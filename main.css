@@ -1,0 +1,262 @@
+/*{
+	color:black;
+}*/
+
+body{
+	background-color:#00407F;/*#2B2B2B;*/
+	color:#AAAAAA;/*#00CC00;*/
+}
+/*anchor elements(links)*/
+a{
+	color:#FF8F00;
+}
+a:hover{
+	color:#D7D700;
+}
+a:focus, a:active{
+	color:#3C7DC4;
+}
+a#home{
+	float:left;
+}
+/*div{
+    background-color:grey;
+}*/
+/*
+Headers
+*/
+h1, h2, h3, h4{
+	background-color:#BB6600;
+    /*width:auto;*/
+    display:inline-block;
+}
+
+.purple{
+	color:purple;
+}
+pre{
+ /*   background-color:#707070;
+    display:inline-block;
+    text-indent:48px;*/
+    color:#171717;
+    font-weight:bold;
+}
+.note{
+    color:#CF0000;
+    background-color:#2B2B2B;
+}
+/*
+Divs
+*/
+/*div#controls{
+	width : 100%;
+}*/
+.leftSidebar{
+
+}
+div.horizontalMenu,
+details.horizontalMenu
+{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width:auto;/*100%;*/
+}
+div#controls{
+	float:right;
+    text-align:right;
+    /*position:absolute;
+    right:0%;
+    top:0%;*/
+}
+div#frameStats{
+    float:right;
+    text-align:right;
+}
+/* div#frameStats p{
+    margin: 0;
+    -webkit-margin-after: 0;
+} */
+/*div#frameStats p:before{
+    content:':';
+}*/
+
+.glc{
+	/*webGL canvas*/
+}
+.glDemo{
+    width:128px;
+    height:128px;
+    /*box-shadow: 4px 8px #0F0F0F;*/
+    /*border-color:#FF0000;*/
+}
+.glIcon{
+    width:64px;
+    height:64px;
+}
+/*canvas#glcanvas{
+	for testing only, change to black to ignore effects
+	backgroud:red;
+}*/
+
+div.menu{
+	text-align:center;
+    /*margin:12px;*/
+	/*background-color:grey;*/
+}
+/*
+Details and Summaries
+*/
+details{
+	border-style: solid;
+	border-color:#000000;
+	border-width:1px;
+	display:inline-block;
+	/*width:auto;
+	float:right;*/
+}
+/*details:not([open]){
+	width:auto;
+	height:auto;
+}*/
+details[open]{
+	background-color:#707070;
+	border-style: solid;
+	border-color:#3C7DC4;
+	border-width:3px;
+	/*width:auto;*/
+	display:inline-block;
+}
+
+details summary{
+	background-color:#707070;
+	width:auto;
+}
+details[open] summary{
+	background-color:#BB6600;
+	width:auto;
+}
+/*div#controls input{
+	float:left;
+}*/
+div#content{
+    text-align:left;
+    float:left;
+    display:table;
+}
+
+/*details#content div{ canvas#px-vecsIcon{
+    width:100%;
+}*/
+
+details#content a{
+    /*display:inline-block;*/
+    /*clear:both;*/
+}
+
+details#content ol,
+details#content ul
+{
+    padding-left:16px;
+    /*list-style:none;*/
+}
+
+details#content ol li,
+details#content ul li
+{
+    /*width:auto;
+    height:auto;*/
+    
+}
+
+ul{
+    list-style-type: none;
+}
+
+div.menu a img{
+	width:32px;
+	height:32px;
+	transition-duration:0.5s;
+	transition-property:transform;
+}
+div.menu a img:hover,
+div.menu a img:focus,
+div.menu a img:active{
+
+	/*animation-name:growDouble;
+	animation-duration:1s;
+	animation-timing-iteration-count:infinite;
+	animation-direction:alternate;*/
+	transform:scale(2.0);
+}
+
+/*
+Horizontal menus
+*/
+ol.horizontalMenu,
+ul.horizontalMenu/*
+div.horizontalMenu*/
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width:100%;
+}
+
+ol.horizontalMenu li,
+ul.horizontalMenu li
+{
+    float: left;
+}
+
+ol.horizontalMenu li a,
+ul.horizontalMenu li a
+{
+    display: block;
+    /*color: #AAA;*/
+    text-align: center;
+    padding: 7px 8px;
+    text-decoration: none;
+}
+
+ol.horizontalMenu li a:hover
+ul.horizontalMenu li a:hover
+{
+    background-color: #222;
+}
+/*
+nav bar styles
+*/
+nav.horizontalMenu
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width:100%;
+}
+
+nav.horizontalMenu a
+{
+    /*float: left;*/
+    display: block;
+    /*color: #AAA;*/
+    text-align: center;
+    text-decoration: none;
+}
+
+nav.horizontalMenu a:hover
+{
+    background-color: #222;
+}
+
+div{
+    /*background-color:black;*/
+    /*border-style: outset;*/
+    /*overflow-x:scroll;*/
+    /*border: 1px solid black;*/
+}
