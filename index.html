@@ -3,17 +3,263 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Vigilance-Github Home Page</title>
+    <!--CSS-->
     <link rel='stylesheet' type='text/css' href='bundle.css'>
     <link rel='stylesheet' type='text/css' href='main.css'>
+    <!--JS-->
     <script type='application/javascript' src='bundle.js'></script>
-    <!--link rel='stylesheet' type='text/css' href='main.css'>
-    <script type='application/javascript' src='main.js'></script-->
+    <!--script type='application/javascript' src='main.js'></script-->
 </head>
 <body>
+    <!--site navigation-->
+    <nav id='banner'
+        class='d-flex justify-content-start navbar navbar-dark bg-dark'
+        role='navigation'>
+        <!--a href='' id='home' class='navbar-brand'>
+            <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='navbarDropdown'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                Introduction
+            </a>
+            
+            <div class='dropdown-menu bg-secondary'
+                aria-labelledby='navbarDropdown'>
+                <a href='' title='jQuery' class='dropdown-item'>
+                    jQuery
+                </a>
+                <a href='' title='chrono-js' class='dropdown-item'>
+                    chrono-js
+                </a>
+                <a href='' title='Functonal Programming' class='dropdown-item'>
+                    Functional Programming
+                </a>
+                <a href='' title='integer Sequences' class='dropdown-item'>
+                    Integer Sequences
+                </a>
+                <a href='' title='Regular Expressions' class='dropdown-item'>
+                    Regular Expressions
+                </a>
+                <a href='' title='color' class='dropdown-item'>
+                    Color
+                    <!--canvas id='vecsIcon' class='webGL' width='64' height='64'>
+                        Browser does not support canvas
+                        <script id='vec2Shaders' type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' title='pxApp main' class='dropdown-item'>
+                    px application
+                </a>
+                <a href='' title='Input' class='dropdown-item'>
+                    <canvas id='inputIcon' class='webGL' width='64' height='64'>
+                        Browser does not support canvas
+                        <script type='application/json'>
+                        </script>
+                    </canvas>
+                </a>
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='nbdd2D'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                2D
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbdd2D'>
+                <a href='' title='2D px application' class='dropdown-item'>
+                    2D App Boilerplate
+                </p>
+                <a href='vector/' title='Vectors' class='dropdown-item'>
+                    <!--canvas id='vecsIcon' class='webGL' width='64' height='64'>
+                        Browser does not support canvas
+                        <script id='vec2Shaders' type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' class='dropdown-item'>
+                    <!--canvas id='matIcon' class='webGL' width='64' height='64' title='Matrices'>
+                        Browser does not support canvas
+                        <script id='mat3IconShaders' type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' title='Complex Numbers' class='dropdown-item'>
+                    Complex
+                </a>
+                <!--li><a href='../camera/'>
+                    <canvas id='cameraIcon' class='webGL' width='64' height='64' title='Matrices'>
+                        Browser does not support canvas
+                        <script id='cameraIconConfig' type='application/json'>
+                        </script>
+                    </canvas>
+                </a></li-->
+                <a href='' class='dropdown-item bg-secondary'>
+                    <!--canvas id='geomIcon' class='webGL' width='64' height='64' title='Geometry'>
+                        Browser does not support canvas
+                        <script id='geomLogo2Shaders' type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' class='dropdown-item'>
+                    <!--canvas id='tx2Icon' class='webGL' width='64' height='64' title='Textures'>
+                        Browser does not support canvas
+                        <script id='tx2Logo2Shaders' type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Lights
+                </a>
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbdd3D' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                3D
+            </a>
+            <div class='dropdown-menu' aria-labelledby='nbdd3D'>
+                <a href='' title='3D px application' class='dropdown-item'>
+                    3D App Boilerplate
+                </p>
+                <a href='' title='Vectors' class='dropdown-item'>
+                    Vectors
+                </a>
+                <a href='' title='Matrices' class='dropdown-item'>
+                    Matrices
+                </a>
+                <a href='' title='Planes' class='dropdown-item'>
+                    Planes
+                </a>
+                <a href='' title='Quaternions' class='dropdown-item'>
+                    Quaternions
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Geometry
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    <!--includes, billboards, sky boxes, blend maps, normal maps, etc-->
+                    Textures
+                </a>
+                <!--includes ambient, 3D point, directional, spot, hemi-sphere, etc-->
+                <a href='' title='' class='dropdown-item'>
+                    Lights
+                </a>
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='nbddInter'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                Intermediate
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <a href='../mulitview/' class='dropdown-item'>
+                    <!--canvas id='multiviewIcon' class='webGL' width='64' height='64' title='Multi-view Rendering'>
+                        Browser does not support canvas
+                        <script type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='../particles/' class='dropdown-item'>
+                    <!--canvas id='particlesIcon' class='webGL' width='64' height='64' title='Particle Effects'>
+                        Browser does not support canvas
+                        <script type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='../animation/' title='Animation' class='dropdown-item'>
+                    <!--canvas id='animIcon' class='webGL' width='64' height='64' title='animation'>
+                        Browser does not support canvas
+                        <script type='application/json'>
+                        </script>
+                    </canvas-->
+                </a>
+                <a href='' title='Post-processing Effects' class='dropdown-item'>
+                    Post-Processing
+                </a>
+                <a href='' title='tensorflow machine learning' class='dropdown-item'>
+                    Tensorflow
+                </a>
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                Games
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <a href="" class='dropdown-item'>PongGL</a>
+            </div>
+        </div>
+        <!--div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                Contact
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <a href='' class='dropdown-item'>Contact Us</a>
+                <a href='' class='dropdown-item'>Careers</a>
+                <a href='' class='dropdown-item'>Report an Issue</a>
+            </div>
+        </div>
+        <div><a href="" class='nav-item'>About</a></div-->
+        <div><a href="" class='nav-item'>Patreon</a></div>
+        
+        <!--button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul class='navbar-nav mr-auto'>
+                <li><a class='nav-item'>Stuff</a></li>
+            <ul>
+        </div-->
+        <!--li><a href='demo/tensor.php?p=two' title='Animation'-->
+        
+        <!--li><a href='demo/tensor.php?p=two' title='Tensor'>
+            <img src='images/metaCube.jpg'>
+            <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a></li-->
+        
+        <!--form class='form-inline my-2 my-lg-0'>
+            <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
+            <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
+        </form-->
+    </nav>
+    <!--main body-->
     <div class='container'>
         <div class='row'>
             <div class='col'>
-            Test
+                <p class='note'>
+                    <b><i>This site is currently under production</i></b>
+                </p>
             </div>
         </div>
     
@@ -30,29 +276,274 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="#sec"
+                            href="#interests"
                             role="tab"
-                            data-toggle="pill">TBD
+                            data-toggle="pill">Interests
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link"
-                            href="#third"
+                            href="#background"
                             role="tab"
-                            data-toggle="pill">TBD
+                            data-toggle="pill">Background
                         </a>
                     </li>
+                    <!--li class="nav-item">
+                        <a class="nav-link"
+                            href="#proj"
+                            role="tab"
+                            data-toggle="pill">GitHub Projects
+                        </a>
+                    </li-->
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="intro">
-                        Stuff
+                        <!--h3>Introduction</h3-->
+                        <p>With a passion for graphics programming, DirectX and OpenGL.
+                        </p>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="sec">
-                        Stuff
+                    
+                    <div role="tabpanel" class="tab-pane" id="interests">
+                        <!--h3>Interests</h3-->
+                        
+                        <!--div>
+                            <h3>Philosophy</h3>
+                            <ul>
+                                <li><a href="">Friedrich Nietzsche</a></li>
+                                <li><a href="">Immanuel Kant</a></li>
+                                <li><a href="">David Hume</a></li>
+                                <li><a href="">René Descartes</a></li>
+                                <li><a href="">Jean-Paul Sartre</a></li>
+                            <ul>
+                        </div>
+                        <div>
+                            <h3>Math</h3>
+                            <ul>
+                                <li>Number Theory</li>
+                                <li></li>
+                            <ul>
+                        </div>
+                        <div>
+                            <h3>Science</h3>
+                            <ul>
+                                <li><a href="">Quantum Mechanics</a></li>
+                                <li><a href="">Optic Computing</a></li>
+                            <ul>
+                        </div>
+                        <div>
+                            <h3>Music</h3>
+                            <ul>
+                                <li><a href="">Fredic Chopin</a></li>
+                                <li></li>
+                            <ul>
+                        </div>
+                        <div>
+                            <h3>Art</h3>
+                            <ul>
+                                <li><a href="">Piet Mondrian</a></li>
+                                <li><a href="">René Magritte</a></li>
+                            <ul>
+                        </div>
+                        <div>
+                            <h3>Literature</h3>
+                            <ul>
+                                <li><a href="">H.P. Lovecraft</a></li>
+                                <li><a href="">George Orwell</a></li>
+                                <li><a href="">Douglas Coupland</a></li>
+                                <li><a href="">Frank Herbert</a></li>
+                                <li><a href="">Aldous Huxley</a></li>
+                                <li><a href="">Isaac Asimov</a></li>
+                                <li><a href="">Stephen King/Richard Bachman</a></li>
+                                <li><a href="">Isaac Asimov</a></li>
+                            </ul>
+                        </div-->
                     </div>
+                    
                     <div role="tabpanel" class="tab-pane" id="third">
                         Other stuff
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane" id="background">
+                        Other stuff
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane" id="langs">
+                        <h4>Programming/Scripting/Markup/Shading Languages</h4>
+                        <ul>
+                            <li><a href="">C/C++</a></li>
+                            <li><a href="">Python</a></li>
+                            <li><a href="">PHP</a></li>
+                            <li><a href="">DirectX-11/HLSL 5</a></li>
+                            <li><a href="">OpenGL/WebGL/GLSL</a></li>
+                            <li><a href="">HTML/Javascript/CSS</a></li>
+                            <li><a href="">Objective-C/Swift</a></li>
+                            <li><a href="">C# XNA</a></li>
+                            <li><a href="">XML</a></li>
+                            <li><a href="">JSON</a></li>
+                            <li><a href="">Solidity</a></li>
+                        </ul>
+                        
+                        <h4>Human Languages</h4>
+                        
+                        <label>Primary:<a href="">English</a></label>
+                        
+                        <p>Studying
+                            <ul>
+                                <li><a href="">American Sign Language</a></li>
+                                <li><a href="">Mandarin</a></li>
+                                <li><a href="">Arabic</a></li>
+                                <li><a href="">Japanese</a></li>
+                                <li><a href="">Sanskrit</a></li>
+                            </ul>
+                        </p>
+                        <p>Native page translations to come!</p>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane" id="proj">
+                        Current project and libraries under production
+                        
+                        <div>
+                            <h3>Integer Sequences</h3>
+                            <p>In number theory, there are many common sequences which are highly prevalent in nature,
+                            such as the Primes or Fibonacci Numbers,
+                            with many having intimate ties to more complex fields of science and math, such as cryptography.
+                            Yet, many common languages lack built in support for generating such sequences.
+                            </p>
+                            <p>This project seeks to solve this problem by creating a standard which is shared across multiple platforms.</p>
+                            <p>
+                            The Integer Sequence Libraries are based off the <a href="">Online Encyclopaedia of Integer Sequences</a>.
+                            Rather than depending on an internet connection and then parsing a text/binary file,
+                            this suite of libraries allows for native platform support for generating common integer sequences.
+                            </p>
+                            <label>Repos
+                                <ul>
+                                    <li><a href="https://github.com/vigilance91/integerSequences-cpp">C/C++</a></li>
+                                    <li><a href="https://github.com/vigilance91/integerSequences-py">Python</a></li>
+                                    <li><a href="">PHP</a></li>
+                                    <li><a href="https://github.com/vigilance91/integerSequences-js">Javascript</a></li>
+                                <ul>
+                            </label>
+                            <label>References
+                                <ul>
+                                    <li><a href="">C/C++</a></li>
+                                    <li><a href="https://vigilance91.github.io/integerSequences-py/index.html">Python</a></li>
+                                    <li><a href="">PHP</a></li>
+                                    <li><a href="">Javascript</a></li>
+                                <ul>
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <h3>Chrono</h3>
+                            <p>The Chrono library provides standardized timing utilities including timers, counters, <!--timed locks,--> etc,
+                            across multiple platforms, including:
+                            <ul>
+                                <li><a href="">C/C++</a></li>
+                                <li><a href="">Python</a></li>
+                                <li><a href="">PHP</a></li>
+                                <li><a href="">Javascript</a></li>
+                            <ul>
+                            </p>
+                            <p>Which includes utilities such as timers and counters,
+                            which can be used for everything from high resolution timing for profiling code or for key-frame animations.
+                            </p>
+                        </div>
+                        <div>
+                            <h3><a href="https://github.com/vigilance91/pypp36">pypp36</a></h3>
+                            <p>A minimalist, lightweight C++17 compatible wrapper for the Python C API.</p>
+                            <a href="https://vigilance91.github.io/pypp36/index.html">API Reference</a>
+                            <p>Currently only x64 libraries are targeted, support for x86 and non-windows OS versions are planned for future releases.</p>
+                        </div>
+                        <!--div>
+                            <h3>PS</h3>
+                            <p>Derived from the latin word for light, "photo" and "script",
+                            this library provides an API where generating, searching, validating, transforming and editing
+                            data in the form of strings or raw image data.
+                            </p>
+                            
+                            <ul>
+                                <li><a href="">C++</a></li>
+                                <li><a href="">Python</a></li>
+                                <li><a href="">PHP</a></li>
+                                <li><a href="">Javascript</a></li>
+                            <ul>
+                        </div>
+                        
+                        <div>
+                            <h3>PX</h3>
+                            <p>Derived from the latin word for light, "photo" and 'kinematics', a branch of mechanics pertaining to the motion of objects,
+                            the PX library literally provides the ability to move technology and people,
+                            through the power of light(TM)!
+                            </p>
+                            <p>
+                            Built on the power of PS, PX strives to bring low-latency, highly responsive games and applications to your desktop, tablet or phone
+                            by harnessing the immense power of GPU technology.
+                            </p>
+                            
+                            <div>
+                                <h4>DirectX</h4>
+                                <p>A DirectX-10, Win32 game engine, PX has its origins in a humble C++ console application.
+                                After developing
+                                </p>
+                            </div>
+                        
+                            <div>
+                                <h4>WebGL</h4>
+                                <p>Is the modern, minimalist Javascript WebGL port of the __ game engine/framework,
+                                for fast, easy web development of interactive graphics and video games on the web.
+                                </p>
+                            </div>
+                        </div-->
+                        
+                        <div>
+                            <h3>Ethereum</h3>
+                            <p>Ethereum is a decentralized cryptocurrency platform.
+                            Developed by Canadian <a href="https://en.wikipedia.org/wiki/Vitalik_Buterin">Vitalik Buterin</a>,
+                            Ethereum is often referred to as the next generation of the internet,
+                            at least as far as electronic currency and E-commerce is concerned.
+                            </p>
+                            
+                            
+                            <p>While most people new to the world of cryptocurrency typically get quickly overwhelmed with the many unfamiliar or foreign concepts,
+                            once the realization that, in many ways, the concepts of digital currencies
+                            are actually employed in the everyday life of the modern world.
+                            </p>
+                            <p>
+                            Do you take advantage of Credit cards with points or systems like PC Optimum,
+                            or any other customer loyalty systems which rewards users with unique currencies which can't be deemed for legal tender?
+                            How about laundry machines that accept reloadable chip-cards, or the wristbands/access passes at amusement parks?
+                            Then you are already using cryptocurrencies and don't even know it!
+                            </p>
+                            <p>
+                            The only difference with Ethereum is the decentralized nature of the system, with the currency exists entirely ephemerally within the distributed blockchain.
+                            </p>
+                            <p>
+                            Where corporate conglomerates or banking syndicates maintain sole control of the traditional systems their users/consumers access,
+                            with Ethereum anyone and everyone can effectively create their own financial system, lending institution, auction house, currency exchange, crowd funding campaign, or entirely secure democratic organizations
+                            without ever having to rely on a third party banking institutes or having to be dependant upon payment systems such as PayPal or Amazon,
+                            which can chose to shutdown user accounts for no reason, without any notice,
+                            effectively halting all future financial transactions.
+                            </p>
+                            <p>With Ethereum, power is entirely in the hands of individual users,
+                            rather than the faceless multi-national financial institutions or corporations which horde their capital (at the expense of the public),
+                            or governments, which would gladly seize private assets to bail out failing business or to serve their own agendas (see <a href="">Bail-Ins</a>, <a href="">Civil Forfeiture</a>, <a href="">Eminent Domain</a> or the Greece financial crisis).
+                            </p>
+                            <p>
+                            With all transactions being recorded publicly in the blockchain.
+                            </p>
+                            <p>Ethereum is truly the future of finance, set to disrupt many traditional institutions through decentralization.
+                            </p>
+                            
+                            <!--label>Wallet</label-->
+                            <label>Projects
+                                <ul>
+                                    <li><a href=""></a></li>
+                                </ul>
+                            </label>
+                            <!--div>
+                            </div-->
+                        </div>
                     </div>
                 </div>
             </div>
