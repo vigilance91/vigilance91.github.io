@@ -2,6 +2,10 @@
 	color:black;
 }*/
 
+sup a{
+    font-size:0.25em;
+}
+
 body{
 	background-color:#00407F;/*#2B2B2B;*/
 	color:#AAAAAA;/*#00CC00;*/

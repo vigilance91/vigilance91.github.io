@@ -11,6 +11,63 @@
     <!--script type='application/javascript' src='main.js'></script-->
 </head>
 <body>
+<!--HTML stubs for copy/replace, because github only allows static html pages,
+which means no fancy PHP or other scripts, aside from static javascript and css-->
+<!--default citation superscript, replace N with the current number of citations + 1
+<sup><a href="">[N]</a></sup>
+-->
+<!--stub to add where citations are required and not currently provided
+<sup><a href="">[citation required]</a></sup>
+-->
+<!--
+if(!ls['privacy']){
+    let $mo=$('#privicy');
+    
+    $mo.modal({data-show:true});
+    $mo
+    //event is fired when hidden, such as when its closed
+    $mo.on('hidden.bs.modal', (e)=>{
+    //prevents modal from showing again until
+      ls['privicy']=true;
+    })
+}-->
+
+<!--div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks for keeping me informed</button>
+            </div>
+        </div>
+    </div>
+</div-->
+<!--class='modal'>
+Privacy Notice:
+<p>Please be aware the we do <b><i>not</i></b> track your activity on our sites with cookies or other such tracking or data mining techniques.
+We also don't sell you personal information for personal gain or steal your bandwidth with mind numbing ad spam,
+nor do we intend to at any point in the future.
+</p>
+<p>
+This site and its developers value personal privacy and we respect the privacy rights of our users as well.
+Unfortunately too few people do.
+</p>
+<p>
+Be advised we do record the most minimal amount of data necessary such as the ip addresses that visit our sites,
+data and duration of your visit, primarily for the purposes of black listing web crawlers, bots or other malicious entities.
+</p>
+<p>The few site op and can be cleared at any time.</p>
+-->
     <!--site navigation-->
     <nav id='banner'
         class='d-flex justify-content-start navbar navbar-dark bg-dark'
@@ -164,7 +221,7 @@
                 Games
             </a>
             <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
-                <a href="" class='dropdown-item'>PongGL</a>
+                <!--a href="" class='dropdown-item'>PongGL</a-->
             </div>
         </div>
         <!--div class='nav-item dropdown'>
@@ -178,7 +235,7 @@
             </div>
         </div>
         <div><a href="" class='nav-item'>About</a></div-->
-        <div><a href="" class='nav-item'>Patreon</a></div>
+        <div><a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a></div>
         
         <!--button class="navbar-toggler"
             type="button"
@@ -274,47 +331,246 @@
                             data-toggle="pill">Links
                         </a>
                     </li>
+                    <!--li class="nav-item">
+                        <a class="nav-link"
+                            href="#refs"
+                            role="tab"
+                            data-toggle="pill">References
+                        </a>
+                    </li-->
                 </ul>
                 
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="intro">
-                        <!--h3>Introduction</h3-->
-                        <p>With a passion for graphics programming, DirectX and OpenGL,
-                        .
-                        </p>
+                        <h3>Introduction</h3>
+                        <!--div>
+                            <h4>Preface</h4-->
+                            <p>As with all of physical existence, being over 99.99% empty space<sup><a href="">[citation required]</a></sup>,
+                            being composed of star dust over 4.6 billion years old (forged in the heart of a dying star),
+                            the culmination of what constitutes any person is roughly (by mass):
+                                <ul>
+                                    <li>65% Oxygen</li>
+                                    <li>9.5% Hydrogen</li>
+                                    <li>19% Carbon</li>
+                                    <li>3% Nitrogen</li>
+                                    <li>1.5% Calcium</li>
+                                    <li>1% Phosphorous</li>
+                                    <li>along with a handful of trace elements</li>
+                                </ul>
+                            </p>
+                            
+                            <p>
+                            With a genome consisting of ~3.23 billion randomly arranged base pairs,
+                            across 23 pairs of chromosomes (which makes up [0.0007%, 0.0009%] of total body mass<sup><a href="">[citation required]</a></sup>),
+                            99.9% of the human genome (excluding mitocondrial DNA) is shared by everyone<sup><a href="">[citation required]</a></sup>,
+                            of which 5-8% is also composed of <a href="">endogenous retroviruses</a>.
+                            </p>
+                            <p class='note'>ERVs are technically foreign gene sequences which have parasitised a host genome (and are generally considered inactive) as the result of being transcripted after exposure to specific viral agents within geographically isolated regions.
+                            </p>
+                            
+                            <p note="note">Those individual mutations which make a person's DNA &apos;<i>unique</i>&apos;
+                            are statistically insignificant<sup><a href="">[citation required]</a></sup>.
+                            </p>
+                            
+                            <p>
+                            Beginning with the fusion event forging human chromosome 2 (birthing modern Homo Sapiens),
+                            this distinct divergence from our 24 chromosome pair hominid relatives allowed our ancestors to stand tall above their competition,
+                            to gaze towards the stars and the future.
+                            </p>
+                            
+                            <p>
+                            Since then on, for all practical purposes, every human has been statistically the same, from a genetic standpoint.
+                            </p>
+                            
+                            <p>As an organic, multi-processing, quantum computer capable of sentience, introspection and self-determination, 
+                            (despite modern debate regarding whether or not the mind is in fact turning complete),
+                            .
+                            </p>
+                            
+                            <!--p>Rational analysis(internal logic) and sensory perception(external stimuli),
+                            Reason yields concepts which are true but tautological, (...) whos content is phenomenal.
+                            </p-->
+                            
+                            <!--p>In (philosophy of knowledge), it is well accepted,
+                            <i>A priori</i>(knowledge without/before experience) and <i>A posteriori</i>(knowledge after/from experience).
+                            </p-->
+                            <!--p class='note'>Where Plato is infamous for the phase, "What I know for certain is that I know nothing",
+                            
+                            it would take the revolutionary philosophy of Immanuel Kant to deduce that,
+                            since the human mind is the by product of and governed by the fundamental laws of nature (from which all physical processes derive),
+                            it is thus required that not only is consciousness an inherent, emergent property of nature,
+                            but also that the mind is intrinsically aware of those processes,
+                            thus in order for the mind to function or even exist,
+                            it must <i>know</i>.
+                            In this sense 
+                            </p-->
+                        
+                            <!--p>Despite the limited capacity of human language to adequately describe concepts beyond the narrow band of sensory perceptions
+                            encountered within the mundane plane of consensual reality and the axioms used for logically interpreting those perceptions,
+                            when asked what words best describe me,
+                            aside from pointing out the Sanskrit concept of dukkha (the insatiable decay of all things, yielding to the stress of impermanence) which makes the idea of affixing permanent,
+                            absolute traits to a temporary form (which constantly undergoes change due to entropy) seems a little ridiculous.
+                            Also, since the metaphysical nature of transcendental consciousness is impossible to fully comprehend (let alone convey to others),
+                            such questions seem either unnecessarily arbitrary at best or existentially insignificant at worse.
+                            However, conventional responses, for the sake of discussion and sanity, might include
+                                <ul>
+                                    <li>(teacher/mentor)</li>
+                                    <li>environmentalist</li>
+                                    <li>minimalist</li>
+                                    <li>writer</li>
+                                    <li>stoic</li>
+                                    <li>philosopher</li>
+                                    <li>skeptic</li>
+                                </ul>
+                            </p>
+                        <!--/div-->
+                        
+                        <!--div>
+                            <h4></h4-->
+                            <!--p>My greatest love for computer science is that it's the only written medium which is experienced dynamically,
+                            where one does not simply passively observe the written word in a static order, like books.
+                            Instead, users are driven by countless interactions,
+                            where each experience has the potential to be new and unique.
+                            </p-->
+                            
+                            <p>Experienced with both DirectX and OpenGL, I have a deep passion for graphics programming.
+                            </p>
+                            
+                            <p>
+                            While conventionally used for rendering geometry to a screen, producing various visual effects,
+                            this field expands vastly beyond that single application.
+                            </p>
+                            
+                            <p>
+                            At its core, graphics programming is the offloading of algorithms from the CPU (central processing unit) onto a computer's GPU (graphic processing unit).
+                            </p>
+                            
+                            <p>
+                            GPUs were designed to leveraging the immense power of asynchronous processing, without the need for synchronization primitives,
+                            such as locks, mutexes or semaphores.
+                                <p class='note'>While superior in terms of raw processing power,
+                                this architecture does pose several drawbacks, however.
+                                The primary one being, graphics processors can <b>not</b> implement a call stack<sup><a href="">[citation required]</a></sup>,
+                                preventing certain techniques such as <a href="">recursion</a>,
+                                which relies on a functional programming technique where,
+                                where a method calls itself until a terminating condition is met or,
+                                the stack is blown, resulting in very <b>bad</b> things happening.
+                                <br>
+                                The second being, any data submitted as input to the graphics pipeline is immutable.
+                                Any operations performed on constants or buffers is unable to persist the state change beyond the current execution,
+                                thus can not be subsequently accessed by the CPU code via the resource handle afterwards.
+                                Instead, unique buffers must be separately bound to the pipeline for independent input and output operations (whoever, HLSL 5 introduced read/write textures/buffers).
+                                As a result, typically the mapping of resources from the graphics card's RAM into conventional RAM is <b>not</b> allowed for those resources currently bound to the pipeline while rendering.
+                                </p>
+                            Their thousands of dedicated cores and their optimized instruction sets targeting vector, matrix, color math as well as accelerated and asynchronous access of indexed buffers allows
+                            GPU programs (colloquially called <b><i>shaders</i></b>) have the ability to process large quantities of data in parallel.
+                            This allows for significantly faster processing compared to the serial nature of processing the same data on a CPU.
+                            </p>
+                            
+                            <!--p class='note'>
+                            When appropriately leveraged with Multi-tasking or Multi-processing on the CPU,
+                            execution can be increased by utilizing techniques such as background loading of resources,
+                            or processing of i/o operations separately from the primary rendering logic.
+                            </p-->
+                            
+                            <p>Two of the most common applications of graphics programming in industry are in the fields of <a href="">artificial intelligence</a> and <a href="">cryptocurrencies</a>,
+                            where highly computational intensive operations such as <a href="">machine learning</a> and <a href="">mining transaction blocks</a>, respectfully,
+                            can be more efficiently performed with significantly higher output capacity than would be possible on a conventional 2 or 4 core processor alone,
+                            with modern GPUs produced with literally hundreds (if not thousands) of cores.
+                            </p>
+                            
+                            <p>
+                            </p>
+                        <!--/div-->
+                        <!--div>
+                            <h3>Family</h3>
+                            <p>The proud father of a bright and charismatic son,
+                            he is the single greatest inspiration in my work.
+                            Knowing that one day he will be able to use and learn from the software I develop,
+                            at the very least he will have fun playing games built specially for him.
+                            </p>
+                            <p>
+                            Aside from his general fascination with his father's computer,
+                            he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
+                            As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
+                            </p>
+                            <p>
+                            He already has a particular fascination with colors and geometry,
+                            as those are his favorite demos to play with.
+                            </p>                            
+                        </div-->
+                        
+                        <!--div>
+                            <h3></h3>
+                            <p>With a passion for math, science, language and art, as a graphics programmer,
+                            I have found a field which combines all these aspects into a single discipline.
+                            </p>
+                            <p>In contrast, where programming is considered a highly ordered, logical <i>left brain</i> activity,
+                            artistic expression is a <i>right brain</i> activity, dependent upon emotion and sensory perceptions.
+                            </p>
+                            <p>While it is common for most work to hyper-focus on only a single cognitive aspect (resulting in the neglect of the other half, leading to atrophy),
+                            this exciting field allows the utilization of both left and right hemispheres working in concert,
+                            culminating in exciting new neurological pathways and alternative interpretations of the world,
+                            leading to creative and innovative solutions which would otherwise not arise simply by relentlessly beating a problem with logic alone.
+                            </p>
+                        </div-->
+                        
+                        <div>
+                            <h3>Gaming</h3>
+                            <p>While growing up in the 90's tech boom, even though I was too young for a personal computer,
+                            I still had an SNES and Sega Genesis that were played at every opportunity,
+                            with classic games including Sonic, Mortal Combat, Road Rash and Super Mario World and Yoshi's Island.
+                            </p>
+                            
+                            <p>After a while, our Sega developed a neat little quirk where it would only play games when it was upside down and propped up against the wall at a specific angle.
+                            Boy, those were the days.
+                            </p>
+                            
+                            <p>It wouldn't be until roughly the early 2000's when the family got its first desktop,
+                            which would ignite a passion for technology and gaming which continues to grow today.
+                            </p>
+                            
+                            <p>Even though most of my time was spent playing solitaire, minesweeper and doodling in MS paint,
+                            eventually I would buy my first PC game, <a href="">Sid Meier's Civilization 4</a>.
+                            </p>
+                            
+                            <p>
+                            After installing it, I played a marathon session of over 48 consecutive hours,
+                            and have been obsessed with the franchise ever since.
+                            </p>
+                            
+                            <p>
+                            It wouldn't be until high school where my interest in on-line gaming really took over,
+                            specifically with MMORG's such as Guild Wars and World of Warcraft and FPS's like Battlefield and Counter Strike,
+                            after buying my first custom built rig for gaming.
+                            </p>
+                            
+                            <p>While PC gaming consumed much outside of school time while not working my after-school job or playing sports,
+                            I still enjoyed the console classics of the time on my Xbox 360,
+                            including Fallout, Halo, Skyrim, Guitar Hero and Rockband
+                            </p>
+                            
+                            <p>Then, after starting College, while my focus turned more from making games than playing games,
+                            I was still able to squeeze in an odd match of League of Legends or delve back into the world of Skyrim.
+                            </p>
+                        </div>
                     </div>
                     
                     <div role="tabpanel" class="tab-pane" id="interests">
-                        <!--h3>Interests</h3-->
+                        <!--h3>Influences</h3-->
                         
                         <!--div>
                             <h3>Philosophy</h3>
                             <ul>
-                                <li><a href="">Stocism</a></li>
+                                <li><a href="">Stoicism</a></li>
                                 <li><a href="">Pragmatism</a></li>
                                 
-                                <li><a href="">Friedrich Nietzsche</a></li>
-                                <li><a href="">Immanuel Kant</a></li>
                                 <li><a href="">David Hume</a></li>
                                 <li><a href="">René Descartes</a></li>
+                                <li><a href="">Friedrich Nietzsche</a></li>
+                                <li><a href="">Immanuel Kant</a></li>
                                 <li><a href="">Jean-Paul Sartre</a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Math</h3>
-                            <ul>
-                                <li><a href="">Number Theory</a></li>
-                                <li><a href="">Complex Mathematics</a></li>
-                                <li><a href=""></a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Science</h3>
-                            <ul>
-                                <li><a href="">Quantum Mechanics</a></li>
-                                <li><a href="">Optic Computing</a></li>
-                                <li><a href="">General/Special Relativity</a></li>
                             <ul>
                         </div>
                         <div>
@@ -324,23 +580,47 @@
                                 <li><a href="">Antonio Vivaldi</a></li>
                                 <li><a href="">Claude Debussy</a></li>
                                 <li><a href="">Franz Schubert</a></li>
+                            </ul>
+                            <ul>
                                 <li><a href="">Tom Lehrer</a></li>
                                 <li><a href="">Gilbert and Sullivan</a></li>
                                 <li><a href="">Tool</a></li>
+                                <li><a href="">A Perfect Circle</a></li>
+                                <li><a href="">Puscifer</a></li>
                                 <li><a href="">The White Stripes</a></li>
                                 <li><a href="">The Mars Volta</a></li>
                                 <li><a href="">Nine Inch Nails</a></li>
                                 <li><a href="">Metallica</a></li>
                                 <li><a href="">Rush</a></li>
                                 <li><a href="">Slipknot/Stonesour</a></li>
+                            </ul>
+                        </div-->
+                        
+                        <!--h3>Interests</h3-->
+                        
+                        <!--div>
+                            <h3>Math</h3>
                             <ul>
+                                <li><a href="">Number Theory</a></li>
+                                <li><a href="">Complex Mathematics</a></li>
+                                <li><a href="">Calculus</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Science</h3>
+                            <ul>
+                                <li><a href="">Quantum Mechanics</a></li>
+                                <li><a href="">Optic Computing</a></li>
+                                <li><a href="">General/Special Relativity</a></li>
+                            </ul>
                         </div>
                         <div>
                             <h3>Art</h3>
                             <ul>
                                 <li><a href="">Piet Mondrian</a></li>
                                 <li><a href="">René Magritte</a></li>
-                                <li><a href="">M.C Esher</a></li>
+                                <li><a href="">M.C. Esher</a></li>
+                                <li><a href="">Francis Bacon</a></li>
                             <ul>
                         </div>
                         <div>
@@ -364,7 +644,7 @@
                             </ul>
                         </div>
                         <div>
-                            <h3>Anime and Comics</h3>
+                            <h3>Anime and Comics/Manga</h3>
                             <ul>
                                 <li><a href="">Ghost In The Shell</a></li>
                                 <li><a href="">Serial Experiments Lain</a></li>
@@ -379,11 +659,11 @@
                         <div>
                             <h3>Games</h3>
                             <ul>
-                                <li><a href="">Sid Meier's Civillization</a></li>
+                                <li><a href="">Sid Meier's Civilization series</a></li>
                                 <li><a href="">League of Legends</a></li>
                                 <li><a href="">Guild Wars</a></li>
                                 <li><a href="">World of Warcraft</a></li>
-                                <li><a href="">Guild Wars</a></li>
+                                <li><a href="">__</a></li>
                             </ul>
                         </div-->
                     </div>
@@ -396,19 +676,28 @@
                         <!--div>
                             <h4>Adolescence</h4>
                             
-                            <p>At the age of 12 I joined Air Cadets.
-                            While there I didn't learn leadership, discipline, and self reliance,
-                            I only strengthen those qualities I already had,
-                            providing the foundation for the strong entrepreneurial attitude I have today.
+                            <p>Joining Air Cadets when I was old enough,
+                            I didn't learn leadership, discipline, or self reliance,
+                            those qualities I already possessed were only strengthened,
+                            providing the foundation for the driven, entrepreneurial attitude I have today.
                             </p>
-                            <p>By the age of 15 I was working a consistent part-time job while still attending high school, cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
-                            By then I had made the rank of sergeant and was regularly teaching classes on survival, drill, the principles of flight and related topics.
+                            
+                            <p>By the age of 15 I was working a consistent part-time job while still attending high school,
+                            cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
+                            By then, having made the rank of sergeant, I was regularly teaching classes on survival, drill, the principles of flight and related topics,
+                            while also being a member of the drill team and color/flag party.
                             </p>
-                            <p>At the age of 17 I received my private pilots license, through cadets before I had my G1.
-                            While in school, I went to OFSSA three times for discuss and shot put,
-                            consistently placing in the top 6 across all of Ontario each year.
+                            
+                            <p>At age 17, I was accepted to the (power ...) at the (...) Airport,
+                            to receive my private pilots license, well before having my G1 driver's license.
                             </p>
-                            <p>Before the age of 20, I had already travelled to, most notably
+                            
+                            <p>
+                            Throughout high school, I went to OFSSA three times for discuss and shot put,
+                            consistently placing in the top 6 across the province each year.
+                            </p>
+                            
+                            <p>Before the time to leave my home town for college, I had already traveled to, most notably
                                 <ul>
                                     <li>Toronto-ON</li>
                                     <li>Ottawa-ON</li>
@@ -416,8 +705,9 @@
                                     <li>Kingston-ON</li>
                                     <li>Manitoulin Island-ON</li>
                                     <li>Windsor-ON</li>
+                                    <li>Kitchener/Waterloo-ON</li>
                                     <li>Columbus-Ohio</li>
-                                    <li>Detriot-Michigan</li>
+                                    <li>Detroit-Michigan</li>
                                     <li>New York-New York</li>
                                     <li>Puerto Plata-Dominican Republic</li>
                                     <li>San Andreas-Columbia</li>
@@ -426,122 +716,228 @@
                         </div>
                         
                         <div>
-                            <h4>College Life</h4>
-                            <p>Shortly after my 20th birthday, I moved to London to attend Video Game Design and Development at TriOS college.
+                            <h4>College</h4>
+                            <p>Shortly after moving to attend a course on video game design and development,
+                            my life changed dramatically.
                             </p>
-                            <p>Within my first few months there I developed a C++ poker hashing algorithm and evaluator as my first major coding project.
-                            When finished, my project outperformed that of my instructor,
+                            
+                            <p>Within the first few months there, I had developed a C++ poker hashing algorithm and evaluator as my first major coding project.
+                            When finished, my project outperformed those of my peers, as well as that of my instructor,
                             which he would eagerly brag about to his colleagues, earning me recognition across campuses.
                             </p>
-                            <p>The game implemented the 5 most common types of poker games,
+                            
+                            <p>The game implements 5 common poker games,
                             leveraging fundamental principles of number theory and static programming techniques to execute,
-                            analyse and compare hands of cards at a nearly instant time complexity.
+                            analyze and compare hands of cards at a nearly instant time complexity.
+                            </p>
+                            
+                            <p>
                             This project is still my proudest accomplishment from that time,
                             however the project source is not planned to be available any time soon.
+                                <p class='note'>One of the core components of the project,
+                                the Integer Sequence Library,
+                                is available on github <a href="https://github.com/vigilance91?tab=repositories">here</a> and has been ported to several languages.
+                                </p>
+                            The executable and associated static libraries may be released in the future,
+                            as development permits.
                             </p>
-                            <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models (saved as markup) and had a primitive combat system and UI (which would later result in the basis for an entire graphics engine),
-                            and two C# XNA titles which included a mincraft-esque farming simulator with real time xml editing tools (for level development) and a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
+                            
+                            <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models and had a primitive combat system and UI,
+                            and two C# XNA titles which included a mincraft-esque farming simulator (including day/night cycle and growing crops with life-cycles) with real time xml editing tools (for level development),
+                            as well as a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
                             </p>
+                            
                             <p>I also attended the Great Canadian App-athon in 2011 and 2012,
                             which was a 72 hour coding contest involving all colleges and universities across Canada.
                             </p>
                             
-                            <p>By this point I was nearing the end of my college career and regularly working 16-18 hours a day (sometime even periods of 48 hours or more) to meet my school work load,
+                            <p>Nearing the end of my college career I was regularly working 16-18 hour days (sometimes even periods of 48 hours or more) to meet my school work load,
                             while also pursuing my own side projects,
                             which would include an interest in cryptography,
-                            but more importantly I would teach myself Python in the hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python,
-                            After that the goal then was to write a C++ application with the interpreter embedded within it,
+                            but more importantly I would teach myself Python in my own time in hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python.
+                            </p>
+                            
+                            <p>
+                            After completing that, the goal then was to write a C++ application with the Python interpreter embedded within it,
                             to leverage the added flexibility and modularity of Python.
                             </p>
-                            <p>The advent of a functioning markup language parser lead to the formalization of a written standard of the markup language I personally developed to address many issues I had personally with both xml and json formats. I would then go on to include these component with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor.
+                            
+                            <p>The advent of a functioning markup language parser lead to the formalization of a written standard,
+                            that I personally developed and maintain to address many (personal) issues presented with both xml and json formats.
                             </p>
+                            
+                            <p>
+                            I would then go on to include these components with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor
+                            and allow for hierarchical management of the application's resources.
+                            </p>
+                            
+                            <p></p>
                         </div>
                         
                         <div>
                             <h4>Post College</h4>
-                            <p>After graduation, I started an unpaid internship as an iOS/Objective-C modile developer at <a href="">Sky Orchard Studios</a>, formerly Seremeres Games.
+                            <p>After graduation, I started an unpaid internship as an iOS/Objective-C mobile developer for a local independent studio.
                             </p>
-                            <p>During the internship I also supported myself through working full time for a temp agency at the LCBO warehouse outside London.
+                            
+                            <p>During the internship I also supported myself through working full time at a temp agency.
                             This required working 16 hours a day at 2 separate jobs for four months straight until I was hired to continue working as an iOS developer.
                             </p>
-                            </p>As it was a small independent studio,
-                            As the sole developer on all their projects (with the owner/CEO being the artist),
+                            
+                            <p>As it was a small start-up, I was the sole developer working on their projects (with the owner/CEO being the artist),
                             I played all roles from lead developer (including writing shell script build tools and photoshop scripts),
                             to QA tester and Research and Development.
-                            I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse toolchain.
                             </p>
+                            
+                            <p>
+                            I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse tool chain.
+                            </p>
+                            
                             <p>
                                 Within my first year, roughly 10 applications had either been released or updated,
-                                to which the most successful app currently has over 3.5 million downloads and continues to be the foundation of Sky Orchard Studio's success.
+                                to which the most successful app having over 3.5 million downloads and continues to be highly successful.
                             </p>
                             
                             <p>Unfortunately, near the end of my employment with Sky Orchard Studios, I would suffer a devastating personal loss,
-                            With all of my personal hardware being stolen from my apartment.
-                            This effectively resulted in the lost of all my projects, notes, source code, examples and entire life's work up to that point,
-                            causing a devastating professional set back, which, to this day, I still have not fully recovered from.
+                            with all of my personal hardware being stolen from my apartment.
+                            </p>
+                            
+                            <p>
+                            This effectively resulted in the loss of all my projects, notes, source code, examples and backups of my entire life's work up to that point,
+                            causing a devastating professional set back, which, to this day, still has not been fully recovered from.
                             </p>
 
-                            <p>Going back to the temp agency after the contract with Sky Orchard expired, I would take on various manual labour roles.
+                            <p>Going back to the temp agency, after the contract expired, I would take on various manual labour roles to survive.
                             </p>
-                            <p>
-                            After several months working in a factory,
-                            I would finally get the opportunity to recover from the theft of my hardware,
-                            being able to purchase a laptop for a job as a web developer working for 8.5:1 Entertainment.
+                            
+                            <p>After several months of factory work,
+                            I would finally get the opportunity to recover from the theft of my life's work,
+                            finally being able to purchase a laptop for a job as a web developer.
                             </p>
-                            <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.</p>
-                            <p>While there I worked closely with 1 other dedicated developer and a small group of and 2-5 interns updating an Actionscript base web application to HTML5.
+                            
+                            <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.
                             </p>
+                            
+                            <p>While there, I worked closely with 1 other dedicated developer and a small group of 2-5 interns updating an Actionscript based web application to HTML5.
+                            </p>
+                            
                             <p>As a senior team member, I primarily supervised the interns assisting in their tasks,
                             while simultaneously working on my own.
                             </p>
-                            <p>The company would collapse before the product could launch, following a series of poor and selfish decisions by the owner.
+                            
+                            <p>Unfortunately, the company would dissolve before the product could launch.
                             </p>
                             
-                            <p>Then I went on to find employment at my former college, TriOS, teaching the very course I had once taken.
+                            <p>Afterward, I went on to find employment at my former college, TriOS, teaching the very course I had once taken not so long ago.
                             </p>
-                            <p>Shortly after beginning my new job, I became a father of a amazing son.
+                            
+                            <p>Shortly after beginning my new job, I became a father of an amazing son.
                             </p>
-                            <p>While at TriOS, I worked 10-16 hours teaching 2 separate classes a day and was responsible for managing groups between 4-12 students at a time,
-                            lecturing on the software production life-cycle and the foundations of computer programming, software development and video game design,
-                            with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and javascript.
+                            
+                            <p>While at TriOS, I worked 10-16 hours teaching 2 separate classes a day and was responsible for managing groups between 4-12 students at a time.
+                            </p>
+                            
+                            <p>
+                            Lectures included the foundational concepts of computer programming, software development, video game design and the software production life-cycle,
+                            with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and Javascript.
                             </p>
 
-                            <p>In my free time, I would begin pursuing a side project in WebGL,
-                            in the hopes of sharing my knowledge of graphics programming with my students (and the world) by developing exciting,
-                            easy to use, interactive examples and tools for WebGL,
-                            while also working towards building a minimalist graphics engine for the web.
+                            <p>In my free time, I began further expanded my knowledge of graphics programming by developing exciting,
+                            easy to use, interactive examples and tools to help with visualization of abstract rendering concepts,
+                            while also working towards building a minimalist graphics engine for the web on my own.
                             </p>
-                            <p>After working a year at TriOS, I decided to leave to be a stay-at-home father to raise and teach my, by then, 1 year old son,
-                            while my spouse went back to both college and work after taking time off and we waited for our son to be accepted into a childcare program.
+                            
+                            <p>After working a year at TriOS, I decided to leave to be a stay-at-home father, to raise and teach my, by then, 1 year old son,
+                            while my spouse went back to both college and work after taking time off while we waited for our son to be accepted into a childcare program.
                             </p>
                         </div>
                         
                         <div>
                             <h4>Recently</h4>
-                            <p>As of today, roughly 6 years after graduating college,
-                            I am fluent in over 10 programming, scripting, shading or markup languages and
-                            recently began teaching myself Solidity, for programming cryptocurrency smart-contracts on the Ethereum blockchain,
-                            as well as TensorFlow for Machine Learning,
+                            <p>As of today, I am fluent in over (a combined) 10 programming, scripting, shading or markup languages.
+                            </p>
+                            
+                            <p>In my sparse spare time,
+                            I have taken an interest in computer forensics (utilizing the vast FOSS tools provided on various Linux platforms) as well as,
+                            beginning to learn TensorFlow for machine learning,
+                            Solidity for programming cryptocurrency smart-contracts on the Ethereum blockchain,
                             React for web UI development and NodeJS for back-end server development.
                             </p>
-                            <p>However, with the many projects currently under development across multiple platforms (see projects page),
-                            it has become quite time consuming for a single developer to work on and maintain all of them (even with appropriate software tools for minimizing workflow overhead),
-                            thus I have opened up several open-source repositories for several of the more complete ones,
-                            in hopes of attracting interest from other developers or potential employers,
-                            while also allowing me to focus on newer, more significant and complex projects.
+                            
+                            <p>Professionally, I have also recently been involved in developing RPA solutions for various business clients.
+                            </p>
+                            
+                            <p>With the many personal projects currently under development across multiple platforms (see <a hef="">projects<a>),
+                            it has become quite time consuming for developing and maintaining them all (even with appropriate software tools for minimizing workflow overhead) as a single developer,
+                            thus I have opened up several open-source repositories for some of the more mature projects,
+                            in hopes of attracting additional interest,
+                            allowing myself to focus on younger, more ambitious, projects.
                             </p>
                         </div-->
+                        
+                        <!--div>
+                            <h4 id=''></h4>
+                            <p>Aside from my passion for (programming), I have a fervent entrepreneurial, philanthropic spirit.
+                            </p>
+                            
+                            <p>
+                            Including wanting to run a studio, my other endeavors are less technology focused instead,
+                            leaning more towards environmentalism, conservationism and sustainability.
+                            </p>
+                            
+                            <p>Believing that (profit should not come at the expense of nature or society),
+                            (...).
+                            Without a sustainable environment, there can be <b>no</b> economy (or people for that matter),
+                            so the choice should be blatantly apparent.
+                            </p>
+                            
+                            <p class='note'>As the successor to the 1857 constitution,
+                            the 1917 revision of the <a herf="">Political Constitution of the United Mexican States</a> is (so far) the only founding political document of a North American country that enshrines,
+                            the right of every citizen to both housing and a hospitable ecosystem, supportive of their (development and welfare),
+                            under Article 4<sup><a href="">citation required</a></sup>,
+                            while also stating under Article 27<sup><a href="">citation required</a></sup>:
+                                all land, water and natural resources within their borders is owned by the Nation (thus belonging to all of its people),
+                                with any wealth generated from the exploitation of these resources to be equally distributed amongst all citizens.
+                            The Mexican Constitution also reserves the right of responsibility for all ecological and conservation concerns (also under Article 27).
+                            </p>
+                            
+                            <p class="note">Considering the Mexican Constitution was written well over a century ago,
+                            it should be both a source of personal and national shame that the same or similar ideals still have not been amended to either the <a href="">Constitution of the United States of American</a> nor,
+                            the <a href="">Canadian Charter of Rights and Freedoms</a>,
+                            seeing as the Mexican Congress of 1917 was objectively more progressive than the modern counterparts in Canada and the U.S. in establishing socio-environmental rights for citizens,
+                            which have now been enjoyed by Mexican citizens for several generations.
+                            </p>
+                            
+                            <p>Intricately tied to (my passion for environmentalism), I also have a love of raptors.</p>
+                            <p>Here is a picture of a baby falcon!
+                            <img ''=""><sup><a href=""></a></sup>
+                            </p>
+                            
+                            <p>Ever since childhood, Peregrine Falcons have been (my favorite animal).
+                            </p>
+                            
+                            <p>
+                            Learning that the use of the pesticide DDT caused the collapse of their population in the 1990's <sup><a href="">citation required</a></sup>,
+                            resulting in their near extinction in North America has to be one of my earliest memories of feeling of disgust towards my species for the general indifference towards the willful poisoning of nature in the pursuit of greed.
+                            </p>
+                            
+                            <p>Luckily, efforts at the dawn of 21st century to reestablish their native population have been successful.
+                            </p>
+                            
+                            <p>To help ensure these majestic creatures continue to thrive alongside humanity,
+                            at the first available opportunity, I desire a license to care for and raise these majestic birds.
+                            </p>
+                        </div>
                     </div>
                     
                     <div role="tabpanel" class="tab-pane" id="langs">
                         <h4>Programming/Scripting/Markup/Shading Languages</h4>
                         <ul>
                             <li><a href="">C/C++</a></li>
-                            <li><a href="">Python</a></li>
-                            <li><a href="">DirectX-11/HLSL 5</a></li>
-                            <li><a href="">OpenGL/WebGL/GLSL</a></li>
+                            <li><a href="">Python (2 &amp; 3)</a></li>
+                            <li><a href="">DirectX &amp; HLSL</a></li>
+                            <li><a href="">OpenGL/WebGL &amp; GLSL</a></li>
                             <li><a href="">PHP</a></li>
-                            <li><a href="">HTML/Javascript/CSS</a></li>
+                            <li><a href="">HTML, Javascript &amp; CSS</a></li>
                             <li><a href="">Objective-C/Swift</a></li>
                             <li><a href="">Bash</a></li>
                             <li><a href="">C# XNA</a></li>
@@ -550,13 +946,23 @@
                             <li><a href="">Solidity</a></li>
                         </ul>
                         
+                        <p><label>Operating Systems
+                            <ul>
+                                <li><a href="">Windows</a></li>
+                                <li><a href="">MacOS</a> &amp; <a href="">iOS</a></li>
+                                <li><a href="">Ubuntu</a> &amp; <a href="">Fedora</a></li>
+                                <li><a href="">Kali</a></li>
+                            </ul>
+                        </label>
+                        </p>
+                        
                         <hr>
                         
                         <h4>Human Languages</h4>
                         
-                        <label>Primary:<a href="">English</a></label>
+                        <p><label>Primary:<a href="">English</a></label></p>
                         
-                        <label>Studying
+                        <p><label>Studying
                             <ul>
                                 <li><a href="">American Sign Language</a></li>
                                 <li><a href="">Mandarin</a></li>
@@ -565,67 +971,95 @@
                                 <li><a href="">Sanskrit</a></li>
                             </ul>
                         </label>
+                        </p>
                         <p>Native page translations to come!</p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="software">
-                        <h4>Development Software, Tools and IDEs Used</h4>
+                        <h4>Development Stack</h4>
                         <ul>
                             <li><ul>
                                 <li><a href="https://github.com/vigilance91">Git Hub</a></li>
                                 <li><a href="">Doxygen</a></li>
                                 <li><a href="">Photoshop</a></li>
                                 <li><a href="">curl</a></li>
+                                <li><a href="">openSSL</a></li>
                                 <li><a href="">nodeJS</a></li>
                                 <li><a href="">Truffle, Mist &amp; Geth</a></li>
-                                <li><a href="">Notepad++</a></li>
                                 <li><a href="">VirtalBox</a></li>
                                 <li><a href="">Filmora Scrn</a></li>
                             </ul></li>
                             <li><ul>
+                                <li><a href="">Notepad++</a></li>
+                                <li><a href="">PHPStorm</a></li>
                                 <li><a href="">Microsoft Visual Studios</a></li>
-                                <li><a href="">Xcode</a></li>
-                                <li><a href="">Unity</a></li>
+                                <!--li><a href="">Xcode</a></li>
+                                <li><a href="">Unity</a></li-->
                             </ul></li>
                         </ul>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="proj">
-                        Current project and libraries under production
+                        Current projects and libraries under production
                         
                         <div>
-                            <h3>Integer Sequences</h3>
+                            <h3>Integer Sequences Libraries</h3>
                             <p>In number theory, there are many common sequences which are highly prevalent in nature,
                             such as the Primes or Fibonacci Numbers,
                             with many having intimate ties to more complex fields of science and math, such as cryptography.
                             Yet, many common languages lack built-in support for generating such sequences.
                             </p>
-                            <p>This project seeks to remedy this by offering a standardized API, which is shared across multiple platforms.</p>
+                            
+                            <p>This project seeks to remedy this by offering a standardized API, which is shared across multiple platforms.
+                            </p>
+                            
                             <p>
-                            The Integer Sequence Library projects are based off the <a href="http://oeis.org/">Online Encyclopaedia of Integer Sequences</a>.
+                            The Integer Sequence Library projects are based off the <a href="http://oeis.org/">Online Encyclopedia of Integer Sequences</a>.
                             Unlike some APIs which simply grab the binary file from the OEIS, then serialize them directly into objects,
-                            this library, rather than depending on an internet connection and then parsing a text/binary file,
+                            this library, rather than depending on an Internet connection and then parsing a text/binary file,
                             allows for native platform support for generating common integer sequences,
                             allowing for much more power and speed as it does away with
                                 <ul>
-                                    <li>dependency upon an established internet connection(if no connection or website is down, no functionality)</li>
-                                    <li>does not need to wait for server responses(sending, receiving and processing http requests takes time)</li>
-                                    <li>does not need to parse server response into native data (data is already generated natively)</li>
-                                    <li>does not need to make multiple requests to the server to generate multiple or varying iterations of a sequences,
-                                    as typically a static series can be generated just once on start-up and used indefinitely while the application runs
+                                    <li>*dependency upon an established Internet connection(if no connection or website is down, no functionality).</li>
+                                    <li>*does not need to wait for server responses(sending, receiving and processing http requests takes time).</li>
+                                    <li>*does not need to parse server response into native data (data is already generated natively).</li>
+                                    <li>*does not need to make multiple requests to the server to generate multiple or varying iterations of a sequences,
+                                    as typically a static series can be generated just once on start-up and used indefinitely while the application runs.
                                     </li>
-                                    <li>developers do not need to worry about buffer overflows(receiving too much data from server, blowing the stack) or receiving data which does not support native data-type sizes (either to large or too small of values or the wrong data type entirely)</li>
+                                    <li>*developers do not need to worry about buffer overflows (receiving too much data from server, blowing the stack) or,
+                                    receiving data which does not support native data-type sizes (either to large or too small of values or the wrong data type entirely).</li>
                                 </ul>
-                                All of these are major drawbacks and are associated with major overhead,
+                                <p>All of these are major drawbacks and are associated with major overhead,
                                 none of which are present when generating native sequences using these libraries.
+                                Many sequence interfaces included in these libraries provide iterative and recursive alternatives (plus generators in languages that support them).
+                                </p>
+                                
+                                <p class='note'>While generally, the recursive versions are not recommended (due to stack depth restrictions),
+                                in some cases the recursive functions can be faster,
+                                such as operating on sets guaranteed to hold only a few numbers of elements or when implemented using static programming techniques.
+                                At worse, an exception is generally thrown (and caught) if abuse occurs,
+                                outputting a message for developers.
+                                </p>
                             </p>
-                            <label>Repos
+                            <label>Documentation
                                 <ul>
-                                    <li><a href="https://github.com/vigilance91/integerSequences-cpp">C/C++</a></li>
-                                    <li><a href="https://github.com/vigilance91/integerSequences-py">Python</a></li>
-                                    <li><a href="https://github.com/vigilance91/integerSequences-php">PHP</a></li>
-                                    <li><a href="https://github.com/vigilance91/integerSequences-js">Javascript</a></li>
+                                    <li><label>C/C++:
+                                        <a href="https://github.com/vigilance91/integerSequences-cpp">repo</a> | 
+                                        <a href="https://vigilance91.github.io/integerSequences-cpp/index.html">reference</a>
+                                    </label></li>
+                                    <li><label>Python:
+                                        <a href="https://github.com/vigilance91/integerSequences-py">repo</a> |
+                                        <a href="https://vigilance91.github.io/integerSequences-py/index.html">reference</a>
+                                    </label></li>
+                                    <li><label>PHP:
+                                        <a href="https://github.com/vigilance91/integerSequences-php">repo</a> | 
+                                        <a href="https://vigilance91.github.io/integerSequences-php/index.html">reference</a>
+                                    </label></li>
+                                    <li><label>Javascript:
+                                        <a href="https://github.com/vigilance91/integerSequences-js">repo</a> | 
+                                        <a href="https://vigilance91.github.io/integerSequences-js/index.html">reference</a>
+                                    </label></li>
                                 <ul>
                             </label>
-                            <br>
+                            <!--br>
                             <label>References
                                 <ul>
                                     <li><a href="https://vigilance91.github.io/integerSequences-cpp/index.html">C/C++</a></li>
@@ -633,51 +1067,62 @@
                                     <li><a href="https://vigilance91.github.io/integerSequences-php/index.html">PHP</a></li>
                                     <li><a href="https://vigilance91.github.io/integerSequences-js/index.html">Javascript</a></li>
                                 <ul>
-                            </label>
+                            </label-->
                         </div>
                         
                         <!--div>
                             <h3>Chrono</h3>
                             <p>The Chrono library provides standardized timing utilities including timers, counters, etc,
                             across multiple platforms, including:
-                            <ul>
-                                <li><a href="">C/C++</a></li>
-                                <li><a href="">Python</a></li>
-                                <li><a href="">PHP</a></li>
-                                <li><a href="">Javascript</a></li>
-                            <ul>
                             </p>
-                            <p>Which includes utilities such as timers and counters,
-                            which can be used for everything from high resolution timing for profiling code or for key-frame animations.
+                            <label>Links
+                                <ul>
+                                    <li>C++: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>Python 3.6: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>PHP: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>Javascript: <a href="">repo</a> | <a href="">reference</a></li>
+                                </ul>
+                            </label>
+                            
+                            <p>Common example use cases include high resolution timing for profiling code or for key-frame animations.
                             </p>
                         </div-->
                         <div>
                             <h3><a href="https://github.com/vigilance91/pypp36">pypp36</a></h3>
-                            <p>A minimalist, lightweight C++17 compatible wrapper for the Python C API.</p>
+                            <p>This project provides a minimalist, lightweight C++17 compatible wrapper for the Python (3.6) C API.</p>
                             <a href="https://vigilance91.github.io/pypp36/index.html">API Reference</a>
                             <p>Currently only x64 libraries are targeted, support for x86 and non-windows OS versions are planned for future releases.</p>
                         </div>
+                        
                         <!--div>
                             <h3>PS</h3>
-                            <p>Derived from the latin word for light, "photo" and "script",
-                            this library provides an API for generating, searching, validating, transforming and editing
-                            data in the form of strings, files or raw image data.
+                            <p>Derived from the latin word for light, "photo" and "script", from Latin scriptum meaning written word,
+                            the Photoscript library provides an API for generating, searching, validating, transforming and editing
+                            data in the form of strings, files or raw binary image data.
                             </p>
                             
-                            <ul>
-                                <li><a href="">C++</a></li>
-                                <li><a href="">Python</a></li>
-                                <li><a href="">PHP</a></li>
-                                <li><a href="">Javascript</a></li>
-                            <ul>
+                            <label>Links
+                                <ul>
+                                    <li>C++: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>Python 3.6: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>PHP: <a href="">repo</a> | <a href="">reference</a></li>
+                                    <li>Javascript: <a href="">repo</a> | <a href="">reference</a></li>
+                                </ul>
+                            </label>
+                            
+                            <p>In additional to various text and image processing tools, the Python API also provides
+                            a parser for the [Photoscript markup language](), the API reference can be found [here](),
+                            while the official language specification can be found [here]().
+                            </p>
                         </div>
                         
                         <div>
                             <h3>PX</h3>
-                            <p>Derived from the latin word for light, "photo" and 'kinematics', a branch of mechanics pertaining to the motion of objects,
+                            <p>Derived from the latin word for light, "photo" and 'kinematics' (a branch of mechanics pertaining to the motion of objects),
                             the PX library literally provides the ability to move technology and people,
                             through the power of light(TM)!
                             </p>
+                            
                             <p>
                             Built on the power of PS, PX strives to bring low-latency, highly responsive games and applications to your desktop, tablet or phone
                             by harnessing the immense power of GPU technology.
@@ -697,52 +1142,302 @@
                                 </p>
                             </div>
                         </div-->
+                        <!--div>
+                            <h3>PX GL</h3>
+                            <p>The PX GL is a web-service (and PHAR library) for programatically generating textures,
+                            including solid colors, gradients, watermarked images, post-processed images using kernels,
+                            encoding text as image data and various other image processing techniques.
+                            </p>
+                            
+                            <!--p>Users may also create profiles, upload contents and share in a public market place,
+                            along side taking advantage of the features.
+                            </p>
+                        </div-->
+                        
+                        <!--details>
+                            <summary>Robotic Process Automation</summary>
+                            <p>Dating back to the first mechanized counting device,
+                            created by the French child prodigy <a href="https://www.britannica.com/biography/Blaise-Pascal">Blaise Pascal</a>,
+                            all computers have been designed to make human processes easier (such as computing mathematical equations).
+                            </p>
+                            
+                            <p>Robotic process automation can then be described as the mechanical emulation of collections of tasks, with little or no intervention.
+                            </p>
+                            
+                            <p>Expanding on the definition of computing (simply as the execution of instruction sets),
+                            RPA technology provides the ability for machines to reproduce complex (often time consuming) interactions with programs (typically through scripted GUI actions),
+                            in a manner which is more convenient for individuals and more cost effective for businesses.
+                            </p>
+                            
+                            <p>With RPA technology, mundane, repetitive tasks (such as downloading pdf invoices from an email account sent by a specific client, then archiving the files) can be significantly hastened,
+                            thus reducing associated overhead.
+                            </p>
+                            
+                            <p>
+                            Since automated processes are significantly faster than a human performing the same task,
+                            it is only natural that developers designing, reusable automated workflows are more valuable assets to a business,
+                            than the alternative of continually paying employee wages and benefits for work which can be performed by computers.
+                            </p>
+                            
+                            <p>Just like the advent of the industrial revolution saw slow, hazardous and expensive human labour replaced by (relatively) cheap steam powered machines,
+                            the technological revolution of the 21st century will see more and more
+                            </p>
+                            <p class='note'>Not all process can be automated. Although, with advances in AI technology, that gap is closing fast.</p>
+                            
+                            <p>Common RPA products include
+                            <ul>
+                                <li><a href="">sikuli</a></li>
+                                <li><a href="">Blue Prism</a></li>
+                                <li><a href="">UIPath</a></li>
+                                <li><a href="">tagUI</a></li>
+                            </ul>
+                            </p>
+                            
+                            <p>For use with tagui <a href=""></a>(Python 3.6), or with sikuli <a href=""></a>(Jython 2.7),
+                            <a href=''>Hyparec</a> provides convenient, open source modules for easy integration with these products,
+                            to increase their utility, expanding what is possible by including many APIs for various, common technologies or tasks,
+                            such as PDF data mining, extracting data from SQL databases, ... and machine learning.
+                            </p>
+                        </details-->
+                        
+                        <!--details>
+                            <summary>Quantum Computing</summary>
+                            <p>Leveraging the powers of the fundamental principles of the universe,
+                            quantum computers operate on the probabilistic laws of <a href="">Quantum Mechanics</a>,
+                            in contrast to conventional computers, operating via (and limited by) Electromagnetism.
+                            </p>
+                            
+                            <p>Where traditional graphical applications run vector and matrix algebra for the transformation and rendering of vertices,
+                            quantum computers operate similarly, by the application of 2x2 matrices of complex numbers (often referred to as <i>gates</i>),
+                            which when applied to a qubit, alters its properties (or rather, the wave function) when observed.
+                            </p>
+                            
+                            <p>When being measured, the qubit's wave function collapses, resulting in a value of either 1(true) or 0(false).
+                            When not being measured, the qubit is in a indeterminate state,
+                            occupying all possibilities, simultaneously.
+                            </p>
+                            
+                            <p class='note'>Like wise with 8, 16 and 32 bit, etc, conventional processors,
+                            introducing multiple qubits creates more complex and powerful programs.
+                            </p>
+                            
+                            <p class='note'>Be aware, there is a difference between quantum computing and an actual, fully fledged quantum computer.
+                            Where all that is need to execute quantum programs is a Quantum Processing Unit (much like a conventional CPU),
+                            a full quantum computer has all of it corresponding conventional counterpart replaced with quantum analogues,
+                            such as quantum RAM or storage.
+                            </p>
+                            
+                            <h4>Mathematical Representation</h4>
+                            <p>Most commonly, quantum gates take the form of <a href="">Pauli Matrices</a>.
+                            Similar to matrix algebra, quantum operations are performed, typically, through the composition of two or more of the 3 Pauli matrices.
+                            Other common gates include phase shift and gates.
+                                <p class='note'>The identity matrix(also expressed as the Kronecker delta) is considered the zeroth Pauli matrix.</p>
+                            What is truly interesting about the math behind quantum computing (as a branch of complex mathematics) is that,
+                            while its principles have been laid out and well understood since by mathematicians for centuries,
+                            it was widely held that complex mathematics (while weird and interesting), held no practical application in the real world,
+                            until the relatively recent advances in science in the early 20th century regarding fields such as electromagnetism, sub-atomic particle physics and the foundation of quantum mechanics itself.
+                            </p>
+                            
+                            <p>Not only does complex algebra accurately and conveniently describe the nature of light and other natural phenomena,
+                            Pauli matrices (and their various combinations) also give the most concise mathematical expression of quarks (the building blocks of protons, neutrons and their antimatter counter parts),
+                            as represented by the the most modern understanding of string theory.
+                            </p>
+                            
+                            <h4>Conceptualization</h4>
+                            <p>At its most rudimentary conception, gates can be conceived of in a similar manner to polarized lenses,
+                            which cause light to be filtered (or rather, collapse its wave function),
+                            dependent upon the photon's electromagnetic charge (expressed as a complex number) and the lens' polarization.
+                            Depending upon the light entering, photons will either pass the lens (representing a logical value of true/1) if parallel to the polarization or,
+                            will not pass through (representing a logical value of false/0) if it is orthogonal to the polarization.
+                            When the charge of a photon is at an angle not parallel or orthogonal to the polarization,
+                            since quantum states can only be expressed with whole number coefficients,
+                            interacting with the lens causes the photon to "decide", based on its wave function,
+                            to collapse and become 1 or 0, passing or being absorbed by the filter respectively.
+                            </p>
+                            
+                            <p>
+                            Observing qubits and performing operations in quantum programs follows the same principle.
+                            </p>
+                            
+                            <p><h4>Example</h4>
+                            One of the most fundamental cases for a single qubit program is for representing flipping a coin,
+                            where each outcome has a 50-50 chance of occurring.
+                                <p class='note'>This is an ideal system, where all external factors (such as wind resistance, ambient temperature and pressure, etc) and,
+                                any unlikely outcomes such as the coin landing on its side or any number of other indeterminate states are not taken into consideration.
+                                </p>
+                            By applying a (..) gate, when the qubit is measured, it will have a 50% probability of being either 1 or 0,
+                            with the results almost always creating an even distribution of alternating 0's and 1's.
+                            </p>
+                            
+                            <p class='note'>This effect is significantly different on a conventional computer,
+                            where true randomness is incredibly difficult to emulate.
+                            Instead, generating pseudo-random numbers can produce close results however,
+                            there will always be an underlying pattern (based on the algorithm used),
+                            thus creating an even distribution of probabilist outcomes is almost impossible without various inherent biases or emergent patterns.
+                            </p>
+                            
+                            <p class='note'>Please visit these links for more on 
+                                <ul>
+                                    <li><a href="">complex numbers</a></li>
+                                    <li><a href="">quantum computing</a></li>
+                                    <li><a href="">quaternions</a></li>
+                                    <li><a href="">spinors</a></li>
+                                </ul>
+                            </p>
+                        </details-->
                         
                         <div>
-                            <h3>Ethereum</h3>
-                            <p>Ethereum is a decentralized cryptocurrency platform.
-                            Developed by Canadian <a href="https://en.wikipedia.org/wiki/Vitalik_Buterin">Vitalik Buterin</a>,
-                            Ethereum is often referred to as the next generation of the internet,
+                            <h3>Cryptocurrency</h3>
+                            <p>Often (and inappropriately) shortened to simply <i>crypto</i> in media (which is absurd because <i>crypto</i> is already a prefix derived from the Greek word kryptos, meaning hidden or secret),
+                            cryptocurrency is a newly evolving technology.
+                            </p>
+                            
+                            <p class='note'>
+                            Referring to cryptocurrency as <i>crypto</i> should be a source of disdain for anyone who values the meaning of words in the English language,
+                            for the same reason that neither Geometry, Geology nor Geography should ever simply be referred to as <i>Geo</i>, under any circumstances.
+                            </p>
+                            
+                            <p>At its core, cryptocurrency technology is based on several concepts.
+                                <!--TODO: convert to table-->
+                                <ul>
+                                    <li><a href="">Ledger</a>, a permanent, decentralized, publicly available log of all actions carried out on the network, also referred to as the <i>blockchain</i></li>
+                                    <li><a href="">Assets</a>, a unit of value or work on the network</li>
+                                    <li><a href="">Wallets</a>, a unique address in the blockchain for storing an individual's assets</li>
+                                    <li><a href="">Transactions</a>, records of the exchange of assets on the network, referred to as <i>blocks</i></li>
+                                    <li><a href="">Miner</a>, any computer which processes and validates transactions, also referred to as a <i>node</i></li>
+                                </ul>
+                            </p>
+                            
+                            <p>These fundamental aspects make cryptocurrency incredibly powerful.
+                            </p>
+                            
+                            <p>
+                            Cryptocurrency networks are supported by miners which verify transactions using a consensus mechanism.
+                            This mechanism ensures all nodes agree that a transaction happened and is valid,
+                            which prevents dishonesty by one node fraudulently attempting to modify the blockchain.
+                            Machines which contribute to processing transactions are typically rewarded for their effort by receiving a small payout in the form of network assets.
+                            </p>
+                            
+                            <p>With the blockchain distributed across all machines participating on the network,
+                            targeting a single node for exploitation, effectively renders common malicious techniques,
+                            such as DDoS attacks, ineffective at worst and obsolete at best,
+                            since disruption of any one network participant has little to no effect on the capacity of the network to operate as a whole.
+                            </p>
+                            
+                            <p>There are currently hundreds of unique cryptocurrency platforms,
+                            with some of the most popular including:
+                                <ul>
+                                    <li><a href="">Bitcoin</a></li>
+                                    <li><a href="">Ethereum</a></li>
+                                    <li><a href="">Ripple</a></li>
+                                    <li><a href="">EOS</a></li>
+                                    <li><a href="">Litecoin</a></li>
+                                    <li><a href="">Tether</a></li>
+                                    <li><a href="">IOTA</a></li>
+                                    <li><a href="">Dash</a></li>
+                                </ul>
+                            </p>
+                            
+                            <p>While each platform offers unique advantages and disadvantages (with some pegged to real currencies, like the USD),
+                            the Ethereum network has proven to be the strongest competition
+                            to the most ubiquitous cryptocurrency, Bitcoin.
+                            </p>
+                            
+                            <p>Ethereum is a decentralized cryptocurrency platform in its infancy,
+                            developed by Russian born Canadian <a href="https://en.wikipedia.org/wiki/Vitalik_Buterin">Vitalik Buterin</a>.
+                            The Ethereum network is often referred to as the next generation of the internet,
                             at least as far as electronic currency and E-commerce is concerned.
                             </p>
                             
+                            <p class='note'>While Ethereum technically falls under the umbrella term of cryptocurrency,
+                            this may be a slight misnomer as it is clearly stated on the foundation's <a href="">website</a> that it is explicitly <b>NOT</b> intended as a form of currency,
+                            but rather as a medium to power the network and its transactions,
+                            much like gasoline is used to power a car.
+                            </p>
+                            
+                            <p>
+                            For example, while conventional currency (an intermediary vector of abstract value) may be used to purchase gasoline (a physical vector of potential work energy) to operate a car,
+                            one can not simply inject currency into an internal-combustion engine to have it operate (although paper money does burn) likewise,
+                            petrol is not legal tender, thus can not be used legitimately as a direct medium for exchanging goods and services.
+                            </p>
                             
                             <p>While most people new to the world of cryptocurrency typically get quickly overwhelmed with the many unfamiliar or foreign concepts,
-                            once the realization that, in many ways, the concepts of digital currencies
-                            are actually employed in the everyday life of the modern world.
+                            it is much less intimidating once the realization that in many ways,
+                            the concept of expressing value with digital assets is actually already employed in the everyday life of the modern world.
                             </p>
+                            
                             <p>
-                            Do you take advantage of Credit cards with points or systems like PC Optimum,
-                            or any other customer loyalty systems which rewards users with unique currencies which can't be deemed for legal tender?
-                            How about laundry machines that accept reloadable chip-cards, or the wristbands/access passes at amusement parks?
-                            Then you are already using cryptocurrencies and don't even know it!
+                            Do you take advantage of Credit cards with reward points or,
+                            any other customer loyalty systems which awards users unique currencies which can't be redeemed for legal tender?
+                            How about laundry machines that accept reloadable chip-cards or, wristbands/access passes at amusement parks?
+                            Then you are already using cryptocurrencies and didn't know it!
                             </p>
+                            
                             <p>
-                            The only difference with Ethereum is the decentralized nature of the system, with the currency exists entirely ephemerally within the distributed blockchain.
+                            The only difference with Ethereum is the decentralized nature of the system,
+                            existing entirely ephemerally within the distributed blockchain,
+                            as opposed to a centralized server, owned by a single entity.
                             </p>
+                            
                             <p>
                             Where corporate conglomerates or banking syndicates maintain sole control of the traditional systems their users/consumers access,
-                            with Ethereum anyone and everyone can effectively create their own financial system, lending institution, auction house, currency exchange, crowd funding campaign, or entirely secure democratic organizations
-                            without ever having to rely on a third party banking institutes or having to be dependant upon payment systems such as PayPal or Amazon,
-                            which can chose to shutdown user accounts for no reason, without any notice,
+                            with Ethereum anyone and everyone can effectively create their own
+                                <ul>
+                                    <li>financial system</li>
+                                    <li>lending institution</li>
+                                    <li>auction house</li>
+                                    <li>currency exchange</li>
+                                    <li>crowd funding campaign</li>
+                                    <li>contracts representing property ownership (referred to as non-fungible tokens)</li>
+                                    <li>entirely secure and transparent democratic organizations</li>
+                                </ul>
+                            all without ever having to rely on third party banking institutes, credit card companies or having to be dependent upon payment services such as PayPal or Amazon.
+                            All of these institutions can arbitrarily choose to shutdown user accounts, without notice,
                             effectively halting all future financial transactions.
+                            However, with cryptocurrency, so long as miners continue to validate transactions,
+                            any one node can be terminated from the system,
+                            without impacting the rest of the infrastructure.
                             </p>
-                            <p>With Ethereum, power is entirely in the hands of individual users,
-                            rather than the faceless multi-national financial institutions or corporations which horde their capital (at the expense of the public),
-                            or governments, which would gladly seize private assets to bail out failing business or to serve their own agendas (see <a href="">Bail-Ins</a>, <a href="">Civil Forfeiture</a>, <a href="">Eminent Domain</a> or the Greece financial crisis).
-                            </p>
+                            
                             <p>
-                            With all transactions being recorded publicly in the blockchain.
                             </p>
+                            
+                            <p>With Ethereum, power is entirely in the hands of individual users,
+                            rather than faceless multi-national corporations (which horde their capital at the expense of the public), financial institutions or governments,
+                            which would gladly seize private assets to bail out failing business or to serve their own agendas (see <a href="">Bail-Ins</a>, <a href="">Civil Forfeiture</a>, <a href="">Eminent Domain</a> or the Greek financial crisis).
+                            </p>
+                            
                             <p>Ethereum is truly the future of finance, set to disrupt many traditional institutions through decentralization.
                             </p>
                             
-                            <!--label>Wallet</label-->
+                            <p class='note'>
+                            While blockchain technologies pride themselves on anonymity (in theory),
+                            with all transactions being recorded publicly using blockchain technology (a decentralized ledger of all accounts and transactions),
+                            through rudimentary powers of deduction by a forensic analyst or with the application of AI (and enough processing power),
+                            the public nature of the blockchain allows transaction histories of wallets to be monitored.
+                            Spending patterns can then be deduced using those data points (which are stored indefinitely).
+                            Using additional techniques including correlation attacks,
+                            it is possible to reasonably associate an individual to a wallet address on the blockchain.
+                            </p>
+                            
+                            <p>
+                            <!--label>Wallets
+                                <ul>
+                                    <li><a href="">Bitcoin</a></li>
+                                    <li><a href="">Ethereum</a></li>
+                                </ul>
+                            </label-->
+                            </p>
+                            
+                            <p>
                             <label>Projects
                                 <ul>
-                                    <li><a href=""></a></li>
+                                    <li><a href="">Startup</a></li>
+                                    <!--li><a href="">RPG blockhcain marketplace</a></li-->
+                                    <li><a href="">TBD</a></li>
                                 </ul>
                             </label>
+                            </p>
                             <!--div>
                             </div-->
                         </div>
@@ -757,6 +1452,19 @@
                             <li><a href="https://www.linkedin.com/in/vigilance-td">Linked-In</a></li>
                             <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
                             <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
+                            <!--li><a href="https://www.patreon.com/vigilance">Youtube</a></li-->
+                        </ul>
+                    </div>
+                    
+                    <div role="tabpanel" class="tab-pane" id="refs">
+                        <h4>Sources</h4>
+                        <ul>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
+                            <li><a href=""></a></li>
                         </ul>
                     </div>
                 </div>

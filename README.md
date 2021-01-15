@@ -60,6 +60,6 @@ Developed and maintained by Tyler R. Drury.
 
 ---
     
-## Acknowledgements
+## Acknowledgments
     
     
