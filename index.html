@@ -2,6 +2,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
 	<title>Vigilance-Github Home Page</title>
     <!--CSS-->
     <link rel='stylesheet' type='text/css' href='bundle.css'>
@@ -11,276 +15,274 @@
     <!--script type='application/javascript' src='main.js'></script-->
 </head>
 
-<body>
-<!--HTML stubs for copy/replace, because github only allows static html pages,
-which means no fancy PHP or other scripts, aside from static javascript and css-->
-<!--default citation superscript, replace N with the current number of citations + 1
-<sup><a href="">[N]</a></sup>
--->
-<!--stub to add where citations are required and not currently provided
-<sup><a href="">[citation required]</a></sup>
--->
-<!--
-if(!ls['privacy']){
-    let $mo=$('#privicy');
-    
-    $mo.modal({data-show:true});
-    $mo
-    //event is fired when hidden, such as when its closed
-    $mo.on('hidden.bs.modal', (e)=>{
-    //prevents modal from showing again until
-      ls['privicy']=true;
-    })
-}-->
-
-<!--div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks for keeping me informed</button>
-            </div>
-        </div>
-    </div>
-</div-->
-<!--class='modal'>
-Privacy Notice:
-<p>Please be aware the we do <b><i>not</i></b> track your activity on our sites with cookies or other such tracking or data mining techniques.
-We also don't sell you personal information for personal gain or steal your bandwidth with mind numbing ad spam,
-nor do we intend to at any point in the future.
-</p>
-<p>
-This site and its developers value personal privacy and we respect the privacy rights of our users as well.
-Unfortunately too few people do.
-</p>
-<p>
-Be advised we do record the most minimal amount of data necessary such as the ip addresses that visit our sites,
-data and duration of your visit, primarily for the purposes of black listing web crawlers, bots or other malicious entities.
-</p>
-<p>The few site op and can be cleared at any time.</p>
--->
-<!--site navigation-->
-<nav id='banner'
-    class='d-flex justify-content-start navbar navbar-dark bg-dark'
-    role='navigation'>
-    <!--a href='' id='home' class='navbar-brand'>
-        <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
-            Browser does not support canvas
-            <script id='logo2Shaders' type='application/json'>
-            </script>
-        </canvas>
-    </a-->
-    
-    <div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle'
-            href='#'
-            id='navbarDropdown'
-            role='button'
-            data-toggle='dropdown'
-            aria-haspopup='true'
-            aria-expanded='false'>
-            Introduction
-        </a>
-        
-        <div class='dropdown-menu bg-secondary'
-            aria-labelledby='navbarDropdown'>
-            <!--a href='' title='jQuery' class='dropdown-item'>
-                jQuery
-            </a>
-            <a href='' title='chrono-js' class='dropdown-item'>
-                chrono-js
-            </a>
-            <a href='' title='Functonal Programming' class='dropdown-item'>
-                Functional Programming
-            </a>
-            <a href='' title='integer Sequences' class='dropdown-item'>
-                Integer Sequences
-            </a>
-            <a href='' title='Regular Expressions' class='dropdown-item'>
-                Regular Expressions
-            </a>
-            <a href='' title='color' class='dropdown-item'>
-                Color
-            </a>
-            <a href='' title='pxApp main' class='dropdown-item'>
-                px application
-            </a>
-            <a href='' title='Input' class='dropdown-item'>
-                <canvas id='inputIcon' class='webGL' width='64' height='64'>
-                    Browser does not support canvas
-                    <script type='application/json'>
-                    </script>
-                </canvas>
-            </a-->
-        </div>
-    </div>
-    <div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle'
-            href='#'
-            id='nbdd2D'
-            role='button'
-            data-toggle='dropdown'
-            aria-haspopup='true'
-            aria-expanded='false'>
-            2D
-        </a>
-        <div class='dropdown-menu bg-secondary' aria-labelledby='nbdd2D'>
-            <!--a href='' title='2D px application' class='dropdown-item'>
-                2D App Boilerplate
-            </p>
-            <a href='vector/' title='Vectors' class='dropdown-item'>
-            </a>
-            <a href='' class='dropdown-item'>
-            </a>
-            <a href='' title='Complex Numbers' class='dropdown-item'>
-                Complex
-            </a>
-            <!--li><a href='../camera/'>
-                <canvas id='cameraIcon' class='webGL' width='64' height='64' title='Matrices'>
-                    Browser does not support canvas
-                    <script id='cameraIconConfig' type='application/json'>
-                    </script>
-                </canvas>
-            </a></li>
-            <a href='' class='dropdown-item bg-secondary'>
-            </a>
-            <a href='' class='dropdown-item'>
-            </a>
-            <a href='' title='' class='dropdown-item'>
-                Lights
-            </a-->
-        </div>
-    </div>
-    <div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle' href='#' id='nbdd3D' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            3D
-        </a>
-        <div class='dropdown-menu' aria-labelledby='nbdd3D'>
-            <!--a href='' title='3D px application' class='dropdown-item'>
-                3D App Boilerplate
-            </p>
-            <a href='' title='Vectors' class='dropdown-item'>
-                Vectors
-            </a>
-            <a href='' title='Matrices' class='dropdown-item'>
-                Matrices
-            </a>
-            <a href='' title='Planes' class='dropdown-item'>
-                Planes
-            </a>
-            <a href='' title='Quaternions' class='dropdown-item'>
-                Quaternions
-            </a>
-            <a href='' title='' class='dropdown-item'>
-                Geometry
-            </a>
-            <a href='' title='' class='dropdown-item'>
-                Textures
-            </a>
-            <a href='' title='' class='dropdown-item'>
-                Lights
-            </a-->
-        </div>
-    </div>
-    <div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle'
-            href='#'
-            id='nbddInter'
-            role='button'
-            data-toggle='dropdown'
-            aria-haspopup='true'
-            aria-expanded='false'>
-            Intermediate
-        </a>
-        <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
-            <!--a href='../mulitview/' class='dropdown-item'>
-            </a>
-            <a href='../particles/' class='dropdown-item'>
-            </a>
-            <a href='../animation/' title='Animation' class='dropdown-item'>
-            </a>
-            <a href='' title='Post-processing Effects' class='dropdown-item'>
-                Post-Processing
-            </a>
-            <a href='' title='tensorflow machine learning' class='dropdown-item'>
-                Tensorflow
-            </a-->
-        </div>
-    </div>
-    <div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            Games
-        </a>
-        <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
-            <!--a href="" class='dropdown-item'>PongGL</a-->
-        </div>
-    </div>
-    <!--div class='nav-item dropdown'>
-        <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-            Contact
-        </a>
-        <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
-            <a href='' class='dropdown-item'>Contact Us</a>
-            <a href='' class='dropdown-item'>Careers</a>
-            <a href='' class='dropdown-item'>Report an Issue</a>
-        </div>
-    </div>
-    <div><a href="" class='nav-item'>About</a></div-->
-    <div><a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a></div>
-    
-    <!--button class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-        <ul class='navbar-nav mr-auto'>
-            <li><a class='nav-item'>Stuff</a></li>
-        <ul>
-    </div-->
-    <!--li><a href='demo/tensor.php?p=two' title='Animation'-->
-    
-    <!--li><a href='demo/tensor.php?p=two' title='Tensor'>
-        <img src='images/metaCube.jpg'>
-        <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
-            Browser does not support canvas
-            <script id='logo2Shaders' type='application/json'>
-            </script>
-        </canvas>
-    </a></li-->
-    
-    <!--form class='form-inline my-2 my-lg-0'>
-        <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
-        <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
-    </form-->
-</nav>
-<!--main body-->
 <body class='container-fluid'>
-    <div class='header flex-row text-center bg-dark border border-light rounded'>
-        <h2><span class='text-success'>Welcome</span> to the <a href="">VS</a> Vault (C)</h2><sub>Built on <a href="">web3</a></sub>
+    <!--HTML stubs for copy/replace, because github only allows static html pages,
+    which means no fancy PHP or other scripts, aside from static javascript and css-->
+    <!--default citation superscript, replace N with the current number of citations + 1
+    <sup><a href="">[N]</a></sup>
+    -->
+    <!--stub to add where citations are required and not currently provided
+    <sup><a href="">[citation required]</a></sup>
+    -->
+    <!--
+    if(!ls['privacy']){
+        let $mo=$('#privicy');
+        
+        $mo.modal({data-show:true});
+        $mo
+        //event is fired when hidden, such as when its closed
+        $mo.on('hidden.bs.modal', (e)=>{
+        //prevents modal from showing again until
+          ls['privicy']=true;
+        })
+    }-->
+
+    <!--div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks for keeping me informed</button>
+                </div>
+            </div>
+        </div>
+    </div-->
+    <!--class='modal'>
+    Privacy Notice:
+    <p>Please be aware the we do <b><i>not</i></b> track your activity on our sites with cookies or other such tracking or data mining techniques.
+    We also don't sell you personal information for personal gain or steal your bandwidth with mind numbing ad spam,
+    nor do we intend to at any point in the future.
+    </p>
+    <p>
+    This site and its developers value personal privacy and we respect the privacy rights of our users as well.
+    Unfortunately too few people do.
+    </p>
+    <p>
+    Be advised we do record the most minimal amount of data necessary such as the ip addresses that visit our sites,
+    data and duration of your visit, primarily for the purposes of black listing web crawlers, bots or other malicious entities.
+    </p>
+    <p>The few site op and can be cleared at any time.</p>
+    -->
+    <div class='header flex-row text-center bg-dark border border-success rounded'>
+        <h2><span class='text-success'>Welcome</span> to <a href="">Vigilance&copy;</a>&apos;s GitHub Home</h2>
         <br>
-        <label><h3>Donate and Support our work @</h3></label>
+        <label><h3>Donate and Support my work @</h3></label>
         <br>
         <strong>0x20fc7E34f4aCfA8Faec8EdF0546C57CD77d76bFE</strong>
     </div>
+    <!--site navigation-->
+    <nav id='banner'
+        class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded'
+        role='navigation'>
+        <!--a href='' id='home' class='navbar-brand'>
+            <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='navbarDropdown'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                Introduction
+            </a>
+            
+            <div class='dropdown-menu bg-secondary'
+                aria-labelledby='navbarDropdown'>
+                <!--a href='' title='jQuery' class='dropdown-item'>
+                    jQuery
+                </a>
+                <a href='' title='chrono-js' class='dropdown-item'>
+                    chrono-js
+                </a>
+                <a href='' title='Functonal Programming' class='dropdown-item'>
+                    Functional Programming
+                </a>
+                <a href='' title='integer Sequences' class='dropdown-item'>
+                    Integer Sequences
+                </a>
+                <a href='' title='Regular Expressions' class='dropdown-item'>
+                    Regular Expressions
+                </a>
+                <a href='' title='color' class='dropdown-item'>
+                    Color
+                </a>
+                <a href='' title='pxApp main' class='dropdown-item'>
+                    px application
+                </a>
+                <a href='' title='Input' class='dropdown-item'>
+                    <canvas id='inputIcon' class='webGL' width='64' height='64'>
+                        Browser does not support canvas
+                        <script type='application/json'>
+                        </script>
+                    </canvas>
+                </a-->
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='nbdd2D'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                2D
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbdd2D'>
+                <!--a href='' title='2D px application' class='dropdown-item'>
+                    2D App Boilerplate
+                </p>
+                <a href='vector/' title='Vectors' class='dropdown-item'>
+                </a>
+                <a href='' class='dropdown-item'>
+                </a>
+                <a href='' title='Complex Numbers' class='dropdown-item'>
+                    Complex
+                </a>
+                <!--li><a href='../camera/'>
+                    <canvas id='cameraIcon' class='webGL' width='64' height='64' title='Matrices'>
+                        Browser does not support canvas
+                        <script id='cameraIconConfig' type='application/json'>
+                        </script>
+                    </canvas>
+                </a></li>
+                <a href='' class='dropdown-item bg-secondary'>
+                </a>
+                <a href='' class='dropdown-item'>
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Lights
+                </a-->
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbdd3D' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                3D
+            </a>
+            <div class='dropdown-menu' aria-labelledby='nbdd3D'>
+                <!--a href='' title='3D px application' class='dropdown-item'>
+                    3D App Boilerplate
+                </p>
+                <a href='' title='Vectors' class='dropdown-item'>
+                    Vectors
+                </a>
+                <a href='' title='Matrices' class='dropdown-item'>
+                    Matrices
+                </a>
+                <a href='' title='Planes' class='dropdown-item'>
+                    Planes
+                </a>
+                <a href='' title='Quaternions' class='dropdown-item'>
+                    Quaternions
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Geometry
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Textures
+                </a>
+                <a href='' title='' class='dropdown-item'>
+                    Lights
+                </a-->
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle'
+                href='#'
+                id='nbddInter'
+                role='button'
+                data-toggle='dropdown'
+                aria-haspopup='true'
+                aria-expanded='false'>
+                Intermediate
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <!--a href='../mulitview/' class='dropdown-item'>
+                </a>
+                <a href='../particles/' class='dropdown-item'>
+                </a>
+                <a href='../animation/' title='Animation' class='dropdown-item'>
+                </a>
+                <a href='' title='Post-processing Effects' class='dropdown-item'>
+                    Post-Processing
+                </a>
+                <a href='' title='tensorflow machine learning' class='dropdown-item'>
+                    Tensorflow
+                </a-->
+            </div>
+        </div>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                Games
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <!--a href="" class='dropdown-item'>PongGL</a-->
+            </div>
+        </div>
+        <!--div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                Contact
+            </a>
+            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
+                <a href='' class='dropdown-item'>Contact Us</a>
+                <a href='' class='dropdown-item'>Careers</a>
+                <a href='' class='dropdown-item'>Report an Issue</a>
+            </div>
+        </div>
+        <div><a href="" class='nav-item'>About</a></div-->
+        <div><a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a></div>
+        
+        <!--button class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class='flex-row'>
-        <div class='flex-column'>
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+            <ul class='navbar-nav mr-auto'>
+                <li><a class='nav-item'>Stuff</a></li>
+            <ul>
+        </div-->
+        <!--li><a href='demo/tensor.php?p=two' title='Animation'-->
+        
+        <!--li><a href='demo/tensor.php?p=two' title='Tensor'>
+            <img src='images/metaCube.jpg'>
+            <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a></li-->
+        
+        <!--form class='form-inline my-2 my-lg-0'>
+            <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
+            <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
+        </form-->
+    </nav>
+    <!--main body-->
+    <div class='flex-row border border-danger rounded'>
+        <div class='flex-column text-center'>
             <p class='note'>
                 <b><i>This site is currently under production</i></b>
             </p>
@@ -289,7 +291,7 @@ data and duration of your visit, primarily for the purposes of black listing web
 
     <div class='flex-row border border-light rounded'>
         <!--right bar-->
-        <div class="flex-column bg-secondary">
+        <div class="flex-column bg-secondary text-center">
         
             <ul class="nav nav-pills bg-dark" role="tablist">
                 <li class="nav">
@@ -360,616 +362,614 @@ data and duration of your visit, primarily for the purposes of black listing web
     </div>
     <!-- Tab panes -->
     <div class='flex-row'>
-        <div class="col text-center bg-secondary border border-info rounded">
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="intro">
-                    <h3>Introduction</h3>
-                    <!--div>
-                        <h4>Preface</h4-->
-                        <p>As with all of physical existence, being over 99.99% empty space<sup><a href="">[citation required]</a></sup>,
-                        being composed of star dust over 4.6 billion years old (forged in the heart of a dying star),
-                        the culmination of what constitutes any person is roughly (by mass):
-                            <ul>
-                                <li>65% Oxygen</li>
-                                <li>9.5% Hydrogen</li>
-                                <li>19% Carbon</li>
-                                <li>3% Nitrogen</li>
-                                <li>1.5% Calcium</li>
-                                <li>1% Phosphorous</li>
-                                <li>along with a handful of trace elements</li>
-                            </ul>
-                        </p>
-                        
-                        <p>With a genome consisting of ~3.23 billion randomly arranged base pairs,
-                        across 23 pairs of chromosomes (which makes up [0.0007%, 0.0009%] of total body mass<sup><a href="">[citation required]</a></sup>),
-                        99.9% of the human genome (excluding mitocondrial DNA) is shared by everyone<sup><a href="">[citation required]</a></sup>,
-                        of which 5-8% is also composed of <a href="">endogenous retroviruses</a>.
-                        </p>
-                        <p class='note'>ERVs are technically foreign gene sequences which have parasitised a host genome (and are generally considered inactive) as the result of being transcripted after exposure to specific viral agents within geographically isolated regions.
-                        </p>
-                        
-                        <p note="note">Those individual mutations which make a person's DNA &apos;<i>unique</i>&apos;
-                        are statistically insignificant<sup><a href="">[citation required]</a></sup>.
-                        </p>
-                        
-                        <p>
-                        Beginning with the fusion event forging human chromosome 2 (birthing modern Homo Sapiens),
-                        this distinct divergence from our 24 chromosome pair hominid relatives allowed our ancestors to stand tall above their competition,
-                        to gaze towards the stars and the future.
-                        </p>
-                        
-                        <p>
-                        Since then on, for all practical purposes, every human has been statistically the same, from a genetic standpoint.
-                        </p>
-                        
-                        <p>As an organic, multi-processing, quantum computer capable of sentience, introspection and self-determination, 
-                        (despite modern debate regarding whether or not the mind is in fact turning complete),
-                        .
-                        </p>
-                        
-                        <!--p>Rational analysis(internal logic) and sensory perception(external stimuli),
-                        Reason yields concepts which are true but tautological, (...) whos content is phenomenal.
-                        </p-->
-                        
-                        <!--p>In (philosophy of knowledge), it is well accepted,
-                        <i>A priori</i>(knowledge without/before experience) and <i>A posteriori</i>(knowledge after/from experience).
-                        </p-->
-                        <!--p class='note'>Where Plato is infamous for the phase, "What I know for certain is that I know nothing",
-                        
-                        it would take the revolutionary philosophy of Immanuel Kant to deduce that,
-                        since the human mind is the by product of and governed by the fundamental laws of nature (from which all physical processes derive),
-                        it is thus required that not only is consciousness an inherent, emergent property of nature,
-                        but also that the mind is intrinsically aware of those processes,
-                        thus in order for the mind to function or even exist,
-                        it must <i>know</i>.
-                        In this sense 
-                        </p-->
+        <div class="tab-content flex-col bg-secondary border border-info rounded">
+            <div role="tabpanel" class="tab-pane active" id="intro">
+                <h3>Introduction</h3>
+                <!--div>
+                    <h4>Preface</h4-->
+                    <p>As with all of physical existence, being over 99.99% empty space<sup><a href="">[citation required]</a></sup>,
+                    being composed of star dust over 4.6 billion years old (forged in the heart of a dying star),
+                    the culmination of what constitutes any person is roughly (by mass):
+                        <ul>
+                            <li>65% Oxygen</li>
+                            <li>9.5% Hydrogen</li>
+                            <li>19% Carbon</li>
+                            <li>3% Nitrogen</li>
+                            <li>1.5% Calcium</li>
+                            <li>1% Phosphorous</li>
+                            <li>along with a handful of trace elements</li>
+                        </ul>
+                    </p>
                     
-                        <!--p>Despite the limited capacity of human language to adequately describe concepts beyond the narrow band of sensory perceptions
-                        encountered within the mundane plane of consensual reality and the axioms used for logically interpreting those perceptions,
-                        when asked what words best describe me,
-                        aside from pointing out the Sanskrit concept of dukkha (the insatiable decay of all things, yielding to the stress of impermanence) which makes the idea of affixing permanent,
-                        absolute traits to a temporary form (which constantly undergoes change due to entropy) seems a little ridiculous.
-                        Also, since the metaphysical nature of transcendental consciousness is impossible to fully comprehend (let alone convey to others),
-                        such questions seem either unnecessarily arbitrary at best or existentially insignificant at worse.
-                        However, conventional responses, for the sake of discussion and sanity, might include
-                            <ul>
-                                <li>(teacher/mentor)</li>
-                                <li>environmentalist</li>
-                                <li>minimalist</li>
-                                <li>writer</li>
-                                <li>stoic</li>
-                                <li>philosopher</li>
-                                <li>skeptic</li>
-                            </ul>
-                        </p>
-                    <!--/div-->
+                    <p>With a genome consisting of ~3.23 billion randomly arranged base pairs,
+                    across 23 pairs of chromosomes (which makes up [0.0007%, 0.0009%] of total body mass<sup><a href="">[citation required]</a></sup>),
+                    99.9% of the human genome (excluding mitocondrial DNA) is shared by everyone<sup><a href="">[citation required]</a></sup>,
+                    of which 5-8% is also composed of <a href="">endogenous retroviruses</a>.
+                    </p>
+                    <p class='note'>ERVs are technically foreign gene sequences which have parasitised a host genome (and are generally considered inactive) as the result of being transcripted after exposure to specific viral agents within geographically isolated regions.
+                    </p>
                     
-                    <!--div>
-                        <h4></h4-->
-                        <!--p>My greatest love for computer science is that it's the only written medium which is experienced dynamically,
-                        where one does not simply passively observe the written word in a static order, like books.
-                        Instead, users are driven by countless interactions,
-                        where each experience has the potential to be new and unique.
-                        </p-->
-                        
-                        <p>Experienced with both DirectX and OpenGL, I have a deep passion for graphics programming.
-                        </p>
-                        
-                        <p>While conventionally used for rendering geometry to a screen, producing various visual effects,
-                        this field expands vastly beyond that single application.
-                        </p>
-                        
-                        <p>At its core, graphics programming is the offloading of algorithms from the CPU (central processing unit) onto a computer's GPU (graphic processing unit).
-                        </p>
-                        
-                        <p>GPUs were designed to leverage the immense power of asynchronous processing, without the need for synchronization primitives,
-                        such as locks, mutexes or semaphores.
-                            <p class='note'>While superior in terms of raw processing power,
-                            this architecture does pose several drawbacks, however.
-                            The primary one being, graphics processors can <b>not</b> implement a call stack<sup><a href="">[citation required]</a></sup>,
-                            preventing certain techniques such as <a href="">recursion</a>,
-                            which relies on a functional programming technique where,
-                            where a method calls itself until a terminating condition is met or,
-                            the stack is blown, resulting in very <b>bad</b> things happening.
-                            <br>
-                            The second being, any data submitted as input to the graphics pipeline is immutable.
-                            Any operations performed on constants or buffers is unable to persist the state change beyond the current execution,
-                            thus can not be subsequently accessed by the CPU code via the resource handle afterwards.
-                            Instead, unique buffers must be separately bound to the pipeline for independent input and output operations (whoever, HLSL 5 introduced read/write textures/buffers).
-                            As a result, typically the mapping of resources from the graphics card's RAM into conventional RAM is <b>not</b> allowed for those resources currently bound to the pipeline while rendering.
-                            </p>
-                        Their thousands of dedicated cores and their optimized instruction sets targeting vector, matrix, color math as well as accelerated and asynchronous access of indexed buffers allows
-                        GPU programs (colloquially called <b><i>shaders</i></b>) have the ability to process large quantities of data in parallel.
-                        This allows for significantly faster processing compared to the serial nature of processing the same data on a CPU.
-                        </p>
-                        
-                        <p class='note'>
-                        When appropriately leveraged with Multi-tasking or Multi-processing on the CPU,
-                        execution can be increased by utilizing techniques such as background loading of resources,
-                        or processing of i/o operations separately from the primary rendering logic.
-                        </p>
-                        
-                        <p>Two of the most common applications of graphics programming in industry are in the fields of <a href="">artificial intelligence</a> and <a href="">cryptocurrencies</a>,
-                        where highly computational intensive operations such as <a href="">machine learning</a> and <a href="">mining transaction blocks</a>, respectfully,
-                        can be more efficiently performed with significantly higher output capacity than would be possible on a conventional 2 or 4 core processor alone,
-                        with modern GPUs produced with literally hundreds (if not thousands) of cores.
-                        </p>
-                        
-                        <p>
-                        </p>
-                    <!--/div-->
-                    <!--div>
-                        <h3>Family</h3>
-                        <p>The proud father of a bright and charismatic son,
-                        he is the single greatest inspiration in my work.
-                        Knowing that one day he will be able to use and learn from the software I develop,
-                        at the very least he will have fun playing games built specially for him.
-                        </p>
-                        <p>
-                        Aside from his general fascination with his father's computer,
-                        he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
-                        As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
-                        </p>
-                        <p>
-                        He already has a particular fascination with colors and geometry,
-                        as those are his favorite demos to play with.
-                        </p>                            
-                    </div-->
+                    <p note="note">Those individual mutations which make a person's DNA &apos;<i>unique</i>&apos;
+                    are statistically insignificant<sup><a href="">[citation required]</a></sup>.
+                    </p>
                     
-                    <div>
-                        <h3></h3>
-                        <p>With a passion for math, science, language and art, as a graphics programmer,
-                        I have combined all these independent facets into a single discipline.
+                    <p>
+                    Beginning with the fusion event forging human chromosome 2 (birthing modern Homo Sapiens),
+                    this distinct divergence from our 24 chromosome pair hominid relatives allowed our ancestors to stand tall above their competition,
+                    to gaze towards the stars and the future.
+                    </p>
+                    
+                    <p>
+                    Since then on, for all practical purposes, every human has been statistically the same, from a genetic standpoint.
+                    </p>
+                    
+                    <p>As an organic, multi-processing, quantum computer capable of sentience, introspection and self-determination, 
+                    (despite modern debate regarding whether or not the mind is in fact turning complete),
+                    .
+                    </p>
+                    
+                    <!--p>Rational analysis(internal logic) and sensory perception(external stimuli),
+                    Reason yields concepts which are true but tautological, (...) whos content is phenomenal.
+                    </p-->
+                    
+                    <!--p>In (philosophy of knowledge), it is well accepted,
+                    <i>A priori</i>(knowledge without/before experience) and <i>A posteriori</i>(knowledge after/from experience).
+                    </p-->
+                    <!--p class='note'>Where Plato is infamous for the phase, "What I know for certain is that I know nothing",
+                    
+                    it would take the revolutionary philosophy of Immanuel Kant to deduce that,
+                    since the human mind is the by product of and governed by the fundamental laws of nature (from which all physical processes derive),
+                    it is thus required that not only is consciousness an inherent, emergent property of nature,
+                    but also that the mind is intrinsically aware of those processes,
+                    thus in order for the mind to function or even exist,
+                    it must <i>know</i>.
+                    In this sense 
+                    </p-->
+                
+                    <!--p>Despite the limited capacity of human language to adequately describe concepts beyond the narrow band of sensory perceptions
+                    encountered within the mundane plane of consensual reality and the axioms used for logically interpreting those perceptions,
+                    when asked what words best describe me,
+                    aside from pointing out the Sanskrit concept of dukkha (the insatiable decay of all things, yielding to the stress of impermanence) which makes the idea of affixing permanent,
+                    absolute traits to a temporary form (which constantly undergoes change due to entropy) seems a little ridiculous.
+                    Also, since the metaphysical nature of transcendental consciousness is impossible to fully comprehend (let alone convey to others),
+                    such questions seem either unnecessarily arbitrary at best or existentially insignificant at worse.
+                    However, conventional responses, for the sake of discussion and sanity, might include
+                        <ul>
+                            <li>(teacher/mentor)</li>
+                            <li>environmentalist</li>
+                            <li>minimalist</li>
+                            <li>writer</li>
+                            <li>stoic</li>
+                            <li>philosopher</li>
+                            <li>skeptic</li>
+                        </ul>
+                    </p>
+                <!--/div-->
+                
+                <!--div>
+                    <h4></h4-->
+                    <!--p>My greatest love for computer science is that it's the only written medium which is experienced dynamically,
+                    where one does not simply passively observe the written word in a static order, like books.
+                    Instead, users are driven by countless interactions,
+                    where each experience has the potential to be new and unique.
+                    </p-->
+                    
+                    <p>Experienced with both DirectX and OpenGL, I have a deep passion for graphics programming.
+                    </p>
+                    
+                    <p>While conventionally used for rendering geometry to a screen, producing various visual effects,
+                    this field expands vastly beyond that single application.
+                    </p>
+                    
+                    <p>At its core, graphics programming is the offloading of algorithms from the CPU (central processing unit) onto a computer's GPU (graphic processing unit).
+                    </p>
+                    
+                    <p>GPUs were designed to leverage the immense power of asynchronous processing, without the need for synchronization primitives,
+                    such as locks, mutexes or semaphores.
+                        <p class='note'>While superior in terms of raw processing power,
+                        this architecture does pose several drawbacks, however.
+                        The primary one being, graphics processors can <b>not</b> implement a call stack<sup><a href="">[citation required]</a></sup>,
+                        preventing certain techniques such as <a href="">recursion</a>,
+                        which relies on a functional programming technique where,
+                        where a method calls itself until a terminating condition is met or,
+                        the stack is blown, resulting in very <b>bad</b> things happening.
+                        <br>
+                        The second being, any data submitted as input to the graphics pipeline is immutable.
+                        Any operations performed on constants or buffers is unable to persist the state change beyond the current execution,
+                        thus can not be subsequently accessed by the CPU code via the resource handle afterwards.
+                        Instead, unique buffers must be separately bound to the pipeline for independent input and output operations (whoever, HLSL 5 introduced read/write textures/buffers).
+                        As a result, typically the mapping of resources from the graphics card's RAM into conventional RAM is <b>not</b> allowed for those resources currently bound to the pipeline while rendering.
                         </p>
+                    Their thousands of dedicated cores and their optimized instruction sets targeting vector, matrix, color math as well as accelerated and asynchronous access of indexed buffers allows
+                    GPU programs (colloquially called <b><i>shaders</i></b>) have the ability to process large quantities of data in parallel.
+                    This allows for significantly faster processing compared to the serial nature of processing the same data on a CPU.
+                    </p>
+                    
+                    <p class='note'>
+                    When appropriately leveraged with Multi-tasking or Multi-processing on the CPU,
+                    execution can be increased by utilizing techniques such as background loading of resources,
+                    or processing of i/o operations separately from the primary rendering logic.
+                    </p>
+                    
+                    <p>Two of the most common applications of graphics programming in industry are in the fields of <a href="">artificial intelligence</a> and <a href="">cryptocurrencies</a>,
+                    where highly computational intensive operations such as <a href="">machine learning</a> and <a href="">mining transaction blocks</a>, respectfully,
+                    can be more efficiently performed with significantly higher output capacity than would be possible on a conventional 2 or 4 core processor alone,
+                    with modern GPUs produced with literally hundreds (if not thousands) of cores.
+                    </p>
+                    
+                    <p>
+                    </p>
+                <!--/div-->
+                <!--div>
+                    <h3>Family</h3>
+                    <p>The proud father of a bright and charismatic son,
+                    he is the single greatest inspiration in my work.
+                    Knowing that one day he will be able to use and learn from the software I develop,
+                    at the very least he will have fun playing games built specially for him.
+                    </p>
+                    <p>
+                    Aside from his general fascination with his father's computer,
+                    he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
+                    As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
+                    </p>
+                    <p>
+                    He already has a particular fascination with colors and geometry,
+                    as those are his favorite demos to play with.
+                    </p>                            
+                </div-->
+                
+                <div>
+                    <h3></h3>
+                    <p>With a passion for math, science, language and art, as a graphics programmer,
+                    I have combined all these independent facets into a single discipline.
+                    </p>
+                    
+                    <p>Programming is generally considered a highly ordered, logical <i>left brain</i> activity,
+                    while artistic expression is a <i>right brain</i> activity,
+                    dependent upon emotion and sensory perceptions.
+                    </p>
+                    
+                    <p>While it is common for most work to hyper-focus on only a single cognitive aspect (resulting in the neglect of the other half, potentially leading to atrophy),
+                    this exciting field allows the utilization of both left and right hemispheres working in concert,
+                    culminating in exciting new neurological pathways and alternative interpretations of the world,
+                    leading to creative and innovative solutions which would otherwise not arise simply by relentlessly beating a problem with logic alone.
+                    </p>
+                </div>
+            </div>
+                
+            <div role="tabpanel" class="tab-pane" id="gaming">
+                <p>While growing up in the 90's tech boom, even though I was too young for a personal computer,
+                I still had an SNES and Sega Genesis that were played at every opportunity,
+                with classic games including Sonic, Mortal Combat, Road Rash and Super Mario World and Yoshi's Island.
+                </p>
+                
+                <p>After a while, our Sega developed a neat little quirk where it would only play games when it was upside down and propped up against the wall at a specific angle.
+                Boy, those were the days.
+                </p>
+                
+                <p>It wouldn't be until roughly the early 2000's when the family got its first desktop,
+                which would ignite a passion for technology and gaming which continues to grow today.
+                </p>
+                
+                <p>Even though most of my time was spent playing solitaire, minesweeper and doodling in MS paint,
+                eventually I would buy my first PC game, <a href="">Sid Meier's Civilization 4</a>.
+                </p>
+                
+                <p>
+                After installing it, I played a marathon session of over 48 consecutive hours,
+                and have been obsessed with the franchise ever since.
+                </p>
+                
+                <p>
+                It wouldn't be until high school where my interest in on-line gaming really took over,
+                specifically with MMORG's such as Guild Wars and World of Warcraft and FPS's like Battlefield and Counter Strike,
+                after buying my first custom built rig for gaming.
+                </p>
+                
+                <p>While PC gaming consumed much outside of school time while not working my after-school job or playing sports,
+                I still enjoyed the console classics of the time on my Xbox 360,
+                including Fallout, Halo, Skyrim, Guitar Hero and Rockband
+                </p>
+                
+                <p>Then, after starting College, my focus turned from playing games to making games.
+                Despite my busy schedule, I was still able to squeeze in an odd match of League of Legends or delve back into the world of Skyrim on occassion.
+                </p>
+                
+                <ul>
+                    <li><a href="">Sid Meier's Civilization series</a></li>
+                    <li><a href="">League of Legends</a></li>
+                    <li><a href="">Guild Wars</a></li>
+                    <!--li><a href="">__</a></li-->
+                </ul>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="interests">
+                <!--h3>Influences</h3-->
+                
+                <div>
+                    <h3>Philosophy</h3>
+                    <ul>
+                        <!--li><a href="">Stoicism</a></li>
+                        <li><a href="">Pragmatism</a></li-->
                         
-                        <p>Programming is generally considered a highly ordered, logical <i>left brain</i> activity,
-                        while artistic expression is a <i>right brain</i> activity,
-                        dependent upon emotion and sensory perceptions.
-                        </p>
-                        
-                        <p>While it is common for most work to hyper-focus on only a single cognitive aspect (resulting in the neglect of the other half, potentially leading to atrophy),
-                        this exciting field allows the utilization of both left and right hemispheres working in concert,
-                        culminating in exciting new neurological pathways and alternative interpretations of the world,
-                        leading to creative and innovative solutions which would otherwise not arise simply by relentlessly beating a problem with logic alone.
-                        </p>
-                    </div>
+                        <li><a href="">David Hume</a></li>
+                        <li><a href="">René Descartes</a></li>
+                        <li><a href="">Friedrich Nietzsche</a></li>
+                        <li><a href="">Immanuel Kant</a></li>
+                        <li><a href="">Jean-Paul Sartre</a></li>
+                        <li><a href="">Sir Francis Bacon</a></li>
+                    <ul>
                 </div>
                 
-                <div role="tabpanel" class="tab-pane" id="gaming">
-                    <p>While growing up in the 90's tech boom, even though I was too young for a personal computer,
-                    I still had an SNES and Sega Genesis that were played at every opportunity,
-                    with classic games including Sonic, Mortal Combat, Road Rash and Super Mario World and Yoshi's Island.
-                    </p>
-                    
-                    <p>After a while, our Sega developed a neat little quirk where it would only play games when it was upside down and propped up against the wall at a specific angle.
-                    Boy, those were the days.
-                    </p>
-                    
-                    <p>It wouldn't be until roughly the early 2000's when the family got its first desktop,
-                    which would ignite a passion for technology and gaming which continues to grow today.
-                    </p>
-                    
-                    <p>Even though most of my time was spent playing solitaire, minesweeper and doodling in MS paint,
-                    eventually I would buy my first PC game, <a href="">Sid Meier's Civilization 4</a>.
-                    </p>
-                    
-                    <p>
-                    After installing it, I played a marathon session of over 48 consecutive hours,
-                    and have been obsessed with the franchise ever since.
-                    </p>
-                    
-                    <p>
-                    It wouldn't be until high school where my interest in on-line gaming really took over,
-                    specifically with MMORG's such as Guild Wars and World of Warcraft and FPS's like Battlefield and Counter Strike,
-                    after buying my first custom built rig for gaming.
-                    </p>
-                    
-                    <p>While PC gaming consumed much outside of school time while not working my after-school job or playing sports,
-                    I still enjoyed the console classics of the time on my Xbox 360,
-                    including Fallout, Halo, Skyrim, Guitar Hero and Rockband
-                    </p>
-                    
-                    <p>Then, after starting College, my focus turned from playing games to making games.
-                    Despite my busy schedule, I was still able to squeeze in an odd match of League of Legends or delve back into the world of Skyrim on occassion.
-                    </p>
-                    
+                <!--div>
+                    <h3>Music</h3>
                     <ul>
-                        <li><a href="">Sid Meier's Civilization series</a></li>
-                        <li><a href="">League of Legends</a></li>
-                        <li><a href="">Guild Wars</a></li>
-                        <!--li><a href="">__</a></li-->
+                        <li><a href="">Fredic Chopin</a></li>
+                        <li><a href="">Antonio Vivaldi</a></li>
+                        <li><a href="">Claude Debussy</a></li>
+                        <li><a href="">Franz Schubert</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">Tom Lehrer</a></li>
+                        <li><a href="">Gilbert and Sullivan</a></li>
+                        <li><a href="">Tool</a></li>
+                        <li><a href="">A Perfect Circle</a></li>
+                        <li><a href="">Puscifer</a></li>
+                        <li><a href="">The White Stripes</a></li>
+                        <li><a href="">The Mars Volta</a></li>
+                        <li><a href="">Nine Inch Nails</a></li>
+                        <li><a href="">Metallica</a></li>
+                        <li><a href="">Rush</a></li>
+                        <li><a href="">Slipknot/Stonesour</a></li>
+                    </ul>
+                </div-->
+                
+                <!--div>
+                    <h3>Math</h3>
+                    <ul>
+                        <li><a href="">Number Theory</a></li>
+                        <li><a href="">Complex Mathematics</a></li>
+                        <li><a href="">Calculus</a></li>
                     </ul>
                 </div>
                 
-                <div role="tabpanel" class="tab-pane" id="interests">
-                    <!--h3>Influences</h3-->
-                    
-                    <div>
-                        <h3>Philosophy</h3>
-                        <ul>
-                            <!--li><a href="">Stoicism</a></li>
-                            <li><a href="">Pragmatism</a></li-->
-                            
-                            <li><a href="">David Hume</a></li>
-                            <li><a href="">René Descartes</a></li>
-                            <li><a href="">Friedrich Nietzsche</a></li>
-                            <li><a href="">Immanuel Kant</a></li>
-                            <li><a href="">Jean-Paul Sartre</a></li>
-                            <li><a href="">Sir Francis Bacon</a></li>
-                        <ul>
-                    </div>
-                    
-                    <!--div>
-                        <h3>Music</h3>
-                        <ul>
-                            <li><a href="">Fredic Chopin</a></li>
-                            <li><a href="">Antonio Vivaldi</a></li>
-                            <li><a href="">Claude Debussy</a></li>
-                            <li><a href="">Franz Schubert</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="">Tom Lehrer</a></li>
-                            <li><a href="">Gilbert and Sullivan</a></li>
-                            <li><a href="">Tool</a></li>
-                            <li><a href="">A Perfect Circle</a></li>
-                            <li><a href="">Puscifer</a></li>
-                            <li><a href="">The White Stripes</a></li>
-                            <li><a href="">The Mars Volta</a></li>
-                            <li><a href="">Nine Inch Nails</a></li>
-                            <li><a href="">Metallica</a></li>
-                            <li><a href="">Rush</a></li>
-                            <li><a href="">Slipknot/Stonesour</a></li>
-                        </ul>
-                    </div-->
-                    
-                    <!--div>
-                        <h3>Math</h3>
-                        <ul>
-                            <li><a href="">Number Theory</a></li>
-                            <li><a href="">Complex Mathematics</a></li>
-                            <li><a href="">Calculus</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3>Science</h3>
-                        <ul>
-                            <li><a href="">Quantum Mechanics</a></li>
-                            <li><a href="">Optic Computing</a></li>
-                            <li><a href="">General/Special Relativity</a></li>
-                        </ul>
-                    </div-->
-                    
-                    <div>
-                        <h3>Art</h3>
-                        <ul>
-                            <li><a href="">Piet Mondrian</a></li>
-                            <li><a href="">René Magritte</a></li>
-                            <li><a href="">M.C. Esher</a></li>
-                        <ul>
-                    </div>
-                    
-                    <div>
-                        <h3>Literature</h3>
-                        <ul>
-                            <li><a href="">H.P. Lovecraft</a></li>
-                            <li><a href="">Edgar Allen Poe</a></li>
-                            <li><a href="">Ambrose G. Bierce</a></li>
-                            <li><a href="">Robert W. Chambers</a></li>
-                            <li><a href="">George Orwell</a></li>
-                            <li><a href="">Douglas Coupland</a></li>
-                            <li><a href="">Frank Herbert</a></li>
-                            <li><a href="">Aldous Huxley</a></li>
-                            <li><a href="">Isaac Asimov</a></li>
-                            <li><a href="">Stephen King/Richard Bachman</a></li>
-                            <li><a href="">‎Steven Erikson</a></li>
-                            <li><a href="">‎J.K. Rowling</a></li>
-                            <li><a href="">Jorge Luis Borges</a></li>
-                            <li><a href="">Franz Kafka</a></li>
-                            <li><a href="">Fyodor Dostoyevsky</a></li>
-                        </ul>
-                    </div>
-                    <!--div>
-                        <h3>Anime and Comics/Manga</h3>
-                        <ul>
-                            <li><a href="">Ghost In The Shell</a></li>
-                            <li><a href="">Serial Experiments Lain</a></li>
-                            <li><a href="">Deathnote</a></li>
-                            <li><a href="">Witch Hunter Robin</a></li>
-                            
-                            <li><a href="">The Walking Dead</a></li>
-                            <li><a href="">X-men/Legion</a></li>
-                            
-                        </ul>
-                    </div>
-                    
-                    <div>
-                    </div-->
+                <div>
+                    <h3>Science</h3>
+                    <ul>
+                        <li><a href="">Quantum Mechanics</a></li>
+                        <li><a href="">Optic Computing</a></li>
+                        <li><a href="">General/Special Relativity</a></li>
+                    </ul>
+                </div-->
+                
+                <div>
+                    <h3>Art</h3>
+                    <ul>
+                        <li><a href="">Piet Mondrian</a></li>
+                        <li><a href="">René Magritte</a></li>
+                        <li><a href="">M.C. Esher</a></li>
+                    <ul>
                 </div>
                 
-                <div role="tabpanel" class="tab-pane" id="third">
-                    Other stuff
+                <div>
+                    <h3>Literature</h3>
+                    <ul>
+                        <li><a href="">H.P. Lovecraft</a></li>
+                        <li><a href="">Edgar Allen Poe</a></li>
+                        <li><a href="">Ambrose G. Bierce</a></li>
+                        <li><a href="">Robert W. Chambers</a></li>
+                        <li><a href="">George Orwell</a></li>
+                        <li><a href="">Douglas Coupland</a></li>
+                        <li><a href="">Frank Herbert</a></li>
+                        <li><a href="">Aldous Huxley</a></li>
+                        <li><a href="">Isaac Asimov</a></li>
+                        <li><a href="">Stephen King/Richard Bachman</a></li>
+                        <li><a href="">‎Steven Erikson</a></li>
+                        <li><a href="">‎J.K. Rowling</a></li>
+                        <li><a href="">Jorge Luis Borges</a></li>
+                        <li><a href="">Franz Kafka</a></li>
+                        <li><a href="">Fyodor Dostoyevsky</a></li>
+                    </ul>
+                </div>
+                <!--div>
+                    <h3>Anime and Comics/Manga</h3>
+                    <ul>
+                        <li><a href="">Ghost In The Shell</a></li>
+                        <li><a href="">Serial Experiments Lain</a></li>
+                        <li><a href="">Deathnote</a></li>
+                        <li><a href="">Witch Hunter Robin</a></li>
+                        
+                        <li><a href="">The Walking Dead</a></li>
+                        <li><a href="">X-men/Legion</a></li>
+                        
+                    </ul>
                 </div>
                 
-                <div role="tabpanel" class="tab-pane" id="background">
-                    <div class='flex-row'>
-                        <h4>Adolescence</h4>
-                        
-                        <p>Joining Air Cadets when I was old enough,
-                        I didn't learn leadership, discipline, or self reliance,
-                        those qualities, I already possessed, were only strengthened,
-                        providing the foundation for the driven, entrepreneurial attitude I have today.
-                        </p>
-                        
-                        <p>By the age of 15 I was working a consistent part-time job while still attending high school,
-                        cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
-                        By then, having made the rank of sergeant, I was regularly teaching classes on survival, drill, the principles of flight and related topics,
-                        while also being a member of the drill team and color/flag party.
-                        </p>
-                        
-                        <p>At age 17, I was accepted to the (power ...) at the Kitchener/Waterloo International Airport,
-                        to receive my private pilots license, well before having my G1 driver's license.
-                        </p>
-                        
-                        <p>
-                        Throughout high school, I went to OFSSA three times for discuss and shot put,
-                        consistently placing in the top 6 across the province each year.
-                        </p>
-                        
-                        <p>Before the time to leave my home town for college, I had already traveled to, most notably
-                            <ul>
-                                <li>Toronto-ON</li>
-                                <li>Ottawa-ON</li>
-                                <li>Niagara-ON</li>
-                                <li>Kingston-ON</li>
-                                <li>Manitoulin Island-ON</li>
-                                <li>Windsor-ON</li>
-                                <li>Kitchener/Waterloo-ON</li>
-                                <li>Columbus-Ohio</li>
-                                <li>Detroit-Michigan</li>
-                                <li>New York-New York</li>
-                                <li>Puerto Plata-Dominican Republic</li>
-                                <li>San Andreas-Columbia</li>
-                            </ul>
-                        </p>
-                        
-                        <p>In addition to these locations, including
-                            <ul>
-                                <li></li>
-                            </ul>
-                        </p>
-                    </div>
+                <div>
+                </div-->
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="third">
+                Other stuff
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="background">
+                <div class='flex-row'>
+                    <h4>Adolescence</h4>
                     
-                    <div class='flex-row'>
-                        <h4>College</h4>
-                        <p>Shortly after moving to attend a course for video game design and development,
-                        my life changed dramatically.
-                        </p>
-                        
-                        <p>Within the first few months there, I had developed a C++ poker hashing algorithm and evaluator as my first major coding project.
-                        When finished, my project outperformed those of my peers, as well as that of my instructor,
-                        which he would eagerly brag about to his colleagues, earning me recognition across campuses.
-                        </p>
-                        
-                        <p>The game implements 5 common poker games,
-                        leveraging fundamental principles of number theory and static programming techniques to execute,
-                        analyze and compare hands of cards at a nearly instant time complexity.
-                        </p>
-                        
-                        <p>This project is still my proudest accomplishment from that time,
-                        however the project source is not planned to be available any time soon.
-                            <p class='note'>One of the core components of the project,
-                            the Integer Sequence Library,
-                            is available on github <a href="https://github.com/vigilance91?tab=repositories">here</a> and has been ported to several languages,
-                            including C++, Python, PHP and Javascript.
-                            </p>
-                        The executable and associated static libraries may be released in the future,
-                        as development permits.
-                        </p>
-                        
-                        <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models and had a primitive combat system and UI,
-                        and two C# XNA titles which included a minecraft-esque farming simulator (including day/night cycle and growing crops with life-cycles) with real time xml editing tools (for level development),
-                        as well as a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
-                        </p>
-                        
-                        <p>I also attended the Great Canadian App-athon in 2011 and 2012,
-                        which was a 72 hour coding contest involving all colleges and universities across Canada.
-                        </p>
-                        
-                        <p>Nearing the end of my college career I was regularly working 16-18 hour days (sometimes even periods of 48 hours or more) to meet my school work load,
-                        while also pursuing my own side projects,
-                        including an interest in cryptography,
-                        but more importantly I would teach myself Python in my own time in hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python.
-                        </p>
-                        
-                        <p>
-                        After completing that, the goal then was to write a C++ application with the Python interpreter embedded within it,
-                        to leverage the added flexibility and modularity of Python.
-                        </p>
-                        
-                        <p>The advent of a functioning markup language parser lead to the formalization of a written standard,
-                        that I personally developed and maintain to address many (personal) issues presented with both xml and json formats.
-                        </p>
-                        
-                        <!--p>I would then go on to include these components with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor
-                        and to allow for hierarchical management of the application's resources.
-                        </p-->
-                    </div>
+                    <p>Joining Air Cadets when I was old enough,
+                    I didn't learn leadership, discipline, or self reliance,
+                    those qualities, I already possessed, were only strengthened,
+                    providing the foundation for the driven, entrepreneurial attitude I have today.
+                    </p>
                     
-                    <div class='flex-row'>
-                        <h4>Post College</h4>
-                        <p>After graduation, I started an unpaid internship as an iOS/Objective-C mobile developer for a local independent studio.
+                    <p>By the age of 15 I was working a consistent part-time job while still attending high school,
+                    cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
+                    By then, having made the rank of sergeant, I was regularly teaching classes on survival, drill, the principles of flight and related topics,
+                    while also being a member of the drill team and color/flag party.
+                    </p>
+                    
+                    <p>At age 17, I was accepted to the (power ...) at the Kitchener/Waterloo International Airport,
+                    to receive my private pilots license, well before having my G1 driver's license.
+                    </p>
+                    
+                    <p>
+                    Throughout high school, I went to OFSSA three times for discuss and shot put,
+                    consistently placing in the top 6 across the province each year.
+                    </p>
+                    
+                    <p>Before the time to leave my home town for college, I had already traveled to, most notably
+                        <ul>
+                            <li>Toronto-ON</li>
+                            <li>Ottawa-ON</li>
+                            <li>Niagara-ON</li>
+                            <li>Kingston-ON</li>
+                            <li>Manitoulin Island-ON</li>
+                            <li>Windsor-ON</li>
+                            <li>Kitchener/Waterloo-ON</li>
+                            <li>Columbus-Ohio</li>
+                            <li>Detroit-Michigan</li>
+                            <li>New York-New York</li>
+                            <li>Puerto Plata-Dominican Republic</li>
+                            <li>San Andreas-Columbia</li>
+                        </ul>
+                    </p>
+                    
+                    <p>In addition to these locations, including
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class='flex-row'>
+                    <h4>College</h4>
+                    <p>Shortly after moving to attend a course for video game design and development,
+                    my life changed dramatically.
+                    </p>
+                    
+                    <p>Within the first few months there, I had developed a C++ poker hashing algorithm and evaluator as my first major coding project.
+                    When finished, my project outperformed those of my peers, as well as that of my instructor,
+                    which he would eagerly brag about to his colleagues, earning me recognition across campuses.
+                    </p>
+                    
+                    <p>The game implements 5 common poker games,
+                    leveraging fundamental principles of number theory and static programming techniques to execute,
+                    analyze and compare hands of cards at a nearly instant time complexity.
+                    </p>
+                    
+                    <p>This project is still my proudest accomplishment from that time,
+                    however the project source is not planned to be available any time soon.
+                        <p class='note'>One of the core components of the project,
+                        the Integer Sequence Library,
+                        is available on github <a href="https://github.com/vigilance91?tab=repositories">here</a> and has been ported to several languages,
+                        including C++, Python, PHP and Javascript.
                         </p>
-                        
-                        <p>During the internship I also supported myself through working full time at a temp agency.
-                        This required working 16 hours a day at 2 separate jobs for four months straight until I was hired to continue working as an iOS developer.
-                        </p>
-                        
-                        <p>As it was a small start-up, I was the sole developer working on their projects (with the owner/CEO being the artist),
-                        I played all roles from lead developer (including writing shell script build tools and photoshop scripts),
-                        to QA tester and Research and Development.
-                        </p>
-                        
-                        <p>
-                        I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse tool chain.
-                        </p>
-                        
-                        <p>
-                            Within my first year, roughly 10 applications had either been released or updated,
-                            to which the most successful app having over 3.5 million downloads and continues to be highly successful to this day.
-                        </p>
-                        
-                        <p>Unfortunately, near the end of my employment with Sky Orchard Studios, I would suffer a devastating personal loss,
-                        with all of my personal hardware being stolen from my apartment.
-                        </p>
-                        
-                        <p>
-                        This effectively resulted in the loss of all my projects, notes, source code, examples and backups of my entire life's work up to that point,
-                        causing a devastating professional set back, which, to this day, still has not been fully recovered from.
-                        </p>
+                    The executable and associated static libraries may be released in the future,
+                    as development permits.
+                    </p>
+                    
+                    <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models and had a primitive combat system and UI,
+                    and two C# XNA titles which included a minecraft-esque farming simulator (including day/night cycle and growing crops with life-cycles) with real time xml editing tools (for level development),
+                    as well as a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
+                    </p>
+                    
+                    <p>I also attended the Great Canadian App-athon in 2011 and 2012,
+                    which was a 72 hour coding contest involving all colleges and universities across Canada.
+                    </p>
+                    
+                    <p>Nearing the end of my college career I was regularly working 16-18 hour days (sometimes even periods of 48 hours or more) to meet my school work load,
+                    while also pursuing my own side projects,
+                    including an interest in cryptography,
+                    but more importantly I would teach myself Python in my own time in hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python.
+                    </p>
+                    
+                    <p>
+                    After completing that, the goal then was to write a C++ application with the Python interpreter embedded within it,
+                    to leverage the added flexibility and modularity of Python.
+                    </p>
+                    
+                    <p>The advent of a functioning markup language parser lead to the formalization of a written standard,
+                    that I personally developed and maintain to address many (personal) issues presented with both xml and json formats.
+                    </p>
+                    
+                    <!--p>I would then go on to include these components with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor
+                    and to allow for hierarchical management of the application's resources.
+                    </p-->
+                </div>
+                
+                <div class='flex-row'>
+                    <h4>Post College</h4>
+                    <p>After graduation, I started an unpaid internship as an iOS/Objective-C mobile developer for a local independent studio.
+                    </p>
+                    
+                    <p>During the internship I also supported myself through working full time at a temp agency.
+                    This required working 16 hours a day at 2 separate jobs for four months straight until I was hired to continue working as an iOS developer.
+                    </p>
+                    
+                    <p>As it was a small start-up, I was the sole developer working on their projects (with the owner/CEO being the artist),
+                    I played all roles from lead developer (including writing shell script build tools and photoshop scripts),
+                    to QA tester and Research and Development.
+                    </p>
+                    
+                    <p>
+                    I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse tool chain.
+                    </p>
+                    
+                    <p>
+                        Within my first year, roughly 10 applications had either been released or updated,
+                        to which the most successful app having over 3.5 million downloads and continues to be highly successful to this day.
+                    </p>
+                    
+                    <p>Unfortunately, near the end of my employment with Sky Orchard Studios, I would suffer a devastating personal loss,
+                    with all of my personal hardware being stolen from my apartment.
+                    </p>
+                    
+                    <p>
+                    This effectively resulted in the loss of all my projects, notes, source code, examples and backups of my entire life's work up to that point,
+                    causing a devastating professional set back, which, to this day, still has not been fully recovered from.
+                    </p>
 
-                        <p>Going back to the temp agency, after the contract expired, I would take on various manual labour roles to survive.
-                        </p>
-                        
-                        <p>After several months of factory work,
-                        I would finally get the opportunity to recover from the theft of my life's work,
-                        finally being able to purchase a laptop for a job as a web developer.
-                        </p>
-                        
-                        <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.
-                        </p>
-                        
-                        <p>While there, I worked closely with 1 other dedicated developer and a small group of 2-5 interns updating an Actionscript based web application to HTML5.
-                        </p>
-                        
-                        <p>As a senior team member, I primarily supervised the interns assisting in their tasks,
-                        while simultaneously working on my own.
-                        </p>
-                        
-                        <p>Unfortunately, the company would dissolve before the product could launch.
-                        </p>
-                        
-                        <p>Afterward, at the age of 25, I would go on to secure employment at my former college,
-                        teaching the very course I had once taken not so long ago.
-                        </p>
-                        
-                        <p>Shortly after beginning my new job, I became a father of an amazing son.
-                        </p>
-                        
-                        <p>During that time, I worked 10-16 hours a day, teaching 2 separate classes and was responsible for managing groups between 4-12 students at a time.
-                        </p>
-                        
-                        <p>
-                        Lectures included the foundational concepts of computer programming, software development, video game design and the software production life-cycle,
-                        with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and Javascript.
-                        </p>
+                    <p>Going back to the temp agency, after the contract expired, I would take on various manual labour roles to survive.
+                    </p>
+                    
+                    <p>After several months of factory work,
+                    I would finally get the opportunity to recover from the theft of my life's work,
+                    finally being able to purchase a laptop for a job as a web developer.
+                    </p>
+                    
+                    <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.
+                    </p>
+                    
+                    <p>While there, I worked closely with 1 other dedicated developer and a small group of 2-5 interns updating an Actionscript based web application to HTML5.
+                    </p>
+                    
+                    <p>As a senior team member, I primarily supervised the interns assisting in their tasks,
+                    while simultaneously working on my own.
+                    </p>
+                    
+                    <p>Unfortunately, the company would dissolve before the product could launch.
+                    </p>
+                    
+                    <p>Afterward, at the age of 25, I would go on to secure employment at my former college,
+                    teaching the very course I had once taken not so long ago.
+                    </p>
+                    
+                    <p>Shortly after beginning my new job, I became a father of an amazing son.
+                    </p>
+                    
+                    <p>During that time, I worked 10-16 hours a day, teaching 2 separate classes and was responsible for managing groups between 4-12 students at a time.
+                    </p>
+                    
+                    <p>
+                    Lectures included the foundational concepts of computer programming, software development, video game design and the software production life-cycle,
+                    with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and Javascript.
+                    </p>
 
-                        <p>In my free time, I began further expanded my knowledge of graphics programming by developing exciting,
-                        easy to use, interactive examples and tools to help with visualization of abstract rendering concepts,
-                        while also working towards building a minimalist graphics engine for the web on my own.
-                        </p>
-                        
-                        <p>After a year, I decided to leave to be a stay-at-home father, to raise and teach my, by then, 1 year old son,
-                        while my form spouse went back to both college and work after taking time off while we waited for our son to be accepted into a childcare program.
-                        </p>
-                        
-                        <p>I would eventually go on to work as a PHP and RPA solution developer for various business clients, including <a href="">GreenEarth</a>.
-                        </p>
-                    </div>
+                    <p>In my free time, I began further expanded my knowledge of graphics programming by developing exciting,
+                    easy to use, interactive examples and tools to help with visualization of abstract rendering concepts,
+                    while also working towards building a minimalist graphics engine for the web on my own.
+                    </p>
                     
-                    <div class='flex-row'>
-                        <h4>Recently</h4>
-                        <p>As of today, I am fluent in over (a combined) 10 programming, scripting, shading or markup languages.
-                        </p>
-                        
-                        <p>In my sparse spare time,
-                        I have taken an interest in dabbling in computer forensics (utilizing the vast FOSS tools provided on various Linux platforms) as well as,
-                        beginning to learn TensorFlow for machine learning,
-                        React for web UI development and NodeJS for back-end server development.
-                        </p>
-                        
-                        <p>My main focus as of today is the Ethereum blockchain, developing Solidity smart-contracts.
-                        </p>
-                        
-                        <p>With the many personal projects currently under development across multiple platforms (see <a hef="">projects<a>),
-                        it has become quite time consuming for developing and maintaining them all (even with appropriate software tools for minimizing workflow overhead) as a single developer,
-                        thus I have opened up several open-source repositories for some of the more mature projects,
-                        in hopes of attracting additional interest,
-                        allowing myself to focus on younger, more ambitious, projects.
-                        </p>
-                        
-                        <p>I currently have a releasable product and am looking for seed round <b>investors and partners</b>,
-                        for integration into my primary application platform,
-                        with the intent of devolpoing other applications built on my ERC20 token.
-                        </p>
-                        
-                        <p>Whitepaper to be released soon.</p>
-                        
-                        <p>Ideally, lauch will be within the first 6 months of 2021, regardless of securing addition investor interest.</p>
-                        
-                        <p>Don't miss out on the exclusive bonuses offered <b>only</b>
-                        to seed round investors, partners and/or early adopters today!
-                        </p>
-                        
-                        <p class='note'>These one-time only incentives will not be available <b>after</b> seed round funding has completed.
-                        </p>
-                    </div>
+                    <p>After a year, I decided to leave to be a stay-at-home father, to raise and teach my, by then, 1 year old son,
+                    while my form spouse went back to both college and work after taking time off while we waited for our son to be accepted into a childcare program.
+                    </p>
                     
-                    <!--div>
-                        <h4 id=''></h4>
-                        <p>Aside from my passion for (programming), I have a fervent entrepreneurial and philanthropic spirit.
-                        </p>
-                        
-                        <p>Including getting my startup going, my other endeavors are less technology focused instead,
-                        leaning more towards environmentalism, conservation and sustainability.
-                        </p>
-                        
-                        <p>Believing that (profit should not come at the expense of nature or society),
-                        (...).
-                        
-                        Without a sustainable environment, there can be <b>no</b> economy (or people for that matter),
-                        so the choice should be blatantly apparent.
-                        </p>
-                        
-                        <p class='note'>As the successor to the 1857 constitution,
-                        the 1917 revision of the <a herf="">Political Constitution of the United Mexican States</a> is (so far) the only founding political document of a North American country that enshrines,
-                        the right of every citizen to both housing and a hospitable ecosystem, supportive of their development and welfare,
-                        under Article 4<sup><a href="">citation required</a></sup>,
-                        while also stating under Article 27<sup><a href="">citation required</a></sup>:
-                            all land, water and natural resources within their borders is owned by the Nation (thus belonging to all of its people),
-                            with any wealth generated from the exploitation of these resources to be equally distributed amongst all citizens.
-                        The Mexican Constitution also reserves the right of responsibility for all ecological and conservation concerns (also under Article 27).
-                        </p>
-                        
-                        <p class="note">Considering the Mexican Constitution was written well over a century ago,
-                        it should be both a source of personal and national shame that the same or similar ideals still have not been amended to either the <a href="">Constitution of the United States of American</a> nor,
-                        the <a href="">Canadian Charter of Rights and Freedoms</a>.
-                        Seeing as the Mexican Congress of 1917 was objectively more progressive than their modern counterparts in Canada and the U.S. in establishing socio-environmental rights for citizens,
-                        which have now been enjoyed by Mexican citizens for several generations, it is astonishing such legal frameworks do not exist outside Mexico.
-                        </p>
-                        
-                        <p>Intricately tied to my passion for environmentalism, I also have a love of raptors.</p>
-                        
-                        <p>Here is a picture of a baby falcon!
-                        <img ''=""><sup><a href=""></a></sup>
-                        </p>
-                        
-                        <p>Ever since childhood, Peregrine Falcons have been my favorite animal.
-                        </p>
-                        
-                        <p>
-                        Learning that the use of the pesticide DDT caused the collapse of their population in the 1990's <sup><a href="">citation required</a></sup>,
-                        resulting in their near extinction in North America has to be one of my earliest memories of feeling of disgust towards my species for the general indifference towards the willful poisoning of nature in the pursuit of greed.
-                        </p>
-                        
-                        <p>Luckily, efforts at the dawn of 21st century to reestablish their native population have been successful.
-                        </p>
-                        
-                        <p>To help ensure these majestic creatures continue to thrive alongside humanity,
-                        at the first available opportunity, I desire a license to care for and raise these majestic birds.
-                        </p>
-                    </div>
+                    <p>I would eventually go on to work as a PHP and RPA solution developer for various business clients, including <a href="">GreenEarth</a>.
+                    </p>
+                </div>
+                
+                <div class='flex-row'>
+                    <h4>Recently</h4>
+                    <p>As of today, I am fluent in over (a combined) 10 programming, scripting, shading or markup languages.
+                    </p>
+                    
+                    <p>In my sparse spare time,
+                    I have taken an interest in dabbling in computer forensics (utilizing the vast FOSS tools provided on various Linux platforms) as well as,
+                    beginning to learn TensorFlow for machine learning,
+                    React for web UI development and NodeJS for back-end server development.
+                    </p>
+                    
+                    <p>My main focus as of today is the Ethereum blockchain, developing Solidity smart-contracts.
+                    </p>
+                    
+                    <p>With the many personal projects currently under development across multiple platforms (see <a hef="">projects<a>),
+                    it has become quite time consuming for developing and maintaining them all (even with appropriate software tools for minimizing workflow overhead) as a single developer,
+                    thus I have opened up several open-source repositories for some of the more mature projects,
+                    in hopes of attracting additional interest,
+                    allowing myself to focus on younger, more ambitious, projects.
+                    </p>
+                    
+                    <p>I currently have a releasable product and am looking for seed round <b>investors and partners</b>,
+                    for integration into my primary application platform,
+                    with the intent of devolpoing other applications built on my ERC20 token.
+                    </p>
+                    
+                    <p>Whitepaper to be released soon.</p>
+                    
+                    <p>Ideally, lauch will be within the first 6 months of 2021, regardless of securing addition investor interest.</p>
+                    
+                    <p>Don't miss out on the exclusive bonuses offered <b>only</b>
+                    to seed round investors, partners and/or early adopters today!
+                    </p>
+                    
+                    <p class='note'>These one-time only incentives will not be available <b>after</b> seed round funding has completed.
+                    </p>
+                </div>
+                
+                <!--div>
+                    <h4 id=''></h4>
+                    <p>Aside from my passion for (programming), I have a fervent entrepreneurial and philanthropic spirit.
+                    </p>
+                    
+                    <p>Including getting my startup going, my other endeavors are less technology focused instead,
+                    leaning more towards environmentalism, conservation and sustainability.
+                    </p>
+                    
+                    <p>Believing that (profit should not come at the expense of nature or society),
+                    (...).
+                    
+                    Without a sustainable environment, there can be <b>no</b> economy (or people for that matter),
+                    so the choice should be blatantly apparent.
+                    </p>
+                    
+                    <p class='note'>As the successor to the 1857 constitution,
+                    the 1917 revision of the <a herf="">Political Constitution of the United Mexican States</a> is (so far) the only founding political document of a North American country that enshrines,
+                    the right of every citizen to both housing and a hospitable ecosystem, supportive of their development and welfare,
+                    under Article 4<sup><a href="">citation required</a></sup>,
+                    while also stating under Article 27<sup><a href="">citation required</a></sup>:
+                        all land, water and natural resources within their borders is owned by the Nation (thus belonging to all of its people),
+                        with any wealth generated from the exploitation of these resources to be equally distributed amongst all citizens.
+                    The Mexican Constitution also reserves the right of responsibility for all ecological and conservation concerns (also under Article 27).
+                    </p>
+                    
+                    <p class="note">Considering the Mexican Constitution was written well over a century ago,
+                    it should be both a source of personal and national shame that the same or similar ideals still have not been amended to either the <a href="">Constitution of the United States of American</a> nor,
+                    the <a href="">Canadian Charter of Rights and Freedoms</a>.
+                    Seeing as the Mexican Congress of 1917 was objectively more progressive than their modern counterparts in Canada and the U.S. in establishing socio-environmental rights for citizens,
+                    which have now been enjoyed by Mexican citizens for several generations, it is astonishing such legal frameworks do not exist outside Mexico.
+                    </p>
+                    
+                    <p>Intricately tied to my passion for environmentalism, I also have a love of raptors.</p>
+                    
+                    <p>Here is a picture of a baby falcon!
+                    <img ''=""><sup><a href=""></a></sup>
+                    </p>
+                    
+                    <p>Ever since childhood, Peregrine Falcons have been my favorite animal.
+                    </p>
+                    
+                    <p>
+                    Learning that the use of the pesticide DDT caused the collapse of their population in the 1990's <sup><a href="">citation required</a></sup>,
+                    resulting in their near extinction in North America has to be one of my earliest memories of feeling of disgust towards my species for the general indifference towards the willful poisoning of nature in the pursuit of greed.
+                    </p>
+                    
+                    <p>Luckily, efforts at the dawn of 21st century to reestablish their native population have been successful.
+                    </p>
+                    
+                    <p>To help ensure these majestic creatures continue to thrive alongside humanity,
+                    at the first available opportunity, I desire a license to care for and raise these majestic birds.
+                    </p>
                 </div-->
                 
                 <div role="tabpanel" class="tab-pane" id="langs">
@@ -1021,7 +1021,7 @@ data and duration of your visit, primarily for the purposes of black listing web
                         <p>Native page translations to come!</p>
                     </div>
                 </div>
-                    
+                
                 <div role="tabpanel" class="tab-pane" id="software">
                     <div class='flex-row'>
                         <h4>Development Stack</h4>
@@ -1592,7 +1592,7 @@ data and duration of your visit, primarily for the purposes of black listing web
 
 <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid'>
     <div class='footer-copyright text-center flex-row'>
-        &copy; 2018 - 2020 <a href="https://vigilance91.github.io/">Tyler R. Drury</a>,
+        &copy; 2018 - 2021 <a href="https://vigilance91.github.io/">Tyler R. Drury</a>,
     </div>
     
     <div class='text-center flex-row'>
