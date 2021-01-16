@@ -57,10 +57,11 @@ pre{
     color:#171717;
     font-weight:bold;
 }
-.note{
+.note, .note ul, .note ol{
     color:#CF0000;
     background-color:#2B2B2B;
 }
+
 /*
 Divs
 */
