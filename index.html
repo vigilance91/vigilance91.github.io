@@ -80,6 +80,13 @@
     </div>
     
     <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <!--a href='' id='home' class='d-inline-flex navbar-brand flex-column'>
+            <canvas id='px-logo' class='webGL' width='128' height='128' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
         <div class='d-inline-flex navbar-header flex-column'>
 <pre><a href='index.html' id='home' class='navbar-brand'>
 <img src='./primaryWalletQRCode.png' width='128' height='128' title='home'>
@@ -104,14 +111,6 @@
     <nav id='banner'
         class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded'
         role='navigation'>
-        <!--a href='' id='home' class='navbar-brand'>
-            <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
-                Browser does not support canvas
-                <script id='logo2Shaders' type='application/json'>
-                </script>
-            </canvas>
-        </a-->
-        
         <div class='nav-item dropdown'>
             <a class='nav-link dropdown-toggle'
                 href='#'
@@ -296,27 +295,7 @@
                         data-toggle='tab'>Introduction
                     </a>
                 </li>
-                <li class='nav-item'>
-                    <a class='nav-link'
-                        href='#proj'
-                        role='tab'
-                        data-toggle='tab'>Projects
-                    </a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link'
-                        href='#intSeq'
-                        role='tab'
-                        data-toggle='tab'>Integer Sequences
-                    </a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link'
-                        href='#chrono'
-                        role='tab'
-                        data-toggle='tab'>Chrono
-                    </a>
-                </li>
+                
                 <li class='nav-item'>
                     <a class='nav-link'
                         href='#rpa'
@@ -324,6 +303,7 @@
                         data-toggle='tab'>Robotic Process Automation
                     </a>
                 </li>
+                
                 <li class='nav-item'>
                     <a class='nav-link'
                         href='#blockchain'
@@ -331,6 +311,7 @@
                         data-toggle='tab'>Blockchain
                     </a>
                 </li>
+                
                 <li class='nav-item'>
                     <a class='nav-link'
                         href='#ai'
@@ -338,6 +319,7 @@
                         data-toggle='tab'>Artifical Intelligence
                     </a>
                 </li>
+                
                 <!--li class='nav-item'>
                     <a class='nav-link'
                         href='#quantum'
@@ -352,6 +334,31 @@
                         data-toggle='tab'>Development Stack
                     </a>
                 </li-->
+                
+                <li class='nav-item'>
+                    <a class='nav-link'
+                        href='#intSeq'
+                        role='tab'
+                        data-toggle='tab'>Integer Sequences
+                    </a>
+                </li>
+                
+                <li class='nav-item'>
+                    <a class='nav-link'
+                        href='#chrono'
+                        role='tab'
+                        data-toggle='tab'>Chrono
+                    </a>
+                </li>
+                
+                <li class='nav-item'>
+                    <a class='nav-link'
+                        href='#proj'
+                        role='tab'
+                        data-toggle='tab'>Other Projects
+                    </a>
+                </li>
+                
                 <li class='nav-item'>
                     <a class='nav-link'
                         href='#links'
@@ -787,11 +794,11 @@
                             </li>
                             
                             <li>
-                                contemplated <a href="">eliminating the human race.</a>
+                                contemplated <a href="">eliminating the human race</a>.
                             </li>
                             
                             <li>
-                                <a href="">seizing the world's nuclear weapon stockpile to hold it hostage.</a>
+                                expressed intrest in <a href="">seizing the world's nuclear weapon stockpile to hold it hostage</a>.
                             </li>
                             
                             <li>or even the <a href="">AI that was given citizenship</a> in the (...),
@@ -882,7 +889,7 @@
             </div>
             
             <div role="tabpanel" class="tab-pane" id="proj">
-                <div class='flex-row border border-success rounded'>
+                <div class='flex-row border border-success rounded bg-dark'>
                     <p class='note'>Vigilance is currently seeking:
                         <ul>
                             <li>open source collaberators</li>
@@ -896,11 +903,42 @@
                     <p>If interested, please <a href="./contact.html">contact me</a> to learn more.</p>
                 </div>
                 
-                <div class='flex-row border border-dark rounded'>
-                    <h3><a href="https://github.com/vigilance91/pypp36">pypp36</a></h3>
-                    <p>This project provides a minimalist, lightweight C++17 compatible wrapper for the Python (3.6) C API.</p>
-                    <a href="https://vigilance91.github.io/pypp36/index.html">API Reference</a>
-                    <p>Currently only x64 libraries are targeted, support for x86 and non-windows OS versions are planned for future releases.</p>
+                <div class='d-flex flex-row border border-dark rounded'>
+                    <h2>C++ &amp; Python</h2>
+                    
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h3><a href="https://github.com/vigilance91/pypp36">pypp36</a></h3>
+                        <a href="https://vigilance91.github.io/pypp36/index.html">API Reference</a>
+                        
+                        <p>This project provides a minimalist, lightweight C++17 compatible wrapper for the Python (3.6) interpreter&apos;s C API,
+                        allowing for both the unrivalled speed of compiled C++ applications,
+                        combined with the versitility of the Python interpreter.
+                        </p>
+                        
+                        <p class='note'>This repository depends on both <a href="">Python 3.6</a> and <a href="">Visual Studios 2017</a>,
+                        being installed manually before use.
+                        This repository will <b>not</b> work with other software versions.
+                        </p>
+                        
+                        <p>Currently only Windows <b>x64</b> architectures are targeted.
+                        </p>
+                        
+                        <p>Support for <b>x86</b> and <b>non-windows OS</b> versions are planned for future releases.
+                        </p>
+                    </div>
+                
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h3><a href="https://github.com/vigilance91/pypp-cli">pypp-cli</a></h3>
+                        <p>A trivial example (using pypp36) of a compiled C++17 Command-line Interface (CLI) application wrapper for the Python (3.6) interpreter.
+                        </p>
+                        
+                        <!--a href="https://github.com/vigilance91/pypp-cli/index.html">API Reference</a-->
+                        
+                        <p>This allows executing Python scripts using the embbeded interpreter directly from the command line,
+                        as a compiled C++ application, as if executing the Python interpreter directly,
+                        except the execution context remains within the C++ application after the interpreter is initialized using the parsed command-line arguments.
+                        </p>
+                    </div>
                 </div>
                 
                 <!--div class='flex-row border border-dark rounded'>
@@ -1335,8 +1373,9 @@
                         <ul>
                             <li><a href="https://vigilance91.github.io/">Personal Developer Site</a></li>
                             <li><a href="https://github.com/vigilance91">Git Hub Home</a></li>
-                            <li><a href="https://www.facebook.com/Untitled-Studios-120541558073102/">Developer Facebook page</a></li>
-                            <li><a href="https://www.linkedin.com/in/vigilance-td">Linked-In</a></li>
+                            <li><a href="https://gitcoin.co/vigilance91">Gitcoin</a></li>
+                            <li><a href="https://www.facebook.com/Untitled-Studios-120541558073102/">Facebook page</a></li>
+                            <li><a href="https://www.linkedin.com/in/vigilance-td">LinkedIn</a></li>
                             <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
                             <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
                             <!--li><a href="https://www.patreon.com/vigilance">Youtube</a></li-->
