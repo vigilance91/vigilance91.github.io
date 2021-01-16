@@ -7,8 +7,8 @@ sup a{
 }
 
 body{
-	background-color:#00407F;/*#2B2B2B;*/
-	color:#AAAAAA;/*#00CC00;*/
+	background-color:#00407F;
+	color:#CCCCCC;
 }
 /*anchor elements(links)*/
 a{
@@ -61,7 +61,51 @@ pre{
     color:#CF0000;
     background-color:#2B2B2B;
 }
+/*
+caution, something could go wrong if not careful
+*/
+.caution{
+    color:yellow;
+    background-color:#333;
+}
+.caution:before{
+    content:'Caution: ';
+    /*background-color:#444;*/
+}
+.caution:hover{
+    color:yellow;
+    /*background-color:#444;*/
+}
 
+/*
+warning, something went wrong but is not serious or fatal to the application
+*/
+.warning{
+    color:orange;
+    background-color:#333;
+}
+.warning:before{
+    content:'Warning! ';
+}
+.warning:hover{
+    color:orange;
+    /*background-color:#444;*/
+}
+
+/*
+something serious wrong occured, like an exception being thrown
+*/
+.danger{
+    color:red;
+    background-color:#333;
+}
+.danger:before{
+    content:'Danger! ';
+}
+.danger:hover{
+    color:red;
+    /*background-color:#444;*/
+}
 /*
 Divs
 */
