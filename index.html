@@ -71,30 +71,29 @@
     </p>
     <p>The few site op and can be cleared at any time.</p>
     -->
-    <div class='header flex-row text-center bg-dark border border-success rounded'>
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <div class='d-inline-flex navbar-header flex-column'>
+<pre><a href='index.html' id='home' class='navbar-brand'>
+<img src="./primaryWalletQRCode.png" width='128' height='128' title='home'>
+</a></pre>
+        </div>
         
-        <h2><span class='text-success'>Welcome</span> to <a href="">Vigilance&apos;s</a> GitHub Home</h2>
-        <br>
-        <sub>The price of success is eternal vigilance.&trade;</sub>
-        <br>
-        <p>Donate and Support my work on Patreon,
-        <br>or on the Ethereum blockchain by scanning the QR code or @
-        <br>
-        <strong>0x20fc7E34f4aCfA8Faec8EdF0546C57CD77d76bFE</strong>
-        </p>
+        <div class='d-inline-flex flex-column'>
+            <h2><span class='text-success'>Welcome</span> to <a href="">Vigilance&apos;s</a> GitHub Home</h2>
+            <br>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <p>Donate and Support my work on <a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a>,
+            <br>or on the Ethereum blockchain by scanning the QR code or @
+            <br>
+            <strong>0x20fc7E34f4aCfA8Faec8EdF0546C57CD77d76bFE</strong>
+            </p>
+        </div>
     </div>
     <!--site navigation-->
     <nav id='banner'
         class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded'
         role='navigation'>
-            <div class='navbar-header flex-row'>
-                <div class='col'>
-<pre><a href='index.html' id='home' class='navbar-brand'>
-<img src="./primaryWalletQRCode.png" width='64' height='64' title='home'>
-</a></pre>
-                </div>
-                <a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a>
-            </div>
         <!--a href='' id='home' class='navbar-brand'>
             <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
                 Browser does not support canvas
@@ -344,13 +343,13 @@
                         data-toggle="tab">Links
                     </a>
                 </li>
-                <li class="nav-item">
+                <!--li class="nav-item">
                     <a class="nav-link"
                         href="#refs"
                         role="tab"
                         data-toggle="tab">References
                     </a>
-                </li>
+                </li-->
             </ul>
         </div>
     </div>
@@ -358,183 +357,185 @@
     <div class='flex-row'>
         <div class="tab-content flex-column bg-secondary border border-info rounded">
             <div role="tabpanel" class="tab-pane active" id="intro">
-                <h3>Introduction</h3>
+                <div>
+                    <h3>Introduction</h3>
+                    <!--div>
+                    <h4>Preface</h4-->
+                    <p>As with all of physical existence, being over 99.99% empty space<sup><a href="">[citation required]</a></sup>,
+                    being composed of star dust over 4.6 billion years old (forged in the heart of a dying star),
+                    the culmination of what constitutes any person is roughly (by mass):
+                        <ul>
+                            <li>65% Oxygen</li>
+                            <li>9.5% Hydrogen</li>
+                            <li>19% Carbon</li>
+                            <li>3% Nitrogen</li>
+                            <li>1.5% Calcium</li>
+                            <li>1% Phosphorous</li>
+                            <li>along with a handful of trace elements</li>
+                        </ul>
+                    </p>
+                    
+                    <p>With a genome consisting of ~3.23 billion randomly arranged base pairs,
+                    across 23 pairs of chromosomes (which makes up [0.0007%, 0.0009%] of total body mass<sup><a href="">[citation required]</a></sup>),
+                    99.9% of the human genome (excluding mitocondrial DNA) is shared by everyone<sup><a href="">[citation required]</a></sup>,
+                    of which 5-8% is also composed of <a href="">endogenous retroviruses</a>.
+                    </p>
+                    
+                    <p class='note'>ERVs are technically foreign gene sequences which have parasitised a host genome (and are generally considered inactive) as the result of being transcripted after exposure to specific viral agents within geographically isolated regions.
+                    </p>
+                    
+                    <p note="note">Those individual mutations which make a person's DNA &apos;<i>unique</i>&apos;
+                    are statistically insignificant<sup><a href="">[citation required]</a></sup>.
+                    </p>
+                    
+                    <p>Beginning with the fusion event forging human chromosome 2 (birthing modern Homo Sapiens),
+                    this distinct divergence from our 24 chromosome pair hominid relatives allowed our ancestors to stand tall above their competition,
+                    to gaze towards the stars and the future.
+                    </p>
+                    
+                    <p>Since then on, from a genetic standpoint for all practical purposes,
+                    every human has been statistically the same.
+                    </p>
+                </div>
+            
+                <div class='flex-row border border-dark rounded'>
+                    <p>As an organic, multi-processing, quantum computer capable of sentience, introspection and self-determination, 
+                    (despite modern debate regarding whether or not the mind is, in fact, turning complete,
+                    depending on your interpretation of the <a href="https://iep.utm.edu/lp-argue/">Lucas-Penrose hypothesis</a> regarding Gödel's incompleteness theorems),
+                    it is effectively impossible for the mind to fully understand itself,
+                    requiring a higher level meta-grammar beyond its own capacity.
+                    </p>
+                    
+                    <p>This provides the fields of neuroscience, psychology and philosophy with an interesting and existential conundrum,
+                    rendering all attempts at comprehending cognition ultimately futile.
+                    </p>
+                    
+                    <!--p>While rational analysis(internal logic) yields concepts which are true but tautological,
+                    sensory perception(external stimuli), whos content is phenomenal.
+                    </p-->
+                    
+                    <!--p>In (philosophy of knowledge), it is well accepted,
+                    <i>A priori</i>(knowledge without/before experience) and <i>A posteriori</i>(knowledge after/from experience).
+                    </p-->
+                    <!--p class='note'>Where Plato is infamous for the phase, "What I know for certain is that I know nothing",
+                    
+                    it would take the revolutionary philosophy of Immanuel Kant to deduce that,
+                    since the human mind is the by product of and governed by the fundamental laws of nature (from which all physical processes derive),
+                    it is thus required that not only is consciousness an inherent, emergent property of nature,
+                    but also that the mind is intrinsically aware of those processes,
+                    thus in order for the mind to function or even exist,
+                    it must <i>know</i>.
+                    In this sense 
+                    </p-->
+                
+                    <!--p>Despite the limited capacity of human language to adequately describe concepts beyond the narrow band of sensory perceptions
+                    encountered within the mundane plane of consensual reality and the axioms used for logically interpreting those perceptions,
+                    when asked what words best describe me,
+                    aside from pointing out the Sanskrit concept of dukkha (the insatiable decay of all things, yielding to the stress of impermanence) which makes the idea of affixing permanent,
+                    absolute traits to a temporary form (which constantly undergoes change due to entropy) seems a little ridiculous.
+                    </p>
+                    <p>Also, since the metaphysical nature of transcendental consciousness is impossible to fully comprehend (let alone convey to others),
+                    such questions seem either unnecessarily arbitrary at best or existentially insignificant at worse.
+                    However, a conventional responses, for the sake of discussion and sanity, might include
+                        <ul>
+                            <li>(teacher/mentor)</li>
+                            <li>environmentalist</li>
+                            <li>minimalist</li>
+                            <li>writer</li>
+                            <li>stoic</li>
+                            <li>philosopher</li>
+                            <li>skeptic</li>
+                        </ul>
+                    </p-->
+                </div>
+                
+                <div class='flex-row border border-dark rounded'>
+                    <p>My love for computer science comes from the fact that it's the only written medium which is experienced dynamically,
+                    where one does not simply passively observe the written word in a static order, like books.
+                    Instead, users are driven by countless interactions,
+                    where each experience has the potential to be new and unique.
+                    </p>
+                    
+                    <p>Experienced with both DirectX and OpenGL, I have a deep passion for graphics programming.
+                    </p>
+                    
+                    <p>While conventionally used for rendering geometry to a screen, producing various visual effects,
+                    this field expands vastly beyond that single application.
+                    </p>
+                    
+                    <p>At its core, graphics programming is the off-loading of algorithms from the CPU (central processing unit) onto a computer's GPU (graphic processing unit).
+                    </p>
+                    
+                    <p>GPUs were designed to leverage the immense power of asynchronous processing, without the need for synchronization primitives,
+                    such as locks, mutexes or semaphores.
+                        <p class='note'>While superior in terms of raw processing power,
+                        this architecture does pose several drawbacks, however.
+                        The primary one being, graphics processors can <b>not</b> implement a call stack<sup><a href="">[citation required]</a></sup>,
+                        preventing certain techniques such as <a href="">recursion</a>,
+                        which relies on a functional programming technique where,
+                        where a method calls itself until a terminating condition is met or,
+                        the stack is blown, resulting in very <b>bad</b> things happening.
+                        <br>
+                        The second being, any data submitted as input to the graphics pipeline is immutable.
+                        Any operations performed on constants or buffers is unable to persist the state change beyond the current execution,
+                        thus can not be subsequently accessed by the CPU code via the resource handle afterwards.
+                        Instead, unique buffers must be separately bound to the pipeline for independent input and output operations (whoever, HLSL 5 introduced read/write textures/buffers).
+                        As a result, typically the mapping of resources from the graphics card's RAM into conventional RAM is <b>not</b> allowed for those resources currently bound to the pipeline while rendering.
+                        </p>
+                    Their thousands of dedicated cores and their optimized instruction sets targeting vector, matrix, color math as well as accelerated and asynchronous access of indexed buffers allows
+                    GPU programs (colloquially called <b><i>shaders</i></b>) have the ability to process large quantities of data in parallel.
+                    This allows for significantly faster processing compared to the serial nature of processing the same data on a CPU.
+                    </p>
+                    
+                    <p class='note'>When appropriately leveraged with Multi-tasking or Multi-processing on the CPU,
+                    execution can be increased by utilizing techniques such as background loading of resources,
+                    or processing of i/o operations separately from the primary rendering logic.
+                    </p>
+                    
+                    <p>Two of the most common applications of graphics programming in industry are in the fields of <a href="">artificial intelligence</a> and <a href="">cryptocurrencies</a>,
+                    where highly computational intensive operations such as <a href="">machine learning</a> and <a href="">mining transaction blocks</a>, respectfully,
+                    can be more efficiently performed with significantly higher output capacity than would be possible on a conventional 2 or 4 core processor alone,
+                    with modern GPUs produced with literally hundreds (if not thousands) of cores.
+                    </p>
+                </div>
                 <!--div>
-                <h4>Preface</h4-->
-                <p>As with all of physical existence, being over 99.99% empty space<sup><a href="">[citation required]</a></sup>,
-                being composed of star dust over 4.6 billion years old (forged in the heart of a dying star),
-                the culmination of what constitutes any person is roughly (by mass):
-                    <ul>
-                        <li>65% Oxygen</li>
-                        <li>9.5% Hydrogen</li>
-                        <li>19% Carbon</li>
-                        <li>3% Nitrogen</li>
-                        <li>1.5% Calcium</li>
-                        <li>1% Phosphorous</li>
-                        <li>along with a handful of trace elements</li>
-                    </ul>
-                </p>
-                
-                <p>With a genome consisting of ~3.23 billion randomly arranged base pairs,
-                across 23 pairs of chromosomes (which makes up [0.0007%, 0.0009%] of total body mass<sup><a href="">[citation required]</a></sup>),
-                99.9% of the human genome (excluding mitocondrial DNA) is shared by everyone<sup><a href="">[citation required]</a></sup>,
-                of which 5-8% is also composed of <a href="">endogenous retroviruses</a>.
-                </p>
-                
-                <p class='note'>ERVs are technically foreign gene sequences which have parasitised a host genome (and are generally considered inactive) as the result of being transcripted after exposure to specific viral agents within geographically isolated regions.
-                </p>
-                
-                <p note="note">Those individual mutations which make a person's DNA &apos;<i>unique</i>&apos;
-                are statistically insignificant<sup><a href="">[citation required]</a></sup>.
-                </p>
-                
-                <p>Beginning with the fusion event forging human chromosome 2 (birthing modern Homo Sapiens),
-                this distinct divergence from our 24 chromosome pair hominid relatives allowed our ancestors to stand tall above their competition,
-                to gaze towards the stars and the future.
-                </p>
-                
-                <p>Since then on, from a genetic standpoint for all practical purposes,
-                every human has been statistically the same.
-                </p>
-            </div>
-            
-            <div class='flex-row border border-dark rounded'>
-                <p>As an organic, multi-processing, quantum computer capable of sentience, introspection and self-determination, 
-                (despite modern debate regarding whether or not the mind is, in fact, turning complete,
-                depending on your interpretation of the <a href="https://iep.utm.edu/lp-argue/">Lucas-Penrose hypothesis</a> regarding Gödel's incompleteness theorems),
-                it is effectively impossible for the mind to fully understand itself,
-                requiring a higher level meta-grammar beyond its own capacity.
-                </p>
-                
-                <p>This provides the fields of neuroscience, psychology and philosophy with an interesting and existential conundrum,
-                rendering all attempts at comprehending cognition ultimately futile.
-                </p>
-                
-                <!--p>While rational analysis(internal logic) yields concepts which are true but tautological,
-                sensory perception(external stimuli), whos content is phenomenal.
-                </p-->
-                
-                <!--p>In (philosophy of knowledge), it is well accepted,
-                <i>A priori</i>(knowledge without/before experience) and <i>A posteriori</i>(knowledge after/from experience).
-                </p-->
-                <!--p class='note'>Where Plato is infamous for the phase, "What I know for certain is that I know nothing",
-                
-                it would take the revolutionary philosophy of Immanuel Kant to deduce that,
-                since the human mind is the by product of and governed by the fundamental laws of nature (from which all physical processes derive),
-                it is thus required that not only is consciousness an inherent, emergent property of nature,
-                but also that the mind is intrinsically aware of those processes,
-                thus in order for the mind to function or even exist,
-                it must <i>know</i>.
-                In this sense 
-                </p-->
-            
-                <!--p>Despite the limited capacity of human language to adequately describe concepts beyond the narrow band of sensory perceptions
-                encountered within the mundane plane of consensual reality and the axioms used for logically interpreting those perceptions,
-                when asked what words best describe me,
-                aside from pointing out the Sanskrit concept of dukkha (the insatiable decay of all things, yielding to the stress of impermanence) which makes the idea of affixing permanent,
-                absolute traits to a temporary form (which constantly undergoes change due to entropy) seems a little ridiculous.
-                </p>
-                <p>Also, since the metaphysical nature of transcendental consciousness is impossible to fully comprehend (let alone convey to others),
-                such questions seem either unnecessarily arbitrary at best or existentially insignificant at worse.
-                However, a conventional responses, for the sake of discussion and sanity, might include
-                    <ul>
-                        <li>(teacher/mentor)</li>
-                        <li>environmentalist</li>
-                        <li>minimalist</li>
-                        <li>writer</li>
-                        <li>stoic</li>
-                        <li>philosopher</li>
-                        <li>skeptic</li>
-                    </ul>
-                </p-->
-            </div>
-            
-            <div class='flex-row border border-dark rounded'>
-                <p>My love for computer science comes from the fact that it's the only written medium which is experienced dynamically,
-                where one does not simply passively observe the written word in a static order, like books.
-                Instead, users are driven by countless interactions,
-                where each experience has the potential to be new and unique.
-                </p>
-                
-                <p>Experienced with both DirectX and OpenGL, I have a deep passion for graphics programming.
-                </p>
-                
-                <p>While conventionally used for rendering geometry to a screen, producing various visual effects,
-                this field expands vastly beyond that single application.
-                </p>
-                
-                <p>At its core, graphics programming is the off-loading of algorithms from the CPU (central processing unit) onto a computer's GPU (graphic processing unit).
-                </p>
-                
-                <p>GPUs were designed to leverage the immense power of asynchronous processing, without the need for synchronization primitives,
-                such as locks, mutexes or semaphores.
-                    <p class='note'>While superior in terms of raw processing power,
-                    this architecture does pose several drawbacks, however.
-                    The primary one being, graphics processors can <b>not</b> implement a call stack<sup><a href="">[citation required]</a></sup>,
-                    preventing certain techniques such as <a href="">recursion</a>,
-                    which relies on a functional programming technique where,
-                    where a method calls itself until a terminating condition is met or,
-                    the stack is blown, resulting in very <b>bad</b> things happening.
-                    <br>
-                    The second being, any data submitted as input to the graphics pipeline is immutable.
-                    Any operations performed on constants or buffers is unable to persist the state change beyond the current execution,
-                    thus can not be subsequently accessed by the CPU code via the resource handle afterwards.
-                    Instead, unique buffers must be separately bound to the pipeline for independent input and output operations (whoever, HLSL 5 introduced read/write textures/buffers).
-                    As a result, typically the mapping of resources from the graphics card's RAM into conventional RAM is <b>not</b> allowed for those resources currently bound to the pipeline while rendering.
+                    <h3>Family</h3>
+                    <p>The proud father of a bright and charismatic son,
+                    he is the single greatest inspiration in my work.
+                    Knowing that one day he will be able to use and learn from the software I develop,
+                    at the very least he will have fun playing games built specially for him.
                     </p>
-                Their thousands of dedicated cores and their optimized instruction sets targeting vector, matrix, color math as well as accelerated and asynchronous access of indexed buffers allows
-                GPU programs (colloquially called <b><i>shaders</i></b>) have the ability to process large quantities of data in parallel.
-                This allows for significantly faster processing compared to the serial nature of processing the same data on a CPU.
-                </p>
-                
-                <p class='note'>When appropriately leveraged with Multi-tasking or Multi-processing on the CPU,
-                execution can be increased by utilizing techniques such as background loading of resources,
-                or processing of i/o operations separately from the primary rendering logic.
-                </p>
-                
-                <p>Two of the most common applications of graphics programming in industry are in the fields of <a href="">artificial intelligence</a> and <a href="">cryptocurrencies</a>,
-                where highly computational intensive operations such as <a href="">machine learning</a> and <a href="">mining transaction blocks</a>, respectfully,
-                can be more efficiently performed with significantly higher output capacity than would be possible on a conventional 2 or 4 core processor alone,
-                with modern GPUs produced with literally hundreds (if not thousands) of cores.
-                </p>
-            </div>
-            <!--div>
-                <h3>Family</h3>
-                <p>The proud father of a bright and charismatic son,
-                he is the single greatest inspiration in my work.
-                Knowing that one day he will be able to use and learn from the software I develop,
-                at the very least he will have fun playing games built specially for him.
-                </p>
-                <p>
-                Aside from his general fascination with his father's computer,
-                he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
-                As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
-                </p>
-                <p>
-                He already has a particular fascination with colors and geometry,
-                as those are some of his favorite demos to play with.
-                </p>
-            </div-->
-        
-            <!--div>
-                <div class='flex-row'>
-                    <p>With a passion for math, science, language and art, as a graphics programmer,
-                    I have combined all these independent facets into a single discipline.
+                    <p>
+                    Aside from his general fascination with his father's computer,
+                    he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
+                    As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
                     </p>
-                    
-                    <p>WIth programming generally considered a highly ordered, logical <i>left brain</i> activity,
-                    while artistic expression is a <i>right brain</i> activity,
-                    dependent upon emotion and sensory perceptions.
-                    </p>
-                    
-                    <p>While it is common for most work to hyper-focus on only a single cognitive aspect (resulting in the neglect of the other half, potentially leading to atrophy),
-                    this exciting field allows the utilization of both left and right hemispheres working in concert,
-                    culminating in exciting new neurological pathways and alternative interpretations of the world,
-                    leading to creative and innovative solutions which would otherwise not arise simply by relentlessly beating a problem with logic alone.
+                    <p>
+                    He already has a particular fascination with colors and geometry,
+                    as those are some of his favorite demos to play with.
                     </p>
                 </div-->
+            
+                <!--div>
+                    <div class='flex-row'>
+                        <p>With a passion for math, science, language and art, as a graphics programmer,
+                        I have combined all these independent facets into a single discipline.
+                        </p>
+                        
+                        <p>WIth programming generally considered a highly ordered, logical <i>left brain</i> activity,
+                        while artistic expression is a <i>right brain</i> activity,
+                        dependent upon emotion and sensory perceptions.
+                        </p>
+                        
+                        <p>While it is common for most work to hyper-focus on only a single cognitive aspect (resulting in the neglect of the other half, potentially leading to atrophy),
+                        this exciting field allows the utilization of both left and right hemispheres working in concert,
+                        culminating in exciting new neurological pathways and alternative interpretations of the world,
+                        leading to creative and innovative solutions which would otherwise not arise simply by relentlessly beating a problem with logic alone.
+                        </p>
+                    </div>
+                </div-->
             </div>
-                
+            
             <div role="tabpanel" class="tab-pane" id="gaming">
                 <div class='flex-row border border-dark rounded'>
                     <p>While growing up in the 90's tech boom, even though I was too young for a personal computer,
@@ -982,52 +983,54 @@
             </div>
             
             <div role="tabpanel" class="tab-pane" id="langs">
-                <div class='flex-row border border-dark rounded'>
-                    <label>Programming/Scripting/Markup/Shading Languages
-                    <ul>
-                        <li><a href="">C/C++</a></li>
-                        <li><a href="">Python (2 &amp; 3)</a></li>
-                        <li><a href="">DirectX &amp; HLSL</a></li>
-                        <li><a href="">OpenGL/WebGL &amp; GLSL</a></li>
-                        <li><a href="">PHP</a></li>
-                        <li><a href="">HTML, Javascript &amp; CSS</a></li>
-                        <li><a href="">JSON &amp; XML</a></li>
-                        <li><a href="">Objective-C/Swift</a></li>
-                        <li><a href="">Bash</a></li>
-                        <li><a href="">C# XNA</a></li>
-                        <li><a href="">Solidity</a></li>
-                    </ul>
-                    </label>
-                </div>
-                
-                <div class='flex-row border border-dark rounded'>
-                    <label>Operating Systems
-                    <ul>
-                        <li><a href="">Windows</a></li>
-                        <li><a href="">MacOS</a> &amp; <a href="">iOS</a></li>
-                        <li><a href="">Linux-Ubuntu</a> &amp; <a href="">Fedora</a></li>
-                        <li><a href="">Linux-Kali</a></li>
-                    </ul>
-                </label>
-                </div>
-                
-                <div class='flex-row'>
-                    <h4>Human Languages</h4>
-                
-                    <p><label>Primary:<a href="">English</a></label></p>
-                
-                    <p><label>Studying
+                <div class='d-flex flex-row border border-dark rounded'>
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <label>Programming/Scripting/Markup/Shading Languages
                         <ul>
-                            <li><a href="">American Sign Language</a></li>
-                            <li><a href="">Mandarin</a></li>
-                            <li><a href="">Arabic</a></li>
-                            <li><a href="">Japanese</a></li>
-                            <li><a href="">Sanskrit</a></li>
+                            <li><a href="">C/C++</a></li>
+                            <li><a href="">Python (2 &amp; 3)</a></li>
+                            <li><a href="">DirectX &amp; HLSL</a></li>
+                            <li><a href="">OpenGL/WebGL &amp; GLSL</a></li>
+                            <li><a href="">PHP</a></li>
+                            <li><a href="">HTML, Javascript &amp; CSS</a></li>
+                            <li><a href="">JSON &amp; XML</a></li>
+                            <li><a href="">Objective-C/Swift</a></li>
+                            <li><a href="">Bash</a></li>
+                            <li><a href="">C# XNA</a></li>
+                            <li><a href="">Solidity</a></li>
+                        </ul>
+                        </label>
+                    </div>
+                
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <label>Operating Systems
+                        <ul>
+                            <li><a href="">Windows</a></li>
+                            <li><a href="">MacOS</a> &amp; <a href="">iOS</a></li>
+                            <li><a href="">Linux-Ubuntu</a> &amp; <a href="">Fedora</a></li>
+                            <li><a href="">Linux-Kali</a></li>
                         </ul>
                     </label>
-                    </p>
+                    </div>
+                
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h4>Human Languages</h4>
                     
-                    <p>Native page translations to come!</p>
+                        <p><label>Primary:<a href="">English</a></label></p>
+                    
+                        <p><label>Studying
+                            <ul>
+                                <li><a href="">American Sign Language</a></li>
+                                <li><a href="">Mandarin</a></li>
+                                <li><a href="">Arabic</a></li>
+                                <li><a href="">Japanese</a></li>
+                                <li><a href="">Sanskrit</a></li>
+                            </ul>
+                        </label>
+                        </p>
+                        
+                        <p>Native page translations to come!</p>
+                    </div>
                 </div>
             </div>
             
@@ -1591,7 +1594,7 @@
                     Spending patterns can then be deduced using those data points (which are stored indefinitely).
                     Using additional techniques including correlation attacks,
                     it is possible to reasonably associate an individual to a wallet address on the blockchain,
-                    with many companies now specialising in just that, in order to thawrt illegal activities,
+                    with many companies now specialising in just that, in order to help regulators, law enforcement and governments thawrt illegal activities,
                     such as scams, money laundering or violating international sanctions.
                     </p>
                    
@@ -1609,24 +1612,24 @@
             </div>
             
             <div role="tabpanel" class="tab-pane" id="links">
-                <div class='flex-row border border-dark rounded'>
-                    <h4>Portfolio Links</h4>
-                    
-                    <ul>
-                        <li><a href="https://vigilance91.github.io/">Personal Developer Site</a></li>
-                        <li><a href="https://github.com/vigilance91">Git Hub Home</a></li>
-                        <li><a href="https://www.facebook.com/Untitled-Studios-120541558073102/">Developer Facebook page</a></li>
-                        <li><a href="https://www.linkedin.com/in/vigilance-td">Linked-In</a></li>
-                        <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
-                        <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
-                        <!--li><a href="https://www.patreon.com/vigilance">Youtube</a></li-->
-                    </ul>
+                <div class='d-flex flex-row border border-dark rounded'>
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h4>Portfolio</h4>
+                        
+                        <ul>
+                            <li><a href="https://vigilance91.github.io/">Personal Developer Site</a></li>
+                            <li><a href="https://github.com/vigilance91">Git Hub Home</a></li>
+                            <li><a href="https://www.facebook.com/Untitled-Studios-120541558073102/">Developer Facebook page</a></li>
+                            <li><a href="https://www.linkedin.com/in/vigilance-td">Linked-In</a></li>
+                            <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
+                            <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
+                            <!--li><a href="https://www.patreon.com/vigilance">Youtube</a></li-->
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
-            <div role="tabpanel" class="tab-pane" id="refs">
-                <div class='flex-row border border-dark rounded'>
-                    <h4>Sources</h4>
+                
+                <div class='d-inline-flex flex-column border border-info rounded'>
+                    <h4>References</h4>
                     
                     <ul>
                         <li><a href=""></a></li>
