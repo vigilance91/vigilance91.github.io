@@ -2,7 +2,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Vigilance-About Page</title>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
+	<title>Vigilance-Github Home Page</title>
     <!--CSS-->
     <link rel='stylesheet' type='text/css' href='bundle.css'>
     <link rel='stylesheet' type='text/css' href='main.css'>
@@ -10,59 +14,95 @@
     <script type='application/javascript' src='bundle.js'></script>
     <!--script type='application/javascript' src='main.js'></script-->
 </head>
-<body>
-<!--
-if(!ls['privacy']){
-    let $mo=$('#privicy');
-    
-    $mo.modal({data-show:true});
-    $mo
-    //event is fired when hidden, such as when its closed
-    $mo.on('hidden.bs.modal', (e)=>{
-    //prevents modal from showing again until
-      ls['privicy']=true;
-    })
-}-->
 
-<!--div class="modal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks for keeping me informed</button>
+<body class='container-fluid'>
+    <!--HTML stubs for copy/replace, because github only allows static html pages,
+    which means no fancy PHP or other scripts, aside from static javascript and css-->
+    <!--default citation superscript, replace N with the current number of citations + 1
+    <sup><a href="">[N]</a></sup>
+    -->
+    <!--stub to add where citations are required and not currently provided
+    <sup><a href="">[citation required]</a></sup>
+    -->
+    <!--
+    if(!ls['privacy']){
+        let $mo=$('#privicy');
+        
+        $mo.modal({data-show:true});
+        $mo
+        //event is fired when hidden, such as when its closed
+        $mo.on('hidden.bs.modal', (e)=>{
+        //prevents modal from showing again until
+          ls['privicy']=true;
+        })
+    }-->
+
+    <!--div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Thanks for keeping me informed</button>
+                </div>
             </div>
         </div>
+    </div-->
+    <!--class='modal'>
+    Privacy Notice:
+    <p>Please be aware the we do <b><i>not</i></b> track your activity on our sites with cookies or other such tracking or data mining techniques.
+    We also don't sell you personal information for personal gain or steal your bandwidth with mind numbing ad spam,
+    nor do we intend to at any point in the future.
+    </p>
+    <p>This site and its developers value personal privacy and we respect the privacy rights of our users as well.
+    Unfortunately too few people do.
+    </p>
+    <p>Be advised we do record the most minimal amount of data necessary such as the ip addresses that visit our sites,
+    data and duration of your visit, primarily for the purposes of black listing web crawlers, bots or other malicious entities.
+    </p>
+    <p>The few site op and can be cleared at any time.</p>
+    -->
+    <div class='flex-row'>
+        <div class='flex-column text-center border border-danger rounded'>
+            <p class='text-danger'>
+                <b><i>This site is currently under development</i></b>
+            </p>
+        </div>
     </div>
-</div-->
-<!--class='modal'>
-Privacy Notice:
-<p>Please be aware the we do <b><i>not</i></b> track your activity on our sites with cookies or other such tracking or data mining techniques.
-We also don't sell you personal information for personal gain or steal your bandwidth with mind numbing ad spam,
-nor do we intend to at any point in the future.
-</p>
-<p>
-This site and its developers value personal privacy and we respect the privacy rights of our users as well.
-Unfortunately too few people do.
-</p>
-<p>
-Be advised we do record the most minimal amount of data necessary such as the ip addresses that visit our sites,
-primarily for the purposes of black listing web crawlers, bots or other malicious entities.
-</p>
-<p>The few site op and can be cleared at any time.</p>
--->
+    
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <div class='d-inline-flex navbar-header flex-column'>
+<pre><a href='index.html' id='home' class='navbar-brand'>
+<img src="./primaryWalletQRCode.png" width='128' height='128' title='home'>
+</a></pre>
+        </div>
+        
+        <div class='d-inline-flex flex-column text-center'>
+            <h2><span class='text-success'>Welcome</span> to <a href="">Vigilance&apos;s</a> GitHub Home</h2>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <p>Donate and Support my work on <a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a>,
+            <br>
+            or on the Ethereum blockchain by scanning the QR code or @
+            <br>
+            <strong>0x20fc7E34f4aCfA8Faec8EdF0546C57CD77d76bFE</strong>
+            <br>
+            All feedback and contributions are <b class='text-success'>greatly</b> appreciated.
+            </p>
+        </div>
+    </div>
     <!--site navigation-->
     <nav id='banner'
-        class='d-flex justify-content-start navbar navbar-dark bg-dark'
+        class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded'
         role='navigation'>
         <!--a href='' id='home' class='navbar-brand'>
             <canvas id='px-logo' class='webGL' width='64' height='64' title='home'>
@@ -216,18 +256,7 @@ primarily for the purposes of black listing web crawlers, bots or other maliciou
                 <!--a href="" class='dropdown-item'>PongGL</a-->
             </div>
         </div>
-        <!--div class='nav-item dropdown'>
-            <a class='nav-link dropdown-toggle' href='#' id='nbddInter' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                Contact
-            </a>
-            <div class='dropdown-menu bg-secondary' aria-labelledby='nbddInter'>
-                <a href='' class='dropdown-item'>Contact Us</a>
-                <a href='' class='dropdown-item'>Careers</a>
-                <a href='' class='dropdown-item'>Report an Issue</a>
-            </div>
-        </div>
-        <div><a href="" class='nav-item'>About</a></div-->
-        <div><a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a></div>
+        <!--div><a href="https://www.patreon.com/vigilance" class='nav-item'>Patreon</a></div-->
         
         <!--button class="navbar-toggler"
             type="button"
@@ -254,383 +283,599 @@ primarily for the purposes of black listing web crawlers, bots or other maliciou
                 </script>
             </canvas>
         </a></li-->
-        
-        <!--form class='form-inline my-2 my-lg-0'>
-            <input class='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search'>
-            <button class='btn btn-outline-success my-2 my-sm-0' type='submit'>Search</button>
-        </form-->
     </nav>
     <!--main body-->
-    <div class='container'>
-        <div class='row'>
-            <div class='col'>
-                <p class='note'>
-                    <b><i>This site is currently under production</i></b>
-                </p>
-            </div>
+    <div class='flex-row border border-light rounded'>
+        <div class="flex-column bg-secondary text-center">
+        
+            <ul class="nav nav-pills bg-dark" role="tablist">
+                <li class="nav">
+                    <a class="nav-link active"
+                        href="#intro"
+                        role="tab"
+                        data-toggle="tab">Early Years
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#college"
+                        role="tab"
+                        data-toggle="tab">College
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#postCollege"
+                        role="tab"
+                        data-toggle="tab">Post College
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#recent"
+                        role="tab"
+                        data-toggle="tab">Recent
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#future"
+                        role="tab"
+                        data-toggle="tab">Future Developments
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#interests"
+                        role="tab"
+                        data-toggle="tab">Interests
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#gaming"
+                        role="tab"
+                        data-toggle="tab">Gaming
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#langs"
+                        role="tab"
+                        data-toggle="tab">Languages
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="#links"
+                        role="tab"
+                        data-toggle="tab">Links
+                    </a>
+                </li>
+            </ul>
         </div>
-    
-        <div class="row">
-            <!--right bar-->
-            <div class="col bg-secondary">
-                <ul class="nav nav-pills bg-dark" role="tablist">
-                    <li class="nav">
-                        <a class="nav-link active"
-                            href="#intro"
-                            role="tab"
-                            data-toggle="pill">Introduction
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="#college"
-                            role="tab"
-                            data-toggle="pill">College
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="#post-college"
-                            role="tab"
-                            data-toggle="pill">Post-College
-                        </a>
-                    </li>
-                    <!--li class="nav-item">
-                        <a class="nav-link"
-                            href="#interests"
-                            role="tab"
-                            data-toggle="pill">Interests
-                        </a>
-                    </li-->
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="#recent"
-                            role="tab"
-                            data-toggle="pill">recent
-                        </a>
-                    </li>
-                    <!--li class="nav-item">
-                        <a class="nav-link"
-                            href="#software"
-                            role="tab"
-                            data-toggle="pill">Development Software
-                        </a>
-                    </li-->
-                    <li class="nav-item">
-                        <a class="nav-link"
-                            href="#links"
-                            role="tab"
-                            data-toggle="pill">Links
-                        </a>
-                    </li>
-                </ul>
-                
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="intro">
-                        <!--h3>Introduction</h3-->
-                        <p>With a passion for graphics programming,
-                        I have experience with both DirectX and OpenGL.
-                        </p>
-                        
-                        <!--div>
-                            <h3>Family</h3>
-                            <p>I'm the proud father of a bright and charismatic son.
-                            </p>
-                            <p>My son is the single greatest inspiration in my work.
-                            Knowing that one day he will be able to use and learn from the software I develop,
-                            at the very least he will have fun playing games specially built just for him.
-                            <p>
-                            <p>
-                            Aside from his general fascination with his father's computer,
-                            he loves to help bug-test code I'm working on by just bashing keys until his heart's content.
-                            As a result, I have set up some examples where he can just push random keys and get immediate results on screen.
-                            </p>
-                            <p>
-                            He already seems to have a particular fascination with colors and geometry,
-                            as those are his favorite demos to play with.
-                            </p>                            
-                        </div-->
-                        <p>With a passion for math, science, language and art, as a graphics programmer,
-                        I have found a field which combines all these aspects into a single discipline.
-                        </p>
-                    </div>
+    </div>
+    <!-- Tab panes -->
+    <div class='flex-row'>
+        <div class="tab-content flex-column bg-secondary border border-info rounded">
+            <div role="tabpanel" class="tab-pane active" id="intro">
+<div class='flex-row border border-dark rounded'>
+                    <p>Joining Air Cadets when I was old enough,
+                    I didn't learn leadership, discipline, or self reliance,
+                    those qualities I already possessed and were only strengthened,
+                    providing the foundation for the driven, entrepreneurial attitude I have today.
+                    </p>
                     
-                    <div role="tabpanel" class="tab-pane" id="interests">
-                        <!--h3>Interests</h3-->
-                        
-                        <!--div>
-                            <h3>Philosophy</h3>
-                            <ul>
-                                <li><a href="">Stocism</a></li>
-                                <li><a href="">Pragmatism</a></li>
-                                
-                                <li><a href="">Friedrich Nietzsche</a></li>
-                                <li><a href="">Immanuel Kant</a></li>
-                                <li><a href="">David Hume</a></li>
-                                <li><a href="">René Descartes</a></li>
-                                <li><a href="">Jean-Paul Sartre</a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Math</h3>
-                            <ul>
-                                <li><a href="">Number Theory</a></li>
-                                <li><a href="">Complex Mathematics</a></li>
-                                <li><a href=""></a>Calculus</li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Science</h3>
-                            <ul>
-                                <li><a href="">Quantum Mechanics</a></li>
-                                <li><a href="">Optic Computing</a></li>
-                                <li><a href="">General/Special Relativity</a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Music</h3>
-                            <ul>
-                                <li><a href="">Fredic Chopin</a></li>
-                                <li><a href="">Antonio Vivaldi</a></li>
-                                <li><a href="">Claude Debussy</a></li>
-                                <li><a href="">Franz Schubert</a></li>
-                                <li><a href="">Tom Lehrer</a></li>
-                                <li><a href="">Gilbert and Sullivan</a></li>
-                                <li><a href="">Tool</a></li>
-                                <li><a href="">The White Stripes</a></li>
-                                <li><a href="">The Mars Volta</a></li>
-                                <li><a href="">Nine Inch Nails</a></li>
-                                <li><a href="">Metallica</a></li>
-                                <li><a href="">Rush</a></li>
-                                <li><a href="">Slipknot/Stonesour</a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Art</h3>
-                            <ul>
-                                <li><a href="">Piet Mondrian</a></li>
-                                <li><a href="">René Magritte</a></li>
-                                <li><a href="">M.C Esher</a></li>
-                            <ul>
-                        </div>
-                        <div>
-                            <h3>Literature</h3>
-                            <ul>
-                                <li><a href="">H.P. Lovecraft</a></li>
-                                <li><a href="">Edgar Allen Poe</a></li>
-                                <li><a href="">Ambrose G. Bierce</a></li>
-                                <li><a href="">Robert W. Chambers</a></li>
-                                <li><a href="">George Orwell</a></li>
-                                <li><a href="">Douglas Coupland</a></li>
-                                <li><a href="">Frank Herbert</a></li>
-                                <li><a href="">Aldous Huxley</a></li>
-                                <li><a href="">Isaac Asimov</a></li>
-                                <li><a href="">Stephen King/Richard Bachman</a></li>
-                                <li><a href="">‎Steven Erikson</a></li>
-                                <li><a href="">‎J.K. Rowling</a></li>
-                                <li><a href="">Jorge Luis Borges</a></li>
-                                <li><a href="">Franz Kafka</a></li>
-                                <li><a href="">Fyodor Dostoyevsky</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Anime and Comics</h3>
-                            <ul>
-                                <li><a href="">Ghost In The Shell</a></li>
-                                <li><a href="">Serial Experiments Lain</a></li>
-                                <li><a href="">Deathnote</a></li>
-                                <li><a href="">Witch Hunter Robin</a></li>
-                                
-                                <li><a href="">The Walking Dead</a></li>
-                                <li><a href="">X-men/Legion</a></li>
-                                
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Gaming</h3>
-                            <p>While growing up in the 90's tech boom, even though I was too young for a computer,
-                            I still had an SNES and Sega Genesis that were played at every opportunity,
-                            with classics including Sonic, Mortal Combat, Road Rash and Super Mario World and Yoshi's Island.
-                            </p>
-                            <p>Our Sega had a neat little feature where it would only play games when it was upside down and propped up against the wall at a specific angle.
-                            Boy, those were the days.
-                            </p>
-                            <p>It wouldn't be until roughly 10 when the family got its first desktop.
-                            That would start a passion for tech and gaming which continues to grow today.
-                            </p>
-                            <p>Even though most of my time was spent playing solitaire, minesweeper and doodling in MS paint,
-                            eventually I would buy my first PC game, Sid Meier's Civilization 4.
-                            After installing it, I played a marathon session of over 48 consecutive hours,
-                            and have been obsessed with the franchise ever since.
-                            </p>
-                            <p>
-                            It wouldn't be until high school where my interest on-line gaming really took over,
-                            specifically with MMORG's such as Guild Wars and World of Warcraft,
-                            after buying my first custom built rig for gaming.
-                            </p>
-                        </div-->
-                    </div>
+                    <p>By the age of 15 I was working a consistent part-time job while still attending high school,
+                    cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
+                    By then, having made the rank of sergeant, I was regularly teaching classes on survival, drill, the principles of flight and related topics,
+                    while also being a member of the drill team and color/flag party.
+                    </p>
                     
-                    <div role="tabpanel" class="tab-pane" id="third">
-                        Other stuff
-                    </div>
+                    <p>Through cadets, at age 17, I was accepted to the Power Pilot Program at the Kitchener/Waterloo International Airport,
+                    to receive my private pilots license, well before having my G1 driver's license.
+                    </p>
                     
-                    <div role="tabpanel" class="tab-pane" id="background">
-                        <!--h4>Adolescence</h4>
+                    <p>Throughout high school, I went to OFSSA three times for discuss and shot put,
+                    consistently placing in the top 6 across the province each year.
+                    </p>
                     
-                        <p>Joining Air Cadets when I was old enough,
-                        I didn't learn leadership, discipline, or self reliance there,
-                        those qualities I already possessed were only strengthened,
-                        providing the foundation for the driven, entrepreneurial attitude I have today.
-                        </p>
-                        <p>By the age of 15 I was working a consistent part-time job while still attending high school, cadets and actively participating in extra curricular sports such a Basketball and Track and Field.
-                        By then having made the rank of sergeant, I was regularly teaching classes on survival, drill, the principles of flight and related topics.
-                        </p>
-                        <p>At age 17, I received my private pilots license, through cadets before I had my G1.
-                        While in high school, I went to OFSSA three times for discuss and shot put,
-                        consistently placing in the top 6 across the province each year.
-                        </p>
-                        <p>Before the time to leave my home town for college, I had already traveled to, most notably
-                            <ul>
-                                <li>Toronto-ON</li>
-                                <li>Ottawa-ON</li>
-                                <li>Niagara-ON</li>
-                                <li>Kingston-ON</li>
-                                <li>Manitoulin Island-ON</li>
-                                <li>Windsor-ON</li>
-                                <li>Kitchener/Waterloo-ON</li>
-                                <li>Columbus-Ohio</li>
-                                <li>Detroit-Michigan</li>
-                                <li>New York-New York</li>
-                                <li>Puerto Plata-Dominican Republic</li>
-                                <li>San Andreas-Columbia</li>
-                            </ul>
-                        </p-->
-                    </div>
-                    
-                    <div role="tabpanel" class="tab-pane" id="college">
-                        <h4>College</h4>
-                        <!--p>Shortly after moving to attend a course on video game design and development,
-                        my life changed dramatically.
-                        </p>
-                        <p>Within the first few months there, I had developed a C++ poker hashing algorithm and evaluator as my first major coding project.
-                        When finished, my project outperformed those of my peers, as well as that of my instructor,
-                        which he would eagerly brag about to his colleagues, earning me recognition across campuses.
-                        </p>
-                        <p>The game implemented the 5 most common types of poker games,
-                        leveraging fundamental principles of number theory and static programming techniques to execute,
-                        analyze and compare hands of cards at a nearly instant time complexity.
-                        This project is still my proudest accomplishment from that time,
-                        however the project source is not planned to be available any time soon.
-                        </p>
-                        <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models (saved as markup) and had a primitive combat system and UI (which would later result in the basis for an entire graphics engine),
-                        and two C# XNA titles which included a mincraft-esque farming simulator with real time xml editing tools (for level development) and a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
-                        </p>
-                        <p>I also attended the Great Canadian App-athon in 2011 and 2012,
-                        which was a 72 hour coding contest involving all colleges and universities across Canada.
-                        </p>
-                        
-                        <p>By this point I was nearing the end of my college career and regularly working 16-18 hours a day (sometimes even periods of 48 hours or more) to meet my school work load,
-                        while also pursuing my own side projects,
-                        which would include an interest in cryptography,
-                        but more importantly I would teach myself Python in the hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python.
-                        After completing that, the goal then was to write a C++ application with the Python interpreter embedded within it,
-                        to leverage the added flexibility and modularity of Python.
-                        </p>
-                        <p>The advent of a functioning markup language parser lead to the formalization of a written standard, that I personally developed and maintain to address many issues I had personally with both xml and json formats. I would then go on to include these component with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor.
-                        </p-->
-                    </div>
-                        
-                    <div role="tabpanel" class="tab-pane" id="post-college">
-                        <h4>Post College</h4>
-                        <!--p>After graduation, I started an unpaid internship as an iOS/Objective-C mobile developer for a local independent studio.
-                        </p>
-                        <p>During the internship I also supported myself through working full time at a temp agency.
-                        This required working 16 hours a day at 2 separate jobs for four months straight until I was hired to continue working as an iOS developer.
-                        </p>
-                        <p>As it was a small start-up, I was the sole developer working on their projects (with the owner/CEO being the artist),
-                        I played all roles from lead developer (including writing shell script build tools and photoshop scripts),
-                        to QA tester and Research and Development.
-                        I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse toolchain.
-                        </p>
-                        <p>
-                            Within my first year, roughly 10 applications had either been released or updated,
-                            to which the most successful app having over 3.5 million downloads and continues to be highly successful.
-                        </p>
-                        
-                        <p>Unfortunately, near the end of my employment with Sky Orchard Studios, I would suffer a devastating personal loss,
-                        With all of my personal hardware being stolen from my apartment.
-                        This effectively resulted in the loss of all my projects, notes, source code, examples and backups of my entire life's work up to that point,
-                        causing a devastating professional set back, which, to this day, still has not been fully recovered from.
-                        </p>
-
-                        <p>Going back to the temp agency, after the contract expired, I would take on various manual labour roles.
-                        </p>
-                        <p>After several months of factory work,
-                        I would finally get the opportunity to recover from the theft of my hardware,
-                        being able to purchase a laptop for a job as a web developer.
-                        </p>
-                        <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.</p>
-                        <p>While there I worked closely with 1 other dedicated developer and a small group of and 2-5 interns updating an Actionscript based web application to HTML5.
-                        </p>
-                        <p>As a senior team member, I primarily supervised the interns assisting in their tasks,
-                        while simultaneously working on my own.
-                        </p>
-                        <p>Unfortunately, the company would dissolve before the product could launch.
-                        </p>
-                        
-                        <p>Afterward, I went on to find employment at my former college, TriOS, teaching the very course I had once taken.
-                        </p>
-                        <p>Shortly after beginning my new job, I became a father of a amazing son.
-                        </p>
-                        <p>While at TriOS, I worked 10-16 hours teaching 2 separate classes a day and was responsible for managing groups between 4-12 students at a time.
-                        Lectures included the foundational concepts of computer programming, software development, video game design and the software production life-cycle,
-                        with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and javascript development.
-                        </p>
-
-                        <p>In my free time, I began further expanded my knowledge of graphics programming by developing exciting,
-                        easy to use, interactive examples and tools to help with visualization of abstract rendering concepts,
-                        while also working towards building a minimalist graphics engine for the web.
-                        </p>
-                        <p>After working a year at TriOS, I decided to leave to be a stay-at-home father to raise and teach my, by then, 1 year old son,
-                        while my spouse went back to both college and work after taking time off and we waited for our son to be accepted into a childcare program.
-                        </p-->
-                    </div>
-                        
-                    <div role="tabpanel" class="tab-pane" id="recent">
-                        <h4>Recently</h4>
-                        <!--p>As of today, roughly 8 years after graduating college,
-                        I am fluent in over 10 programming, scripting, shading or markup languages and
-                        recently began teaching myself Solidity, for programming cryptocurrency smart-contracts on the Ethereum blockchain,
-                        as well as TensorFlow for Machine Learning,
-                        React for web UI development and NodeJS for back-end server development.
-                        </p>
-                        <p>However, with the many projects currently under development across multiple platforms (see projects page),
-                        it has become quite time consuming for a single developer to work on and maintain all of them (even with appropriate software tools for minimizing workflow overhead),
-                        thus I have opened up several open-source repositories for several of the more mature projects,
-                        in hopes of attracting additional interest in my work,
-                        while also allowing me to focus on younger and more ambitious projects.
-                        </p-->
-                    </div>
-                    
-                    <div role="tabpanel" class="tab-pane" id="links">
-                        <h4>Website Link Reference Page</h4>
+                    <p>Before leaving my home town for college, I had already traveled to, most notably
                         <ul>
-                            <li><a href="https://vigilance91.github.io/">Personal Developer Site</a></li>
-                            <li><a href="https://github.com/vigilance91">Git Hub Home</a></li>
-                            <li><a href="https://www.facebook.com/Untitled-Studios-120541558073102/">Developer Facebook page</a></li>
-                            <li><a href="https://www.linkedin.com/in/vigilance-td">Linked-In</a></li>
-                            <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
-                            <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
+                            <li>Toronto-ON</li>
+                            <li>Ottawa-ON</li>
+                            <li>Niagara-ON</li>
+                            <li>Kingston-ON</li>
+                            <li>Manitoulin Island-ON</li>
+                            <li>Windsor-ON</li>
+                            <li>Kitchener/Waterloo-ON</li>
+                            <li>Columbus-Ohio</li>
+                            <li>Detroit-Michigan</li>
+                            <li>New York-New York</li>
+                            <li>Puerto Plata-Dominican Republic</li>
+                            <li>San Andreas-Columbia</li>
+                        </ul>
+                    </p>
+                    
+                    <!--p>In addition to these locations, including
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </p-->
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="gaming">
+                <div class='flex-row border border-dark rounded'>
+                    <p>While growing up in the 90's tech boom, even though I was too young for a personal computer,
+                    I still had an SNES and Sega Genesis that were played at every opportunity,
+                    with classic games including Sonic, Mortal Combat, Road Rash and Super Mario World and Yoshi's Island.
+                    </p>
+                    
+                    <p>After a while, our Sega developed a neat little quirk where it would only play games when it was upside down and propped up against the wall at a specific angle.
+                    Boy, those were the days.
+                    </p>
+                    
+                    <p>It wouldn't be until roughly the early 2000's when the family got its first desktop,
+                    which would ignite a passion for technology and gaming which continues to grow today.
+                    </p>
+                    
+                    <p>Even though most of my time was spent playing solitaire, minesweeper and doodling in MS paint,
+                    eventually I would buy my first PC game, <a href="">Sid Meier's Civilization 4</a>.
+                    </p>
+                    
+                    <p>After installing it, I played a marathon session of over 48 consecutive hours,
+                    and have been obsessed with the franchise ever since.
+                    </p>
+                </div>
+                
+                <div class='flex-row border border-dark rounded'>
+                    <p>It wouldn't be until high school where my interest in on-line gaming really took over,
+                    specifically with MMORG's such as Guild Wars and World of Warcraft and FPS's like Battlefield and Counter Strike,
+                    after buying my first custom built rig for gaming.
+                    </p>
+                    
+                    <p>While PC gaming consumed much outside of school time while not working my after-school job or playing sports,
+                    I still enjoyed the console classics of the time on my Xbox 360,
+                    including Fallout, Halo, Skyrim, Guitar Hero and Rockband
+                    </p>
+                    
+                    <p>Then, after starting College, my focus turned from playing games to making games.
+                    Despite my busy schedule, I was still able to squeeze in an odd match of League of Legends or delve back into the world of Skyrim on occassion.
+                    </p>
+                </div>
+                
+                <div class='flex-row border border-dark rounded'>
+                    <ul>
+                        <li><a href="">Sid Meier's Civilization</a></li>
+                        <li><a href="">League of Legends</a></li>
+                        <li><a href="">Guild Wars</a></li>
+                        <li><a href="">The Legend of Dragoon</a></li>
+                        <li><a href="">Final Fantasy</a></li>
+                        <li><a href="">Metroid</a></li>
+                        <li><a href="">Dark Cloud</a></li>
+                        <li><a href="">Twisted Metal</a></li>
+                        <li><a href="">The Legend of Zelda</a></li>
+                        <li><a href=""></a></li>
+                        <!--li><a href="">__</a></li-->
+                    </ul>
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="interests">
+                <div class='d-flex flex-row'>
+                    <div class='d-inline-flex flex-column border border-dark rounded'>
+                        <h3>Philosophy</h3>
+                        <ul>
+                            <!--li><a href="">Stoicism</a></li>
+                            <li><a href="">Pragmatism</a></li-->
+                            
+                            <li><a href="">David Hume</a></li>
+                            <li><a href="">René Descartes</a></li>
+                            <li><a href="">Friedrich Nietzsche</a></li>
+                            <li><a href="">Immanuel Kant</a></li>
+                            <li><a href="">Jean-Paul Sartre</a></li>
+                            <li><a href="">Sir Francis Bacon</a></li>
+                        <ul>
+                    </div>
+                    
+                    <!--div class='flex-row border border-dark rounded'>
+                        <h3>Music</h3>
+                        <ul>
+                            <li><a href="">Fredic Chopin</a></li>
+                            <li><a href="">Antonio Vivaldi</a></li>
+                            <li><a href="">Claude Debussy</a></li>
+                            <li><a href="">Franz Schubert</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Tom Lehrer</a></li>
+                            <li><a href="">Gilbert and Sullivan</a></li>
+                            <li><a href="">Tool</a></li>
+                            <li><a href="">A Perfect Circle</a></li>
+                            <li><a href="">Puscifer</a></li>
+                            <li><a href="">The White Stripes</a></li>
+                            <li><a href="">The Mars Volta</a></li>
+                            <li><a href="">Nine Inch Nails</a></li>
+                            <li><a href="">Metallica</a></li>
+                            <li><a href="">Rush</a></li>
+                            <li><a href="">Slipknot/Stonesour</a></li>
+                        </ul>
+                    </div-->
+                
+                    <!--div>
+                        <h3>Math</h3>
+                        <ul>
+                            <li><a href="">Number Theory</a></li>
+                            <li><a href="">Complex Mathematics</a></li>
+                            <li><a href="">Calculus</a></li>
                         </ul>
                     </div>
+                    
+                    <div>
+                        <h3>Science</h3>
+                        <ul>
+                            <li><a href="">Quantum Mechanics</a></li>
+                            <li><a href="">Optic Computing</a></li>
+                            <li><a href="">General/Special Relativity</a></li>
+                        </ul>
+                    </div-->
+                
+                    <div class='d-inline-flex flex-column border border-dark rounded'>
+                        <h3>Art</h3>
+                        <ul>
+                            <li><a href="">Piet Mondrian</a></li>
+                            <li><a href="">René Magritte</a></li>
+                            <li><a href="">M.C. Esher</a></li>
+                        <ul>
+                    </div>
+                    
+                    <div class='d-inline-flex flex-column border border-dark rounded'>
+                        <h3>Literature</h3>
+                        <ul>
+                            <li><a href="">H.P. Lovecraft</a></li>
+                            <li><a href="">Edgar Allen Poe</a></li>
+                            <li><a href="">Ambrose G. Bierce</a></li>
+                            <li><a href="">Robert W. Chambers</a></li>
+                            <li><a href="">George Orwell</a></li>
+                            <li><a href="">Douglas Coupland</a></li>
+                            <li><a href="">Frank Herbert</a></li>
+                            <li><a href="">Aldous Huxley</a></li>
+                            <li><a href="">Isaac Asimov</a></li>
+                            <li><a href="">Stephen King/Richard Bachman</a></li>
+                            <li><a href="">‎Steven Erikson</a></li>
+                            <li><a href="">‎J.K. Rowling</a></li>
+                            <li><a href="">Jorge Luis Borges</a></li>
+                            <li><a href="">Franz Kafka</a></li>
+                            <li><a href="">Fyodor Dostoyevsky</a></li>
+                        </ul>
+                    </div>
+                    <!--div>
+                        <h3>Anime and Comics/Manga</h3>
+                        <ul>
+                            <li><a href="">Ghost In The Shell</a></li>
+                            <li><a href="">Serial Experiments Lain</a></li>
+                            <li><a href="">Deathnote</a></li>
+                            <li><a href="">Witch Hunter Robin</a></li>
+                            
+                            <li><a href="">The Walking Dead</a></li>
+                            <li><a href="">X-men/Legion</a></li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div>
+                    </div-->
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="college">
+                <div class='flex-row border border-dark rounded'>
+                    <p>Shortly after moving to attend a course for video game design and development,
+                    my life changed dramatically.
+                    </p>
+                    
+                    <p>Within the first few months there, I had developed a C++ poker hashing algorithm and evaluator as my first major coding project.
+                    When finished, my project outperformed those of my peers, as well as that of my instructor,
+                    which he would eagerly brag about to his colleagues, earning me recognition across campuses.
+                    </p>
+                    
+                    <p>The game implements 5 common poker games,
+                    leveraging fundamental principles of number theory and static programming techniques to execute,
+                    analyze and compare hands of cards at a nearly instant time complexity.
+                    </p>
+                    
+                    <p>This project is still my proudest accomplishment from that time,
+                    however the project source is not planned to be available any time soon.
+                        <p class='note'>One of the core components of the project,
+                        the Integer Sequence Library,
+                        is available on github <a href="https://github.com/vigilance91?tab=repositories">here</a> and has been ported to several languages,
+                        including C++, Python, PHP and Javascript.
+                        </p>
+                    The executable and associated static libraries may be released in the future,
+                    as development permits.
+                    </p>
+                    
+                    <p>After that, my most notable projects were developing prototypes for a 3D DirectX-10 role playing game which loaded levels and basic models and had a primitive combat system and UI,
+                    and two C# XNA titles which included a minecraft-esque farming simulator (including day/night cycle and growing crops with life-cycles) with real time xml editing tools (for level development),
+                    as well as a space-flight shooter featuring upgrade-able weapons of various types (including laser cannons, photon-torpedoes and proximity mines) for Xbox 360.
+                    </p>
+                    
+                    <p>I also attended the Great Canadian App-athon in 2011 and 2012,
+                    which was a 72 hour coding contest involving all colleges and universities across Canada.
+                    </p>
+                    
+                    <p>Nearing the end of my college career I was regularly working 16-18 hour days (sometimes even periods of 48 hours or more) to meet my school work load,
+                    while also pursuing my own side projects,
+                    including an interest in cryptography,
+                    but more importantly I would teach myself Python in my own time in hopes of adapting a bulky and cumbersome C++ template meta-programming markup language serialization library into a more elegant solution in Python.
+                    </p>
+                    
+                    <p>
+                    After completing that, the goal then was to write a C++ application with the Python interpreter embedded within it,
+                    to leverage the added flexibility and modularity of Python.
+                    </p>
+                    
+                    <p>The advent of a functioning markup language parser lead to the formalization of a written standard,
+                    that I personally developed and maintain to address many (personal) issues presented with both xml and json formats.
+                    </p>
+                    
+                    <!--p>I would then go on to include these components with my larger 3D Direct-X engine to facilitate serialization of dynamic game objects created through the level editor
+                    and to allow for hierarchical management of the application's resources.
+                    </p-->
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="postCollege">
+                <div class='flex-row border border-dark rounded'>
+                    <p>After graduation, I started an unpaid internship as an iOS/Objective-C mobile developer for a local independent studio.
+                    </p>
+                    
+                    <p>During the internship I also supported myself through working full time at a temp agency.
+                    This required working 16 hours a day at 2 separate jobs for four months straight until I was hired to continue working as an iOS developer.
+                    </p>
+                    
+                    <p>As it was a small start-up, I was the sole developer working on their projects (with the owner/CEO being the artist),
+                    I played all roles from lead developer (including writing shell script build tools and photoshop scripts),
+                    to QA tester and Research and Development.
+                    </p>
+                    
+                    <p>
+                    I was also responsible for all aspects of the life cycle of multiple built target applications which implemented a diverse tool chain.
+                    </p>
+                    
+                    <p>
+                        Within my first year, roughly 10 applications had either been released or updated,
+                        to which the most successful app having over 3.5 million downloads and continues to be highly successful to this day.
+                    </p>
+                    
+                    <p>Unfortunately, near the end of my employment with Sky Orchard Studios, I would suffer a devastating personal loss,
+                    with all of my personal hardware being stolen from my apartment.
+                    </p>
+                    
+                    <p>
+                    This effectively resulted in the loss of all my projects, notes, source code, examples and backups of my entire life's work up to that point,
+                    causing a devastating professional set back, which, to this day, still has not been fully recovered from.
+                    </p>
+
+                    <p>Going back to the temp agency, after the contract expired, I would take on various manual labour roles to survive.
+                    </p>
+                    
+                    <p>After several months of factory work,
+                    I would finally get the opportunity to recover from the theft of my life's work,
+                    finally being able to purchase a laptop for a job as a web developer.
+                    </p>
+                    
+                    <p>At that point I quickly taught myself javascript, html, css, php, and mySQL while on the job.
+                    </p>
+                    
+                    <p>While there, I worked closely with 1 other dedicated developer and a small group of 2-5 interns updating an Actionscript based web application to HTML5.
+                    </p>
+                    
+                    <p>As a senior team member, I primarily supervised the interns assisting in their tasks,
+                    while simultaneously working on my own.
+                    </p>
+                    
+                    <p>Unfortunately, the company would dissolve before the product could launch.
+                    </p>
+                    
+                    <p>Afterward, at the age of 25, I would go on to secure employment at my former college,
+                    teaching the very course I had once taken not so long ago.
+                    </p>
+                    
+                    <p>Shortly after beginning my new job, I became a father of an amazing son.
+                    </p>
+                    
+                    <p>During that time, I worked 10-16 hours a day, teaching 2 separate classes and was responsible for managing groups between 4-12 students at a time.
+                    </p>
+                    
+                    <p>
+                    Lectures included the foundational concepts of computer programming, software development, video game design and the software production life-cycle,
+                    with the course's primary focus being on Unity/C#, Xcode/Swift, Win32/DirectX-11, and mobile/web development using HTML and Javascript.
+                    </p>
+
+                    <p>In my free time, I began further expanded my knowledge of graphics programming by developing exciting,
+                    easy to use, interactive examples and tools to help with visualization of abstract rendering concepts,
+                    while also working towards building a minimalist graphics engine for the web on my own.
+                    </p>
+                    
+                    <p>After a year, I decided to leave to be a stay-at-home father, to raise and teach my, by then, 1 year old son,
+                    while my form spouse went back to both college and work after taking time off while we waited for our son to be accepted into a childcare program.
+                    </p>
+                    
+                    <p>I would eventually go on to work as a PHP and RPA solution developer for various business clients, including <a href="">GreenEarth</a>.
+                    </p>
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="recent">
+                <div class='flex-row border border-dark rounded'>
+                    <p>As of today, I am fluent in over (a combined) 10 programming, scripting, shading or markup languages.
+                    </p>
+                    
+                    <p>In my sparse spare time,
+                    I have taken an interest in dabbling in computer forensics (utilizing the vast FOSS tools provided on various Linux platforms) as well as,
+                    beginning to learn TensorFlow for machine learning,
+                    React for web UI development and NodeJS for back-end server development.
+                    </p>
+                    
+                    <p>My main focus as of today is the Ethereum blockchain, developing Solidity smart-contracts.
+                    </p>
+                    
+                    <p>With the many personal projects currently under development across multiple platforms (see <a hef="">projects<a>),
+                    it has become quite time consuming for developing and maintaining them all (even with appropriate software tools for minimizing workflow overhead) as a single developer,
+                    thus I have opened up several open-source repositories for some of the more mature projects,
+                    in hopes of attracting additional interest,
+                    allowing myself to focus on younger, more ambitious, projects.
+                    </p>
+                    
+                    <p>I currently have a releasable product and am looking for seed round <b>investors and partners</b>,
+                    for integration into my primary application platform,
+                    with the intent of devolpoing other applications built on my ERC20 token.
+                    </p>
+                    
+                    <p>Whitepaper to be released soon.</p>
+                    
+                    <p>Ideally, lauch will be within the first 6 months of 2021, regardless of securing addition investor interest.</p>
+                    
+                    <p>Don't miss out on the exclusive bonuses offered <b>only</b>
+                    to seed round investors, partners and/or early adopters today!
+                    </p>
+                    
+                    <p class='note'>These one-time only incentives will not be available <b>after</b> seed round funding has completed.
+                    </p>
+                </div>
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="future">
+                <div class='flex-row border border-dark rounded'>
+                    <b>TBD</b>
+                </div>
+                
+                <!--div>
+                    <h4 id=''></h4>
+                    <p>Aside from my passion for (programming), I have a fervent entrepreneurial and philanthropic spirit.
+                    </p>
+                    
+                    <p>Including getting my startup going, my other endeavors are less technology focused instead,
+                    leaning more towards environmentalism, conservation and sustainability.
+                    </p>
+                    
+                    <p>Believing that (profit should not come at the expense of nature or society),
+                    (...).
+                    
+                    Without a sustainable environment, there can be <b>no</b> economy (or people for that matter),
+                    so the choice should be blatantly apparent.
+                    </p>
+                    
+                    <p class='note'>As the successor to the 1857 constitution,
+                    the 1917 revision of the <a herf="">Political Constitution of the United Mexican States</a> is (so far) the only founding political document of a North American country that enshrines,
+                    the right of every citizen to both housing and a hospitable ecosystem, supportive of their development and welfare,
+                    under Article 4<sup><a href="">citation required</a></sup>,
+                    while also stating under Article 27<sup><a href="">citation required</a></sup>:
+                        all land, water and natural resources within their borders is owned by the Nation (thus belonging to all of its people),
+                        with any wealth generated from the exploitation of these resources to be equally distributed amongst all citizens.
+                    The Mexican Constitution also reserves the right of responsibility for all ecological and conservation concerns (also under Article 27).
+                    </p>
+                    
+                    <p class="note">Considering the Mexican Constitution was written well over a century ago,
+                    it should be both a source of personal and national shame that the same or similar ideals still have not been amended to either the <a href="">Constitution of the United States of American</a> nor,
+                    the <a href="">Canadian Charter of Rights and Freedoms</a>.
+                    Seeing as the Mexican Congress of 1917 was objectively more progressive than their modern counterparts in Canada and the U.S. in establishing socio-environmental rights for citizens,
+                    which have now been enjoyed by Mexican citizens for several generations, it is astonishing such legal frameworks do not exist outside Mexico.
+                    </p>
+                    
+                    <p>Intricately tied to my passion for environmentalism, I also have a love of raptors.</p>
+                    
+                    <p>Here is a picture of a baby falcon!
+                    <img ''=""><sup><a href=""></a></sup>
+                    </p>
+                    
+                    <p>Ever since childhood, Peregrine Falcons have been my favorite animal.
+                    </p>
+                    
+                    <p>
+                    Learning that the use of the pesticide DDT caused the collapse of their population in the 1990's <sup><a href="">citation required</a></sup>,
+                    resulting in their near extinction in North America has to be one of my earliest memories of feeling of disgust towards my species for the general indifference towards the willful poisoning of nature in the pursuit of greed.
+                    </p>
+                    
+                    <p>Luckily, efforts at the dawn of 21st century to reestablish their native population have been successful.
+                    </p>
+                    
+                    <p>To help ensure these majestic creatures continue to thrive alongside humanity,
+                    at the first available opportunity, I desire a license to care for and raise these majestic birds.
+                    </p>
+                </div-->
+            </div>
+            
+            <div role="tabpanel" class="tab-pane" id="langs">
+                <div class='d-flex flex-row border border-dark rounded'>
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h4>Programming/Scripting/Markup/Shading Languages</h4>
+                        
+                        <ul>
+                            <li><a href="">C/C++</a></li>
+                            <li><a href="">Python (2 &amp; 3)</a></li>
+                            <li><a href="">DirectX &amp; HLSL</a></li>
+                            <li><a href="">OpenGL/WebGL &amp; GLSL</a></li>
+                            <li><a href="">PHP</a></li>
+                            <li><a href="">HTML, Javascript &amp; CSS</a></li>
+                            <li><a href="">JSON &amp; XML</a></li>
+                            <li><a href="">Objective-C/Swift</a></li>
+                            <li><a href="">Bash</a></li>
+                            <li><a href="">C# XNA</a></li>
+                            <li><a href="">Solidity</a></li>
+                        </ul>
+                    </div>
+                
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h4>Operating Systems</h4>
+                        
+                        <ul>
+                            <li><a href="">Windows</a></li>
+                            <li><a href="">MacOS</a> &amp; <a href="">iOS</a></li>
+                            <li><a href="">Linux-Ubuntu</a></li>
+                            <li><a href="">Linux-Fedora</a></li>
+                            <li><a href="">Linux-Kali</a></li>
+                        </ul>
+                    </div>
+                
+                    <div class='d-inline-flex flex-column border border-info rounded'>
+                        <h4>Human Languages</h4>
+                    
+                        <label>Primary:<a href="">English</a></label>
+                    
+                        <label>Studying
+                            <ul>
+                                <li><a href="">American Sign Language</a></li>
+                                <li><a href="">Mandarin</a></li>
+                                <li><a href="">Arabic</a></li>
+                                <li><a href="">Japanese</a></li>
+                                <li><a href="">Sanskrit</a></li>
+                            </ul>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class='flex-row text-center'>
+                    <p class='note'>Native page translations to come!</p>
                 </div>
             </div>
         </div>
     </div>
 </body>
-<footer>
-    &copy; Tyler R. Drury June 2018-present <a href='about.html'>about</a>|<a href=''>contact</a>|
+
+<footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid'>
+    <div class='footer-copyright text-center flex-row'>
+        &copy; 2018 - 2021 <a href="https://vigilance91.github.io/">Tyler R. Drury</a>,
+    </div>
+    
+    <div class='text-center flex-row'>
+        <b>All Rights Reserved.</b>
+    </div>
+
+    <div class='text-center flex-row'>
+        <sub><a id='about' href="./about.html" class=''>About</a> |
+        <a id='contact' href="" class= ''>Contact</a></sub>
+    </div>
 </footer>
 </html>
