@@ -29,12 +29,24 @@ a#home{
 /*
 Headers
 */
-h1, h2, h3, h4{
-	background-color:#BB6600;
-    /*width:auto;*/
+h1, h2, h3, h4, h5, h6{
+	/*background-color:#BB6600;
+    width:auto;*/
     display:inline-block;
+    width:100%;
+    text-align:center;
 }
-
+tr th {
+    text-align: center;
+}
+/*
+table captions
+*/
+caption {
+    caption-side:top;
+    background-color:#444;
+    text-align:center;
+}
 .purple{
 	color:purple;
 }
