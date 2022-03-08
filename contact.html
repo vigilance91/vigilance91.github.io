@@ -14,7 +14,8 @@
     <script type='application/javascript' src='bundle.js'></script>
     <!--script type='application/javascript' src='main.js'></script-->
 </head>
-<body class='container-fluid'>
+
+<body>
     <!--disclaimer-->
     <div class='d-flex flex-row'>
         <div class='d-inline-flex flex-fill flex-column text-center border border-danger rounded'>
@@ -58,134 +59,161 @@
     <nav id='banner'
         class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded small'
         role='navigation'>
-        <div class="container">
-            <ul class='nav nav-pills bg-dark small' role='tablist'>
-                <li class='nav-item'>
-                    <a class='nav-link active'
-                        href='#socials'
-                        role='tab'
-                        data-toggle='tab'>Socials
-                    </a>
-                </li>
-                
-                <li class='nav-item'>
-                    <a class='nav-link'
-                        href='#help'
-                        role='tab'
-                        data-toggle='tab'>Help
-                    </a>
-                </li>
-            </ul>
+        <div class="container-fluid">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-fill flex-column text-center'>
+                    <ul class='nav nav-pills bg-dark small' role='tablist'>
+                        <li class='nav-item'>
+                            <a class='nav-link active'
+                                href='#socials'
+                                role='tab'
+                                data-toggle='tab'>Socials
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#help'
+                                role='tab'
+                                data-toggle='tab'>Help
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
     <!--main body-->
-    <div class='flex-container'>
-        <div class='tab-content bg-secondary border border-info rounded'>
-            <div role='tabpanel' class='tab-pane active bg-dark border border-info rounded' id='socials'>
-                <div class="d-flex flex-row">
-                    <div class='d-line-flex flex-column flex-fill'>
-                        <p>Stay engaged with me on social media on any of these platforms:
-                        </p>
-                        
-                        <ul class='text-center'>
-                            <li><a href="https://www.linkedin.com/in/vigilance-td">LinkedIn</a></li>
-                            <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
-                                    <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
-                            <li><a href="https://twitter.com/StudiosVigil">Twitter</a></li>
-                            <li><a href="https://www.reddit.com/r/VigilStudios/">Reddit</a></li>
-                            <!--li><a href="https://www.youtube.com/channel/UC_NzDTMa3g72JGbXnKUTt0g">Youtube</a></li-->
-                            <!--li><a href="">Discord</a></li-->
-                            <!--li><a href="">Telegram</a></li-->
-                            <li><a href="https://www.meetup.com/London-Bitcoin-And-Blockchain-Meetup/">London Blockchain &amp; Cryptocurrency Meetup</a></li>
-                        </ul>
-                    </div>
+    <main class='container-fluid tab-content border border-info rounded'>
+        <article role='tabpanel' class='tab-pane active bg-dark border border-info rounded' id='socials'>
+            <div class="d-flex flex-row">
+                <div class='d-line-flex flex-column flex-fill'>
+                    <p>Stay engaged with me on social media on any of these platforms:
+                    </p>
+                    
+                    <ul class='text-center'>
+                        <li><a href="https://www.linkedin.com/in/vigilance-td">LinkedIn</a></li>
+                        <li><a href="https://stackoverflow.com/users/1663549/vigilance">Stackoverflow</a></li>
+                                <li><a href="https://www.patreon.com/vigilance">Patreon</a></li>
+                        <li><a href="https://twitter.com/StudiosVigil">Twitter</a></li>
+                        <li><a href="https://www.reddit.com/r/VigilStudios/">Reddit</a></li>
+                        <!--li><a href="https://www.youtube.com/channel/UC_NzDTMa3g72JGbXnKUTt0g">Youtube</a></li-->
+                        <!--li><a href="">Discord</a></li-->
+                        <!--li><a href="">Telegram</a></li-->
+                        <li><a href="https://www.meetup.com/London-Bitcoin-And-Blockchain-Meetup/">Blockchain &amp; Cryptocurrency Meetup</a></li>
+                    </ul>
                 </div>
             </div>
-            
-            <div role='tabpanel' class='tab-pane bg-dark border border-info rounded' id='help'>
-                <div class='d-flex flex-row'>
-                    <div class='d-inline-flex flex-column flex-fill'>
-                        <p>Interested in collaborating?
-                        Looking for a consultation?
-                        Got a hot new project you want help with?
-                        </p>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark border border-info rounded' id='help'>
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>Interested in collaborating?
+                    Looking for a consultation?
+                    Got a hot new project you want help with?
+                    </p>
+                    
+                    <p>Or, if you've encountered a <b class='text-danger'>bug</b>, have a <b class='text-success'>question</b>, concern or comment about something else,
+                    <span class='text-success'>please</span> fill in the form below. Our team would be happy to <span class='text-success'>help</span>.
+                    </p>
+                    
+                    <!--p class='note border border-info rounded'>This form strips all input of any HTML tags and esacpes all other special characters before being submitted,
+                    so don&apos;t even try it.
+                    </p-->
+                    
+                    <form id='submitIssue'
+                        class='text-center border border-success rounded needs-validation'>
+                        <!--action="">
+                        method="post"-->
+                        <input type='hidden'
+                            name='action'
+                            value='submitIssue'>
                         
-                        <p>Or, if you've encountered a <b class='text-danger'>bug</b>, have a <b class='text-success'>question</b>, concern or comment about something else,
-                        <span class='text-success'>please</span> fill in the form below. Our team would be happy to <span class='text-success'>help</span>.
-                        </p>
-                        
-                        <!--p class='note border border-info rounded'>This form strips all input of any HTML tags and esacpes all other special characters before being submitted,
-                        so don&apos;t even try it.
-                        </p-->
-                        
-                        <form id='submitIssue'
-                            class='text-center border border-success rounded'>
-                            <!--action="">
-                            method="post"-->
-                            <input type='hidden'
-                                name='action'
-                                value='submitIssue'>
+                        <fieldset class ='border border-success rounded'>
+                            <div class="form-group input-group justify-content-center">
+                                <label for='firstName'>First Name
+                                    <input id='firstName'
+                                        name='firstName'
+                                        class='form-control'
+                                        type='text'
+                                        maxlength='32'
+                                        title='First Name'
+                                        placeholder='First'
+                                        required>
+                                </label>
+                                
+                                <label for='surname'>Last Name
+                                    <input id='surname'
+                                        name='surname'
+                                        class='form-control'
+                                        type='text'
+                                        maxlength='32'
+                                        title='Last Name'
+                                        placeholder='Surname'
+                                        required>
+                                </label>
+                            </div>
                             
-                            <fieldset class ='border border-success rounded'>
-<pre><label for='issueName'>Name
-<input id='issueName'
-    name='issueName'
-    type='text'
-    maxlength='64'
-    title='Your Name'
-    placeholder='Your Name'
-    required>
-<label for='issueEmail'>Email
-<input
-    type='text'
-    name='issueEmail'
-    id='issueEmail'
-    maxlength='64'
-    title='Your email'
-    placeholder='Your email'
-    required>
-</label>
-<label for='issuePhone'>Phone Number
-1-(<input
-    type='text'
-    name='issuePhoneAreaCode'
-    id='issuePhoneAreaCode'
-    maxlength='3'
-    title='Your phone number'
-    placeholder='xxx'>)-<input
-    type='text'
-    name='issuePhonePrimary'
-    id='issuePhonePrimary'
-    maxlength='3'
-    placeholder='xxx'>-<input
-    type='text'
-    name='issuePhoneSecondary'
-    id='issuePhoneSecondary'
-    maxlength='4'
-    placeholder='xxxx'>
-</label>
-<label for='issueInfo'>Details
-<textarea
-    id='issueInfo'
-    name='issueInfo'
-    rows='16'
-    cols='64'
-    maxlength='512'
-    title='Issue Information'
-    placeholder='Please describe your issue'
-    required></textarea>
-</label>
-</pre></fieldset>
-                <input id='issueSubmit'
-                    type='submit'
-                    text='send'
-                    class='btn btn-outline-success'>
-                        </form>
-                    </div>
+                            <div class="form-group input-group justify-content-center">
+                                <label for='issueEmail' class='has-float-label'>Email
+                                    <input id='issueEmail'
+                                        name='issueEmail'
+                                        class='form-control'
+                                        type='text'
+                                        maxlength='64'
+                                        title='Your email'
+                                        placeholder='email@domain.com'
+                                        required>
+                                </label>
+                            </div>
+                            
+                            <div class="form-group input-group justify-content-center">
+                                <label for='issuePhone'>Phone Number
+                                1-(<input
+                                    type='text'
+                                    name='issuePhoneAreaCode'
+                                    id='issuePhoneAreaCode'
+                                    maxlength='3'
+                                    title='Your phone number'
+                                    placeholder='xxx'>)-<input
+                                    type='text'
+                                    name='issuePhonePrimary'
+                                    id='issuePhonePrimary'
+                                    maxlength='3'
+                                    placeholder='xxx'>-<input
+                                    type='text'
+                                    name='issuePhoneSecondary'
+                                    id='issuePhoneSecondary'
+                                    maxlength='4'
+                                    placeholder='xxxx'>
+                                </label>
+                            </div>
+
+                            <div class="form-group input-group justify-content-center">
+                                <label for='issueInfo'>Details
+                                    <textarea id='issueInfo'
+                                        name='issueInfo'
+                                        class='form-control'
+                                        rows='16'
+                                        cols='64'
+                                        maxlength='512'
+                                        title='Issue Information'
+                                        placeholder='Please describe your issue'
+                                    required></textarea>
+                                </label>
+                            </div>
+                        </fieldset>
+            
+                        <input id='issueSubmit'
+                            type='submit'
+                            text='send'
+                            class='btn btn-outline-success'>
+                    </form>
                 </div>
             </div>
-        </div>
-    </div>
+        </article>
+    </main>
 </body>
 <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid small'>
     <div class='footer-copyright text-center flex-row'>
