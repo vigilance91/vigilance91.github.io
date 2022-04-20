@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
+    <!--base href="https://vigilance91.github.io/"-->
+    
+	<title>Vigilance-Secure Signature Format 64 Byte (SSF64) Specification</title>
+    <!--CSS-->
+    <link rel='stylesheet' type='text/css' href='bundle.css'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <!--JS-->
+    <script type='application/javascript' src='bundle.js'></script>
+    <!--script type='application/javascript' src='main.js'></script-->
+</head>
+
+<body>
+    <div class='d-flex flex-row'>
+        <div class='d-inline-flex flex-fill flex-column text-center border border-danger rounded'>
+            <pre class='small'><sub><i class='warning'>This site is currently <b class='text-danger'>under development</b>.</i>
+<i class='note'>Please <span class='text-warning'>bookmark this site</span> &amp; <b class='text-success'>always</b> ensure:
+* <b class='text-success'>HTTPS</b> is <b class='text-success'>enabled</b>
+* the URL is <a href="https://vigilance91.github.io/index.html">https://vigilance91.github.io</a>
+</i>
+</sub></pre>
+        </div>
+    </div>
+    
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <!--a href='' id='home' class='d-inline-flex navbar-brand flex-column'>
+            <canvas id='px-logo' class='webGL' width='128' height='128' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        <div class='d-inline-flex navbar-header flex-column'>
+            <h2><a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe"
+                id='home'
+                title='VSN Home'
+                class='navbar-brand'><!--img src="/_img/primaryWalletQRCode.png"
+                    width='64'
+                    height='64'-->vigilance.eth<sup>&trade;</sup></a> <a href="http://vigilance91.github.io/" class='text-primary'>Home</a>
+            </h2>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <sub>Built using <a href="https://github.com/">github</a>, <a href="https://web3js.readthedocs.io/en/v1.3.0/#">web3</a> &amp; <a href="https://github.com/vigilance91/solidarity">solidarity&trade;</a></sub>
+        </div>
+        
+        <div class='d-inline-flex flex-column flex-fill text-center'>
+            <h2 class='text-primary'>Secure Signature Format 64 Byte (<span class='text-success'>SSF64</span>) Specification</h2>
+            <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
+            </p>
+        </div>
+    </div>
+    <!--site navigation-->
+    
+    <nav id='banner'
+        class='d-flex text-center navbar navbar-dark bg-dark border border-info rounded small'
+        role='navigation'>
+        
+        <!--button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button-->
+      
+        <div class="container-fluid justify-content-center">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-fill flex-column text-center'>
+                    <ul class='nav navbar-center nav-pills bg-dark small' role='tablist'>
+                        <li class='nav-item'>
+                            <a class='nav-link active'
+                                href='#intro'
+                                role='tab'
+                                data-toggle='tab'>Introduction
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#specPacked'
+                                role='tab'
+                                data-toggle='tab'>Packed Specification
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#specPadded'
+                                role='tab'
+                                data-toggle='tab'>Padded Specification
+                            </a>
+                        </li>
+                        
+                        <!--li class='nav-item'>
+                            <a class='nav-link'
+                                href='#compression'
+                                role='tab'
+                                data-toggle='tab'>Compression
+                            </a>
+                        </li-->
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#misc'
+                                role='tab'
+                                data-toggle='tab'>Miscellaneous
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#recommendations'
+                                role='tab'
+                                data-toggle='tab'>Recommendations
+                            </a>
+                        </li>
+                        
+                        <!--li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuIntro"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Introduction
+                            </a>
+                            
+                            <div class="dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#intro'
+                                    role='tab'
+                                    data-toggle='tab'>Introduction
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#specification'
+                                    role='tab'
+                                    data-toggle='tab'>Specification
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#compression'
+                                    role='tab'
+                                    data-toggle='tab'>Compression
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#encoders'
+                                    role='tab'
+                                    data-toggle='tab'>Encoders
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#decoders'
+                                    role='tab'
+                                    data-toggle='tab'>Decoders
+                                </a>
+                            </div>
+                        </li-->
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#glossary'
+                                role='tab'
+                                data-toggle='tab'>Glossary
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Appendix
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#rationale'
+                                    role='tab'
+                                    data-toggle='tab'>Rationale
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#examples'
+                                    role='tab'
+                                    data-toggle='tab'>Examples
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#errata'
+                                    role='tab'
+                                    data-toggle='tab'>Errata
+                                </a>
+                            
+                                <a class='dropdown-item'
+                                    href='#references'
+                                    role='tab'
+                                    data-toggle='tab'>References
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#credits'
+                                    role='tab'
+                                    data-toggle='tab'>Credits
+                                </a>
+                            </div>
+                        </li>
+                        
+                         <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#license'
+                                role='tab'
+                                data-toggle='tab'>License
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Tab panes -->
+    <main role='main' class='container-fluid tab-content border border-info rounded'>
+        <article role='tabpanel' class='tab-pane bg-dark active' id='intro'>
+            <div class='flex-row bg-dark border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Document Status</h3>
+                    
+                    <p>This is a initial draft of the <b class='text-success'>SSF64</b> 1.0 specification.
+                    <!--which has been published as RFC-XXXX and as a W3C Recommendation.-->
+                    </p>
+                    
+                    <p>While this draft has been released, it has <b class='text-danger'>not</b> been approved by any standards body.
+                    </p>
+                    
+                    <!--p>The <b class='text-success'>SSF64</b> specification is on a standards track under the purview of ISO/IEC (TBD) and is expected to be released eventually as ISO/IEC International Standard (TBD).
+                    </p-->
+                    
+                    <!--p>It is the intent of the standards bodies to maintain backward compatibility with this specification.
+                    </p-->
+                    
+                    <p>Implementors should periodically check the <b class='text-success'>SSF64</b> online resources (see <b class='text-primary'>#Online Resources</b> tab) for the current status of <b class='text-success'>SSF64</b> documentation.
+                    </p>
+                    
+                    <p class='note'>Looking for the <b class='text-success'>32 Byte SSF Specifiction</b>? Please visit the Official documentation <a href="http://vigilance91.github.io/ssf32.html"><b class='text-success'>here</b></a>.
+                    </p>
+                </div>
+            
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Abstract</h3>
+                    
+                    <p>The <i class='text-primary'>Secure Signature Format 64 Byte</i> (<b class='text-success'>SSF64</b>) specification
+                    provides an extensible, tamper &amp; corruption resistant file format for cryptographically secure signatures for files and strings
+                    which is a 64 Byte extension of the <i class='text-primary'>Secure Signature Format 32 Byte</i> (<b class='text-success'>SSF32</b>) Specification.
+                    </p>
+                    
+                    <p>The <b class='text-success'>SSF64</b> specification is inspired by the patent-free <a href="">PNG specification</a> and is
+                    designed to provide a poratble, legally unencumbered, highly-secure, well-specified standard for encoding and decoding formatted pairs of cryptographically secure hashes &amp; digital signatures.
+                    </p>
+                    
+                    <p>The initial motivation for the <b class='text-success'>SSF64</b> standard was to have a convenient, extensible, compact &amp; cryptographically secure method for
+                    storing hashes and signatures for secure verification of files or strings transmitted across internet protocols or stored on blockchains.
+                    </p>
+                    
+                    <p class='note'>All applications which encode or decode <b class='text-success'>SSF64</b> files in compliance with this specification <b class='text-warning'>should</b> utilize the industry standard <a href="https://www.openssl.org/">OpenSSL Protocol</a> or another secure &amp; tested cryptographic protocol.
+                    
+                    <p>The <b class='text-success'>SSF64</b> file format is a patent-free format licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
+                    </p>
+                    
+                    <p>This specification defines the Internet Media Type &quot;<b class='text-success'>application/ssf64</b>&quot;.
+                    </p>
+                    
+                    <p class="note">Please review either the <b class='text-primary'>#License</b> tab or the repository <a href="">LICENSE.md</a> for more information.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>        
+                    <p><b class='text-success'>SSF64</b> features retained from the <a href="">PNG Standard</a> &amp; <a href="http://vigilance91.github.io/ssf32.html">SSF32 Standard</a> include:
+                    </p>
+                    
+                    <ul>
+                        <li>Complete hardware and platform independence.</li>
+                        <!--li>Effective, 100% lossless compression via <a href="">gzdeflate</a>.</li-->
+                        <li>Reliable, straightforward detection of file corruption.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class='flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p><b class='text-success'>SSF64</b> is designed to be:
+                        <ul>
+                            <li>Simple &amp; portable.</li>
+                            <li>Secure: Reasonably cryptographically resistant to tampering or data corruption.</li>
+                            <!--li>Legally unencumbered: to the best knowledge of the <b class='text-success'>SSF64</b> authors, no algorithms under legal challenge are used.</li-->
+                            <!--li>well compressed, implementing <i class='text-info'>gzdeflate</i> algorithm.</li-->
+                            <li>Flexible: Allows for future extensions without compromising the fundementals of the specification.</li>
+                            <li>Robust: Designed to support full file integrity, including: simple, quick detection of common transmission errors, while also supporting highly optimized, industry standard cryptographic validation algorithms.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column'>
+                    <p>The primary purpose of this specification is to provide the definition of the <i class='text-primary'>64 Byte Secure Signature Format</i> and recommendations for the minimum required behaviour for encoders and decoders.</p>
+                    
+                    <p>The <a href="text-primary">#Appendix</a> tab provides additional documentation, including rational for all design decisions.
+                    </p>
+                    
+                    <p class='note'>While the <b class="text-primary">#Appendix</b> tab and its content are <b>not</b> part of the formal specification,
+                    it helps implementors to understand the design and intent behind this document.
+                    Its other purpose is to provide cross-references to relevant sections of rationale, examples or other supporting material.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill text-center'>
+                    <h4 class='text-primary'>Terms</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column'>
+                    <p>The key words in this document:</p>
+                    
+                    <ul>
+                        <li>&quot;MUST&quot;</li>
+                        <li>&quot;MUST NOT&quot;</li>
+                        <li>&quot;REQUIRED&quot;</li>
+                        <li>&quot;SHALL&quot;</li>
+                        <li>&quot;SHALL NOT&quot;</li>
+                        <li>&quot;SHOULD&quot;</li>
+                        <li>&quot;SHOULD NOT&quot;</li>
+                        <li>&quot;RECOMMENDED&quot;</li>
+                        <li>&quot;MAY&quot;</li>
+                        <li>and &quot;OPTIONAL&quot;</li>
+                    </ul>    
+                    
+                    <p>are to be interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a>.
+                    </p>
+
+                    <!--See Rational: <ul>
+                        <li></li>
+                    </ul-->
+               </div> 
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Pronunciation</h3>
+                    
+                    <p><a href="https://www.ling.upenn.edu/courses/Fall_2014/ling115/phonetics.html">Phonetically</a>, <b class='text-success'>SSF</b> is pronounced: &quot;ɛs-ɛs-ɛf&quot;.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="specPacked">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
+                    <p>A tightly <b class='text-light'>packed</b> <b class='text-success'>SSF64</b> compliant file consists of a standard <b class='text-primary'>8 Byte</b> SSF <i class='text-primary'>header</i> followed by:
+                        <ol>
+                            <li>The <b class='text-danger'>Content Integrity Hash</b> of the remainder of the file&apos;s content.</li>
+                            <li>A <b class='text-white'>Format Layout Type Hash</b> of the string representing the domain, format data types and their layout in the file which includes:
+                                <ol>
+                                    <li>A 4 Byte (32 bit) file length indicator.</li>
+                                    <li>Hash of the data source (file or string).</li>
+                                    <li>optional:
+                                        <ol>
+                                            <li>Hash of the signing Public Key</li>
+                                            <li>Sequence of zero or more 8-bit bytes.</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>The <b class='text-warning'>Byte Length Specifier</b>, a 4 byte (32 bit) unsigned integer specifying the number of (8-bit) bytes expected to follow in the file.</li>
+                            <li>512 bit (64 Byte) <b class='text-info'>Source Hash</b> of the raw data file or string which was signed.</li>
+                            <li>optional:
+                                <ol>
+                                    <li>512 bit (64 Byte) <span style='color:#7b7bff;'>Public Key Hash</span> of the public key used to sign the data source.</li>
+                                    <li>Arbitrary sequence of bytes of the <b class='text-success'>Source Signature</b>, the cryptograhically secure signature of the source data signed by the Author/Publisher/Copyright holder.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>SSF File Signature</h3>
+                    
+                    <p>The first <b class='text-info'>8 bytes</b> of an <b class='text-success'>SSF</b> file are always the following (hexadecimal) values:
+                        <span class='text-primary'>0x23 0x53 0x53 0x46 0x0d 0x0a 0x1a 0x0a</span>
+                    </p>
+                    
+                    <p>This signature indicates that the remainder of a file consists of an <b class='text-success'>SSF</b> file as specified by this standard.
+                    </p>
+                    
+                    <p class='note'>See rationale: <a href="">SSF File Signature</a>.</p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Content Layout</h3>
+                    
+                    <!--p>Encoders &amp; decoders <b>may</b> implement a 64 Byte or 64 byte hashing algorithm
+                    but may implement another comparable algorithm.
+                    </p-->
+                    
+                    <p>Immediately following the <b class='text-info'>8 byte</b> file <i class='text-primary'>header</i> is a format specific hash,
+                    which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
+                    </p>
+                    
+                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.</p>
+                    <!--
+                    "solidarity.SecureSignatureFormat256(uint32 byteLength,bytes32 manifestHash,bytes signature)"
+                    "solidarity.SecureSignatureFormat512(uint32 byteLength,bytes64 manifestHash,bytes signature)"
+                    -->
+                    <p>
+                        <ol>
+                            <li>32-bit (4 Byte) uint specifying the total bytes to expect in he remainder of the file.</li>
+                            <li>512 bit (64 Byte) Hash of the data being signed.</li>
+                            <li>optional:
+                                <ol>
+                                    <li>512 bit (64 Byte) Hash of the Public Key used to sign data source.</li>
+                                    <li>A cryptographically secure binary signature (of arbitrary length and format) of the data.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </p>
+                    
+                    <p>This <i class='text-light'>Type Hash</i> is a unique identifier for <b class='text-success'>SSF64</b> data, used to easily identify, encode and decode binary data in the expected format as specified by this standard,
+                    which differentiates an arbitrary, unstructured binary payload from an <b class='text-success'>SSF64</b> compliant file, string or data stream.
+                    </p>
+                    
+                    <p class='note'>See rationale: <a href="">SSF64 Type Hash</a>.</p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary'>Packed File Layout</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>The binary layout for an <b class='text-success'>SSF64</b> file is as follows:
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded' style='overflow-x:scroll;'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <pre><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span><span class='text-danger'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='text-white'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='text-warning'>\x00\x00\x00\x00</span><span class='text-info'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>(<span style='color:#7b7bff;'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='text-success'>\x00...</span>)?</pre>
+<!--p><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span>
+<span class='text-danger'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-white'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-warning'>\x00\x00\x00\x00</span>
+<span class='text-info'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+(<span style='color:#7b7bff;'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-success'>\x00...</span>
+)?</p-->
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <label>Where:
+                        <ol>
+                            <li class='text-primary'>8 byte <b class='text-success'>SSF</b> Signature.</li>
+                            <li class='text-danger'>64 Byte Content Integrity Hash.</li>
+                            <li class='text-white'>64 Byte File Layout Type Hash (unique to <b class='text-success'>SSF64</b>).</li>
+                            <li class='text-warning'>4 byte (32-bit) Unsigned Integer Byte Length Specifier (must be a value greater than 64 Bytes and less than 4 GB).</li>
+                            <!--li class='text-danger'>or 64 byte Salt used when hashing content.</li-->
+                            <li class='text-info'>64 Byte Source File Content Hash.</li>
+                            <li>optional:
+                                <ol>
+                                    <li style='color:#7b7bff;'>64 Byte Author/Copyright holder/Publisher Public Key Hash.</li>
+                                    <li class='text-success'>Arbitrary (optional) bytes of Author/Publisher/Copyright Holder Signature of the signed source file.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>The byte length of a <b class='text-success'>SSF64</b> compliant file without optional signature <b class='text-danger'>must</b> be no less than:
+<pre><b class='text-primary'>8</b> + <span class='text-success'>(</span><b class='text-danger'>64</b> + <b class='text-white'>64</b> + <b class='text-warning'>4</b><span class='text-success'>)</span> + <span class='text-warning'>(</span><b class='text-info'>64</b><span class='text-warning'>)</span> = <b class='text-success'>204 Bytes</b></pre>
+                    </p>
+                    
+                    <p>With signature included, the minimum byte length of a <b class='text-success'>SSF64</b> compliant file (excluding trailing signature) <b class='text-danger'>must</b> be greater than:
+<pre><b class='text-primary'>8</b> + <span class='text-success'>(</span><b class='text-danger'>64</b> + <b class='text-white'>64</b> + <b class='text-warning'>4</b><span class='text-success'>)</span> + <span class='text-warning'>(</span><b class='text-info'>64</b> + <b style='color:#7b7bff;'>64</b><span class='text-warning'>)</span> = <b class='text-success'>268 Bytes</b></pre>
+                    </p>
+                    
+                    <p class='note'>See: </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Regular Expression</h3>
+                    
+                    <p>A PHP preg_* compatible regex repressenting a <b class='text-success'>SSF64</b> compatible string which conforms to this specification <b>may</b> be implemented as follows:
+                    </p>
+                    
+                    <code>&apos;/^<span class='text-danger'>(</span><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span><span class='text-danger'>)</span><span class='text-success'>(</span><span class='text-danger'>(.{64})</span><span class='text-light'>(.{64})</span><span class='text-warning'>(.{4})</span><span class='text-success'>)</span><span class='text-warning'>(</span><span class='text-info'>(.{64})</span>(<span style='color:#7b7bff;'>(.{64})</span><span class='text-success'>(.+)</span>)?<span class='text-warning'>)</span>$/s&apos;
+                    </code>
+
+                    <p class='note'>See: The <a href="" class='text-success'>Official <b>SSF64</b> PHP Implementation</a> for a practical example.</p>
+                </div>
+            </div>
+            
+            <!--div class='d-flex flex-row bg-dark'>
+                <div class='d-inline-flex flex-column flex-fill bg-dark text-center border border-light rounded'>
+                    <h3 class='text-primary'>SSF-64 (SHA512) File Layout</h3>
+                </div>
+            </div>
+            
+            <div class='flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <label>The initial byte length of a <b>SHA3-512</b> SSF compliant file (excluding signature) must be:
+                        <p>8 + (2 * 64) + 4 + 64 = <b class='text-success'>204 bytes</b></p>
+                    </label>
+                </div>
+            </div-->
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="specPadded">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
+                    <p>A <b class='text-light'>padded</b> <b class='text-success'>SSF64</b> file is the same as the <b class='text-light'>packed</b> version,
+                    with the only difference being all data fields are aligned to 64 bytes (<b class='text-light'>padded</b>)
+                    and must be encoded in the same manner as to be comliant with <a href="https://docs.soliditylang.org/en/v0.6.8/abi-spec.html#abi">standard Ethereum Virtual Machine (EVM) ABI encoding</a>.
+                    </p>
+                    
+                    <p>
+                        <label>Such that:
+                            <ol>
+                                <li>Unisgned integers less than 64 bytes are left <b class='text-light'>padded</b> with &apos;\x00&apos; bytes.</li>
+                                <li>Bytes, String and Arrays are right padded with &apos;\x00&apos; bytes.</li>
+                                <li>Bytes, String and Array objects are encoded with the first element indicating the number of elements it contains.</li>
+                            </ol>
+                        </label>
+                    </p>
+                    
+                    <p>A <b class='text-light'>padded</b> <b class='text-success'>SSF64</b> compliant file consists of a standard <b class='text-primary'>8-byte</b> SSF <i class='text-primary'>header</i> followed by:
+                        <ol>
+                            <li class='text-muted'>56 Bytes of padding, which <b class='text-danger'>must</b> be ignored.</li>
+                            <li>The <b class='text-danger'>Content Integrity Hash</b> of the remainder of the file&apos;s content.</li>
+                            <li>A <b class='text-white'>Format Layout Type Hash</b> of the string representing the domain, format data types and their layout in the file which includes:
+                                <ol>
+                                    <li>A 4 Byte (32 bit) file length indicator.</li>
+                                    <li>Hash of the raw data file or string.</li>
+                                    <li>
+                                        <label>optional:
+                                            <ol>
+                                                <li>Hash of the signing Public Key</li>
+                                                <li>Encoded binary singature as a sequence of more than 64 bytes, if present.</li>
+                                            </ol>
+                                        </label>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li class='text-muted'>60 Bytes of padding, which <b class='text-danger'>must</b> be ignored.</li>
+                            <li>The <b class='text-warning'>Byte Length Specifier</b>, a 4 byte (32 bit) unsigned integer specifying the number of (8-bit) bytes expected to follow in the file.</li>
+                            <li>64 Byte <b class='text-info'>Source Hash</b> of the raw data file or string which was signed.</li>
+                            <li>optional:
+                                <ol>
+                                    <li>512 bit (64 Byte) <span style='color:#7b7bff;'>Public Key Hash</span> of the public key used to sign the data source.</li>
+                                    <li>Arbitrary sequence of bytes of the <b class='text-success'>Source Signature</b>, the cryptograhically secure signature of the source data signed by the Author/Publisher/Copyright holder.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>SSF File Signature</h3>
+                    
+                    <p>The first <b class='text-info'>8 bytes</b> of an <b class='text-success'>SSF</b> file are always the following (hexadecimal) values:
+                        <span class='text-primary'>0x23 0x53 0x53 0x46 0x0d 0x0a 0x1a 0x0a</span>
+                    </p>
+                    
+                    <p>Followed by <b class='text-muted'>56 bytes of &apos;\x00&apos; padding</b>
+                    </p>
+                    
+                    <p>The signature indicates that the remainder of the file consists of a <b class='text-success'>SSF64</b> signature as specified by this standard.
+                    </p>
+                    
+                    <p class='note'>See rationale: <a href="">SSF Padded File Signature</a>.</p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Content Layout</h3>
+                    
+                    <!--p>Encoders &amp; decoders <b>may</b> implement a 32 byte or 64 byte hashing algorithm
+                    but may implement another comparable algorithm.
+                    </p-->
+                    
+                    <p>Immediately following the <b class='text-light'>padded</b> <b class='text-info'>64 byte</b> file <i class='text-primary'>header</i> is a format specific hash,
+                    which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
+                    </p>
+                    
+                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.</p>
+                    <!--
+                    "solidarity.SecureSignatureFormat256(uint32 byteLength,bytes32 sourceHash,bytes32 publicKeyHash,bytes signature)"
+                    "solidarity.SecureSignatureFormat512(uint32 byteLength,bytes64 sourceHash,bytes64 publicKeyHash,bytes signature)"
+                    -->
+                    <p>
+                        <ol>
+                            <li>32-bit (4 byte) uint specifying the total bytes to expect in the remainder of the file (must be a multiple of 64 bytes).</li>
+                            <li>64 byte Hash of the data being signed.</li>
+                            <li>optional:
+                                <ol>
+                                    <li style='color:#7b7bff;'>64 byte Public Key Hash.</li>
+                                    <li class='text-success'>Arbitrary bytes of Author/Publisher/Copyright Holder Signature of the signed source file (padded to 64 bytes).</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </p>
+                    
+                    <p>This <b class='text-light'>Type Hash</b> is a unique identifier for <b class='text-success'>SSF64</b> data, used to easily identify, encode and decode binary data in the expected format as specified by this standard,
+                    which differentiates an arbitrary, unstructured binary payload from an <b class='text-success'>SSF64</b> compliant file, string or data stream.
+                    </p>
+                    
+                    <p class='note'>See rationale: <a href="">SSF64 padded Type Hash</a>.</p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary text-center'>Padded File Layout</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded padded' style='overflow-x:scroll;'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>The binary layout for a 64 byte <b class='text-light'>padded</b> <b class='text-success'>SSF64</b> file is as follows:
+                    </p>
+                    
+<pre><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span><span class='text-muted'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-danger'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-white'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-muted'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span><span class='text-warning'>\x00\x00\x00\x00</span>
+<span class='text-info'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+(
+<span style='color:#7b7bff;'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00</span>
+<span class='text-success'>\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00...</span>
+)?</pre>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded padded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <label>Where:
+                        <ol>
+                            <li class='text-primary'>8 byte <b class='text-success'>SSF</b> Signature.</li>
+                            <li class='text-muted'>56 byte padding.</li>
+                            <li class='text-danger'>64 byte Content Integrity Hash.</li>
+                            <li class='text-white'>64 byte File Layout Type Hash (unique to <b class='text-success'>SSF64</b>).</li>
+                            <li class='text-muted'>60 byte padding.</li>
+                            <li class='text-warning'>4 byte (32-bit) Unsigned Integer Byte Length Specifier (must be a value greater than 32 bytes and less than 4 GB).</li>
+                            <!--li class='text-danger'>64 byte Salt used when hashing content.</li-->
+                            <li class='text-info'>64 byte Source Content Hash.</li>
+                            <li>optional:
+                                <ol>
+                                    <li style='color:#7b7bff;'>64 byte Public Key Hash used to sign source.</li>
+                                    <li class='text-success'>Arbitrary bytes of Author/Publisher/Copyright Holder Signature of the signed source file &apos;0x00&apos; <b class='text-light'>padded</b> to 64 bytes.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded padded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>The byte length of a 64 byte <b class='text-light'>padded</b> <b class='text-success'>SSF64</b> compliant file (excluding trailing signature) <b class='text-danger'>must</b> be no less than:
+<pre><b class='text-primary'>64</b> + <span class='text-success'>(</span><b class='text-danger'>64</b> + <b class='text-white'>64</b> + <b class='text-warning'>64</b><span class='text-success'>)</span> + <span class='text-warning'>(</span><b class='text-info'>64</b><span class='text-warning'>)</span> = <b class='text-success'>320 Bytes</b></pre>
+                    </p>
+                    
+                    <p>With signature included, the minimum byte length of a <b class='text-success'>SSF64</b> compliant file (excluding trailing signature) <b class='text-danger'>must</b> be greater than:
+<pre><b class='text-primary'>64</b> + <span class='text-success'>(</span><b class='text-danger'>64</b> + <b class='text-white'>64</b> + <b class='text-warning'>64</b><span class='text-success'>)</span> + <span class='text-warning'>(</span><b class='text-info'>64</b> + <b style='color:#7b7bff;'>64</b><span class='text-warning'>)</span> = <b class='text-success'>384 Bytes</b></pre>
+                    </p>
+                    
+                    <p class='note'>See: </p>
+                </div>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded padded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Padded Regular Expression</h3>
+                    
+                    <p>A PHP preg_* compatible regex repressenting a <b class='text-light'>padded</b> <b class='text-success'>SSF64</b> compatible string which conforms to this specification, which captures all required groups <b>may</b> be implemented as follows:
+                    </p>
+                    
+                    <code>&apos;/^<span class='text-danger'>(</span><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span><span class='text-danger'>)<span class='text-muted'>.{56}</span></span><span class='text-success'>(</span><span class='text-danger'>(.{64})</span><span class='text-light'>(.{64})</span><span class='text-muted'>.{60}</span><span class='text-warning'>(.{4})</span><span class='text-success'>)</span><span class='text-warning'>(</span><span class='text-info'>(.{64})</span>(<span style='color:#7b7bff;'>(.{64})</span><span class='text-success'>(.+)</span>)?<span class='text-warning'>)</span>$/s&apos;
+                    </code>
+
+                    <p class='note'>See: The <a href="" class='text-success'>Official <b>SSF64</b> PHP Implementation</a> for a practical example.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="compression">
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Deflate/Inflate Compression</h3>
+                    
+                    <p><b class='text-success'>SSF</b> compression utilizes the deflate/inflate compression method.
+                    <p>
+                    
+                    <p class='note'>Deflate compression is an LZ77 derivative used in zip, gzip, pkzip, and related programs. Extensive research has been done supporting its patent-free status.
+                    Portable C implementations are freely available across multiple platforms.
+                    </p>
+                    
+                    <!--p>Deflate-compressed datastreams within SSF are stored in the unstructured "gzdeflate" format
+                    Further details on this format are given in the zlib specification [RFC-1950].
+                    </p-->
+                    
+                    <!--p class='note'>The zlib compression method number is not the same as the PNG compression method number. The additional flags must not specify a preset dictionary.
+                    A PNG decoder must be able to decompress any valid zlib datastream that satisfies these additional constraints.
+                    </p-->
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="misc">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>File Name Extension</h3>
+                    <p>On systems where file names customarily include an extension signifying file type,
+                    the extension &quot;<b class='text-success'>.ssf64</b>&quot; is recommended for <b class='text-success'>SSF</b> files.
+                    </p>
+                    
+                    <p>Lowercase &quot;<b class='text-success'>.ssf64</b>&quot; is preferred if file names are case-sensitive.
+                    </p>
+                    
+                    <p>In the event an <b class='text-success'>SSF</b> file extension lacks an integer suffix (eg. &quot;<b class='text-success'>.ssf</b>&quot;),
+                    it <b class='text-danger'>must</b> be parsed as a 32 Byte <b class='text-success'>SSF</b> file as outlined in the <a href="">SSF 32 Byte specification</a>.
+                    </p>
+                </div>
+                
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Internet Media Type</h3>
+                    <!--p>The Internet Assigned Numbers Authority (IANA) has registered &quot;<b class='text-success'>application/ssf64</b>&quot; as the Internet Media Type for SSF64 [RFC-XXXX], [RFC-XXXX].
+                    </p-->
+                    
+                    <p>For robustness, decoders may choose to support the interim media type:
+<pre class='text-success'>&apos;application/x-ssf64&apos;</pre>
+                    Until an official MIME type registration is complete.
+                    </p>
+                </div>
+            </div>
+            
+            <!--div class='flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill text-center'>
+                    <h3 class='text-primary border border-light rounded'>Multisig extension</h3>
+                </div>
+            </div>
+            
+            <div class='flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p>This extension allows for SSF64 files which supports content from multiple Authors/Publishers/Signers,
+                    similar to envelopes.
+                    </p>
+                </div>
+            </div-->
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Terminating Signature</h3>
+                    
+                    <p class='note'>The length of the final &apos;Signautre&apos; field is an arbitrary byte-length and dependant upon the signing algorithm and format used.
+                    </p>
+                    
+                    <p>This specification allows for a maximum allowable byte size for the combined trailing hash and signature to be no more than 4 gB.
+                    Taking future proofing into consideration, for all practical purposes,
+                    the trailing hash and signature combined <b>should not</b> require more than 4 kB but <b>may</b> potentailly exceed 4 kB and is encoder specific.
+                    </p>
+                    
+                    <p>This approach accomodates future signing algorithms requiring more bytes than modern algorithms.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Security Considerations</h3>
+                    
+                    <p>All <b class='text-success'>SSF64</b> files <b class='text-danger'>must</b> be non-executable.
+                    </p>
+                    
+                    <p>A decoder that fails to complete all checks specified in the <b class='text-primary'>#Decoders</b> tab
+                    <b class='text-danger'>must</b> consider the decoded data corrupt or otherwise invalid.
+                    </p>
+                    
+                    <!--p>Decoders <b class='text-danger'>must</b> only perform validation on a decoded <b class='text-success'>SSF64</b> payload and its associated source.
+                    A compliant decoder <b class='text-danger'>must not</b> execute mutable code which has side effects.
+                    </p-->
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="recommendations">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Encoders</h3>
+                    
+                    <p>This section provides recommendations for <b class='text-success'>SSF64</b> encoder behavior.</p>
+                    
+                    <p>The only absolute requirement for an <b class='text-success'>SSF64</b> encoder is that it produce files that conform to the format specified in this document.
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <p>Encoders <b class='text-danger'>must</b>:
+                        <ul>
+                            <li>Produce files or strings that conform to this specification.</li>
+                            <li>Support <b class='text-light'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode.</li>
+                        </ul>
+                    </p>
+                    
+                    <p>Encoders <b class='text-warning'>may</b>:
+                        <ul>
+                            <li>Perform encryption, compression, base64 encoding or any combination of the three on its output.</li>
+                        </ul>
+                    </p>
+                </div>
+            
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Decoders</h3>
+                    
+                    <p>This section provides recommendations for decoder behavior.
+                    The only absolute requirement for an <b class='text-success'>SSF64</b> decoder is that it successfully reads any file conforming to the format specified in this document.
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <!--10.1. Error checking-->
+                    <p>To ensure early detection of common file-transfer problems, decoders <b>must</b> verify that all initial eight (8) bytes (64 bits) of the <b class='text-success'>SSF64</b> file signature are correct.
+                    (See Rationale: <b class='text-success'>SSF64</b> file signature).
+                    </p>
+                    
+                    <p>A decoder can have additional confidence in the file&apos;s integrity using the File <i class='text-danger'>Content Integrity Hash</i>, <i class='text-light'>File Layout Type Hash</i> and <i class='text-warning'>Byte Length Specifier</i>.
+                    </p>
+                    
+                    <p>Decoders <b class='text-danger'>must</b>:
+                        <ul>
+                            <li>Hash (using the alogrithm specific to the parser rendering the file) the parsed <i class='text-light'>Type Hash</i>, <i class='text-warning'>Byte Length Specifier</i>, <i class='text-primary'>Source Content Hash</i>, <i class='text-success'>Source Signature</i> then validate it against the <b>parsed</b> <i class='text-danger'>Content Integrity Hash</i>.</li>
+                            <li>Validate the file&apos;s parsed <i class='text-light'>Type Hash</i> matches the unique <i class='text-light'>Type Hash</i> of the specific parser implemenation rendering the file.</li>
+                            <li>Verify the number of (8-bit) <b>bytes</b> read from the file following the <span class='text-warning'>4 Byte Byte Length Specifier</span> equals the parsed <i class='text-warning'>Byte Length Specifier</i>. The <i class='text-warning'>Byte Length Specifier</i> <b class='text-danger'>must</b> be no less than the number of bytes corresponding to the specific parser rendering the file (typically either 32 or 64 Bytes).</li>
+                        </ul>
+                    </p>
+                    
+                    <p>Decoders <b class='text-warning'>may</b>:
+                        <ul>
+                            <li>Perform decryption, decompression, base64 decoding or any combination of the three on its input. The result <b class='text-danger'>must</b> conform to this standard.</li>
+                        </ul>
+                    </p>
+                    
+                    <p>In the event the <b>parsed</b> <i class='text-warning'>Byte Length Specifier</i> of a file equals the number of bytes in its hashing algorithm (typically either 32 or 64 Bytes),
+                    there is no signature associated with the data and parsing must end immediately after the <i class='text-info'>Source Content Hash</i> has been parsed.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="glossary">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Glossary of Terms</h3>
+                    
+                    <table id='defiERC20'
+                        class='table table-dark table-striped table-bordered'>
+                        
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Byte</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">Eight bits; also called an octet.</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Deflate</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SSF64</b> files &amp; PNG files,
+                                            as well as in zip, gzip, pkzip, and other compression programs.
+                                            </p>
+                                            
+                                            <p class='card-text'><b>Deflate</b> is a member of the <span class='text-info'>LZ77</span> family of compression methods.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossless compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that guarantees the original data can be reconstructed exactly, bit-for-bit.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossy compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that reconstructs the original data approximately, rather than exactly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">zlib</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">A particular format for data that has been compressed using deflate-style compression.
+                                            Also, the name of a library implementing this method.
+                                            </p>
+                                            
+                                            <p class="card-text"><b class='text-success'>SSF64</b> implementations need not use the zlib library,
+                                            but they must conform to its format for compressed data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">SSF64</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">An extensible, secure, non-executable binary format for structuring the hash and digital signature in a manner which is resistant to corruption, transferable over common internet protocols, embeded within an HTML webpages or stored in a database server or blockchain.</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="appendix">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Appendix</h3>
+                    
+                    <p class='note'>This section is <b>not</b> part of the formal PNG specification.
+                    </p>
+                    
+                    <p>This section provides reasoning behind some of the design decisions which when into standardizing <b class='text-success'>SSF64</b>.
+                    Many of these decisions were the subject of considerable debate.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill text-center bg-dark'>
+                    <h3 class='text-primary'>Why a new file format</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>Common cryptographic operations include generating then subsequently storing a hash and signature to prove the authorship or ownership of some text or file.
+                    </p>
+                    
+                    <p>The <b class='text-success'>SSF64</b> specification provides a convenient, patent-free manner in which to structure, encode and decode such data,
+                    which can then be directly embbeded within another file as metadata, transmitted across the internet or stored in a database on a blockchain, which may be used for validation.
+                    </p>
+                </div>
+            </div>
+        </article>
+    
+        <article role="tabpanel" class="tab-pane" id="examples">
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Example Encoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SSF64</b> encoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+                
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded'>Example Decoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SSF64</b> decoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="resources">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Online Resources</h3>
+                    
+                    <p>The Official <b class='text-success'>SSF64</b> PHP reference is available <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="errata">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Errata</h3>
+                    
+                    <p>Change Log:
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="references">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>References</h3>
+                    
+                    <ul>
+                        <li><a href="http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html">PNG Specification</a></li>
+                        <li><a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a></li>
+                        <li><a href="http://www.faqs.org/rfcs/rfc1951.html">RFC-1951 Deflate Compressed Data Format</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="credits">
+            <div class='flex-row bg-dark border border-light rounded bg-dark'>
+                <h3 class='text-primary'>Credits</h3>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Editors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Authors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Trademarks<ul>
+                        <li></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <!--label>Source Integrity<ul>
+                    <li></li>
+                </ul></label-->
+                
+                <!--p>This specification is being provided by the copyright holders under the following license. By obtaining, using and/or copying this specification, you agree that you have read, understood, and will comply with the following terms and conditions:
+                </p-->
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="license">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>License</h3>
+                    
+                    <p>This specification is being provided by the copyright holders under the following conditions:
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+<pre><code>----------------------------------------------------------------
+
+# Copyright &copy; 11-04-2022 Tyler R. Drury (vigilance.eth™), All Rights Reserved.
+    
+----------------------------------------------------------------
+
+## Disclaimer
+
+This specification (the **Product**), including but not limited to,
+all source code, object files, executables, library files,
+images, video, audio, documentation, content generated by
+the Product and any other resource file of the Product,
+are subject to the following terms and conditions (the **License**).
+
+----------------------------------------------------------------
+
+## Retention of Intellectual Property Rights
+
+The name, likeness or works (either in part or in whole)
+of [Tyler R. Drury](https://vigilance91.github.io/) or that of any additional authors or contributors respectfully
+may not be used to endorse or promote products derived from this specification without specific prior written permission.
+
+----------------------------------------------------------------
+
+## Use and Redistribution
+
+Redistribution and use in source and binary forms,
+with or without modification is permitted,
+provided that the following conditions are met:
+
+* Redistributions of source code must retain, in whole,
+the above copyright notice, disclaimer, and this list of conditions.
+* Redistributions in binary form must reproduce, in whole,
+the above copyright notice, disclaimer
+and this list of conditions in the documentation
+and/or other materials provided with the distribution.
+* Any documentation, advertising materials,
+and other materials related to such distribution and use,
+must acknowledge the original author of the **Product** and all contributors.
+
+
+----------------------------------------------------------------
+
+## Coverage
+
+The **Product** is licensed under the Apache License, Version 2.0 (the **Apache License**),
+and may not be used, except in compliance with the **Apache License**.
+
+A full copy of the **Apache License** can be obtained [here](http://www.apache.org/licenses/LICENSE-2.0).
+
+----------------------------------------------------------------
+
+## Disclaimer of Warranty and Limitation of Liability
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the **License** is distributed on an
+**AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND**,
+either express or implied.
+
+Copyright holders and contributors are **not liable for damages** incurred through the use or inability to use the **Product**.
+
+See the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) for the specific language governing permissions and
+limitations under the **Apache License**.
+
+----------------------------------------------------------------
+</code></pre>
+            </div>
+        </article>
+    </main>
+    
+    <script id='main' type="application/javascript">
+    $(()=>{
+        $('pre code').each(
+            (i, block)=>{
+                hljs.highlightBlock(block);
+            }
+        );
+    });
+    </script>
+    
+    <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid small'>
+        <div class='footer-copyright text-center flex-row'>
+            &copy; 2018 - 2022 <a href="https://vigilance91.github.io/">Tyler R. Drury</a> (<a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a><sup>&trade;</sup>),
+        </div>
+        
+        <div class='text-center flex-row'>
+            <b>All Rights Reserved.</b>
+        </div>
+
+        <div class='text-center flex-row'>
+        <!--sub><a id='about' href=""https://vigilance91.github.io/tos.html" class=''>Terms</a> |
+            <a id='about' href=""https://vigilance91.github.io/governance.html" class=''>Governance</a> |-->
+            <sub><a id='about' href="https://vigilance91.github.io/about.html" class=''>About</a> |
+            <a id='contact' href="https://vigilance91.github.io/contact.html" class= ''>Contact</a></sub>
+        </div>
+    </footer>
+</body>
+</html>
