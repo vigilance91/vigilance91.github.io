@@ -8,5 +8,6 @@ Doxyfile
 /_tests
 /_output
 /_input
+sign.bat
 hash.bat
 SETUP.md
