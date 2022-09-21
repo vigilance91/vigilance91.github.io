@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
+    <!--base href="https://vigilance91.github.io/"-->
+    
+	<title>Vigilance-Signed DAG Format 32 Byte (SDF32) Specification</title>
+    <!--CSS-->
+    <link rel='stylesheet' type='text/css' href='bundle.css'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <!--JS-->
+    <script type='application/javascript' src='bundle.js'></script>
+    <!--script type='application/javascript' src='main.js'></script-->
+</head>
+
+<body>
+    <div class='d-flex flex-row'>
+        <div class='d-inline-flex flex-fill flex-column text-center border border-danger rounded'>
+            <pre class='small'><sub><i class='warning'>This site is currently <b class='text-danger'>under development</b>.</i>
+<i class='note'>Please <span class='text-warning'>bookmark this site</span> &amp; <b class='text-success'>always</b> ensure:
+* <b class='text-success'>HTTPS</b> is <b class='text-success'>enabled</b>
+* the URL is <a href="/index.html">https://vigilance91.github.io</a>
+</i>
+</sub></pre>
+        </div>
+    </div>
+    
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <!--a href='' id='home' class='d-inline-flex navbar-brand flex-column'>
+            <canvas id='px-logo' class='webGL' width='128' height='128' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        <div class='d-inline-flex navbar-header flex-column border border-info rounded'>
+            <h2><a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe"
+                id='home'
+                title='VSN Home'
+                class='navbar-brand'><!--img src="/_img/primaryWalletQRCode.png"
+                    width='64'
+                    height='64'-->vigilance.eth<sup>&trade;</sup></a> <a href="http://vigilance91.github.io/" class='text-primary'>Home</a>
+            </h2>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <sub>Built using <a href="https://github.com/">github</a>, <a href="https://web3js.readthedocs.io/en/v1.3.0/#">web3</a> &amp; <a href="https://github.com/vigilance91/solidarity">solidarity&trade;</a></sub>
+        </div>
+        
+        <div class='d-inline-flex flex-column flex-fill text-center border border-success rounded'>
+            <h2 class='text-primary'><b class='text-success'>S</b>igned <b class='text-success'>D</b>AG <b class='text-success'>F</b>ormat <b class='text-success'>32</b> Byte (<span class='text-success'>SDF32</span>) Specification</h2>
+            
+            <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
+            </p>
+        </div>
+        
+        
+        <!--div class='d-flex flex-row border border-info border-rounded small'>
+            <label>
+                <h6 class='text-primary border border-light border-rounded text-center'>Options</h6>
+                <form>
+                    <div class='d-inline-flex flex-column flex-fill border border-primary border-rounded'>
+                        <label for='byteSize'>Byte Size:
+                            <fieldset class='form-group'>
+                                <div class="form-check">
+                                    <label class="form-check-label"
+                                        for="byteSize32">
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="byteSize"
+                                            id="byteSize32"
+                                            value="ssf32" checked>
+                                        SSF-32
+                                    </label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <label class="form-check-label"
+                                        for="byteSize64">
+                                        <input class="form-check-input" 
+                                            type="radio"
+                                            name="byteSize"
+                                            id="byteSize64"
+                                            value="ssf64">
+                                        SSF-64
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </label>
+                    </div>
+                    
+                    <div class='d-inline-flex flex-column flex-fill border border-primary border-rounded'>
+                        <label for='byteLayout'>Layout:
+                            <fieldset class='form-group'>
+                                <div class="form-check">
+                                    <label class="form-check-label"
+                                        for="exampleRadios1">
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="byteLayout"
+                                            id="layoutPacked"
+                                            value="packed" checked>
+                                        Packed
+                                    </label>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <label class="form-check-label"
+                                        for="layoutPadded">
+                                        <input class="form-check-input"
+                                            type="radio"
+                                            name="byteLayout"
+                                            id="layoutPadded"
+                                            value="padded">
+                                        Padded
+                                    </label>
+                                </div>
+                            </fieldset>
+                        </label>
+                    </div>
+                </form>
+            </label>
+        </div-->
+    </div>
+    <!--site navigation-->
+    
+    <nav id='banner'
+        class='d-flex navbar navbar-dark bg-dark border border-info rounded small'
+        role='navigation'>
+        
+        <!--button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button-->
+      
+        <div class="container-fluid justify-content-center">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-fill flex-column text-center'>
+                    <ul class='nav navbar-center nav-pills bg-dark small' role='tablist'>
+                        <li class='nav-item'>
+                            <a class='nav-link active'
+                                href='#intro'
+                                role='tab'
+                                data-toggle='tab'>Introduction
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#specPacked'
+                                role='tab'
+                                data-toggle='tab'>Specification
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#misc'
+                                role='tab'
+                                data-toggle='tab'>Miscellaneous
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#encoders'
+                                role='tab'
+                                data-toggle='tab'>Recommendations
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Appendix
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#glossary'
+                                    role='tab'
+                                    data-toggle='tab'>Glossary
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#rationale'
+                                    role='tab'
+                                    data-toggle='tab'>Rationale
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#examples'
+                                    role='tab'
+                                    data-toggle='tab'>Examples
+                                </a>
+                                
+                                <hr>
+                                
+                                <a class='dropdown-item'
+                                    href='#errata'
+                                    role='tab'
+                                    data-toggle='tab'>Errata
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#references'
+                                    role='tab'
+                                    data-toggle='tab'>References
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#credits'
+                                    role='tab'
+                                    data-toggle='tab'>Credits
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href="https://vigilance91.github.io/LICENSE.md">License
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Tab panes -->
+    <main role='main' class='container-fluid tab-content border border-info rounded'>
+        <article role='tabpanel' class='tab-pane bg-dark active' id='intro'>
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Document Status</h3>
+                    
+                    <p>This is an initial draft of the <b class='text-success'>SDF32</b> 1.0 specification.
+                    <!--which has been published as RFC-XXXX and as a W3C Recommendation.-->
+                    </p>
+                    
+                    <p>While this draft has been released, it has <b class='text-danger'>not</b> been approved by any standards body.
+                    </p>
+                    
+                    <!--p>The <b class='text-success'>SDF32</b> specification is on a standards track under the purview of ISO/IEC (TBD) and is expected to be released eventually as ISO/IEC International Standard (TBD).
+                    </p-->
+                    
+                    <!--p>It is the intent of the standards bodies to maintain backward compatibility with this specification.
+                    </p-->
+                    
+                    <p>Implementors should periodically check the <b class='text-success'>SDF32</b> online resources (see <b class='text-primary'>#Online Resources</b> tab) for the current status of <b class='text-success'>SDF32</b> documentation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border-light border border-light border-rounded text-center'>Abstract</h3>
+                    
+                    <p>The <i class='text-primary'>Signed DAG Format 32 Byte</i> (<b class='text-success'>SDF32</b>) specification
+                    provides a convenient format for signed directional acyclic graphs (<i class='text-success'>SDAG</i>s).
+                    </p>
+                    
+                    <p>The <b class='text-success'>SDF32</b> specification is inspired by the patent-free <a href="/ssf32.html" class=''>SSF32 specification</a> and is
+                    designed to provide a poratble, legally unencumbered, highly-secure, well-specified standard for encoding and decoding directional acyclic graphs
+                    constructed from SSF in a manner which <!--can be serialized-->....   <!--cryptographically secure hashes &amp; digital signatures-->.
+                    </p>
+                    
+                    <!--p class='note'>This specification is <b class='text-warning'>non-standard</b> JSON.</p-->
+                    
+                    <p>The initial motivation for the <b class='text-success'>SDF32</b> standard was to have a convenient, extensible, compact &amp; cryptographically secure method for
+                    proving two or more transformations of some source document are related, either directly or indirectly,
+                    through some arbitrary (non-cyclic) chain of transformations.
+                    </p>
+                    
+                    <!--p class='note'>
+                    </p-->
+                    
+                    <!--p class='note'>All applications which encode or decode <b class='text-success'>SSF32</b> files in compliance with this specification <b class='text-warning'>should</b> utilize the industry standard <a href="https://www.openssl.org/">OpenSSL Protocol</a> or another secure &amp; tested cryptographic protocol.-->
+                    
+                    <p>The <b class='text-success'>SDF32</b> file format is a patent-free format licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
+                    </p>
+                    
+                    <p>This specification defines the Internet Media Type &quot;<b class='text-success'>application/sdf32</b>&quot;.
+                    </p>
+                    
+                    <p class="note">Please review either the <b class='text-primary'>#License</b> tab or the repository <a href="">LICENSE.md</a> for more information.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>        
+                    <p><b class='text-success'>SDF32</b> features retained from the <a href="">PNG Standard</a> include:
+                    </p>
+                    
+                    <ul>
+                        <li>Complete hardware and platform independence.</li>
+                        <!--li>Effective, 100% lossless compression via <a href="">gzdeflate</a>.</li-->
+                        <li>Reliable, straightforward detection of file corruption.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p><b class='text-success'>SDF32</b> is designed to be:
+                        <ul>
+                            <li>Simple &amp; portable.</li>
+                            <li>Non-binary.</li>
+                            <li>Secure: Reasonably cryptographically resistant to tampering or data corruption.</li>
+                            <!--li>Legally unencumbered: to the best knowledge of the <b class='text-success'>SSF32</b> authors, no algorithms under legal challenge are used.</li-->
+                            <!--li>well compressed, implementing <i class='text-info'>gzdeflate</i> algorithm.</li-->
+                            <li>Flexible: Allows for future extensions without compromising the fundementals of the specification.</li>
+                            <li>Robust: Designed to support full file integrity, including: simple, quick detection of common transmission errors, while also supporting highly optimized, industry standard cryptographic validation algorithms.</li>
+                            <li>Acyclic: Graphs which result in circular structures are not supported.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column'>
+                    <p>The primary purpose of this specification is to provide the definition of the <i class='text-primary'>Signed DAG Format</i> and recommendations for the minimum required behaviour for renderers, parsers and verifiers.</p>
+                    
+                    <p>The <a href="text-primary">#Appendix</a> tab provides additional documentation, including rational for all design decisions.
+                    </p>
+                    
+                    <p class='note'>While the <b class="text-primary">#Appendix</b> tab and its content are <b>not</b> part of the formal specification,
+                    it helps implementors to understand the design and intent behind this document.
+                    Its other purpose is to provide cross-references to relevant sections of rationale, examples or other supporting material.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-primary border border-light border-rounded text-center'>Terms</h4>
+                    
+                    <p>The key words in this document:</p>
+                    
+                    <ul>
+                        <li>&quot;MUST&quot;</li>
+                        <li>&quot;MUST NOT&quot;</li>
+                        <li>&quot;REQUIRED&quot;</li>
+                        <li>&quot;SHALL&quot;</li>
+                        <li>&quot;SHALL NOT&quot;</li>
+                        <li>&quot;SHOULD&quot;</li>
+                        <li>&quot;SHOULD NOT&quot;</li>
+                        <li>&quot;RECOMMENDED&quot;</li>
+                        <li>&quot;MAY&quot;</li>
+                        <li>and &quot;OPTIONAL&quot;</li>
+                    </ul>    
+                    
+                    <p>are to be interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a>.
+                    </p>
+
+                    <!--See Rational: <ul>
+                        <li></li>
+                    </ul-->
+                </div> 
+            
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Pronunciation</h3>
+                    
+                    <p><a href="https://www.ling.upenn.edu/courses/Fall_2014/ling115/phonetics.html">Phonetically</a>, <b class='text-success'>SDF</b> is pronounced: &quot;ɛs-di-ɛf&quot;.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="specPacked">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
+                    <p>As with <b class='text-success'>SSF32</b>, <b class='text-success'>SDF32</b> may either be tightly <b class='text-light'>packed</b> or <b class='text-success'>padded</b> to 32 Byte boundaries.
+                    </p>
+                    
+                    <p><b class='text-success'>SDF32</b> files are JSON compatible files consisting of:
+                        <ul>
+                            <li>A single root object containing a non-zero amount of unique keys.</li>
+                            <li>Unique keys which <b class='text-danger'>MUST</b> contain 44 Base64 encoded characters repressenting the __ of some text or file.</li>
+                            <li>Each root key <b class='text-danger'>MUST</b> be associated with an array containing one or more other unique keys which <b class='text-warning'>MAY</b> also contain associations to other arrays.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>File Header</h3>
+                    
+                    <p>There is no unique file header currently associated with <b class='text-success'>.sdf32</b> files,
+                    they are for all intents and purposes <b class='text-success'>.json</b> files (and should be treated as such)
+                    which additionally adhere to the restrictions outlined in this specifiction.
+                    </p>
+                    
+                    <!--p class='note'>See rationale: <a href="">SDF32 File Signature</a>.
+                    </p-->
+                </div>
+            
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Structure</h3>
+                    
+                    <p>Immediately following the <b class='text-info'>8 byte</b> file <i class='text-primary'>header</i> is a format specific hash,
+                    which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
+                    </p>
+                    
+<pre><code>{
+    "lQimK55LEESzsGNL1qMgJiuo9rLgjWsUBRjFjasaVKc=": [
+        "1NMPWtQtazV50IjvkOtNLaOpW8kX8atcKKqZb1S76xc=",
+        "WlAGg930RjfnhMgPgHNjuBivTid+3ndkvlGzQw1+8uM=",
+        "3nP0o09Y7hH2Gi\/ZFqWKL1+trFfzCSZtDHavrqbc+s4="
+    ],
+    "azJ4ayvoiSQKpBCKfJ84lcIYWEMEC2x\/0MFUYdyw+r4=": [
+        "+etuZkMuMQ7BKMu\/PRTSaDC7E\/ImdDvr3AbSlLzDYhE=",
+        "WgP+1HTI\/6nEKvp+h1YxTaAltxYUV\/Y\/avSyJs8CC+E=",
+        "fOMCfz57FG3597hwonC9C1osyUw800WmIvDjODCfDek="
+    ]
+}
+</code></pre>
+                    <p class='note'>See rationale: <a href="">SDF32 Key Format</a>.</p>
+                    
+                    <p>After the data structure has been serialized into a string repressentation (in this example, JSON),
+                    it is &apos;gzdeflate&apos;ed (to compress the payload), then Base64 encoded (to support transport across multiple internet protocols).
+                    </p>
+                    
+                    <pre><code>
+</code></pre>
+                </div>
+            </div>
+            
+            
+            <div class='d-flex flex-row border border-info rounded packed' style='overflow-x:scroll;'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    
+                    <p>By default, <b class='text-success'>SDF32</b> keys SHOULD be binary SSF32 encoded as Base64,
+                    but MAY optionally be implemented as underscore prefixed ('_') hexadecimal equivalent values if
+                    full adoption of the JSON standard as well as multiplatform support across Python, C/C++, Javascript and other common programming languages is desired.
+                    </p>
+                </div>
+            </div>
+            
+            <!--div class='d-flex flex-row border border-info rounded packed'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Packed Regular Expression</h3>
+                    
+                    <p>A PHP preg_* compatible regex repressenting a <b class='text-success'>SSF32</b> compatible string which conforms to this specification, which captures all required groups <b>may</b> be implemented as follows:
+                    </p>
+                    
+                    <code>&apos;/^<span class='text-danger'>(</span><span class='text-primary'>\x23\x53\x53\x46\x0d\x0a\x1a\x0a</span><span class='text-danger'>)</span><span class='text-success'>(</span><span class='text-danger'>(.{32})</span><span class='text-light'>(.{32})</span><span class='text-warning'>(.{4})</span><span class='text-success'>)</span><span class='text-warning'>(</span><span class='text-info'>(.{32})</span>(<span style='color:#7b7bff;'>(.{32})</span><span class='text-success'>(.+)</span>)?<span class='text-warning'>)</span>$/s&apos;
+                    </code>
+
+                    <p class='note'>See: The <a href="" class='text-success'>Official <b>SSF32</b> PHP Implementation</a> for a practical example.</p>
+                </div>
+            </div-->
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="compression">
+            <div class='d-flex flex-row border border-info rounded'>
+                <h3 class='text-primary border border-light rounded text-center'>Deflate/Inflate Compression</h3>
+                
+                <p><b class='text-success'>SDF32</b> files MUST be compressed using the lossless gzdeflate methods,
+                the Base64 encoded in compliance with <a href="">RFC-2045</a>.
+                </p>
+                
+                <p class='note'>Deflate compression is an LZ77 derivative used in zip, gzip, pkzip, and related programs.
+                Extensive research has been done supporting its patent-free status.
+                Portable C implementations are freely available across multiple platforms.
+                </p>
+                
+                <!--p>Deflate-compressed datastreams within SSF are stored in the unstructured "gzdeflate" format
+                Further details on this format are given in the zlib specification [RFC-1950].
+                </p-->
+                
+                <!--p class='note'>The zlib compression method number is not the same as the PNG compression method number. The additional flags must not specify a preset dictionary.
+                A PNG decoder must be able to decompress any valid zlib datastream that satisfies these additional constraints.
+                </p-->
+                
+                <p>Decoding <b class='text-success'>SDF32</b> files MUST decode the Base64 <a href="">RFC-2045</a> compliant,
+                then uncompress the resulting binary payload using the gzinflate to generate the resulting JSON data structure.
+                </p>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="misc">
+            <!--div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill text-center'>
+                    
+                </div>
+            </div-->
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill border border-info border-rounded'>
+                    <h3 class='text-primary border border-light rounded'>File Name Extension</h3>
+                    
+                    <p>Where system customarily include a file extension signifying its type,
+                    the extension &quot;<b class='text-success'>.sdf32</b>&quot; is recommended for <b class='text-success'>SDF32</b> files.
+                    </p>
+                    
+                    <p>Lowercase &quot;<b class='text-success'>.sdf32</b>&quot; is preferred if names are case-sensitive.
+                    </p>
+                    
+                    <p><b class='text-success'>SDF32</b> file extensions MUST contain an integer suffix (eg. &quot;<b class='text-success'>.sdf</b>&quot; is not permitted),
+                    denoting the byte format (typically either 32 or 64 bytes) of the SSF encoding used to generated the SDAG&apos;s entries.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info border-rounded'>
+                    <h3 class='text-primary border border-light rounded'>Internet Media Type</h3>
+                    <!--p>The Internet Assigned Numbers Authority (IANA) has registered &quot;<b class='text-success'>application/sdf32</b>&quot; as the Internet Media Type for SDF32 [RFC-XXXX], [RFC-XXXX].
+                    </p-->
+                    
+                    <!--p>For robustness, decoders MAY choose to support the interim media type:
+<pre class='text-success'>&apos;application/x-sdf32&apos;</pre>
+                    Until an official MIME type registration is complete.
+                    </p-->
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Security Considerations</h3>
+                    
+                    <p>All <b class='text-success'>SDF32</b> files <b class='text-danger'>MUST</b> be non-executable,
+                        <b class='text-warning'>MAY</b> be <b>read-only</b>.
+                    </p>
+                    
+                    <p>Production <b class='text-success'>SDF32</b> files <b class='text-warning'>SHOULD</b> be pre-built during a separate build phase
+                    while the <b class='text-warning'>SHOULD</b> also be read-only to prevent modifiction in production environmnents.
+                    </p>
+                    
+                    <p class='note'>Use of dynamic, runtime generated, read-write SDF32 files in production environmnents is highly discouraged,
+                    however this is not explicitly a violation of the standard, although implementors must be aware such behaviour may provide a protential attack vector to be exploited by hostile actors.
+                    </p>
+                    
+                    <p>A validator that fails to complete all checks specified in the <b class='text-primary'>#Validator</b> tab
+                    <b class='text-danger'>MUST</b> consider the decoded data corrupt or otherwise invalid.
+                    </p>
+                    
+                    <!--p>Decoders <b class='text-danger'>must</b> only perform validation on a decoded <b class='text-success'>SSF32</b> payload and its associated source.
+                    A compliant decoder <b class='text-danger'>must not</b> execute mutable code which has side effects.
+                    </p-->
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="encoders">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Decoders</h3>
+                
+                    <p class='note'>This section provides recommendations for decoder behavior.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <!--div class='d-inline-flex flex-column border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Encoders</h3>
+                    
+                    <p>This section provides recommendations for <b class='text-success'>SSF32</b> encoder behavior.</p>
+                    
+                    <p>The only absolute requirement for an <b class='text-success'>SSF32</b> encoder is that it 
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <p>Encoders <b class='text-danger'>must</b>:
+                        <ul>
+                            <li>Produce files or strings that conform to this specification.</li>
+                            <li>Support <b class='text-light'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li>
+                        </ul>
+                    </p>
+                    
+                    <p>Encoders <b class='text-warning'>may</b>:
+                        <ul>
+                            <li>Perform encryption, compression, base64 encoding or any combination of the three on its output.</li>
+                        </ul>
+                    </p>
+                </div-->
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <p>The only absolute requirement for an <b class='text-success'>SDF32</b> decoder is that it successfully reads any file conforming to the format specified in this document.
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <!--10.1. Error checking-->
+                    <p>To ensure early detection of common file-transfer problems, decoders <b class='text-danger'>must</b> verify that all initial eight (8) bytes (64 bits) of the <b class='text-success'>SSF32</b> file signature are correct.
+                    (See Rationale: <b class='text-success'>SDF32</b> file signature).
+                    </p>
+                    
+                    <!--p>A decoder can have additional confidence in the file&apos;s integrity using the File <i class='text-danger'>Content Integrity Hash</i>, <i class='text-light'>File Layout Type Hash</i> and <i class='text-warning'>Byte Length Specifier</i>.
+                    </p-->
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>    
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>                
+                    <p><b class='text-danger'>MUST</b>:
+                        <ul>
+                            <!--li>ONLY support <b class='text-succss'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li-->
+                            <li>Hash (using the alogrithm specific to the parser rendering the file) the parsed <i class='text-light'>Type Hash</i>, <i class='text-warning'>Byte Length Specifier</i>, <i class='text-primary'>Source Content Hash</i>, <i class='text-success'>Source Signature</i> then validate it against the <b>parsed</b> <i class='text-danger'>Content Integrity Hash</i>.</li>
+                            <li>Validate the file&apos;s parsed <i class='text-light'>Type Hash</i> matches the unique <i class='text-light'>Type Hash</i> of the specific parser implemenation rendering the file.</li>
+                            <li>Verify the number of (8-bit) <b>bytes</b> read from the file following the <span class='text-warning'>4 Byte Byte Length Specifier</span> equals the parsed <i class='text-warning'>Byte Length Specifier</i>. The <i class='text-warning'>Byte Length Specifier</i> <b class='text-danger'>must</b> be no less than the number of bytes corresponding to the specific parser rendering the file (typically either 32 or 64 Bytes).</li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <p><b class='text-warning'>MAY</b>:
+                        <ul>
+                            <li>Perform decompression, base64 decoding on its input.
+                            The result <b class='text-danger'>must</b> conform to this standard.
+                            </li>
+                        </ul>
+                    </p>
+                    
+                    <p>In the event the <b>parsed</b> <i class='text-warning'>Byte Length Specifier</i> of a file equals the number of bytes in its hashing algorithm (typically either 32 or 64 Bytes),
+                    there is no signature associated with the data and parse must end after the <i class='text-info'>Source Content Hash</i> has been parsed.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="glossary">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Glossary of Terms</h3>
+                    
+                    <table id='defiERC20'
+                        class='table table-dark table-striped table-bordered'>
+                        
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Byte</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">Eight bits; also called an octet.</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Deflate</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SSF32</b> files &amp; PNG files,
+                                            as well as in zip, gzip, pkzip, and other compression programs.
+                                            </p>
+                                            
+                                            <p class='card-text'><b>Deflate</b> is a member of the <span class='text-info'>LZ77</span> family of compression methods.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossless compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that guarantees the original data can be reconstructed exactly, bit-for-bit.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossy compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that reconstructs the original data approximately, rather than exactly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">zlib</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">A particular format for data that has been compressed using deflate-style compression.
+                                            Also, the name of a library implementing this method.
+                                            </p>
+                                            
+                                            <p class="card-text"><b class='text-success'>SSF32</b> implementations need not use the zlib library,
+                                            but they must conform to its format for compressed data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">SSF32</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">An extensible, secure, non-executable binary format for structuring the hash and digital signature in a manner which is resistant to corruption, transferable over common internet protocols as a header, embeded within an HTML webpages, included as an email attachment or stored in a database server or blockchain.</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">SDAG</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">Signed Directional Acyclic Graph</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">SDF32</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">SDAG Format 32 Byte</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="appendix">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Appendix</h3>
+                    
+                    <p class='note'>This section is <b>not</b> part of the formal SDF32 specification.
+                    </p>
+                    
+                    <p>This section provides reasoning behind some of the design decisions which when into standardizing <b class='text-success'>SDF32</b>.
+                    Many of these decisions were the subject of considerable debate.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill text-center bg-dark'>
+                    <h3 class='text-primary'>Why a new file format?</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <!--div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>Common cryptographic operations include generating then subsequently storing a hash and signature to prove the authorship or ownership of some text or file.
+                    </p>
+                    
+                    <p>The <b class='text-success'>SSF32</b> specification provides a convenient, patent-free manner in which to structure, encode and decode such data,
+                    which can then be directly embbeded within another file as metadata, transmitted across the internet or stored in a database on a blockchain, which may be used for validation.
+                    </p>
+                </div-->
+            </div>
+        </article>
+    
+        <article role="tabpanel" class="tab-pane bg-dark" id="examples">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Example Encoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SDF32</b> encoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+                
+                <div class='d-inline-flex flex-column flex-fill border border-info border-rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Example Decoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SDF32</b> decoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="resources">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Online Resources</h3>
+                
+                    <p>The Official <b class='text-success'>SDF32</b> PHP reference is available <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="errata">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Errata</h3>
+                    
+                    <p>Change Log:
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="references">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>References</h3>
+                    
+                    <ul>
+                        <!--li><a href="/ssf32.html">SSF32 Specification</a></li-->
+                        <li><a href="https://www.ietf.org/rfc/rfc2045.txt">RFC-2045</a></li>
+                        <li><a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a></li>
+                        <li><a href="http://www.faqs.org/rfcs/rfc1951.html">RFC-1951 Deflate Compressed Data Format</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="credits">
+            <div class='d-flex flex-row'>
+                <h3 class='text-primary border border-light rounded text-center'>Credits</h3>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Editors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Authors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Trademarks<ul>
+                        <li></li>
+                    </ul></label>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <script id='main' type="application/javascript">
+    $(()=>{
+        $('pre code').each(
+            (i, block)=>{
+                hljs.highlightBlock(block);
+            }
+        );
+        /*
+        //hide an individual element by setting its hidden attibute
+        function $hide($jqo, b){
+            return $jqo.attr('hidden', b === true ? true : false);
+        }
+        //if $jqo is hidden, reveal it, if its visible, hide it
+        //function $toggleHidden($jqo){
+            //$jqo.attr('hidden', !$jqo.attr('hidden'));
+        //}
+        //
+        //enable/diable ui input elements
+        function $disable(
+            $jqo,
+            b
+        ){
+            return $jqo.prop('disabled', b === true ? true : false);
+        }
+        //
+        //disables or enables all input elements contained within div,
+        //then hides or shows the desired div element, respectfully
+        //note an entire div can NOT be hiden if they have any visible internal content
+        //
+        function $toggleByteLength(b){
+            const 
+                $ssf32 = $(`.ssf32`),
+                $ssf64 = $(`.ssf64`);
+            
+            if(b === true){
+                //$disable($ssf32, false);
+                $(`.ssf32 *`).show();
+                $ssf32.show();
+                //
+                //$disable($ssf64, false);
+                $ssf64.hide();
+                $(`.ssf64 *`).hide();
+            }
+            else{
+                $ssf32.hide();
+                $ssf64.show();
+            }
+        }
+        
+        function $toggleByteLayout(b){
+            const
+                $packed = $(`.packed`),
+                $padded = $(`.padded`);
+            
+            if(b === true){
+                $disable($(`.packed *`), false);
+                $disable($packed, false);
+                $hide($packed, false);
+                //
+                $disable($(`.padded *`), true);
+                $disable($padded, true);
+                $hide($padded, true);
+            }
+            else{
+                $disable($(`.packed *`), true);
+                $disable($packed, true);
+                $hide($packed, true);
+                //
+                $disable($(`.padded *`), false);
+                $disable($padded, false);
+                $hide($padded, false);
+            }
+        }
+        
+        $toggleByteLength(true);
+        $toggleByteLayout(true);
+        
+        $toggleByteLength(false);
+        $toggleByteLayout(false);
+        
+        //function _$setEscapedText(
+            //$jqo,
+            //text
+        //){
+            //$jqo.text(
+                //_.escape(text)
+            //);
+        //}
+        */
+    });
+    </script>
+    
+    <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid small'>
+        <div class='footer-copyright text-center flex-row'>
+            &copy; 2018 - 2022 <a href="index.html">Tyler R. Drury</a> (<a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a><sup>&trade;</sup>),
+        </div>
+        
+        <div class='text-center flex-row'>
+            <b>All Rights Reserved.</b>
+        </div>
+
+        <div class='text-center flex-row'>
+            <sub><!--a id='about' href="tos.html" class=''>Terms</a> |
+                <a id='about' href="governance.html" class=''>Governance</a> |-->
+                <a id='about' href="about.html" class=''>About</a> |
+                <a id='contact' href="contact.html" class= ''>Contact</a>
+            </sub>
+        </div>
+    </footer>
+</body>
+</html>

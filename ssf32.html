@@ -37,7 +37,7 @@
                 </script>
             </canvas>
         </a-->
-        <div class='d-inline-flex navbar-header flex-column'>
+        <div class='d-inline-flex navbar-header flex-column border border-info rounded'>
             <h2><a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe"
                 id='home'
                 title='VSN Home'
@@ -50,8 +50,8 @@
             <sub>Built using <a href="https://github.com/">github</a>, <a href="https://web3js.readthedocs.io/en/v1.3.0/#">web3</a> &amp; <a href="https://github.com/vigilance91/solidarity">solidarity&trade;</a></sub>
         </div>
         
-        <div class='d-inline-flex flex-column flex-fill text-center'>
-            <h2 class='text-primary'>Secure Signature Format 32 Byte (<span class='text-success'>SSF32</span>) Specification</h2>
+        <div class='d-inline-flex flex-column flex-fill text-center border border-info rounded'>
+            <h2 class='text-primary'><b class='text-success'>S</b>ecure <b class='text-success'>S</b>ignature <b class='text-success'>F</b>ormat <b class='text-success'>32</b> 32 Byte (<span class='text-success'>SSF32</span>) Specification</h2>
             <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
             </p>
         </div>
@@ -146,20 +146,29 @@
                             </a>
                         </li>
                         
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#specPacked'
-                                role='tab'
-                                data-toggle='tab'>Packed Specification
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSpecs"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Specification
                             </a>
-                        </li>
-                        
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#specPadded'
-                                role='tab'
-                                data-toggle='tab'>Padded Specification
-                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#specPacked'
+                                    role='tab'
+                                    data-toggle='tab'>Packed
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#specPadded'
+                                    role='tab'
+                                    data-toggle='tab'>Padded
+                                </a>
+                            </div>
                         </li>
                         
                         <!--li class='nav-item'>
@@ -170,19 +179,36 @@
                             </a>
                         </li-->
                         
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuRecs"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Recommendations
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#recsEncoders'
+                                    role='tab'
+                                    data-toggle='tab'>Encoders
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#recsDecoders'
+                                    role='tab'
+                                    data-toggle='tab'>Decoders
+                                </a>
+                            </div>
+                        </li>
+                        
                         <li class='nav-item'>
                             <a class='nav-link'
                                 href='#misc'
                                 role='tab'
                                 data-toggle='tab'>Miscellaneous
-                            </a>
-                        </li>
-                        
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#encoders'
-                                role='tab'
-                                data-toggle='tab'>Recommendations
                             </a>
                         </li>
                         
@@ -223,14 +249,6 @@
                             </div>
                         </li-->
                         
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#glossary'
-                                role='tab'
-                                data-toggle='tab'>Glossary
-                            </a>
-                        </li>
-                        
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle"
                                 href="#"
@@ -243,6 +261,12 @@
                             
                             <div class="dropdown-menu dropdown-menu bg-secondary text-center">
                                 <a class='dropdown-item'
+                                    href='#glossary'
+                                    role='tab'
+                                    data-toggle='tab'>Glossary
+                                </a>
+                                
+                                <a class='dropdown-item'
                                     href='#rationale'
                                     role='tab'
                                     data-toggle='tab'>Rationale
@@ -253,6 +277,8 @@
                                     role='tab'
                                     data-toggle='tab'>Examples
                                 </a>
+                                
+                                <hr>
                                 
                                 <a class='dropdown-item'
                                     href='#errata'
@@ -276,9 +302,7 @@
                         
                          <li class='nav-item'>
                             <a class='nav-link'
-                                href='#license'
-                                role='tab'
-                                data-toggle='tab'>License
+                                href="https://vigilance91.github.io/LICENSE.md">License
                             </a>
                         </li>
                     </ul>
@@ -315,7 +339,7 @@
                 <div class='d-line-flex flex-column flex-fill'>
                     <h3 class='text-primary border-light border border-light border-rounded text-center'>Abstract</h3>
                     
-                    <p>The <i class='text-primary'>Secure Signature Format 32 Byte</i> (<b class='text-success'>SSF32</b>) specification
+                    <p>The <i class='text-primary'><b class='text-success'>S</b>ecure <b class='text-success'>S</b>ignature <b class='text-success'>F</b>ormat <b class='text-success'>32</b> Byte</i> (<b class='text-success'>SSF32</b>) specification
                     provides an extensible, tamper &amp; corruption resistant file format for cryptographically secure signatures for files and strings.
                     </p>
                     
@@ -328,6 +352,7 @@
                     </p>
                     
                     <p class='note'>All applications which encode or decode <b class='text-success'>SSF32</b> files in compliance with this specification <b class='text-warning'>should</b> utilize the industry standard <a href="https://www.openssl.org/">OpenSSL Protocol</a> or another secure &amp; tested cryptographic protocol.
+                    </p>
                     
                     <p>The <b class='text-success'>SSF32</b> file format is a patent-free format licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
                     </p>
@@ -370,7 +395,8 @@
             
             <div class='d-flex flex-row bg-dark border border-info rounded'>
                 <div class='d-inline-flex flex-column'>
-                    <p>The primary purpose of this specification is to provide the definition of the <i class='text-primary'>Secure Signature Format</i> and recommendations for the minimum required behaviour for encoders and decoders.</p>
+                    <p>The primary purpose of this specification is to provide the definition of the <i class='text-primary'>Secure Signature Format</i> and recommendations for the minimum required behaviour for encoders and decoders.
+                    </p>
                     
                     <p>The <a href="text-primary">#Appendix</a> tab provides additional documentation, including rational for all design decisions.
                     </p>
@@ -383,7 +409,7 @@
             </div>
             
             <div class='d-flex flex-row border border-info rounded'>
-                <div class='d-inline-flex flex-column flex-fill'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     <h4 class='text-primary border border-light border-rounded text-center'>Terms</h4>
                     
                     <p>The key words in this document:</p>
@@ -407,11 +433,9 @@
                     <!--See Rational: <ul>
                         <li></li>
                     </ul-->
-               </div> 
-            </div>
-            
-            <div class='d-flex flex-row border border-info rounded'>
-                <div class='d-inline-flex flex-column flex-fill'>
+                </div> 
+                
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     <h3 class='text-primary border border-light rounded text-center'>Pronunciation</h3>
                     
                     <p><a href="https://www.ling.upenn.edu/courses/Fall_2014/ling115/phonetics.html">Phonetically</a>, <b class='text-success'>SSF</b> is pronounced: &quot;ɛs-ɛs-ɛf&quot;.
@@ -423,6 +447,8 @@
         <article role="tabpanel" class="tab-pane bg-dark" id="specPacked">
             <div class='d-flex flex-row'>
                 <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
+                    <h3 class='text-primary border border-light rounded'>Packed Specification</h3>
+                    
                     <p>A tightly <b class='text-light'>packed</b> <b class='text-success'>SSF32</b> compliant file consists of a standard <b class='text-primary'>8-byte</b> SSF <i class='text-primary'>header</i> followed by:
                         <ol>
                             <li>The <b class='text-danger'>Content Integrity Hash</b> of the remainder of the file&apos;s content.</li>
@@ -478,7 +504,8 @@
                     which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
                     </p>
                     
-                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.</p>
+                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.
+                    </p>
                     <!--
                     "solidarity.SecureSignatureFormat256(uint32 byteLength,bytes32 sourceHash,bytes32 publicKeyHash,bytes signature)"
                     "solidarity.SecureSignatureFormat512(uint32 byteLength,bytes64 sourceHash,bytes64 publicKeyHash,bytes signature)"
@@ -586,6 +613,8 @@
         <article role="tabpanel" class="tab-pane bg-dark" id="specPadded">
             <div class='d-flex flex-row'>
                 <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
+                    <h3 class='text-primary border border-light rounded'>Padded Specification</h3>
+                    
                     <p>A <b class='text-light'>padded</b> <b class='text-success'>SSF32</b> file is the same as the <b class='text-light'>packed</b> version,
                     with the only difference being all data fields are aligned to 32 bytes (<b class='text-light'>padded</b>)
                     and must be encoded in the same manner as to be comliant with <a href="https://docs.soliditylang.org/en/v0.6.8/abi-spec.html#abi">standard Ethereum Virtual Machine (EVM) ABI encoding</a>.
@@ -660,7 +689,8 @@
                     which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
                     </p>
                     
-                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.</p>
+                    <p>Following the <i class='text-danger'>Content Integrity Hash</i> is a unique, parser specific <i class='text-light'>Type Hash</i> specifying the following layout of the expected data and their types.
+                    </p>
                     <!--
                     "solidarity.SecureSignatureFormat256(uint32 byteLength,bytes32 sourceHash,bytes32 publicKeyHash,bytes signature)"
                     "solidarity.SecureSignatureFormat512(uint32 byteLength,bytes64 sourceHash,bytes64 publicKeyHash,bytes signature)"
@@ -766,7 +796,7 @@
                 <h3 class='text-primary border border-light rounded text-center'>Deflate/Inflate Compression</h3>
                 
                 <p><b class='text-success'>SSF</b> compression utilizes the deflate/inflate compression method.
-                <p>
+                </p>
                 
                 <p class='note'>Deflate compression is an LZ77 derivative used in zip, gzip, pkzip, and related programs. Extensive research has been done supporting its patent-free status.
                 Portable C implementations are freely available across multiple platforms.
@@ -867,12 +897,13 @@
             </div>
         </article>
         
-        <article role="tabpanel" class="tab-pane bg-dark" id="encoders">
+        <article role="tabpanel" class="tab-pane bg-dark" id="recsEncoders">
             <div class='d-flex flex-row'>
-                <div class='d-inline-flex flex-column border border-info rounded'>
-                    <h3 class='text-primary border border-light rounded'>Encoders</h3>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Encoder Recommendations</h3>
                     
-                    <p>This section provides recommendations for <b class='text-success'>SSF32</b> encoder behavior.</p>
+                    <p class='note'>This section provides recommendations for <b class='text-success'>SSF32</b> encoder behavior.
+                    </p>
                     
                     <p>The only absolute requirement for an <b class='text-success'>SSF32</b> encoder is that it 
                     However, best results will usually be achieved by following these recommendations.
@@ -891,9 +922,12 @@
                         </ul>
                     </p>
                 </div>
-                
-                <div class='d-line-flex flex-column border border-info rounded'>
-                    <h3 class='text-primary border border-light rounded'>Decoders</h3>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="recsDecoders">
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Decoder Recommendations</h3>
                     
                     <p>This section provides recommendations for decoder behavior.
                     </p>
