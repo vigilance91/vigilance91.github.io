@@ -8,7 +8,7 @@
     
     <!--base href="https://vigilance91.github.io/"-->
     
-	<title>Vigilance-Signed DAG Format 32 Byte (SDF32) Specification</title>
+	<title>Vigilance-Signed DAG Format 32 Byte (SDF32™) Specification</title>
     <!--CSS-->
     <link rel='stylesheet' type='text/css' href='bundle.css'>
     <link rel='stylesheet' type='text/css' href='main.css'>
@@ -51,7 +51,7 @@
         </div>
         
         <div class='d-inline-flex flex-column flex-fill text-center border border-success rounded'>
-            <h2 class='text-primary'><b class='text-success'>S</b>igned <b class='text-success'>D</b>AG <b class='text-success'>F</b>ormat <b class='text-success'>32</b> Byte (<span class='text-success'>SDF32</span>) Specification</h2>
+            <h2 class='text-primary'><b class='text-success'>S</b>igned <b class='text-success'>D</b>AG <b class='text-success'>F</b>ormat <b class='text-success'>32</b> Byte (<span class='text-success'>SDF32</span>™) Specification</h2>
             
             <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
             </p>
@@ -155,20 +155,43 @@
                             </a>
                         </li>
                         
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#misc'
-                                role='tab'
-                                data-toggle='tab'>Miscellaneous
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Recommendations
                             </a>
-                        </li>
-                        
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href='#encoders'
-                                role='tab'
-                                data-toggle='tab'>Recommendations
-                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#encoders'
+                                    role='tab'
+                                    data-toggle='tab'>Encoders
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#decoders'
+                                    role='tab'
+                                    data-toggle='tab'>Decoders
+                                </a>
+                                
+                                <hr>
+                                
+                                <a class='dropdown-item'
+                                    href='#misc'
+                                    role='tab'
+                                    data-toggle='tab'>Miscellaneous
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#security'
+                                    role='tab'
+                                    data-toggle='tab'>Security
+                                </a>
+                            </div>
                         </li>
                         
                         <li class="nav-item dropdown">
@@ -221,12 +244,6 @@
                                 </a>
                             </div>
                         </li>
-                        
-                        <li class='nav-item'>
-                            <a class='nav-link'
-                                href="https://vigilance91.github.io/LICENSE.md">License
-                            </a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -239,7 +256,7 @@
                 <div class='d-line-flex flex-column flex-fill'>
                     <h3 class='text-primary border border-light rounded text-center'>Document Status</h3>
                     
-                    <p>This is an initial draft of the <b class='text-success'>SDF32</b> 1.0 specification.
+                    <p>This is an initial draft of the <b class='text-success'>SDF32™</b> 1.0 specification.
                     <!--which has been published as RFC-XXXX and as a W3C Recommendation.-->
                     </p>
                     
@@ -295,13 +312,13 @@
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill'>        
-                    <p><b class='text-success'>SDF32</b> features retained from the <a href="">PNG Standard</a> include:
+                    <p><b class='text-success'>SDF32</b> retains the following features from the <a href="">PNG Standard</a> &amp; <a href="">SSF32 Standard</a>:
                     </p>
                     
                     <ul>
                         <li>Complete hardware and platform independence.</li>
-                        <!--li>Effective, 100% lossless compression via <a href="">gzdeflate</a>.</li-->
-                        <li>Reliable, straightforward detection of file corruption.</li>
+                        <li>Effective, 100% lossless compression via <a href="">gzdeflate</a>.</li>
+                        <li>Reliable, straightforward detection of data/file corruption.</li>
                     </ul>
                 </div>
             </div>
@@ -311,10 +328,9 @@
                     <p><b class='text-success'>SDF32</b> is designed to be:
                         <ul>
                             <li>Simple &amp; portable.</li>
-                            <li>Non-binary.</li>
                             <li>Secure: Reasonably cryptographically resistant to tampering or data corruption.</li>
-                            <!--li>Legally unencumbered: to the best knowledge of the <b class='text-success'>SSF32</b> authors, no algorithms under legal challenge are used.</li-->
-                            <!--li>well compressed, implementing <i class='text-info'>gzdeflate</i> algorithm.</li-->
+                            <li>Legally unencumbered: to the best knowledge of the <b class='text-success'>SSF32</b> authors, no algorithms under legal challenge are used.</li>
+                            <li>Well compressed, implementing <i class='text-info'>gzdeflate</i> algorithm.</li>
                             <li>Flexible: Allows for future extensions without compromising the fundementals of the specification.</li>
                             <li>Robust: Designed to support full file integrity, including: simple, quick detection of common transmission errors, while also supporting highly optimized, industry standard cryptographic validation algorithms.</li>
                             <li>Acyclic: Graphs which result in circular structures are not supported.</li>
@@ -330,7 +346,7 @@
                     <p>The <a href="text-primary">#Appendix</a> tab provides additional documentation, including rational for all design decisions.
                     </p>
                     
-                    <p class='note'>While the <b class="text-primary">#Appendix</b> tab and its content are <b>not</b> part of the formal specification,
+                    <p class='note'>While the <b class="text-primary">#Appendix</b> tab and its content are <b class='text-danger'>not</b> part of the formal specification,
                     it helps implementors to understand the design and intent behind this document.
                     Its other purpose is to provide cross-references to relevant sections of rationale, examples or other supporting material.
                     </p>
@@ -376,13 +392,22 @@
         <article role="tabpanel" class="tab-pane bg-dark" id="specPacked">
             <div class='d-flex flex-row'>
                 <div class='d-inline-flex flex-column flex-fill border border-light rounded'>
-                    <p>As with <b class='text-success'>SSF32</b>, <b class='text-success'>SDF32</b> may either be tightly <b class='text-light'>packed</b> or <b class='text-success'>padded</b> to 32 Byte boundaries.
+                    <p><b class='text-success'>SDF32</b> is a platform independant Directional Acyclic Graph format,
+                    designed to graph cryptographic transforms, encodings, etc and verify the relationship of those transforms,
+                    such that if &apos;x&apos; is some source string or file and &apos;f(x)&apos; is some transform applied to the source,
+                    then by traversing the graph, the relationship between &apos;x&apos; and &apos;f(x)&apos; can be established and independantly verified
+                    without revealing any underlying data mapped in the graph.
+                    <!--which supports JSON format and can be serialized C/C++ Paython and Javascript objects.-->
                     </p>
                     
-                    <p><b class='text-success'>SDF32</b> files are JSON compatible files consisting of:
+                    <p>As with <b class='text-success'>SSF32</b>, a <b class='text-success'>SDF32</b> structure&apos;s elements MUST be composed of binary <b class='text-success'>SSF32</b> entries,
+                    which MUST either be tightly <b class='text-light'>packed</b> or <b class='text-success'>padded</b> to 32 Byte boundaries.
+                    </p>
+                    
+                    <p>When serializing <b class='text-success'>SDF32</b> files as JSON, encoders consisting of:
                         <ul>
                             <li>A single root object containing a non-zero amount of unique keys.</li>
-                            <li>Unique keys which <b class='text-danger'>MUST</b> contain 44 Base64 encoded characters repressenting the __ of some text or file.</li>
+                            <li>Unique keys which <b class='text-danger'>MUST</b> contain an underscore (&apos;_&apos;) prefixed series of 64 hexadecimal encoded characters (repressenting 32 8-bit Bytes) constituting the unique SDAG key of some text or file (if it is signed).</li>
                             <li>Each root key <b class='text-danger'>MUST</b> be associated with an array containing one or more other unique keys which <b class='text-warning'>MAY</b> also contain associations to other arrays.</li>
                         </ul>
                     </p>
@@ -393,54 +418,146 @@
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     <h3 class='text-primary border border-light rounded text-center'>File Header</h3>
                     
-                    <p>There is no unique file header currently associated with <b class='text-success'>.sdf32</b> files,
-                    they are for all intents and purposes <b class='text-success'>.json</b> files (and should be treated as such)
-                    which additionally adhere to the restrictions outlined in this specifiction.
+                    <p>There is no unique file header currently associated with <b class='text-success'>.sdf32</b> files.
+                    </p>
+                    
+                    <p>All <b class='text-success'>.sdf32</b> encoded files MUST be <i class='text-success'>RFC-2045 Base64 encoded</i> <b class='text-warning'>.json</b> files,
+                    which additionally adhere to the restrictions outlined in this specifiction when decoded and parsed.
                     </p>
                     
                     <!--p class='note'>See rationale: <a href="">SDF32 File Signature</a>.
                     </p-->
                 </div>
+            </div>
             
-                <div class='d-inline-flex flex-column flex-fill'>
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     <h3 class='text-primary border border-light rounded text-center'>Structure</h3>
                     
-                    <p>Immediately following the <b class='text-info'>8 byte</b> file <i class='text-primary'>header</i> is a format specific hash,
+                    <p>Due to the flexability of this standard, it is up to end users to construct SDAGS in the layout they desire,
+                    allowing for establishing of a wide arrange of textual sematic relationships.
+                    </p>
+                    <!--p>Immediately following decoding, the resulting markup file,
                     which is the hash of the remaining file content, which is used for verification of the integrity of the file contents.
-                    </p>
-                    
-<pre><code>{
-    "lQimK55LEESzsGNL1qMgJiuo9rLgjWsUBRjFjasaVKc=": [
-        "1NMPWtQtazV50IjvkOtNLaOpW8kX8atcKKqZb1S76xc=",
-        "WlAGg930RjfnhMgPgHNjuBivTid+3ndkvlGzQw1+8uM=",
-        "3nP0o09Y7hH2Gi\/ZFqWKL1+trFfzCSZtDHavrqbc+s4="
-    ],
-    "azJ4ayvoiSQKpBCKfJ84lcIYWEMEC2x\/0MFUYdyw+r4=": [
-        "+etuZkMuMQ7BKMu\/PRTSaDC7E\/ImdDvr3AbSlLzDYhE=",
-        "WgP+1HTI\/6nEKvp+h1YxTaAltxYUV\/Y\/avSyJs8CC+E=",
-        "fOMCfz57FG3597hwonC9C1osyUw800WmIvDjODCfDek="
-    ]
-}
-</code></pre>
-                    <p class='note'>See rationale: <a href="">SDF32 Key Format</a>.</p>
-                    
-                    <p>After the data structure has been serialized into a string repressentation (in this example, JSON),
-                    it is &apos;gzdeflate&apos;ed (to compress the payload), then Base64 encoded (to support transport across multiple internet protocols).
-                    </p>
-                    
-                    <pre><code>
-</code></pre>
+                    </p-->
                 </div>
             </div>
             
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='border border-light rounded text-center'>Flat Layout</h4>
+                    
+                    <p>In this common layout, a single source text will have all possible transforms aggregated
+                    as single leaf nodes which do not have any other children.
+                    </p>
+                    
+                    <p>This approach can be convenient, however, for semantic relationships including higher-oder functions,
+                    such that &apos;`y = h(g(f(x)))&apos;, which might repressent some complex series of transforms can be conveniently expressed
+                    as a single layer SDAG.
+                    </p>
+<pre><code>{
+    "_87a95ba3eb40319184f32195a8c07dd79f4d56fb726bfbf3797406ee9ac9d8aa": [
+        "_756191b167221a64ef5e6eabb5801e5ec7e2534cd916ad0d4aebadbe7dded056",
+        "_c3b0f93c1751464f8a4f2aa506e797fe854e9f7097205666e3e1c0de96e27359",
+        "_c689c8ba9c32d1c3c5420b0bdef0829ae28ef7d6b7d20ccd8b66516d2207f38c",
+        "_4bf39b1950d66ee0a216284c4a59908d2d7e23fa2dae09b520cf640b82da0737",
+        "_6c8f0f2aa6171af9102d82b38fb7ea1818e4ff1851acdff83cbec226deb597c8",
+        "_ab4b6e0994480cae80428a8f733f52140d6b479eb53d7eb8d300438eb90f41b3",
+        "_8719f8e14879dffa8159fcaed18055b117d490e749450b03c6c760447c436634",
+        "_bddfc595e52ae72d5b6932a677aecc14c441b20c16ae2d5a6ea03da30d2d8558",
+        "_532d2cb466fcd57a57f5a7e0ae2fa287e448379b9fcb164425f793e1d8ffd151",
+        "_1f7e21479198c4979bb2bb5045a1ecd0ff38f4ed4b0ce6ee0037a3d352ae912c"
+    ]
+}</code></pre>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='border border-light rounded text-center'>Tiered Layout</h4>
+                    
+                    <p>This common layout is helpful for repressenting complex relationships such as higher-order functions,
+                    where a single source text will have all possible transforms separated
+                    into leaf nodes and branch nodes which may or may not contain other branches or leaves (collectively known as children),
+                    such that for each transform in &apos;`y = h(g(f(x)))&apos;,
+                    will be a new child tier layer in the SDAG for each resulting transform.
+                    </p>
+                    
+<pre><code>{
+    "_87a95ba3eb40319184f32195a8c07dd79f4d56fb726bfbf3797406ee9ac9d8aa": [
+        "_756191b167221a64ef5e6eabb5801e5ec7e2534cd916ad0d4aebadbe7dded056",
+        "_c3b0f93c1751464f8a4f2aa506e797fe854e9f7097205666e3e1c0de96e27359",
+        ...
+        {
+            "_45a51cbc8ea35aaae0249b7ef7659600f6a2cddd4339869d8edd1803cce2c7a2": [
+                "_6c4eb5b38fe9563c122f2f7ba0a8ea5f6361f526c537a253e54c8cdab94640e4",
+                ...
+            ],
+            "_c689c8ba9c32d1c3c5420b0bdef0829ae28ef7d6b7d20ccd8b66516d2207f38c": [
+                "_182c729b559cd1779325adfb22357b97ef6db95b769d600cfc27cad843c495dc",
+                ...
+            ],
+            ...
+        }
+    ]
+}</code></pre>
+                </div>
+            </div>
+            
+            <!--div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h4 class='border border-light rounded text-center'>Hybrid Layout</h4>
+                    
+                    <p>This layout combines both the flat and tiered layouts,
+                    where the SDAG has multiple primary keys which may or may not have children which are either flat or tiered.
+                    </p>
+<JSON>
+<pre><code>{
+    "_f16836ddbaf77e9e26091a88197551b2583d0c807fb6675354c7c522dd633882": [
+        "_e37b40df3c0a3493c431f711682226e9da905ce4ce126b626d305c0c0c5f9d44",
+        "_b83a245d849e704976e9f20b18e2ce7cf651e9464e96a01c9af62d1f5f8a1c13",
+        "_a3c144887d74992cd9fa51c0d031374a85aa88bcbfcde5b20152e8ca13c31d05",
+        "_cec587a684b6495e9b4e8cd9e48b7a48a5d27f85b26b64c8f63d15e91e182465",
+        "_823124ba528dc60a48a13e326ecd0061857cee7cb2e45fc84292a001a8589e74",
+        "_15d067efaf6a39cbe53e4baf2d926b54c8be5da214a9118579fc2ecc8cddb016",
+        "_874ec9ec374337c3d0735460037c2f714e59b40dd4f55a8cd5d9b524f8c8cf6f",
+        "_cafa95baa1a5a398d608005e0439449039c71dd69f1d689094ca9c38952d9803"
+    ],
+    "_46bde671cb1df29f933612b94fd8026977b60cfa4e02ae56901e7e2878635917": [
+        "_3f277a658f0c7eb9f5ae31e72e072fbfea13735ce611213a27a93cd65221959b",
+        "_a57a0f8aeeaa242cc9c37aecb09824d23142a7cd7278eaccd507f4d0e919b7bd",
+        "_fff11bcedea7e0df7a4882d5842e647d6435868af52507ae158046b1a7ec8507",
+        "_98a9bae16f15b18050a489c01c17cc87b8ec34a84e04e837807ba7a529fee879",
+        "_18b994bed239d4f25ab790ff147c269f879d2a2a068a4403af6becf88e61f982",
+        "_2da7b491b9df2b70a57fe7bb4daf678b21ee306e9576ac0d6f1250e086370ae4",
+        "_0d165d56980ace4a343bcfd23120839cd0f248f97c298c27d8565162e0b62c49",
+        "_c7c178ec32606b4dfa22f17e3ff41db0abddd58bcf0fa341de03275979594ab3"
+    ]
+}
+</code></pre>
+<!--XML-->
+<!--YAML-->
+<!--...-->
+                    <p class='note'>See rationale: <a href="">SDF32 Key Format</a>.</p>
+                    
+                    <p>After the data structure has been serialized into a native data repressentation (in this example, JSON),
+                    it is &apos;gzdeflate&apos;ed (to compress the payload), then Base64 encoded (to support transport across multiple internet protocols).
+                    </p>
+                    
+                    <!--pre><code>
+</code></pre-->
+                </div>
+            </div>
             
             <div class='d-flex flex-row border border-info rounded packed' style='overflow-x:scroll;'>
                 <div class='d-inline-flex flex-column flex-fill'>
                     
-                    <p>By default, <b class='text-success'>SDF32</b> keys SHOULD be binary SSF32 encoded as Base64,
-                    but MAY optionally be implemented as underscore prefixed ('_') hexadecimal equivalent values if
-                    full adoption of the JSON standard as well as multiplatform support across Python, C/C++, Javascript and other common programming languages is desired.
+                    <p>By default, <b class='text-success'>SDF32</b> keys <b class='text-danger'>MUST</b> be binary SSF32,
+                    but MAY optionally be encoded as an underscore prefixed ('_') series of hexadecimal values (JSON standard as well as multiplatform support across Python, C/C++, Javascript and other common programming languages).
                     </p>
+                    
+                    <!--p class='note'>Since this specification is platform independant, implementors are responsible for ensuring and documenting whether or not the keys are sorted
+                    </p-->
                 </div>
             </div>
             
@@ -463,8 +580,8 @@
             <div class='d-flex flex-row border border-info rounded'>
                 <h3 class='text-primary border border-light rounded text-center'>Deflate/Inflate Compression</h3>
                 
-                <p><b class='text-success'>SDF32</b> files MUST be compressed using the lossless gzdeflate methods,
-                the Base64 encoded in compliance with <a href="">RFC-2045</a>.
+                <p><b class='text-success'>SDF32</b> files MUST be compressed using the lossless &apos;<i class='text-warning'>gzdeflate</i>&apos; method,
+                then Base64 encoded in compliance with <a href="">RFC-2045</a>.
                 </p>
                 
                 <p class='note'>Deflate compression is an LZ77 derivative used in zip, gzip, pkzip, and related programs.
@@ -480,8 +597,8 @@
                 A PNG decoder must be able to decompress any valid zlib datastream that satisfies these additional constraints.
                 </p-->
                 
-                <p>Decoding <b class='text-success'>SDF32</b> files MUST decode the Base64 <a href="">RFC-2045</a> compliant,
-                then uncompress the resulting binary payload using the gzinflate to generate the resulting JSON data structure.
+                <p>Decoding <b class='text-success'>SDF32</b> files MUST decode the Base64 <a href="">RFC-2045</a> compliant file,
+                then uncompress the resulting binary payload using &apos;<i class='text-warning'>gzinflate</i>&apos; to generate the resulting JSON data structure.
                 </p>
             </div>
         </article>
@@ -510,33 +627,35 @@
                 </div>
             </div>
             
-            <div class='d-flex flex-row border border-info rounded'>
+            <!--div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info border-rounded'>
                     <h3 class='text-primary border border-light rounded'>Internet Media Type</h3>
-                    <!--p>The Internet Assigned Numbers Authority (IANA) has registered &quot;<b class='text-success'>application/sdf32</b>&quot; as the Internet Media Type for SDF32 [RFC-XXXX], [RFC-XXXX].
-                    </p-->
+                    <p>The Internet Assigned Numbers Authority (IANA) has registered &quot;<b class='text-success'>application/sdf32</b>&quot; as the Internet Media Type for SDF32 [RFC-XXXX], [RFC-XXXX].
+                    </p>
                     
                     <!--p>For robustness, decoders MAY choose to support the interim media type:
 <pre class='text-success'>&apos;application/x-sdf32&apos;</pre>
                     Until an official MIME type registration is complete.
-                    </p-->
+                    </p>
                 </div>
-            </div>
-            
+            </div-->
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="security">
             <div class='d-flex flex-row bg-dark border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill'>
                     <h3 class='text-primary border border-light rounded text-center'>Security Considerations</h3>
                     
                     <p>All <b class='text-success'>SDF32</b> files <b class='text-danger'>MUST</b> be non-executable,
-                        <b class='text-warning'>MAY</b> be <b>read-only</b>.
+                        <b class='text-warning'>SHOULD</b> be <b>read-only</b> in production environments.
                     </p>
                     
                     <p>Production <b class='text-success'>SDF32</b> files <b class='text-warning'>SHOULD</b> be pre-built during a separate build phase
-                    while the <b class='text-warning'>SHOULD</b> also be read-only to prevent modifiction in production environmnents.
+                    while they <b class='text-warning'>SHOULD</b> also be read-only, to prevent runtime modifiction in production environmnents.
                     </p>
                     
                     <p class='note'>Use of dynamic, runtime generated, read-write SDF32 files in production environmnents is highly discouraged,
-                    however this is not explicitly a violation of the standard, although implementors must be aware such behaviour may provide a protential attack vector to be exploited by hostile actors.
+                    however this is not explicitly a violation of the standard, although implementors must be aware such behaviour may provide a potential attack vector to be exploited by hostile actors.
                     </p>
                     
                     <p>A validator that fails to complete all checks specified in the <b class='text-primary'>#Validator</b> tab
@@ -553,6 +672,46 @@
         <article role="tabpanel" class="tab-pane bg-dark" id="encoders">
             <div class='d-flex flex-row'>
                 <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Encoders</h3>
+                    
+                    <p class='note'>This section provides recommendations for <b class='text-success'>SDF32</b> encoder behavior.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <p>The only absolute requirement for an <b class='text-success'>SDF32</b> encoder is that it ...
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <p><b class='text-danger'>MUST</b>:
+                        <ul>
+                            <li>Produce files or strings that conform to this specification.</li>
+                            <li>Support <b class='text-success'>SSF32</b> <b class='text-light'>Packed mode</b></li>
+                        </ul>
+                    </p>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>                
+                    <p><b class='text-warning'>MAY</b>:
+                        <ul>
+                            <li>Support <b class='text-success'>SSF32</b> <b class='text-light'>Padded mode</b>.</li>
+                            <li>Perform additional encryption, compression or any other transforms on the resulting output as needed.</li>
+                            <li>Include either a signed or unsigned <b class='text-success'>SSF32</b> header when transmitted over http(s) for content integrity and/or verification purposes.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="decoders">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
                     <h3 class='text-primary border border-light rounded'>Decoders</h3>
                 
                     <p class='note'>This section provides recommendations for decoder behavior.
@@ -561,38 +720,15 @@
             </div>
             
             <div class='d-flex flex-row'>
-                <!--div class='d-inline-flex flex-column border border-info rounded'>
-                    <h3 class='text-primary border border-light rounded'>Encoders</h3>
-                    
-                    <p>This section provides recommendations for <b class='text-success'>SSF32</b> encoder behavior.</p>
-                    
-                    <p>The only absolute requirement for an <b class='text-success'>SSF32</b> encoder is that it 
-                    However, best results will usually be achieved by following these recommendations.
-                    </p>
-                    
-                    <p>Encoders <b class='text-danger'>must</b>:
-                        <ul>
-                            <li>Produce files or strings that conform to this specification.</li>
-                            <li>Support <b class='text-light'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li>
-                        </ul>
-                    </p>
-                    
-                    <p>Encoders <b class='text-warning'>may</b>:
-                        <ul>
-                            <li>Perform encryption, compression, base64 encoding or any combination of the three on its output.</li>
-                        </ul>
-                    </p>
-                </div-->
-                
                 <div class='d-line-flex flex-column flex-fill border border-info rounded'>
                     <p>The only absolute requirement for an <b class='text-success'>SDF32</b> decoder is that it successfully reads any file conforming to the format specified in this document.
                     However, best results will usually be achieved by following these recommendations.
                     </p>
                     
                     <!--10.1. Error checking-->
-                    <p>To ensure early detection of common file-transfer problems, decoders <b class='text-danger'>must</b> verify that all initial eight (8) bytes (64 bits) of the <b class='text-success'>SSF32</b> file signature are correct.
+                    <!--p>To ensure early detection of common file-transfer problems, decoders <b class='text-danger'>must</b> verify that all initial eight (8) bytes (64 bits) of the <b class='text-success'>SSF32</b> file signature are correct.
                     (See Rationale: <b class='text-success'>SDF32</b> file signature).
-                    </p>
+                    </p-->
                     
                     <!--p>A decoder can have additional confidence in the file&apos;s integrity using the File <i class='text-danger'>Content Integrity Hash</i>, <i class='text-light'>File Layout Type Hash</i> and <i class='text-warning'>Byte Length Specifier</i>.
                     </p-->
@@ -603,10 +739,9 @@
                 <div class='d-line-flex flex-column flex-fill border border-info rounded'>                
                     <p><b class='text-danger'>MUST</b>:
                         <ul>
-                            <!--li>ONLY support <b class='text-succss'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li-->
-                            <li>Hash (using the alogrithm specific to the parser rendering the file) the parsed <i class='text-light'>Type Hash</i>, <i class='text-warning'>Byte Length Specifier</i>, <i class='text-primary'>Source Content Hash</i>, <i class='text-success'>Source Signature</i> then validate it against the <b>parsed</b> <i class='text-danger'>Content Integrity Hash</i>.</li>
-                            <li>Validate the file&apos;s parsed <i class='text-light'>Type Hash</i> matches the unique <i class='text-light'>Type Hash</i> of the specific parser implemenation rendering the file.</li>
-                            <li>Verify the number of (8-bit) <b>bytes</b> read from the file following the <span class='text-warning'>4 Byte Byte Length Specifier</span> equals the parsed <i class='text-warning'>Byte Length Specifier</i>. The <i class='text-warning'>Byte Length Specifier</i> <b class='text-danger'>must</b> be no less than the number of bytes corresponding to the specific parser rendering the file (typically either 32 or 64 Bytes).</li>
+                            <li>Support <b class='text-light'>Packed</b> mode.</li>
+                            <li><i>Base64 decode</i>, then <i>gzinflate</i> input before parsing the resulting JSON data.</li>
+                            <!--li>Validate the file&apos;s parsed <i class='text-light'>Type Hash</i> matches the unique <i class='text-light'>Type Hash</i> of the specific parser implemenation rendering the file.</li-->
                         </ul>
                     </p>
                 </div>
@@ -614,14 +749,11 @@
                 <div class='d-line-flex flex-column flex-fill border border-info rounded'>
                     <p><b class='text-warning'>MAY</b>:
                         <ul>
-                            <li>Perform decompression, base64 decoding on its input.
+                            <li>Support <b class='text-light'>Padded</b> mode.</li>
+                            <!--li>Perform decompression or base64 decoding on its input.>
                             The result <b class='text-danger'>must</b> conform to this standard.
-                            </li>
+                            </li-->
                         </ul>
-                    </p>
-                    
-                    <p>In the event the <b>parsed</b> <i class='text-warning'>Byte Length Specifier</i> of a file equals the number of bytes in its hashing algorithm (typically either 32 or 64 Bytes),
-                    there is no signature associated with the data and parse must end after the <i class='text-info'>Source Content Hash</i> has been parsed.
                     </p>
                 </div>
             </div>
@@ -632,7 +764,7 @@
                 <div class='d-inline-flex flex-column flex-fill'>
                     <h3 class='text-primary border border-light rounded text-center'>Glossary of Terms</h3>
                     
-                    <table id='defiERC20'
+                    <table id='glossaryOfTerms'
                         class='table table-dark table-striped table-bordered'>
                         
                         <tbody>
@@ -650,7 +782,7 @@
                                 </td>
                             </tr>
                             
-                            <!--tr>
+                            <tr>
                                 <td>
                                     <div class='card bg-dark'>
                                         <div class="card-header">
@@ -658,7 +790,7 @@
                                         </div>
                                         
                                         <div class="card-body">
-                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SSF32</b> files &amp; PNG files,
+                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SDF32</b> files &amp; PNG files,
                                             as well as in zip, gzip, pkzip, and other compression programs.
                                             </p>
                                             
@@ -684,7 +816,7 @@
                                 </td>
                             </tr>
                             
-                            <tr>
+                            <!--tr>
                                 <td>
                                     <div class='card bg-dark'>
                                         <div class="card-header">
@@ -699,7 +831,7 @@
                                 </td>
                             </tr-->
                             
-                            <!--tr>
+                            <tr>
                                 <td>
                                     <div class='card bg-dark'>
                                         <div class="card-header">
@@ -711,13 +843,13 @@
                                             Also, the name of a library implementing this method.
                                             </p>
                                             
-                                            <p class="card-text"><b class='text-success'>SSF32</b> implementations need not use the zlib library,
+                                            <p class="card-text"><b class='text-success'>SDF32</b> implementations need not use the zlib library,
                                             but they must conform to its format for compressed data.
                                             </p>
                                         </div>
                                     </div>
                                 </td>
-                            </tr-->
+                            </tr>
                             
                             <tr>
                                 <td>
@@ -727,7 +859,7 @@
                                         </div>
                                         
                                         <div class="card-body">
-                                            <sub class="card-text">An extensible, secure, non-executable binary format for structuring the hash and digital signature in a manner which is resistant to corruption, transferable over common internet protocols as a header, embeded within an HTML webpages, included as an email attachment or stored in a database server or blockchain.</sub>
+                                            <sub class="card-text">An extensible, secure, non-executable binary format for structuring the hash and digital signature in a manner which is resistant to corruption, transferable over common internet protocols as a header, embeded within an HTML webpage, included as an email header/attachment or stored in a database server or blockchain.</sub>
                                         </div>
                                     </div>
                                 </td>
@@ -755,7 +887,7 @@
                                         </div>
                                         
                                         <div class="card-body">
-                                            <sub class="card-text">SDAG Format 32 Byte</sub>
+                                            <sub class="card-text">SDAG Format 32 Byte Specification</sub>
                                         </div>
                                     </div>
                                 </td>
@@ -771,7 +903,7 @@
                 <div class='d-inline-flex flex-column flex-fill'>
                     <h3 class='text-primary border border-light rounded text-center'>Appendix</h3>
                     
-                    <p class='note'>This section is <b>not</b> part of the formal SDF32 specification.
+                    <p class='note'>This section is <b>not</b> part of the formal <b class='text-success'>SDF32</b> specification.
                     </p>
                     
                     <p>This section provides reasoning behind some of the design decisions which when into standardizing <b class='text-success'>SDF32</b>.
@@ -803,15 +935,31 @@
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     <h3 class='text-primary border border-light rounded text-center'>Example Encoders</h3>
                     
-                    <p>The official example <b class='text-success'>SDF32</b> encoder for PHP can be found <a href="">here</a>.
+                    <p>The official <b class='text-success'>SDF32</b> encoders are implementations available here:
                     </p>
+                    
+                    <ul>
+                        <li><a href="">PHP</a></li>
+                        <!--li><a href="">Python</a></li>
+                        <li><a href="">C++</a></li-->
+                        <!--li><a href="">Javascript</a></li-->
+                        <!--li><a href="">Solidity</a></li-->
+                    </ul>
                 </div>
                 
                 <div class='d-inline-flex flex-column flex-fill border border-info border-rounded'>
                     <h3 class='text-primary border border-light rounded text-center'>Example Decoders</h3>
                     
-                    <p>The official example <b class='text-success'>SDF32</b> decoder for PHP can be found <a href="">here</a>.
+                    <p>The official <b class='text-success'>SDF32</b> decoder implementations are available here:
                     </p>
+                    
+                    <ul>
+                        <li><a href="">PHP</a></li>
+                        <!--li><a href="">Python</a></li>
+                        <li><a href="">C++</a></li-->
+                        <!--li><a href="">Javascript</a></li-->
+                        <!--li><a href="">Solidity</a></li-->
+                    </ul>
                 </div>
             </div>
         </article>
@@ -845,9 +993,10 @@
                     
                     <ul>
                         <!--li><a href="/ssf32.html">SSF32 Specification</a></li-->
-                        <li><a href="https://www.ietf.org/rfc/rfc2045.txt">RFC-2045</a></li>
-                        <li><a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a></li>
                         <li><a href="http://www.faqs.org/rfcs/rfc1951.html">RFC-1951 Deflate Compressed Data Format</a></li>
+                        <li><a href="https://www.rfc-editor.org/rfc/rfc8259.html">RFC-8259 JSON Data Interchange Format</a></li>
+                        <li><a href="https://www.ietf.org/rfc/rfc2045.html">RFC-2045 MIME Part One: Format of Internet Message Bodies</a></li>
+                        <li><a href="https://www.ietf.org/rfc/rfc2119.html">RFC-2119 Key words for use in RFCs to Indicate Requirement Levels</a></li>
                     </ul>
                 </div>
             </div>
@@ -987,7 +1136,10 @@
             <sub><!--a id='about' href="tos.html" class=''>Terms</a> |
                 <a id='about' href="governance.html" class=''>Governance</a> |-->
                 <a id='about' href="about.html" class=''>About</a> |
-                <a id='contact' href="contact.html" class= ''>Contact</a>
+                <a id='contact' href="contact.html" class=''>Contact</a> |
+                <a id='license'
+                    href="https://vigilance91.github.io/LICENSE.md">License
+                </a>
             </sub>
         </div>
     </footer>
