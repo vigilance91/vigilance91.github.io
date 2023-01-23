@@ -9,7 +9,6 @@ This site is the personal github home page for vigilance91.
 
 Developed and maintained by Tyler R. Drury.
 
----
 
 ---
 
