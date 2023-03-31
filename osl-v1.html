@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
+    <!--base href="https://vigilance91.github.io/"-->
+    
+	<title>VSN-Open Scripting Language (OSL™) Specification</title>
+    <!--CSS-->
+    <link rel='stylesheet' type='text/css' href='bundle.css'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+    <!--JS-->
+    <script type='application/javascript' src='bundle.js'></script>
+    <!--script type='application/javascript' src='main.js'></script-->
+</head>
+
+<body>
+    <div class='d-flex flex-row'>
+        <div class='d-inline-flex flex-fill flex-column text-center border border-danger rounded'>
+            <pre class='small'><sub><i class='warning'>This site is currently <b class='text-danger'>under development</b>.</i>
+<i class='note'>Please <span class='text-warning'>bookmark this site</span> &amp; <b class='text-success'>always</b> ensure:
+* <b class='text-success'>HTTPS</b> is <b class='text-success'>enabled</b>
+* the URL is <a href="/index.html">https://vigilance91.github.io</a>
+</i>
+</sub></pre>
+        </div>
+    </div>
+    
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <!--a href='' id='home' class='d-inline-flex navbar-brand flex-column'>
+            <canvas id='px-logo' class='webGL' width='128' height='128' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        <div class='d-inline-flex navbar-header flex-column border border-info rounded'>
+            <h2><a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe"
+                id='home'
+                title='VSN Home'
+                class='navbar-brand'><!--img src="/_img/primaryWalletQRCode.png"
+                    width='64'
+                    height='64'-->vigilance.eth<sup>&trade;</sup></a> <a href="http://vigilance91.github.io/" class='text-primary'>Home</a>
+            </h2>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <sub>Built using <a href="https://github.com/">github</a>, <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, <a href="https://web3js.readthedocs.io/en/v1.3.0/#">web3</a> &amp; <a href="https://github.com/vigilance91/solidarity">solidarity&trade;</a></sub>
+        </div>
+        
+        <div class='d-inline-flex flex-column flex-fill text-center border border-info rounded'>
+            <h2 class='text-primary'><b class='text-success'>O</b>pen <b class='text-success'>S</b>cripting <b class='text-success'>L</b>anguage (<span class='text-success'>OSL-v1.0</span>) Specification</h2>
+            <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
+            </p>
+        </div>
+    </div>
+    <!--
+    site navigation
+    -->
+    <nav id='banner'
+        class='d-flex navbar navbar-dark bg-dark border border-info rounded small'
+        role='navigation'>
+        
+        <!--button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button-->
+      
+        <div class="container-fluid justify-content-center">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-fill flex-column text-center'>
+                    <ul class='nav navbar-center nav-pills bg-dark small' role='tablist'>
+                        <li class='nav-item'>
+                            <a class='nav-link active'
+                                href='#intro'
+                                role='tab'
+                                data-toggle='tab'>Introduction
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <!--a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSpecs"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"-->
+                            <a class='nav-link '
+                                href='#specification'
+                                role='tab'
+                                data-toggle='tab'>Specification
+                            </a>
+                            
+                            <!--div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#specPacked'
+                                    role='tab'
+                                    data-toggle='tab'>Packed
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#specPadded'
+                                    role='tab'
+                                    data-toggle='tab'>Padded
+                                </a>
+                            </div-->
+                        </li>
+                        
+                        <!--li class='nav-item'>
+                            <a class='nav-link'
+                                href='#compression'
+                                role='tab'
+                                data-toggle='tab'>Compression
+                            </a>
+                        </li-->
+                        
+                        <!--li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuRecs"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Recommendations
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#recsEncoders'
+                                    role='tab'
+                                    data-toggle='tab'>Encoders
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#recsDecoders'
+                                    role='tab'
+                                    data-toggle='tab'>Decoders
+                                </a>
+                            </div>
+                        </li-->
+                        
+                        <!--li class='nav-item'>
+                            <a class='nav-link'
+                                href='#misc'
+                                role='tab'
+                                data-toggle='tab'>Miscellaneous
+                            </a>
+                        </li-->
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Appendix
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#glossary'
+                                    role='tab'
+                                    data-toggle='tab'>Glossary
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#rationale'
+                                    role='tab'
+                                    data-toggle='tab'>Rationale
+                                </a>
+                                
+                                <!--a class='dropdown-item'
+                                    href='#examples'
+                                    role='tab'
+                                    data-toggle='tab'>Examples
+                                </a-->
+                                
+                                <hr>
+                                
+                                <a class='dropdown-item'
+                                    href='#errata'
+                                    role='tab'
+                                    data-toggle='tab'>Errata
+                                </a>
+                            
+                                <a class='dropdown-item'
+                                    href='#references'
+                                    role='tab'
+                                    data-toggle='tab'>References
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#credits'
+                                    role='tab'
+                                    data-toggle='tab'>Credits
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Tab panes -->
+    <main role='main' class='container-fluid tab-content border border-info rounded'>
+        <article role='tabpanel' class='tab-pane bg-dark active' id='intro'>
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Document Status</h3>
+                    
+                    <p>This is a initial draft of the <b class='text-success'>OSL</b>™ v1.0 specification.
+                    <!--which has been published as RFC-XXXX and as a W3C Recommendation.-->
+                    </p>
+                    
+                    <p>While this draft has been released, it has <b class='text-danger'>not</b> been approved by any standards body.
+                    </p>
+                    
+                    <!--p>The <b class='text-success'>SSF32</b> specification is on a standards track under the purview of ISO/IEC (TBD) and is expected to be released eventually as ISO/IEC International Standard (TBD).
+                    </p-->
+                    
+                    <!--p>It is the intent of the standards bodies to maintain backward compatibility with this specification.
+                    </p-->
+                    
+                    <p>Implementors should periodically check the <b class='text-success'>OSL-v1.0</b> online resources (see <b class='text-primary'>#Online Resources</b> tab) for the current status of <b class='text-success'>OSL-v1.0</b> documentation.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary border-light border border-light border-rounded text-center'>Abstract</h3>
+                    
+                    <p>The <i class='text-primary'><b class='text-success'>O</b>pen <b class='text-success'>S</b>cripting <b class='text-success'>L</b>anguage</i> (<b class='text-success'>OSL-v1.0</b>) specification
+                    provides a convenient, high level grammar wrapper around ChatGPT commands, which simplifies the process of reading and writing complex commands in ChatGPT prompts,
+                    while leaving the natural human language processing cababilites of ChatGPT untouched.
+                    </p>
+                    
+                    <!--p>The <b class='text-success'>OSL-v1.0</b> specification is inspired by the patent-free <a href="">WDM/SDM Photoscript specification</a> and is
+                    designed to provide a convenient, easy to understand syntax to ChatGPT commands without affecting its core capabilities.
+                    </p-->
+                    
+                    <!--p>The initial motivation for the <b class='text-success'>SSF32</b> standard was to have a convenient, extensible, compact &amp; cryptographically secure method for
+                    storing hashes and signatures for secure verification of files or strings transmitted across internet protocols or stored on blockchains.
+                    </p>
+                    
+                    <p class='note'>All applications which encode or decode <b class='text-success'>SSF32</b> files in compliance with this specification <b class='text-warning'>should</b> utilize the industry standard <a href="https://www.openssl.org/">OpenSSL Protocol</a> or another secure &amp; tested cryptographic protocol.
+                    </p-->
+                    
+                    <p>The <b class='text-success'>OSL-v1.0</b> format is a patent-free format licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>.
+                    </p>
+                    
+                    <p>This specification defines the Internet Media Type &quot;<b class='text-success'>text/osl</b>&quot;.
+                    </p>
+                    
+                    <p class="note">Please review either the <b class='text-primary'>#License</b> tab or the repository <a href="">LICENSE.md</a> for more information.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <p><b class='text-success'>OSL-v1.0</b> is designed to be:
+                        <ul>
+                            <li>Simple &amp; portable.</li>
+                            <li>Concise &amp; easy to parse.</li>
+                            <li>Clear &amp; well structured.</li>
+                            <!--li>Robust: Designed to support full file integrity, including: simple, quick detection of common transmission errors, while also supporting highly optimized, industry standard cryptographic validation algorithms.</li-->
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-inline-flex flex-column'>
+                    <p>The primary purpose of this specification is to provide the definition of the <i class='text-primary'>Open Scripting Language</i> and recommendations for implementors.
+                    </p>
+                    
+                    <p>The <a href="text-primary">#Appendix</a> tab provides additional documentation, including rational for all design decisions.
+                    </p>
+                    
+                    <p class='note'>While the <b class="text-primary">#Appendix</b> tab and its content are <b>not</b> part of the formal specification,
+                    it helps implementors to understand the design and intent behind this document.
+                    Its other purpose is to provide cross-references to relevant sections of rationale, examples or other supporting material.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-primary border border-light border-rounded text-center'>Terms</h4>
+                    
+                    <p>The key words in this document:</p>
+                    
+                    <ul>
+                        <li>&quot;MUST&quot;</li>
+                        <li>&quot;MUST NOT&quot;</li>
+                        <li>&quot;REQUIRED&quot;</li>
+                        <li>&quot;SHALL&quot;</li>
+                        <li>&quot;SHALL NOT&quot;</li>
+                        <li>&quot;SHOULD&quot;</li>
+                        <li>&quot;SHOULD NOT&quot;</li>
+                        <li>&quot;RECOMMENDED&quot;</li>
+                        <li>&quot;MAY&quot;</li>
+                        <li>and &quot;OPTIONAL&quot;</li>
+                    </ul>    
+                    
+                    <p>are to be interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a>.
+                    </p>
+
+                    <!--See Rational: <ul>
+                        <li></li>
+                    </ul-->
+                </div> 
+                
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Pronunciation</h3>
+                    
+                    <p><a href="https://www.ling.upenn.edu/courses/Fall_2014/ling115/phonetics.html">Phonetically</a>, <b class='text-success'>OSL</b> is pronounced: &quot;oh-ɛs-ɛl&quot;.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='specification'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h3 class='text-primary text-center'>Specification</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>Comments</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: To define comments which can be used within prompts,
+                    either to add non-executable, human readable comments or to optionally disable commands within a command block.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+<label><b class='text-success'>//</b> C-style single line comments:
+<p><code>enable grammar rule: Either on a single line or in a line-by-line list of commands to be executed sequentially, any line beginning with a pair of forward slashes (<b class='text-primary'>//</b>), preceded by any amount of whitespace, will be ignored and not processed.
+</code></p>
+</label>
+
+<label><b class='text-success'>/* */</b> C-style block comments:
+<p><code>enable grammar rule: Either on a single line or in a line-by-line list of commands to be executed sequentially, ignore all commands on lines between a single forward slash followed immediately by an asterisk, until the block is terminated by an asterisk followed immediately with a single forward slash.
+</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Example</b>:
+<pre class='text-success'><code>//single line C-style comments
+/*
+C-style
+multi-line
+comments
+*/
+</code></pre>
+                    </label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>System Constants</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: Convenient, short-hand for the built-in ChatGPT system commands:
+                        <ul>
+                            <li>&quot;<i class='text-primary'>/get key</i>&quot;</li>
+                            <li>&quot;<i class='text-primary'>/set key value</i>&quot;</li>
+                        </ul>
+                    </p>
+                    
+                    <label><b class='text-info'>Set (singlar) Grammar</b>:
+<p><code>In a line-by-line list of commands to be executed sequentially, each command prefixed with an hash &apos;<b class='text-primary'>#</b>&apos; followed by a single verbatim word, named &apos;<b class='text-success'>key</b>&apos; and delimited by an equal sign &apos;<b class='text-primary'>=</b>&apos;,
+which must then be followed by the remainder of the line which is the verbatim value, named &apos;<b class='text-success'>value</b>&apos;, terminated with a semicolon &apos;<b class='text-primary'>;</b>&apos; on the end of the same line, will process the command `<i class='text-primary'>/set {<b class='text-success'>key</b>} {<b class='text-success'>value</b>}</i>`.
+The purpose of using this grammar rule is to provide a convenient short-hand for setting constants using `<i class='text-primary'>/set</i>` from a list of commands.</code></p>
+                    </label>
+                    
+                    <label>assign new constants:
+<pre><code><b class='text-primary'>#</b><i class='text-success'>key</i><b class='text-primary'>=</b><i>constant literal value</i><b class='text-primary'>;</b></code></pre>
+                    </label>
+                    
+                    <hr>
+                    
+                    <label><b class='text-info'>Set (plural) Grammar</b>:
+<p><code>If a line is prefixed with a hash symbol <b class='text-primary'>#</b> immediately followed by opening square bracket <b class='text-primary'>{</b>,
+for each line until a terminating closing curly bracket <b class='text-primary'>}</b> followed immediately by a semicolon <b class='text-primary'>;</b>,
+it will be interpreted as a list of verbatim key-value pairs separated by an equal sign <b class='text-primary'>=</b> and terminated by a new line, which must be interpreted as processing the command <i>`/set <b class='text-success'>key</b> <b class='text-success'>value</b>`</i>.
+</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Example</b>:
+<pre><code><b class='text-primary'>#{</b>
+MY_CONST<b class='text-primary'>=</b>bcdef
+OTHER_CONST<b class='text-primary'>=</b>123456
+<b class='text-primary'>};</b></code></pre>
+
+<p><code>will process the commands in the order they appear, /set MY_CONST bcdef and /set OTHER_CONST 123456, respectively.
+</code></p>
+                    </label>
+                    
+                    <hr>
+                    
+                    <label><b class='text-info'>Get Grammar</b>:
+<p><code>each command prefixed with a modulus &apos;<b class='text-primary'>%</b>&apos; followed by a single verbatim word, named &apos;<b class='text-success'>key</b>&apos; and terminated by a matching, unescaped, modulus &apos;<b class='text-primary'>%</b>&apos; will be processed as: `<i class='text-primary'>/get {<b class='text-success'>key</b>}</i>`.
+The purpose of using this grammar rule is to provide a convenient short-hand for getting constants which were previously set using `<i class='text-primary'>/set</i>`.</code></p>
+                    </label>
+                    
+                    <label>assign new phrases:
+<pre><code><b class='text-primary'>%</b>MY_CHAT_GPT_SYSTEM_CONSTANT<b class='text-primary'>%</b></code></pre>
+                    </label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>Phrases</h3>
+                    
+                    <p><b class='text-info'>Purpose</b>: Convenient short hand phrase for &quot;<i>set phrase "..." as "...".</i>&quot; statements.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+<p><code>In a line-by-line list of commands to be executed sequentially, each command prefixed with an open square bracket &apos;<b class='text-primary'>[</b>&apos; followed by a verbatim phrase (including whitespace) to be set and delimited by an equal sign &apos;<b class='text-primary'>=</b>&apos;,
+which must then be followed by the remainder of the line which is the verbatim value to interpret the phrase as in all future commands,
+terminated with a closing square &apos;<b class='text-primary'>]</b>&apos; at the end of the line.</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Example</b>:
+<p><code><b class='text-primary'>[</b>source phrase<b class='text-primary'>=</b>replacement phrase<b class='text-primary'>]</b></code></p>
+                    </label>
+                    
+                    <p><code>The purpose of using this grammar rule is to enable conveniently setting phrases from a list of commands.</code></p>
+                    
+                    <hr>
+                    
+                    <label><b class='text-info'>Set (plural) Grammar</b>:
+<p><code>On a line-by-line list of commands, if a line is prefixed with opening square bracket &apos;<b class='text-primary'>[</b>&apos; immediately followed by a curly open bracket &apos;<b class='text-primary'>{</b>&apos;,
+for each line until a terminating closing curly bracket &apos;<b class='text-primary'>}</b>&apos; followed immediately by a closing square bracket &apos;<b class='text-primary'>]</b>&apos;, will be interpreted as a list of verbatim key value pairs (optionally prefixed with zero or more whitespace) separated by an equal sign &apos;<b class='text-primary'>=</b>&apos; and terminated by a new line,
+which must be interpreted as the command to set a phrase using square bracket notation as previously defined in another grammar rule, where key is the left-hand side argument and value is the right-hand side argument.
+</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Example</b>:
+<pre><code><b class='text-primary'>[{</b>
+prima persona<b class='text-primary'>=</b>from the first-person perspective
+secunda persona<b class='text-primary'>=</b>from the second-person perspective
+tertia persona<b class='text-primary'>=</b>from the third-person perspective
+in modus<b class='text-primary'>=</b>in the style of
+cum sono<b class='text-primary'>=</b>in the following tone
+compliment<b class='text-primary'>=</b>a gesture of appreciation or recognition for a job well done.
+unhelpful<b class='text-primary'>=</b>your answer was not helpful.
+contrario<b class='text-primary'>=</b>to the contrary; you are wrong.
+ex gratia<b class='text-primary'>=</b>in your following response please be exceptionally kind.
+ex amicitia pax<b class='text-primary'>=</b>an expression of inner peace brought about by your friendship
+<b class='text-primary'>}]</b>
+</code></pre>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>Contexts</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: Conveniently set or switch between existing, pre-configured contexts.
+                    </p>
+                    <label><b class='text-info'>Regex</b>:
+<p><code><b class='text-primary'>&lt;</b>{word}+<b class='text-primary'>&gt;</b></code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+<p><code>Any single line that starts with an opening angle bracket &apos;<b class='text-primary'>&lt;</b>&apos;, followed by an arbitrary amount of zero or more whitespace,
+and the context name (which must exist) delimited by an arbitrary amount of zero or more whitespace, terminated by a single closing angle bracket &apos;<b class='text-primary'>&gt;</b>&apos; on the same line,
+will be interpreted as the command `/context enable [context name]`.
+If the space between the brackets is empty or only contains whitespace, this will be interpreted as the command `/context enable default`.
+Please output the resulting grammar rule rewritten as a ChatGPT prompt and ask for confirmation before enabling the rule.</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Example</b>:
+<pre><code><b class='text-primary'>&lt;</b>exampleContext<b class='text-primary'>&gt;</b>
+commands to execute within exampleContext
+...</code></pre>
+                    </label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>Personae</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: Convenient short hand to enable ChatGPT to behave as a specific persona while processing commands or having conversations involving other personae.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+{{greeting}}, please enable grammar rule for executing a list of commands, where each command is formatted as follows:
+
+[ initial persona &lt;annotation ... &gt; @second persona ... : verbatim text ]
+...
+
+Where:
+
+initial persona: Required. The name of the persona initiating the conversation which ChatGPT will behave as. This persona must exist within the current context.
+&lt;annotation ...&gt;: Optional. The annotation list is enclosed in a matching pair of angle brackets, is an optional list of key value pairs (where the annotation keys must be one of the values: 'style', 'tone', 'perspective' or 'intent') separated by whitespace with each respective value enclosed by matching pairs of either single quotes or double quotes. Examples: &lt;style='David Suzuki' tone='formal' perspective='third-person' intent="to persuade"&gt;
+@second persona ...: Optional. A whitespace separated list of additional personae to be included in the conversation for each unique persona (which must exist within the current context) who will exclusively take part in the conversation. Only personae which are explicitly included in the command can take part in the conversation.
+verbatim text: The commands to process or message to be conveyed.
+Notes:
+
+&lt;annotation ...&gt; must only appear on the left-hand side of the colon :.
+@second persona ... must only appear on the left-hand side of the colon :, if any annotations are present then the list of @second persona ... must be on the right side of the annotations.
+The colon : must immediately follow the annotations if present or immediately follow the list of additional personae if present, otherwise it must immediately follow the initial persona.
+More than one external new line between pairs of square brackets denotes new conversations.
+                    </label>
+                    
+                    <label>Example 1:
+<p><code><b class='text-primary'>[</b>p0<b class='text-primary'>:</b>commands ...<b class='text-primary'>] ...</b></code></p>
+                    </label>
+                    
+                    <label>Example 2:
+<p><code><b class='text-primary'>[</b>p0 @p1<b class='text-primary'>:</b>commands directed at p1 from p0 ...<b class='text-primary'>]</b> ...</code></p>
+                    </label>
+                    
+                    <label>Example 3:
+<p><code><b class='text-primary'>[</b>p0&lt;tone<b class='text-primary'>=</b>&apos;&apos; style<b class='text-primary'>=</b>&apos;&apos; intent<b class='text-primary'>=</b>&apos;&apos; perspective<b class='text-primary'>=</b>&apos;&apos;&gt; @p1 ...<b class='text-primary'>:</b>commands ...<b class='text-primary'>]</b> ...</code></p>
+                    </label>
+                    
+                    <label>Example 4:
+<p><code><b class='text-primary'>&lt;</b>exampleContext<b class='text-primary'>&gt;</b>
+<b class='text-primary'>[</b>p0<b class='text-primary'>&lt;</b>tone<b class='text-primary'>=</b>&apos;&apos; style<b class='text-primary'>=</b>&apos;&apos; intent<b class='text-primary'>=</b>&apos;&apos; perspective<b class='text-primary'>=</b>&apos;&apos;<b class='text-primary'>&gt;</b> @p1 ...<b class='text-primary'>:</b>commands ...<b class='text-primary'>]</b> ... </code></p>
+                    </label>
+                </div>
+            </div>
+        </article>
+        
+        <!--article role='tabpanel' class='tab-pane' id='misc'>
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Specification</h3>
+                    
+                    <p>Miscellaneous
+                    </p>
+                </div>
+            </div>
+        </article-->
+        
+        <!--article role="tabpanel" class="tab-pane bg-dark" id="recsEncoders">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Encoder Recommendations</h3>
+                    
+                    <p class='note'>This section provides recommendations for <b class='text-success'>SSF32</b> encoder behavior.
+                    </p>
+                    
+                    <p>The only absolute requirement for an <b class='text-success'>SSF32</b> encoder is that it 
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <p>Encoders <b class='text-danger'>must</b>:
+                        <ul>
+                            <li>Produce files or strings that conform to this specification.</li>
+                            <li>Support <b class='text-light'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li>
+                        </ul>
+                    </p>
+                    
+                    <p>Encoders <b class='text-warning'>may</b>:
+                        <ul>
+                            <li>Perform encryption, compression, base64 encoding or any combination of the three on its output.</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="recsDecoders">
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded'>Decoder Recommendations</h3>
+                    
+                    <p>This section provides recommendations for decoder behavior.
+                    </p>
+                    
+                    <p>The only absolute requirement for an <b class='text-success'>SSF32</b> decoder is that it successfully reads any file conforming to the format specified in this document.
+                    However, best results will usually be achieved by following these recommendations.
+                    </p>
+                    
+                    <p>To ensure early detection of common file-transfer problems, decoders <b class='text-danger'>must</b> verify that all initial eight (8) bytes (64 bits) of the <b class='text-success'>SSF32</b> file signature are correct.
+                    (See Rationale: <b class='text-success'>SSF32</b> file signature).
+                    </p>
+                    
+                    <p>A decoder can have additional confidence in the file&apos;s integrity using the File <i class='text-danger'>Content Integrity Hash</i>, <i class='text-light'>File Layout Type Hash</i> and <i class='text-warning'>Byte Length Specifier</i>.
+                    </p>
+                    
+                    <p>Decoders <b class='text-danger'>must</b>:
+                        <ul>
+                            <li>Support <b class='text-light'>Packed</b> mode and <b>should</b> support <b class='text-light'>Padded</b> mode, especially if compatibility with Ethereum Virtual Machine (or similar blockchain) is desired.</li>
+                            <li>Hash (using the alogrithm specific to the parser rendering the file) the parsed <i class='text-light'>Type Hash</i>, <i class='text-warning'>Byte Length Specifier</i>, <i class='text-primary'>Source Content Hash</i>, <i class='text-success'>Source Signature</i> then validate it against the <b>parsed</b> <i class='text-danger'>Content Integrity Hash</i>.</li>
+                            <li>Validate the file&apos;s parsed <i class='text-light'>Type Hash</i> matches the unique <i class='text-light'>Type Hash</i> of the specific parser implemenation rendering the file.</li>
+                            <li>Verify the number of (8-bit) <b>bytes</b> read from the file following the <span class='text-warning'>4 Byte Byte Length Specifier</span> equals the parsed <i class='text-warning'>Byte Length Specifier</i>. The <i class='text-warning'>Byte Length Specifier</i> <b class='text-danger'>must</b> be no less than the number of bytes corresponding to the specific parser rendering the file (typically either 32 or 64 Bytes).</li>
+                        </ul>
+                    </p>
+                    
+                    <p>Decoders <b class='text-warning'>may</b>:
+                        <ul>
+                            <li>Perform decryption, decompression, base64 decoding or any combination of the three on its input. The result <b class='text-danger'>must</b> conform to this standard.</li>
+                        </ul>
+                    </p>
+                    
+                    <p>In the event the <b>parsed</b> <i class='text-warning'>Byte Length Specifier</i> of a file equals the number of bytes in its hashing algorithm (typically either 32 or 64 Bytes),
+                    there is no signature associated with the data and parse must end after the <i class='text-info'>Source Content Hash</i> has been parsed.
+                    </p>
+                </div>
+            </div>
+        </article-->
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="glossary">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Glossary of Terms</h3>
+                    
+                    <table id='glossaryOfTerms'
+                        class='table table-dark table-striped table-bordered'>
+                        
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">TBD</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">...</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Deflate</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SSF32</b> files &amp; PNG files,
+                                            as well as in zip, gzip, pkzip, and other compression programs.
+                                            </p>
+                                            
+                                            <p class='card-text'><b>Deflate</b> is a member of the <span class='text-info'>LZ77</span> family of compression methods.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossless compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that guarantees the original data can be reconstructed exactly, bit-for-bit.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossy compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that reconstructs the original data approximately, rather than exactly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">zlib</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">A particular format for data that has been compressed using deflate-style compression.
+                                            Also, the name of a library implementing this method.
+                                            </p>
+                                            
+                                            <p class="card-text"><b class='text-success'>SSF32</b> implementations need not use the zlib library,
+                                            but they must conform to its format for compressed data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">OSL</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">A concise language for use with LLMs such as ChatGPT to more easily denote scripting conversations or other commands.</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="appendix">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Appendix</h3>
+                    
+                    <p class='note'>This section is <b>not</b> part of the formal OSL-v1.0 specification.
+                    </p>
+                    
+                    <p>This section provides reasoning behind some of the design decisions which when into standardizing <b class='text-success'>OSL</b>.
+                    Many of these decisions were the subject of considerable debate.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill text-center bg-dark'>
+                    <h3 class='text-primary'>Why a new file format</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </article>
+    
+        <!--article role="tabpanel" class="tab-pane bg-dark" id="examples">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Example Encoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SSF32</b> encoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+                
+                <div class='d-inline-flex flex-column flex-fill border border-info border-rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Example Decoders</h3>
+                    
+                    <p>The official example <b class='text-success'>SSF32</b> decoder for PHP can be found <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="resources">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Online Resources</h3>
+                
+                    <p>The Official <b class='text-success'>SSF32</b> PHP reference is available <a href="">here</a>.
+                    </p>
+                </div>
+            </div>
+        </article-->
+        
+        <article role="tabpanel" class="tab-pane" id="errata">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Errata</h3>
+                    
+                    <p>Change Log:
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="references">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>References</h3>
+                    
+                    <ul>
+                        <li><a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a></li>
+                        <!--li><a href="http://www.faqs.org/rfcs/rfc1951.html">RFC-1951 Deflate Compressed Data Format</a></li-->
+                    </ul>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="credits">
+            <div class='d-flex flex-row'>
+                <h3 class='text-primary border border-light rounded text-center'>Credits</h3>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Editors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Authors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Trademarks<ul>
+                        <li></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <!--label>Source Integrity<ul>
+                    <li></li>
+                </ul></label-->
+                
+                <!--p>This specification is being provided by the copyright holders under the following license. By obtaining, using and/or copying this specification, you agree that you have read, understood, and will comply with the following terms and conditions:
+                </p-->
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="license">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>License</h3>
+                    
+                    <p>This specification is being provided by the copyright holders under the following conditions:
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+<pre><code>----------------------------------------------------------------
+
+# Copyright &copy; 28-03-2023 Tyler R. Drury (vigilance.eth™), All Rights Reserved.
+    
+----------------------------------------------------------------
+
+## Disclaimer
+
+This specification (the **Product**), including but not limited to,
+all source code, object files, executables, library files,
+images, video, audio, documentation, content generated by
+the Product and any other resource file of the Product,
+are subject to the following terms and conditions (the **License**).
+
+----------------------------------------------------------------
+
+## Retention of Intellectual Property Rights
+
+The name, likeness or works (either in part or in whole)
+of [Tyler R. Drury](https://vigilance91.github.io/) or that of any additional authors or contributors respectfully
+may not be used to endorse or promote products derived from this specification without specific prior written permission.
+
+----------------------------------------------------------------
+
+## Use and Redistribution
+
+Redistribution and use in source and binary forms,
+with or without modification is permitted,
+provided that the following conditions are met:
+
+* Redistributions of source code must retain, in whole,
+the above copyright notice, disclaimer, and this list of conditions.
+* Redistributions in binary form must reproduce, in whole,
+the above copyright notice, disclaimer
+and this list of conditions in the documentation
+and/or other materials provided with the distribution.
+* Any documentation, advertising materials,
+and other materials related to such distribution and use,
+must acknowledge the original author of the **Product** and all contributors.
+
+
+----------------------------------------------------------------
+
+## Coverage
+
+The **Product** is licensed under the Apache License, Version 2.0 (the **Apache License**),
+and may not be used, except in compliance with the **Apache License**.
+
+A full copy of the **Apache License** can be obtained [here](http://www.apache.org/licenses/LICENSE-2.0).
+
+----------------------------------------------------------------
+
+## Disclaimer of Warranty and Limitation of Liability
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the **License** is distributed on an
+**AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND**,
+either express or implied.
+
+Copyright holders and contributors are **not liable for damages** incurred through the use or inability to use the **Product**.
+
+See the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) for the specific language governing permissions and
+limitations under the **Apache License**.
+
+----------------------------------------------------------------
+</code></pre>
+            </div>
+        </article>
+    </main>
+    
+    <script id='main' type="application/javascript">
+    $(()=>{
+        $('pre code').each(
+            (i, block)=>{
+                hljs.highlightBlock(block);
+            }
+        );
+    });
+    </script>
+    
+    <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid small'>
+        <div class='footer-copyright text-center flex-row'>
+            &copy; 2018 - 2023 <a href="index.html">Tyler R. Drury</a> (<a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a><sup>&trade;</sup>),
+        </div>
+        
+        <div class='text-center flex-row'>
+            <b>All Rights Reserved.</b>
+        </div>
+
+        <div class='text-center flex-row'>
+            <sub><!--a id='about' href="tos.html" class=''>Terms</a> |
+                <a id='about' href="governance.html" class=''>Governance</a> |-->
+                <a id='about' href="about.html" class=''>About</a> |
+                <a id='contact' href="contact.html" class= ''>Contact</a> |
+                <a id='license'
+                    href="https://vigilance91.github.io/LICENSE.md">License
+                </a>
+            </sub> 
+        </div>
+    </footer>
+</body>
+</html>
