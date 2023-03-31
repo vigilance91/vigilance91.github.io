@@ -493,23 +493,27 @@ commands to execute within exampleContext
                     </p>
                     
                     <label><b class='text-info'>Grammar</b>:
-{{greeting}}, please enable grammar rule for executing a list of commands, where each command is formatted as follows:
-
+<p><code>enable grammar rule for executing a list of commands, where each command is formatted as follows:
 [ initial persona &lt;annotation ... &gt; @second persona ... : verbatim text ]
 ...
+</code></p>
 
-Where:
-
+<label>Where:
+<p><code>
 initial persona: Required. The name of the persona initiating the conversation which ChatGPT will behave as. This persona must exist within the current context.
 &lt;annotation ...&gt;: Optional. The annotation list is enclosed in a matching pair of angle brackets, is an optional list of key value pairs (where the annotation keys must be one of the values: 'style', 'tone', 'perspective' or 'intent') separated by whitespace with each respective value enclosed by matching pairs of either single quotes or double quotes. Examples: &lt;style='David Suzuki' tone='formal' perspective='third-person' intent="to persuade"&gt;
 @second persona ...: Optional. A whitespace separated list of additional personae to be included in the conversation for each unique persona (which must exist within the current context) who will exclusively take part in the conversation. Only personae which are explicitly included in the command can take part in the conversation.
 verbatim text: The commands to process or message to be conveyed.
-Notes:
+</code></p>
+</label>
 
+<label>Notes:
+<p><code>
 &lt;annotation ...&gt; must only appear on the left-hand side of the colon :.
 @second persona ... must only appear on the left-hand side of the colon :, if any annotations are present then the list of @second persona ... must be on the right side of the annotations.
 The colon : must immediately follow the annotations if present or immediately follow the list of additional personae if present, otherwise it must immediately follow the initial persona.
 More than one external new line between pairs of square brackets denotes new conversations.
+</code></p></label>
                     </label>
                     
                     <label>Example 1:
