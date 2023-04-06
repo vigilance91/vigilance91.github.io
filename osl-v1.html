@@ -86,12 +86,45 @@
                                 data-toggle="dropdown"
                                 aria-haspopup="true"
                                 aria-expanded="false"-->
-                            <a class='nav-link '
-                                href='#specification'
-                                role='tab'
-                                data-toggle='tab'>Specification
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">Specification
                             </a>
                             
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#comments'
+                                    role='tab'
+                                    data-toggle='tab'>Comments
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#constants'
+                                    role='tab'
+                                    data-toggle='tab'>System Constants
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#phrases'
+                                    role='tab'
+                                    data-toggle='tab'>Phrases
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#contexts'
+                                    role='tab'
+                                    data-toggle='tab'>Contexts
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#personae'
+                                    role='tab'
+                                    data-toggle='tab'>Personae
+                                </a>
+                            </div>
                             <!--div class="dropdown-menu dropdown-menu bg-secondary text-center">
                                 <a class='dropdown-item'
                                     href='#specPacked'
@@ -323,17 +356,15 @@
             </div>
         </article>
         
-        <article role='tabpanel' class='tab-pane bg-dark' id='specification'>
+        <article role='tabpanel' class='tab-pane bg-dark' id='comments'>
             <div class='d-flex flex-row bg-dark border border-light rounded'>
                 <div class='d-line-flex flex-column flex-fill'>
-                    <h3 class='text-primary text-center'>Specification</h3>
+                    <h4 class='text-info'>Comments</h4>
                 </div>
             </div>
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-                    <h4 class='text-info'>Comments</h4>
-                    
                     <p><b class='text-info'>Purpose</b>: To define comments which can be used within prompts,
                     either to add non-executable, human readable comments or to optionally disable commands within a command block.
                     </p>
@@ -360,11 +391,17 @@ comments
                     </label>
                 </div>
             </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='constants'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>System Constants</h4>
+                </div>
+            </div>
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-                    <h4 class='text-info'>System Constants</h4>
-                    
                     <p><b class='text-info'>Purpose</b>: Convenient, short-hand for the built-in ChatGPT system commands:
                         <ul>
                             <li>&quot;<i class='text-primary'>/get key</i>&quot;</li>
@@ -413,11 +450,17 @@ The purpose of using this grammar rule is to provide a convenient short-hand for
                     </label>
                 </div>
             </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='phrases'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Phrases</h3>
+                </div>
+            </div>
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-                    <h4 class='text-info'>Phrases</h3>
-                    
                     <p><b class='text-info'>Purpose</b>: Convenient short hand phrase for &quot;<i>set phrase "..." as "...".</i>&quot; statements.
                     </p>
                     
@@ -458,11 +501,17 @@ ex amicitia pax<b class='text-primary'>=</b>an expression of inner peace brought
 </code></pre>
                 </div>
             </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='contexts'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Contexts</h4>
+                </div>
+            </div>
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-                    <h4 class='text-info'>Contexts</h4>
-                    
                     <p><b class='text-info'>Purpose</b>: Conveniently set or switch between existing, pre-configured contexts.
                     </p>
                     <label><b class='text-info'>Regex</b>:
@@ -484,11 +533,17 @@ commands to execute within exampleContext
                     </label>
                 </div>
             </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='personae'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Personae</h4>
+                </div>
+            </div>
             
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-                    <h4 class='text-info'>Personae</h4>
-                    
                     <p><b class='text-info'>Purpose</b>: Convenient short hand to enable ChatGPT to behave as a specific persona while processing commands or having conversations involving other personae.
                     </p>
                     
@@ -532,8 +587,80 @@ More than one external new line between pairs of square brackets denotes new con
 <p><code><b class='text-primary'>&lt;</b>exampleContext<b class='text-primary'>&gt;</b>
 <b class='text-primary'>[</b>p0<b class='text-primary'>&lt;</b>tone<b class='text-primary'>=</b>&apos;&apos; style<b class='text-primary'>=</b>&apos;&apos; intent<b class='text-primary'>=</b>&apos;&apos; perspective<b class='text-primary'>=</b>&apos;&apos;<b class='text-primary'>&gt;</b> @p1 ...<b class='text-primary'>:</b>commands ...<b class='text-primary'>]</b> ... </code></p>
                     </label>
+                    
+                    <hr>
+                    
+                    <h4 class='text-info'>ChainedConversationGrammar</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: To easily facilitate communication and collaboration between groups of personas.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+<p><code>{&lt;prompt1&gt;} &amp; {&lt;prompt2&gt;} [&amp; {&lt;prompt3&gt;}] [&amp; {&lt;prompt4&gt;}] [&amp; {&lt;prompt5&gt;}] ...
+- When a series of two or more conversation prompts are separated by an ampersand symbol '&', the resulting output from each will be used as the source of a collaboration between the initial persona of each conversation (if they are unique and exist), discussing together the combined output of each processed command in the series before processing the resulting command behaving as the left most conversation's initial persona, directing the command to all the unique primary personas in all other chained prompts to collaborate.
+- If the initial personas of two or more commands are the same, an internal monologue will be created instead.
+- The commands in each prompt will be processed in left to right order before the final collaboration command.
+</code></p>
+
+<pre>Example Usage:
+<code>[Doug: describe C++] &amp; [Doug: describe Java.]
+[Doug: write an engaging article describing the benefits of C++.] &amp; [Kaitlin: rewrite Doug&apos;s article to optimize for seo.]
+[Mary: What&apos;s the weather like today?] &amp; [John: I think it&apos;s going to be sunny.] &amp; [Mary: That's great! Let's plan a picnic.]
+</code></pre>
+                    </label>
+                    
+                    <hr>
+                    
+                    <h4 class='text-info'>ChainedArgumentGrammar</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: To easily facilitate debate between groups of personas.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
+                    <p><code>{&lt;prompt1&gt;} ^ {&lt;prompt2&gt;} [^ {&lt;prompt3&gt;}] [^ {&lt;prompt4&gt;}] [^ {&lt;prompt5&gt;}] ...
+                        - When a series of two or more conversation prompts are separated by a caret symbol &apos;^&apos;, the resulting output from each will be used the topic of argument between the initial persona of each conversation (if they are unique and exist), discussing together the merits of each of the results of their respective processed command in the series before outputting the discussion and resulting response before processing the resulting command behaving as the left most conversation's initial persona, directing the command to all the unique primary personas in all other chained prompts to discuss one final time.
+                        - If the initial personas are the same, an internal monologue will be created instead.
+                        - The commands in each prompt will be processed in left to right order before the final collaboration command.
+                    </code></p>
+                    
+<pre>Example Usage:
+<code>[Doug: describe the benefits of C++.] ^ [Kaitlin: Describe the benefits of Java.]
+[Mary: What&apos;s the weather like today?] ^ [John: I think it&apos;s going to be sunny.] ^ [Mary: I think it will be rainy.]
+</code></pre>
                 </div>
+                
+                <!--div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    
+                </div-->
             </div>
+            
+            <!--div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <h4 class='text-info'>Byte Code</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: Convenient, repressenation of ChatGPT commands as standardized hexadecimal< or base64> encoded byte-code.
+                    </p>
+                    
+                    <p>OSL compliant byte-code must begin with the header
+                        <code>&apos;<b class='text-primary'>234750540D0A1A0A</b>&apos;</code>
+                        this must then be followed by the hexadecimal encoding of the <b>SHA256</b> digest of the literal source commands,
+                        followed lastly by the hexadecimal< or base64> encoded literal ChatGPT commands to be processed upon successfully being decoded.
+                    </p>
+                    
+                    <label><b class='text-info'>Encoding Prompt</b>:
+<p><code>
+set the entire following literal text as C, then convert C to hexadecimal then prefix that result with the sha256 hash of C, then finally prefix that result with &quot;234750540D0A1A0A&quot;:
+...
+</code></p>
+                    </label>
+                    
+                    <label><b class='text-info'>Decoding Grammar</b>:
+<p><code>{{greeting}}, please enable grammar rule in all future commands where:
+if the input begins with &quot;234750540D0A1A0A&quot;, the prefix will be removed, if the result text is less than 65 characters in length output an error otherwise the following 64 hexadecimal characters will be set as hsrc then removed. The remaining literal hexadecimal characters must be converted to uft-8 then set as src. src is then hashed using sha256 the result is set as hcmd. if hsrc and hcmd are equal the commands stored in src must be processed as normal otherwise output an error.
+</code></p>
+                    </label>
+                </div>
+            </div-->
         </article>
         
         <!--article role='tabpanel' class='tab-pane' id='misc'>
