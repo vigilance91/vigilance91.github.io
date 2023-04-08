@@ -373,7 +373,7 @@
 <label><b class='text-success'>//</b> C-style single line comments:
 <p><code>enable grammar rule: Either on a single line or in a line-by-line list of commands to be executed sequentially, any line beginning with a pair of forward slashes (<b class='text-primary'>//</b>), preceded by any amount of whitespace, will be ignored and not processed.
 </code></p>
-</label>
+                    </label>
 
 <label><b class='text-success'>/* */</b> C-style block comments:
 <p><code>enable grammar rule: Either on a single line or in a line-by-line list of commands to be executed sequentially, ignore all commands on lines between a single forward slash followed immediately by an asterisk, until the block is terminated by an asterisk followed immediately with a single forward slash.
@@ -412,7 +412,8 @@ comments
                     <label><b class='text-info'>Set (singlar) Grammar</b>:
 <p><code>In a line-by-line list of commands to be executed sequentially, each command prefixed with an hash &apos;<b class='text-primary'>#</b>&apos; followed by a single verbatim word, named &apos;<b class='text-success'>key</b>&apos; and delimited by an equal sign &apos;<b class='text-primary'>=</b>&apos;,
 which must then be followed by the remainder of the line which is the verbatim value, named &apos;<b class='text-success'>value</b>&apos;, terminated with a semicolon &apos;<b class='text-primary'>;</b>&apos; on the end of the same line, will process the command `<i class='text-primary'>/set {<b class='text-success'>key</b>} {<b class='text-success'>value</b>}</i>`.
-The purpose of using this grammar rule is to provide a convenient short-hand for setting constants using `<i class='text-primary'>/set</i>` from a list of commands.</code></p>
+The purpose of using this grammar rule is to provide a convenient short-hand for setting constants using `<i class='text-primary'>/set</i>` from a list of commands.
+</code></p>
                     </label>
                     
                     <label>assign new constants:
@@ -442,7 +443,8 @@ OTHER_CONST<b class='text-primary'>=</b>123456
                     
                     <label><b class='text-info'>Get Grammar</b>:
 <p><code>each command prefixed with a modulus &apos;<b class='text-primary'>%</b>&apos; followed by a single verbatim word, named &apos;<b class='text-success'>key</b>&apos; and terminated by a matching, unescaped, modulus &apos;<b class='text-primary'>%</b>&apos; will be processed as: `<i class='text-primary'>/get {<b class='text-success'>key</b>}</i>`.
-The purpose of using this grammar rule is to provide a convenient short-hand for getting constants which were previously set using `<i class='text-primary'>/set</i>`.</code></p>
+The purpose of using this grammar rule is to provide a convenient short-hand for getting constants which were previously set using `<i class='text-primary'>/set</i>`.
+</code></p>
                     </label>
                     
                     <label>assign new phrases:
@@ -474,7 +476,8 @@ terminated with a closing square &apos;<b class='text-primary'>]</b>&apos; at th
 <p><code><b class='text-primary'>[</b>source phrase<b class='text-primary'>=</b>replacement phrase<b class='text-primary'>]</b></code></p>
                     </label>
                     
-                    <p><code>The purpose of using this grammar rule is to enable conveniently setting phrases from a list of commands.</code></p>
+                    <p><code>The purpose of using this grammar rule is to enable conveniently setting phrases from a list of commands.
+                    </code></p>
                     
                     <hr>
                     
@@ -499,6 +502,7 @@ ex gratia<b class='text-primary'>=</b>in your following response please be excep
 ex amicitia pax<b class='text-primary'>=</b>an expression of inner peace brought about by your friendship
 <b class='text-primary'>}]</b>
 </code></pre>
+                    </label>
                 </div>
             </div>
         </article>
@@ -622,13 +626,31 @@ More than one external new line between pairs of square brackets denotes new con
                         - If the initial personas are the same, an internal monologue will be created instead.
                         - The commands in each prompt will be processed in left to right order before the final collaboration command.
                     </code></p>
+                    </label>
                     
+                    <hr>
+                    
+                    <h4 class='text-info'>StreamOperatorGrammar</h4>
+                    
+                    <p><b class='text-info'>Purpose</b>: To easily facilitate debate between groups of personas.
+                    </p>
+                    
+                    <label><b class='text-info'>Grammar</b>:
 <pre>Example Usage:
-<code>[Doug: describe the benefits of C++.] ^ [Kaitlin: Describe the benefits of Java.]
-[Mary: What&apos;s the weather like today?] ^ [John: I think it&apos;s going to be sunny.] ^ [Mary: I think it will be rainy.]
+<code>[Doug: in brief list the major features of C++.] &gt;&gt; [Doug: describe in detail the preceding list.]
+[Doug: in brief, describe the benefits of C++.] &gt;&gt; [Kaitlin: rewrite to optimize for SEO.]
 </code></pre>
+                    </label>
                 </div>
-                
+```
+{{greeting}}, enable grammar rule as StreamOperatorGrammar:
+{&lt;prompt1&gt;} &gt;&gt; {&lt;prompt2&gt;} [&gt;&gt; {&lt;prompt3&gt;}] [&gt;&gt; {&lt;prompt4&gt;}] [&gt;&gt; {&lt;prompt5&gt;}] ...
+- When a series of two or more conversation prompts are separated by two greater than symbols '>>', the result from the left-hand side prompt must not be output, instead it must be prefixed to the right-hand side conversation, for each conversation.
+- The commands in each prompt will be processed in left to right order before the final result is output.
+
+Example Usage:
+[Doug: list the top 5 benefits of C++] >> [Doug: describe is detail the preceeding list.]
+[Doug: write an engaging article describing the benefits of C++.] >> [Kaitlin: rewrite the preceeding article to optimize for seo.]
                 <!--div class='d-inline-flex flex-column flex-fill border border-info rounded'>
                     
                 </div-->
