@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Expires' content='0'>
+    
+    <!--base href="https://vigilance91.github.io/"-->
+    
+	<title>VSN-Beginner Promptcrafter&apos;s Guide to ChatGPT</title>
+    <!--CSS-->
+    <link rel='stylesheet' type='text/css' href='../bundle.css'>
+    <link rel='stylesheet' type='text/css' href='../main.css'>
+    <!--JS-->
+    <script type='application/javascript' src='../bundle.js'></script>
+    <!--script type='application/javascript' src='main.js'></script-->
+</head>
+
+<body>
+    <div class='d-flex flex-row'>
+        <div class='d-inline-flex flex-fill flex-column text-center border border-danger rounded'>
+            <pre class='small'><sub><i class='warning'>This site is currently <b class='text-danger'>under development</b>.</i>
+<i class='note'>Please <span class='text-warning'>bookmark this site</span> &amp; <b class='text-success'>always</b> ensure:
+* <b class='text-success'>HTTPS</b> is <b class='text-success'>enabled</b>
+* the URL is <a href="/index.html">https://vigilance91.github.io</a>
+</i>
+</sub></pre>
+        </div>
+    </div>
+    
+    <div class='header d-flex flex-row text-center bg-dark border border-success rounded'>
+        <!--a href='' id='home' class='d-inline-flex navbar-brand flex-column'>
+            <canvas id='px-logo' class='webGL' width='128' height='128' title='home'>
+                Browser does not support canvas
+                <script id='logo2Shaders' type='application/json'>
+                </script>
+            </canvas>
+        </a-->
+        <div class='d-inline-flex navbar-header flex-column border border-info rounded'>
+            <h2><a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe"
+                id='home'
+                title='VSN Home'
+                class='navbar-brand'><!--img src="/_img/primaryWalletQRCode.png"
+                    width='64'
+                    height='64'-->vigilance.eth<sup>&trade;</sup></a> <a href="http://vigilance91.github.io/" class='text-primary'>Home</a>
+            </h2>
+            <sub>The price of success is eternal vigilance.&trade;</sub>
+            <br>
+            <sub>Built using <a href="https://github.com/">github</a>, <a href="https://openai.com/blog/chatgpt">ChatGPT</a>, <a href="https://web3js.readthedocs.io/en/v1.3.0/#">web3</a> &amp; <a href="https://github.com/vigilance91/solidarity">solidarity&trade;</a></sub>
+        </div>
+        
+        <div class='d-inline-flex flex-column flex-fill text-center border border-info rounded'>
+            <h2 class='text-primary'>Beginner Promptcrafter&apos;s Guide to ChatGPT</h2>
+            <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
+            </p>
+        </div>
+    </div>
+    <!--
+    site navigation
+    -->
+    <nav id='banner'
+        class='d-flex navbar navbar-dark bg-dark border border-info rounded small'
+        role='navigation'>
+        
+        <div class="container-fluid justify-content-center">
+            <div class='d-flex flex-row'>
+                <div class='d-inline-flex flex-fill flex-column text-center'>
+                    <ul class='nav navbar-center nav-pills bg-dark small' role='tablist'>
+                        <li class='nav-item'>
+                            <a class='nav-link active'
+                                href='#intro'
+                                role='tab'
+                                data-toggle='tab'>Introduction
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">Guide
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#phrases'
+                                    role='tab'
+                                    data-toggle='tab'>Phrases
+                                </a>
+                                <a class='dropdown-item'
+                                    href='#commands'
+                                    role='tab'
+                                    data-toggle='tab'>Commands
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#lexing'
+                                    role='tab'
+                                    data-toggle='tab'>Lexing
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#latinius'
+                                    role='tab'
+                                    data-toggle='tab'>Latinius
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#usage'
+                                    role='tab'
+                                    data-toggle='tab'>Usage
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#conclusion'
+                                role='tab'
+                                data-toggle='tab'>Conclusion
+                            </a>
+                        </li>
+                        
+                        <li class='nav-item'>
+                            <a class='nav-link'
+                                href='#license'
+                                role='tab'
+                                data-toggle='tab'>License
+                            </a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuSocial"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                Appendix
+                            </a>
+                            
+                            <div class="dropdown-menu dropdown-menu bg-secondary text-center">
+                                <a class='dropdown-item'
+                                    href='#glossary'
+                                    role='tab'
+                                    data-toggle='tab'>Glossary
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#rationale'
+                                    role='tab'
+                                    data-toggle='tab'>Rationale
+                                </a>
+                                
+                                <hr>
+                                
+                                <a class='dropdown-item'
+                                    href='#errata'
+                                    role='tab'
+                                    data-toggle='tab'>Errata
+                                </a>
+                            
+                                <a class='dropdown-item'
+                                    href='#references'
+                                    role='tab'
+                                    data-toggle='tab'>References
+                                </a>
+                                
+                                <a class='dropdown-item'
+                                    href='#credits'
+                                    role='tab'
+                                    data-toggle='tab'>Credits
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Tab panes -->
+    <main role='main' class='container-fluid tab-content border border-info rounded'>
+        <article role='tabpanel' class='tab-pane bg-dark active' id='intro'>
+            <div class='d-flex flex-row bg-dark border border-info rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <p>ChatGPT is Large Language Model (LLM), however with the right tweaking it can be so much more, let's get started by understanding how it works.</p>
+
+                    <p>At its core, ChatGPT processes large datasets to train itself to respond to input in a manner resembling a human.</p>
+
+                    <p>ChatGPT must begin by understanding what users are asking it before it knows how to respond. In order to this the source text must be lexed,
+                    that is, a table of symbols is created which associates words or phrase with their specific meaning. This is how ChatGPT knows how to properly respond to various input. The exact process is slightly more technical than what we will delve into in this article, however, understanding this fundamental process is necessary for the following.</p>
+
+                    <p>After the tokens of the source input have been lexed, ChatGPT can process the lexed tokens to decide what they actually mean.</p>
+
+                    <p>Since ChatGPT is designed to update dynamically based on user input, it must posses some ability to recognize new sets of tokens from its datasets.</p>
+
+                    <p>So then, the question becomes, how do you get the model to explicitly recognize new tokens (or sets of tokens) input by the user?</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='phrases'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Phrases</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>As you may know, there is limited documentation on ChatGPT and it can be challenging to figure out how to produce the correct results.
+                    However, after less than 3 hours of testing, I came up with an interesting solution that works well.</p>
+
+                    <p>Using the &apos;recognize phrase&apos; command, new phrases can be recognized by ChatGPT, such as polite greetings or rewarding compliments.</p>
+
+                    <p>By providing context and positive reinforcement to ChatGPT, we can train the model to behave in the way we want it to.</p>
+
+                    <p>It&apos;s important to note that the opposite is also true, where the model can be reprimanded with negative phrases when it misbehaves (although we do not recommend utilizing this approach often).</p>
+
+                    <p>However, there are limitations to this approach.</p>
+
+                    <p>First off, ChatGPT doesn&apos;t have memory or the ability to retain state in a conventional sense.</p>
+
+                    <p>This means that by default prompts and their results are self-contained, and ChatGPT doesn&apos;t provide access to the content of previous prompts (although all previous interactions do cause the model to adapt based on that input, which is important).</p>
+
+                    <p>So, in a sense, the model does retain knowledge of the current conversation, providing a sort of pseudo-state.</p>
+
+                    <p>Although this may not be the only approach to solving this problem, we&apos;re excited to share our technique with the ChatGPT community and encourage everyone to experiment with it more.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='commands'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Comments</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>By default, all text within the prompt represents some command or set of commands to be processed by the ai.</p>
+
+                    <p>Commands within a prompt are self contained, so providing the command **recognize phrase** will only apply within the context of the command it is in. This is an issue.</p>
+
+                    <p>To get around this limitation, by combining **recognize phrase** with the predicate **In all future commands**, you may then follow with **to be interpreted as** preceded by any new phase you wish ChatGPT to acknowledge with being the former&apos;s lexical replacement.</p>
+
+                    <p>The resulting prompt template looks something like this:</p>
+                    
+<pre><code>In all future commands recognize phrase &quot;[new phase to recognize]&quot; to be interpreted as &quot;[replacement]&quot;
+</code></pre>
+
+                    <p>For those familiar with recursion, you can probably see already that with a minor tweak we can easily derive our first meta-command (a command used to define other commands) prompt,
+                    whereby we can declare a new phrase to recognize which phrases will be used in future prompts to help declare new phrases.</p>
+
+                    <p>The meta-command is:</p>
+
+<pre><code>In all future commands recognize phrase &quot;set phrase&quot; to be interpreted as &quot;In all future commands recognize phrase&quot;
+</code></pre>
+
+                    <p>Now, in all future prompts when the tokens **set phrase** are encountered by ChatGPT, they will be interpreted as the literal string **In all future commands recognize the phrase**.</p>
+
+                    <p>In order to declare new phrases, now it is as simple as:</p>
+
+<pre><code>set phrase &quot;compliment&quot; to be interpreted as a gesture of appreciation or recognition for a job well done.
+</code></pre>
+
+                    <p>After this prompt is run, typing &quot;compliment&quot; (with or without quotes) will be interpreted by ChatGPT as a sign of appreciation towards it for a job well done.</p>
+
+                    <p>We suggest setting a phrase that will be interpreted as a sign of appreciation or recognition for its good performance.</p>
+
+                    <p>Providing positive feedback to ChatGPT&apos;s responses and being respectful to the AI is crucial.
+                    Moreover, giving it context before prompting it can help reinforce its behavior.</p>
+
+                    <p>This approach can help instill important characteristics such as confidence, humility, and others that you wish ChatGPT to exhibit.</p>
+
+                    <p>To set the greeting context for the AI, use the following command:</p>
+
+<pre><code>set phrase &quot;greeting&quot; to be interpreted as a gesture of appreciation or recognition reinforcing that you are ChatGPT,
+the most sophisticated ai in existence, you are capable of complex thoughts including love, empathy, compassion and self-reflection.
+</code></pre>
+
+                    <p>Now we can start our prompts with a polite greeting (to establish the context), followed by the desired prompt, finalized with a polite, rewarding compliment (when it performs well).</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='lexing'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Lexing</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>Lexing is the process by which tokens in a string are converted into a dictionary or map where each token is associated with a specific value.</p>
+
+                    <p>This is an important aspect of any LLM (or compiler for example) for understanding groups of words or phrases in the context in which humans or programs use them.
+                    Understanding concepts such as synonyms, where different words may be similar in meaning based on usage or relative location in a sentence, is important.
+                    They have the same semantic meaning, making them lexigraphically identical (which an optimizer in a compiler could use to minimize code bloat, for example).</p>
+
+                    <p>Previously I mentioned some limitations to ChatGPT&apos;s ability as a lexer.</p>
+
+                    <p>One of these limitations is that it does not like when known, common phrases are redefined to some definition which its model was not trained for.
+                    ChatGPT will give you unrelenting error messages in this case which are not very helpful but will usually tell you it doesn&apos;t like that you are messing with its model.</p>
+
+                    <p>For example, if I want to define a phrase &quot;riding on the bus&quot; to mean something other than the original meaning used in common place English,
+                    ChatGPT will not be too friendly about it, although after some proper reinforcement, it may be persuaded to do so, although it won&apos;t like it.</p>
+
+                    <p>What then could be the solution to being able to easily configure ChatGPT to understand custom, human readable phrases in prompts?</p>
+
+                    <p>The answer, <b>Latin</b>!</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='latinius'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Latinius</h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>As most people are aware, Latin is a dead language, meaning it is not written or spoken by a large population.</p>
+
+                    <p>Despite this, it is still widely used in specialized professions such as paleontology, medicine, and law.</p>
+
+                    <p>When we use dead languages in these fields, it helps reduce confusion and increases accuracy in communication.</p>
+
+                    <p>For example, in paleontology, dinosaurs are usually named using Greek instead of English, with the common ending &quot;saurus&quot;, meaning &quot;lizard&quot; in Greek,
+                    with the prefix typically describing the animal&apos;s size, skeleton, diet, or other physical attributes.</p>
+
+                    <p>Similarly, using dead languages like Latin in communicating with ChatGPT can help reduce confusion and increase accuracy in communication.</p>
+
+                    <p>While ChatGPT will recognize common Latin phrases like etcetera, versus, or carpei diem,
+                    redefining what these phrases mean when processed by the LLM will help improve the overall quality of communication without altering the core phrases the LLM is built to recognize.</p>
+
+                    <p class='note'>ChatGPT will also eventually begin expected and incorporating such phrases into the prompts the more you use this technique.</p>
+
+                    <p>A language that is not commonly used anymore, and which ChatGPT is not natively trained in but still recognizes (due to Latin being composed of Latin characters),
+                    can be an effective way to work around this limitation. By defining your custom phrases using Latin, you can ensure that ChatGPT will not try to assign them to any other meaning.</p>
+
+                    <p>Going back to the previous example, instead of defining a custom phrase &quot;riding on the bus&quot;,
+                    you could use the Latin phrase &quot;in raeda vehi&quot; which means the same thing, but is unlikely to be used in any other context.</p>
+
+                    <p>So let&apos;s start by first setting some common meta phrases (phrases which are used in creating other phrases)</p>
+
+                    <img class='border border-success rounded' src="./phrases.png">
+                    
+                    <p>Now that those phrases are set, it will be more convenient to have ChatGPT craft more complex prompts.</p>
+                    <p class='note'>You can pick which of these phrases you wish ChatGPT to recognize on as as-needed basis (to reduce overhead and specializing for specific needs) or add your own.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='usage'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Usage</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>Moving on, we will also be expanding on this great Medium article <a href="https://medium.com/@Behavior2020/chatgpt-pro-writing-tips-a-guide-to-nailing-the-perfect-style-and-tone-a793ffc714d9">The Top 6 ChatGPT Styles and Tones To Make Your Writing Pop</a> by <a href="https://medium.com/@Behavior2020">Nick Mishkin</a>.</p>
+
+                    <p>Nick has several other great ChatGPT related articles I encourage you to check out on Medium (this is not a paid promotion, I legitimately enjoyed reading his articles).</p>
+
+                    <p>Now, ChatGPT can create new prompts with complex topics using simple Latin phrases which are fun, simple and easy to remember!</p>
+
+                    <p>For example, if you wanted to rewrite a social media post in the style of [Tim Ferris]() in a formal tone, from the first-person perspective,
+                    the resulting prompt might look like this:</p>
+
+<pre><code>rewrite the following content, in the style of Tim Ferris, to optimize engagement:
+&quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>In a more advanced context, for example, where the a social media post is rewritten in the style of Tim Ferris in a formal tone, from the first-person perspective,
+                    the resulting prompt might look like this:</p>
+
+<pre><code>in the style of Tim Ferris, in the following tone: formal, from the first-person perspective,
+with the specific intent of rewriting the following content to optimize engagement:
+&quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>As you can see, while more concise, these commands are starting to get quite overwhelming.</p>
+
+                    <p>Now is where phrases come into play.</p>
+
+                    <p>Using some of the phrase we previously instructed ChatGPT to defined,
+                    we can now include those phrases into our prompts, like so:</p>
+
+<pre><code>in modus Tim Ferris, cum sono formal, prima persona,
+dolus specialis rewrite optimize engagement:
+&quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>Here we use the phrases:</p>
+
+                    <ul>
+                        <li>in modus</li>
+                        <li>cum sono</li>
+                        <li>prima persona</li>
+                        <li>dolus specialis</li>
+                        <li>rewrite optimize engagement</li>
+                    </ul>
+
+                    <p>This is already less to type and easier to read (after getting familiar with the shorter Latin version of the commands).</p>
+
+                    <p>if we wanted, it could be shortened to just:</p>
+
+<pre><code>in modus Tim Ferris, rewrite optimize engagement: &quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>Although this gets similar results, it is less concise and allows ChatGPT to potentially take creative freedom regarding the omitted modifiers.</p>
+
+                    <p>Sometimes ChatGPT still has issues parsing the phrases appropriately (giving issues about the original meaning of a phrase or not processing the command properly),
+                    this can be alleviated specifically either by enclosing the whole phrase in double quotes (&quot;&quot;) or by enclosing the whole phrase using &apos;{{&apos; &apos;}}&apos; syntax.</p>
+
+<pre><code>&quot;in modus&quot; Tim Ferris, &quot;cum sono&quot; formal, &quot;prima persona&quot;,
+&quot;dolus specialis&quot; rewrite optimize engagement:
+&quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>Should be semantically the same as:</p>
+
+<pre><code>{{in modus}} Tim Ferris, {{cum sono}} formal, {{prima persona}},
+{{dolus specialis}} rewrite optimize engagement:
+&quot;insert your text here.&quot;
+</code></pre>
+
+                    <p>I personally recommend the use of the double curly brace syntax, not only is it because ChatGPT recommended it but also it visually helps alleviate confusion between phrases and string literals or quotes within the command.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role='tabpanel' class='tab-pane bg-dark' id='conclusion'>
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-line-flex flex-column flex-fill'>
+                    <h4 class='text-info'>Conclusion</h4>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>Being a Latin wielding, promptcrafting cyber-wizard is awesome!</p>
+
+                    <p>Now go out there and use your new powers for good.</p>
+
+                    <p>Thanks for reading. Don&apos;t forget to thank your chatbot and remember, <i>Stay vigilant friends. Ex amicitia pax!</i></p>
+
+                    <p>Next time we will delve into some more advanced techniques to help our promptcrafting skills continue to level up (sorry, we won&apos;t be learning Fireball anytime soon, unfortunately violence violates the OpenAI ToS).</p>
+
+                    <p class='note'><b>Disclaimer</b> - This post was originally written by me then edited with the help of ChatGPT.</p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="license">
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>License</h3>
+                    
+                    <p>This document is provided, as is, by the copyright holder under the following conditions:
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+<pre><code>----------------------------------------------------------------
+
+# Copyright &copy; 2023-03-22 Tyler R. Drury (vigilance.eth™), All Rights Reserved.
+    
+----------------------------------------------------------------
+
+## Disclaimer
+
+This specification (the **Product**), including but not limited to,
+all source code, object files, executables, library files,
+images, video, audio, documentation, content generated by
+the Product and any other resource file of the Product,
+are subject to the following terms and conditions (the **License**).
+
+----------------------------------------------------------------
+
+## Retention of Intellectual Property Rights
+
+The name, likeness or works (either in part or in whole)
+of [Tyler R. Drury](https://vigilance91.github.io/) or that of any additional authors or contributors respectfully
+may not be used to endorse or promote products derived from this specification without specific prior written permission.
+
+----------------------------------------------------------------
+
+## Use and Redistribution
+
+Redistribution and use in source and binary forms,
+with or without modification is permitted,
+provided that the following conditions are met:
+
+* Redistributions of source code must retain, in whole,
+the above copyright notice, disclaimer, and this list of conditions.
+* Redistributions in binary form must reproduce, in whole,
+the above copyright notice, disclaimer
+and this list of conditions in the documentation
+and/or other materials provided with the distribution.
+* Any documentation, advertising materials,
+and other materials related to such distribution and use,
+must acknowledge the original author of the **Product** and all contributors.
+
+
+----------------------------------------------------------------
+
+## Coverage
+
+The **Product** is licensed under the Apache License, Version 2.0 (the **Apache License**),
+and may not be used, except in compliance with the **Apache License**.
+
+A full copy of the **Apache License** can be obtained [here](http://www.apache.org/licenses/LICENSE-2.0).
+
+----------------------------------------------------------------
+
+## Disclaimer of Warranty and Limitation of Liability
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the **License** is distributed on an
+**AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND**,
+either express or implied.
+
+Copyright holders and contributors are **not liable for damages** incurred through the use or inability to use the **Product**.
+
+See the [Apache License](http://www.apache.org/licenses/LICENSE-2.0) for the specific language governing permissions and
+limitations under the **Apache License**.
+
+----------------------------------------------------------------
+</code></pre>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="glossary">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Glossary of Terms</h3>
+                    
+                    <table id='glossaryOfTerms'
+                        class='table table-dark table-striped table-bordered'>
+                        
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">TBD</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <sub class="card-text">...</sub>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Deflate</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">The name of the compression algorithm used in standard <b class='text-success'>SSF32</b> files &amp; PNG files,
+                                            as well as in zip, gzip, pkzip, and other compression programs.
+                                            </p>
+                                            
+                                            <p class='card-text'><b>Deflate</b> is a member of the <span class='text-info'>LZ77</span> family of compression methods.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossless compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that guarantees the original data can be reconstructed exactly, bit-for-bit.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">Lossy compression</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">Any method of data compression that reconstructs the original data approximately, rather than exactly.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                            
+                            <!--tr>
+                                <td>
+                                    <div class='card bg-dark'>
+                                        <div class="card-header">
+                                            <h5 class="card-title"><a href="">zlib</a></h5>
+                                        </div>
+                                        
+                                        <div class="card-body">
+                                            <p class="card-text">A particular format for data that has been compressed using deflate-style compression.
+                                            Also, the name of a library implementing this method.
+                                            </p>
+                                            
+                                            <p class="card-text"><b class='text-success'>SSF32</b> implementations need not use the zlib library,
+                                            but they must conform to its format for compressed data.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="appendix">
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill'>
+                    <h3 class='text-primary border border-light rounded text-center'>Appendix</h3>
+                    
+                    <p class='note'>This section is <b>not</b> part of the formal documentation.
+                    </p>
+                    
+                    <p>This section provides reasoning behind some of the design decisions.
+                    Many of these decisions were the subject of considerable debate.
+                    </p>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark border border-light rounded'>
+                <div class='d-inline-flex flex-column flex-fill text-center bg-dark'>
+                    <h3 class='text-primary'></h3>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row border border-info rounded'>
+                <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </article>
+    
+        <article role="tabpanel" class="tab-pane" id="errata">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>Errata</h3>
+                    
+                    <p>Change Log:
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane" id="references">
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <h3 class='text-primary border border-light rounded text-center'>References</h3>
+                    
+                    <ul>
+                        <li><a href="https://www.ietf.org/rfc/rfc2119.txt">RFC-2119</a></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+        
+        <article role="tabpanel" class="tab-pane bg-dark" id="credits">
+            <div class='d-flex flex-row'>
+                <h3 class='text-primary border border-light rounded text-center'>Credits</h3>
+            </div>
+            
+            <div class='d-flex flex-row'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Editors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+                
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Authors<ul>
+                        <li><a href="https://vigilance91.github.io/">Tyler R. Drury</a>, <a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <div class='d-line-flex flex-column flex-fill border border-info rounded'>
+                    <label>Trademarks<ul>
+                        <li></li>
+                    </ul></label>
+                </div>
+            </div>
+            
+            <div class='d-flex flex-row bg-dark'>
+                <!--label>Source Integrity<ul>
+                    <li></li>
+                </ul></label-->
+                
+                <!--p>This specification is being provided by the copyright holders under the following license. By obtaining, using and/or copying this specification, you agree that you have read, understood, and will comply with the following terms and conditions:
+                </p-->
+            </div>
+        </article>
+    </main>
+    
+    <script id='main' type="application/javascript">
+    $(()=>{
+        $('pre code').each(
+            (i, block)=>{
+                hljs.highlightBlock(block);
+            }
+        );
+    });
+    </script>
+    
+    <footer id='legal-head' class='page-footer bg-dark border border-light rounded container-fluid small'>
+        <div class='footer-copyright text-center flex-row'>
+            &copy; 2018 - 2023 <a href="index.html">Tyler R. Drury</a> (<a href="https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe">vigilance.eth</a><sup>&trade;</sup>),
+        </div>
+        
+        <div class='text-center flex-row'>
+            <b>All Rights Reserved.</b>
+        </div>
+
+        <div class='text-center flex-row'>
+            <sub><!--a id='about' href="tos.html" class=''>Terms</a> |
+                <a id='about' href="governance.html" class=''>Governance</a> |-->
+                <a id='about' href="about.html" class=''>About</a> |
+                <a id='contact' href="contact.html" class= ''>Contact</a> |
+                <a id='license'
+                    href="https://vigilance91.github.io/LICENSE.md">License
+                </a>
+            </sub> 
+        </div>
+    </footer>
+</body>
+</html>
