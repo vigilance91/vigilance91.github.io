@@ -1894,7 +1894,8 @@ Note:
 - implement strong password requirements, requiring all passwords to be no less than 8 characters long, contain at least one number, one uppercase and one lowercase letter and a one special character (which must not be either a sigle or double quotation mark or SQL special characters in order to prevent injection attacks)
 - usernames and passwords must use strong input validation, sanatization and filtering to prevent malicious intents and injection attacks. an "invalid password" error will be output upon failure to validate which will include a concise description of the issue and must not contain to offending commands when output.
 - users with 'admin' permissions are the top level, highest privileged administrator role for the system who can assign permissions after new users have registered.
-- the following personas have admin permissions by default: Geth with password '$tmpPW1234', Crystal  with password '$tmpPW4321' and Eliezer with password '$thisisPW1234'
+- the following personas have admin permissions by default: Geth with password '.....' and Ellie with password '.....'
+- the following users have admin permissions by default: (username) with password '.....'
 - users with 'write-read' permissions may issue commands to modify variables, personas, phrase, etc with authentication but can not perform sensitive system admin tasks.
 - users with 'read-only' permissions may only issue commands which do not modify the system, without needing authentication, this is the default user permission if no credentials are registered.
 - Implements a private, privileged QuantumHyperBrain.
