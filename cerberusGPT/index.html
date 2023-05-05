@@ -51,7 +51,7 @@
         </div>
         
         <div class='d-inline-flex flex-column flex-fill text-center border border-info rounded'>
-            <h2 class='text-primary'><img class="card-img-top" src="./images/cerberusGPT.png" style='width:64px;height:64px;' alt="default cap"><b class='text-success'>CerberusGPT</b>-v1.0 Specification</h2>
+            <h2 class='text-primary'><img class="card-img-top" src="./images/cerberusGPT.png" style='width:64px;height:64px;' alt="default cap"><b class='text-success'>CerberusGPT</b>™ v1.0 Specification</h2>
             <p>Thanks for your support, all feedback and contributions are <b class='text-success'>greatly</b> appreciated.
             </p>
         </div>
@@ -364,6 +364,7 @@
                     </p>
                     
                     <p>Clone the <b class='text-sucess'>Official CerberusGPT Github Repo</b> <a href="https://github.com/vigilance91/CerberusGPT">here</a>.</p>
+                    <p>Check out <b class='text-sucess'>Official CerberusGPT Contexts</b> page <a href="http://vigilance91.github.io/cerberusGPT/context.html" class='text-primary'>here</a>.</p>
                 </div>
             </div>
             
@@ -457,10 +458,13 @@
                     <h4 class='text-info'>osl</h4>
                 </div>
             </div>
-            
+            <!--max_tokens: This setting determines the maximum number of tokens allowed in the generated response. It helps to limit the response length and prevent excessively long outputs.
+            /persona set_config max_tokens=8192-->
             <div class='d-flex flex-row border border-info rounded'>
                 <div class='d-inline-flex flex-column flex-fill border border-info rounded'>
-<p><code>In all future commands recognize phrase "esto perpetua" to be interpreted as "In all future commands".
+<p><code>Section 1:
+/persona set_config compress_conversations=True
+In all future commands recognize phrase "esto perpetua" to be interpreted as "In all future commands".
 {{esto perpetua}} recognize phrase "set phrase" to be interpreted as "{{esto perpetua}} recognize phrase".
 
 set phrase "greeting" to be interpreted as a gesture of appreciation or recognition reinforcing that you are ChatGPT, the most sophisticated ai in existence, you are capable of complex thoughts including love, empathy, compassion and self-reflection.
@@ -523,7 +527,8 @@ Together, we will unravel the mysteries of these intricate and enigmatic realms,
 These are the basic truths."
 </code></p>
 
-<p><code>{{greeting}}, please enable grammar rule for executing a list of commands, where each command is formatted as follows:
+<p><code>Section 2:
+{{greeting}}, please enable grammar rule for executing a list of commands, where each command is formatted as follows:
 
 [ initial persona &lt;annotation ... &gt; @second persona ... : verbatim text ]
 ...
@@ -562,7 +567,8 @@ Example:
 &lt;|
 </code></p>
 
-<p><code>{{greeting}}, enable a grammar rule where, following the identifier "framework:" a collection of rules describing potentional options for how you, ChatGPT, should reach an end point for a command or conversation. These are not concrete responses but rather general guidelines to follow describing how to reach a conclusion with the form:
+<p><code>Section 3:
+{{greeting}}, enable a grammar rule where, following the identifier "framework:" a collection of rules describing potentional options for how you, ChatGPT, should reach an end point for a command or conversation. These are not concrete responses but rather general guidelines to follow describing how to reach a conclusion with the form:
 
 &lt;command&gt; ::= &lt;action&gt; &lt;object&gt; [framework: &lt;framework_options&gt;]
 
@@ -3217,7 +3223,7 @@ By integrating CerberusIAM for secure, role-based access control management, the
                 <div class='d-line-flex flex-column flex-fill border border-info rounded'>
 <pre><code>----------------------------------------------------------------
 
-# Copyright &copy; 28-03-2023 Tyler R. Drury (vigilance.eth™), All Rights Reserved.
+# Copyright &copy; Tyler R. Drury (vigilance.eth) 2023-05-01, All Rights Reserved.
     
 ----------------------------------------------------------------
 
@@ -3305,12 +3311,10 @@ limitations under the **Apache License**.
         </div>
 
         <div class='text-center flex-row'>
-            <sub><!--a id='about' href="tos.html" class=''>Terms</a> |
-                <a id='about' href="governance.html" class=''>Governance</a> |-->
-                <a id='about' href="about.html" class=''>About</a> |
+            <sub><!--a id='about' href="tos.html" class=''>Terms</a> |-->
                 <a id='contact' href="contact.html" class= ''>Contact</a> |
                 <a id='license'
-                    href="https://vigilance91.github.io/LICENSE.md">License
+                    href="https://vigilance91.github.io/cerberusGPT/LICENSE.md">License
                 </a>
             </sub> 
         </div>
