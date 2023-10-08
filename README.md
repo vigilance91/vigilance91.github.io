@@ -1,5 +1,12 @@
-# Vigilance91 Home
-# Copyright (C) June 2018, Tyler R. Drury. All Rights Reserved.
+# Vigilance Home
+
+|     |    |
+| ---- | ---- |
+| Author | [Tyler R. Drury](https://vigilance91.github.io/) [vigilance.eth](https://etherscan.io/address/0x20fc7e34f4acfa8faec8edf0546c57cd77d76bfe) |
+| Date | June 2018 |
+| Copyright | &copy; Tyler R. Drury <vigilstudios.td@gmail.com>, All Rights Reserved. |
+
+## Proudly made in [Ontario](https://www.ontario.ca/) [![Canadian](https://flagcdn.com/16x12/ca.png "flag image host https://flagcdn.com")](https://www.canada.ca/en.html)
 
 ---
 

@@ -2,6 +2,10 @@
 	color:black;
 }*/
 
+.pcScrollX{
+    overflow-x:scroll;
+}
+
 sup a{
     font-size:0.25em;
 }
